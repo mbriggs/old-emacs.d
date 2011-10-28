@@ -10,7 +10,7 @@
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (end-of-buffer)
     (eval-print-last-sexp)))
-    
+
 
 (setq el-get-sources
       '((:name textmate
@@ -18,10 +18,6 @@
                :url "git://github.com/defunkt/textmate.el"
                :load "textmate.el")
         (:name css-mode :type elpa)
-        (:name anything-config
-               :type git
-               :url "git://repo.or.cz/anything-config.git"
-               :load "anything-config.el")
         (:name rvm
                :type git
                :url "http://github.com/djwhitt/rvm.el.git"
@@ -39,8 +35,8 @@
 
 (setq my-packages
       (append
-       '(evil anything-config auto-complete color-theme-solarized flymake-ruby
-              linum-ex magit rhtml rvm textmate yaml-mode)
+       '(evil anything auto-complete color-theme-solarized flymake-ruby
+         linum-ex rhtml rvm textmate yaml-mode)
        (mapcar 'el-get-source-name el-get-sources)))
 
 
@@ -48,6 +44,7 @@
 
 (autoload 'ruby-mode "ruby-mode" nil t)
 (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
@@ -70,6 +67,11 @@
 (define-key evil-normal-state-map "\C-h" 'evil-backward-word-begin)
 (define-key evil-normal-state-map "\M-t" 'textmate-goto-file)
 (define-key evil-normal-state-map "\M-j" 'evil-window-next)
+(define-key evil-normal-state-map "E" 'ido-find-file)
+(define-key evil-normal-state-map "  " 'evil-jump-item)
+(define-key evil-normal-state-map "\\" 'evil-repeat-find-char-reverse)
+(define-key evil-normal-state-map "H" 'evil-first-non-blank)
+(define-key evil-normal-state-map "L" 'evil-last-non-blank)
 
 (textmate-mode)
 
@@ -94,4 +96,4 @@
 (column-number-mode t)
 (set-fringe-style -1)
 (tooltip-mode -1)
-(set-frame-font "Menlo-16")
+(set-frame-font "Menlo-11")
