@@ -1,0 +1,77 @@
+(1
+ (all .
+      [(1 0)
+       nil "Edit all lines matching a given regexp" single])
+ (auctex .
+	 [(11 86)
+	  nil "Integrated environment for *TeX*" tar])
+ (company .
+	  [(0 5)
+	   nil "Flexible inline text and code completion" tar])
+ (debbugs .
+	  [(0 3)
+	   nil "SOAP library to access debbugs servers" tar])
+ (eldoc-eval .
+	     [(0 1)
+	      nil "Enable eldoc support when minibuffer is in use." single])
+ (epoch-view .
+	     [(0 0 1)
+	      nil "Minor mode to visualize epoch timestamps" single])
+ (jgraph-mode .
+	      [(0 0)
+	       nil "Major mode for Jgraph files" single])
+ (js2-mode .
+	   [(20090814)
+	    nil "Improved JavaScript editing mode" single])
+ (lmc .
+      [(1 0)
+       nil "Little Man Computer in Elisp" single])
+ (load-dir .
+	   [(0 0 3)
+	    nil "Load all Emacs Lisp files in a given directory" single])
+ (markchars .
+	    [(0 2 0)
+	     nil "Mark chars fitting certain characteristics" single])
+ (memory-usage .
+	       [(0 1)
+		nil "Analyze the memory usage of Emacs in various ways" single])
+ (minimap .
+	  [(1 0)
+	   nil "Sidebar showing a \"mini-map\" of a buffer" single])
+ (muse .
+       [(3 20)
+	nil "Authoring and publishing tool" tar])
+ (oauth2 .
+	 [(0 1)
+	  nil "OAuth 2.0 Authorization Protocol" single])
+ (org .
+      [(20111027)
+       nil "Outline-based notes management and organizer" tar])
+ (quarter-plane .
+		[(0 1)
+		 nil "editing using quarter-plane screen model" single])
+ (rainbow-mode .
+	       [(0 2)
+		nil "Colorize color names in buffers" single])
+ (register-list .
+		[(0 1)
+		 nil "Interactively list/edit registers" single])
+ (shen-mode .
+	    [(0 1)
+	     nil "A major mode for editing shen source code" single])
+ (sisu-mode .
+	    [(3 0 3)
+	     nil "Major mode for SiSU markup text" single])
+ (svg-clock .
+	    [(0 2)
+	     nil "Analog clock using Scalable Vector Graphics" single])
+ (undo-tree .
+	    [(0 3 1)
+	     nil "Treat undo history as a tree" single])
+ (uni-confusables .
+		  [(0 1)
+		   nil "Unicode confusables table" tar])
+ (windresize .
+	     [(0 1)
+	      nil "Resize windows interactively" single]))
+
