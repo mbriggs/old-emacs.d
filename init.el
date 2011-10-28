@@ -1,11 +1,16 @@
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
 
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil t)
   (with-current-buffer
       (url-retrieve-synchronously
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (end-of-buffer)
     (eval-print-last-sexp)))
+    
 
 (setq el-get-sources
       '((:name textmate
@@ -38,8 +43,8 @@
               linum-ex magit rhtml rvm textmate yaml-mode)
        (mapcar 'el-get-source-name el-get-sources)))
 
+
 (el-get 'sync my-packages)
-(el-get 'wait)
 
 (autoload 'ruby-mode "ruby-mode" nil t)
 (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
@@ -59,14 +64,11 @@
 
 (evil-mode 1)
 (define-key evil-normal-state-map ",," 'evil-buffer)
-(define-key evil-normal-state-map [C-j] 'evil-forward-paragraph)
-(define-key evil-normal-state-map [C-k] 'evil-backward-paragraph)
-(define-key evil-normal-state-map [C-l] 'evil-forward-word-begin)
-(define-key evil-normal-state-map [C-h] 'evil-backward-word-begin)
-(define-key evil-normal-state-map [S-return] 'textmate-next-line)
-(define-key evil-normal-state-map [M-t] 'textmate-goto-file)
-;(define-key evil-normal-state-map [C-h] 'evil-backward-word-begin)
-
+(define-key evil-normal-state-map "\C-j" 'evil-forward-paragraph)
+(define-key evil-normal-state-map "\C-k" 'evil-backward-paragraph)
+(define-key evil-normal-state-map "\C-l" 'evil-forward-word-begin)
+(define-key evil-normal-state-map "\C-h" 'evil-backward-word-begin)
+(define-key evil-normal-state-map "\M-t" 'textmate-goto-file)
 
 (textmate-mode)
 
@@ -92,8 +94,3 @@
 (set-fringe-style -1)
 (tooltip-mode -1)
 (set-frame-font "Menlo-16")
-
-(setq mac-option-key-is-meta nil)
-(setq mac-command-key-is-meta t)
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier nil)
