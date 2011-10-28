@@ -69,6 +69,7 @@
 (define-key evil-normal-state-map "\C-l" 'evil-forward-word-begin)
 (define-key evil-normal-state-map "\C-h" 'evil-backward-word-begin)
 (define-key evil-normal-state-map "\M-t" 'textmate-goto-file)
+(define-key evil-normal-state-map "\M-j" 'evil-window-next)
 
 (textmate-mode)
 
