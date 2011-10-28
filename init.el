@@ -32,7 +32,14 @@
                :url "http://github.com/yoshiki/yaml-mode.git"
                :features yaml-mode)))
 
-(el-get 'sync)
+(setq my-packages
+      (append
+       '(evil anything-config auto-complete color-theme-solarized flymake-ruby
+              linum-ex magit rhtml rvm textmate yaml-mode)
+       (mapcar 'el-get-source-name el-get-sources)))
+
+(el-get 'sync my-packages)
+(el-get 'wait)
 
 (autoload 'ruby-mode "ruby-mode" nil t)
 (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
@@ -50,12 +57,21 @@
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 
-
 (evil-mode 1)
+(define-key evil-normal-state-map ",," 'evil-buffer)
+(define-key evil-normal-state-map [C-j] 'evil-forward-paragraph)
+(define-key evil-normal-state-map [C-k] 'evil-backward-paragraph)
+(define-key evil-normal-state-map [C-l] 'evil-forward-word-begin)
+(define-key evil-normal-state-map [C-h] 'evil-backward-word-begin)
+(define-key evil-normal-state-map [S-return] 'textmate-next-line)
+(define-key evil-normal-state-map [M-t] 'textmate-goto-file)
+;(define-key evil-normal-state-map [C-h] 'evil-backward-word-begin)
+
+
 (textmate-mode)
 
 (setq linum-format "%3d ")
-(linum-mode)
+(global-linum-mode)
 
 (color-theme-solarized-light)
 
@@ -76,3 +92,8 @@
 (set-fringe-style -1)
 (tooltip-mode -1)
 (set-frame-font "Menlo-16")
+
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)

@@ -1,1 +1,14 @@
-(nil)
+((("evil-forward-word-begin" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("evil-forward-char" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("footnote-mode" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("define-key" .
+   [0 0 0 0 0 0 0 0 0 1])
+  ("evil-normal-state" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("evil-normal-state-map" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0])
+  ("evil-buffer" .
+   [0 0 0 0 0 0 0 0 0 0 1])))
