@@ -60,6 +60,15 @@
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 
 (evil-mode 1)
+(setq-default evil-shift-width 2)
+
+(defun new-line-in-normal-mode ()
+  (interactive)
+  (evil-set-marker ?z)
+  (evil-insert-newline-below)
+  (evil-force-normal-state)
+  (evil-goto-mark ?z))
+
 (define-key evil-normal-state-map ",," 'evil-buffer)
 (define-key evil-normal-state-map "\C-j" 'evil-forward-paragraph)
 (define-key evil-normal-state-map "\C-k" 'evil-backward-paragraph)
@@ -72,6 +81,7 @@
 (define-key evil-normal-state-map "\\" 'evil-repeat-find-char-reverse)
 (define-key evil-normal-state-map "H" 'evil-first-non-blank)
 (define-key evil-normal-state-map "L" 'evil-last-non-blank)
+(define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
 
 (textmate-mode)
 
@@ -97,3 +107,7 @@
 (set-fringe-style -1)
 (tooltip-mode -1)
 (set-frame-font "Menlo-11")
+
+(custom-set-faces
+ '(flymake-errline ((((class color)) (:underline "OrangeRed"))))
+ '(flymake-warnline ((((class color)) (:underline "Blue")))))
