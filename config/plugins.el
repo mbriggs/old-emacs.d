@@ -19,6 +19,15 @@
                :load "rvm.el"
                :compile ("rvm.el")
                :after (lambda() (rvm-use-default)))
+        (:name rinari
+               :type git
+               :url "https://github.com/technomancy/rinari.git")
+        (:name sass-mode
+               :type git
+               :url "https://github.com/nex3/sass-mode.git")
+        (:name haml-mode
+               :type git
+               :url "https://github.com/nex3/haml-mode.git")
         (:name fill-column-mode
                :type git
                :url "https://github.com/alpaker/Fill-Column-Indicator.git")
@@ -48,7 +57,12 @@
          auto-complete-etags
          auto-complete-ruby
          coffee-mode
+         color-theme-sanityinc-solarized
+         color-theme-sanityinc
          color-theme-solarized
+         color-theme-mac-classic
+         color-theme-zen-and-art
+         color-theme-tango-2
          csv-mode
          enclose
          evil
@@ -58,14 +72,13 @@
          json
          linum-ex
          magit
-         nxhtml
          mustache-mode
          textmate
          rainbow-delimiters
          rspec-mode
+         rhtml-mode
          ruby-block
          ruby-end
-         rinari
          sass-mode
          scss-mode
          smex

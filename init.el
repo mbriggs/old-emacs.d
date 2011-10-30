@@ -14,23 +14,22 @@
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 
-;; erb support
-(load "~/.emacs.d/el-get/nxhtml/autostart.el")
-(setq
-  nxhtml-global-minor-mode t
-  mumamo-background-colors nil
-  nxhtml-skip-welcome t
-  indent-region-mode t
-  rng-nxml-auto-validate-flag nil
-  nxml-degraded t)
+(autoload 'ruby-mode "ruby-mode" nil t)
+(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("config.ru" . ruby-mode))
 
-(add-to-list 'auto-mode-alist '("\\.html\\.erb$" . eruby-nxhtml-mumamo-mode)) 
+(autoload 'rhtml-mode "rhtml-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode)) 
 
 (evil-mode 1)
 (setq-default evil-shift-width 2)
 
 (require 'rainbow-delimiters)
 (global-rainbow-delimiters-mode)
+
 
 (autoload 'ack-and-a-half-same "ack-and-a-half" nil t)
 (autoload 'ack-and-a-half "ack-and-a-half" nil t)
@@ -44,8 +43,7 @@
 
 (textmate-mode)
 
-(require 'fill-column-indicator)
-(add-hook 'after-change-major-mode-hook 'fci-mode)
+(require 'rinari)
 
 (setq linum-format "%3d ")
 (global-linum-mode)
