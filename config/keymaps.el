@@ -13,5 +13,15 @@
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
 (define-key evil-normal-state-map "\M-b" 'ibuffer)
 (define-key evil-normal-state-map "\M-f" 'sunrise-cd)
+
+(define-key evil-normal-state-map ",sc" 'rinari-find-controller)
+(define-key evil-normal-state-map ",sh" 'rinari-find-helper)
+(define-key evil-normal-state-map ",si" 'rinari-find-migration)
+(define-key evil-normal-state-map ",sm" 'rinari-find-model)
+(define-key evil-normal-state-map ",st" 'rinari-find-test)
+(define-key evil-normal-state-map ",sv" 'rinari-find-view)
+(define-key evil-normal-state-map ",sl" 'rinari-find-lib)
+
+
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
