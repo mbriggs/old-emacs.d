@@ -19,6 +19,18 @@
                :load "rvm.el"
                :compile ("rvm.el")
                :after (lambda() (rvm-use-default)))
+        (:name fill-column-mode
+               :type git
+               :url "https://github.com/alpaker/Fill-Column-Indicator.git")
+        (:name color-theme-sanityinc-solarized
+               :type git
+               :url "https://github.com/purcell/color-theme-sanityinc-solarized.git")
+        (:name full-ack
+               :type git
+               :url "https://github.com/nschum/full-ack.git")
+        (:name ack-and-a-half
+               :type git
+               :url "https://github.com/jhelwig/ack-and-a-half.git")
         (:name rhtml
                :type git
                :url "https://github.com/eschulte/rhtml.git"
@@ -30,14 +42,13 @@
 
 (setq my-packages
       (append
-       '(ack
+       '(ack-and-a-half
          auto-complete
          auto-complete-css
          auto-complete-etags
          auto-complete-ruby
          coffee-mode
          color-theme-solarized
-         color-theme-tomorrow
          csv-mode
          enclose
          evil
@@ -50,12 +61,14 @@
          nxhtml
          mustache-mode
          textmate
+         rainbow-delimiters
          rspec-mode
          ruby-block
          ruby-end
          rinari
          sass-mode
          scss-mode
+         smex
          sunrise-commander
          sunrise-x-buttons
          textile-mode

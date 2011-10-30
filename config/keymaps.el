@@ -11,5 +11,7 @@
 (define-key evil-normal-state-map "H" 'evil-first-non-blank)
 (define-key evil-normal-state-map "L" 'evil-last-non-blank)
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
-(define-key evil-normal-state-map "\M-b" 'buffer-menu)
+(define-key evil-normal-state-map "\M-b" 'ibuffer)
 (define-key evil-normal-state-map "\M-f" 'sunrise-cd)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)

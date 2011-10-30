@@ -3,6 +3,7 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 (setq inhibit-startup-message t)
+(setq fill-column 85)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
