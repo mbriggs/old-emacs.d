@@ -5,11 +5,12 @@
 
 (push "~/scripts" exec-path)
 
+(load "~/.emacs.d/config/sources.el")
 (load "~/.emacs.d/config/plugins.el")
-(load "~/.emacs.d/config/config-plugins.el")
-(load "~/.emacs.d/config/commands.el")
+(load "~/.emacs.d/config/functions.el")
 (load "~/.emacs.d/config/keymaps.el")
 (load "~/.emacs.d/config/settings.el")
+(load "~/.emacs.d/config/hex-colors.el")
 
 (autoload 'yaml-mode "yaml-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
