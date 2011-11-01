@@ -25,6 +25,14 @@
 
 (setq ibuffer-default-sorting-mode 'major-mode)
 
+(defface solarized-string-delimiter-face
+  '((t (:foreground "#c60007" :weight bold)))
+   "string delimiters being the start and end sigil")
+
+(add-hook 'after-change-major-mode-hook 
+          (lambda () 
+            (font-lock-add-keywords nil '(("\\s\"\\|\\s|" 0 'solarized-string-delimiter-face t)))))
+
 (custom-set-faces
  '(flymake-errline ((((class color)) (:underline "red"))))
  '(flymake-warnline ((((class color)) (:underline "yellow"))))
