@@ -23,6 +23,8 @@
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("config.ru" . ruby-mode))
 
+(setq ibuffer-default-sorting-mode 'major-mode)
+
 (custom-set-faces
  '(flymake-errline ((((class color)) (:underline "red"))))
  '(flymake-warnline ((((class color)) (:underline "yellow"))))

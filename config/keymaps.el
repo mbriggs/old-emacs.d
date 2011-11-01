@@ -22,6 +22,8 @@
 (define-key evil-normal-state-map ",sv" 'rinari-find-view)
 (define-key evil-normal-state-map ",sl" 'rinari-find-lib)
 
+(define-key evil-insert-state-map "RET" 'newline-and-indent)
 
-(global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "RET") 'newline-and-indent)
