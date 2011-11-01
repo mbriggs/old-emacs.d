@@ -78,7 +78,6 @@
          rspec-mode
          rhtml-mode
          ruby-block
-         ruby-end
          sass-mode
          scss-mode
          smex

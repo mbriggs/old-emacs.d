@@ -5,3 +5,13 @@
   (evil-insert-newline-below)
   (evil-force-normal-state)
   (evil-goto-mark ?z))
+
+(defvar hexcolour-keywords
+  '(("#[abcdef[:digit:]]\\{6\\}"
+     (0 (put-text-property (match-beginning 0)
+                           (match-end 0)
+                           'face (list :background 
+                                       (match-string-no-properties 0)))))))
+(defun highlight-hex-codes ()
+  (interactive)
+  (font-lock-add-keywords nil hexcolour-keywords))

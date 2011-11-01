@@ -19,6 +19,4 @@
     (set-frame-font "Menlo-15")
     (set-frame-font "Menlo-11"))
 
-(custom-set-faces
- '(flymake-errline ((((class color)) (:underline "OrangeRed"))))
- '(flymake-warnline ((((class color)) (:underline "Blue")))))
+(color-theme-solarized-light)
