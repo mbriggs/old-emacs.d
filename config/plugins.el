@@ -23,8 +23,6 @@
 (require 'tidy)
 (require 'rinari)
 
-(require 'anything-config)
-
 (ruby-block-mode t)
 
 (setq linum-format "%3d ")

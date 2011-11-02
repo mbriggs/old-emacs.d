@@ -13,6 +13,7 @@
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
 (define-key evil-normal-state-map "\M-b" 'ibuffer)
 (define-key evil-normal-state-map "\M-f" 'sunrise-cd)
+(define-key evil-normal-state-map "\M-." 'find-tag)
 
 (define-key evil-normal-state-map ",sc" 'rinari-find-controller)
 (define-key evil-normal-state-map ",sh" 'rinari-find-helper)
