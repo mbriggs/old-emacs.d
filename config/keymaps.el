@@ -3,7 +3,7 @@
 (define-key evil-normal-state-map "\C-k" 'evil-backward-paragraph)
 (define-key evil-normal-state-map "\C-l" 'evil-forward-word-begin)
 (define-key evil-normal-state-map "\C-h" 'evil-backward-word-begin)
-(define-key evil-normal-state-map "\M-t" 'textmate-goto-file)
+(define-key evil-normal-state-map "\M-t" 'anything-for-files)
 (define-key evil-normal-state-map "\M-j" 'evil-window-next)
 (define-key evil-normal-state-map "E" 'ido-find-file)
 (define-key evil-normal-state-map "  " 'evil-jump-item)

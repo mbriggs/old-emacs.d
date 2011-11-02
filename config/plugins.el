@@ -23,9 +23,9 @@
 (require 'tidy)
 (require 'rinari)
 
-(ruby-block-mode t)
+(require 'anything-config)
 
-(enclose-global-mode t)
+(ruby-block-mode t)
 
 (setq linum-format "%3d ")
 (global-linum-mode)

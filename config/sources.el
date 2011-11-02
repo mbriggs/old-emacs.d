@@ -40,6 +40,9 @@
         (:name full-ack
                :type git
                :url "https://github.com/nschum/full-ack.git")
+        (:name anything-config
+               :type git
+               :url "git://repo.or.cz/anything-config.git")
         (:name ack-and-a-half
                :type git
                :url "https://github.com/jhelwig/ack-and-a-half.git")
@@ -47,7 +50,7 @@
                :type git
                :url "https://github.com/eschulte/rhtml.git"
                :features rhtml-mode)
-        (:name yaml-mode 
+        (:name yaml-mode
                :type git
                :url "http://github.com/yoshiki/yaml-mode.git"
                :features yaml-mode)))
@@ -55,6 +58,7 @@
 (setq my-packages
       (append
        '(ack-and-a-half
+         anything-config
          auto-complete
          auto-complete-css
          auto-complete-etags
@@ -67,7 +71,6 @@
          color-theme-zen-and-art
          color-theme-tango-2
          csv-mode
-         enclose
          evil
          flymake-ruby
          haml-mode
