@@ -29,3 +29,7 @@
 
 (setq linum-format "%3d ")
 (global-linum-mode)
+
+(setq ibuffer-default-sorting-mode 'major-mode)
+
+(setq show-trailing-whitespace t)
