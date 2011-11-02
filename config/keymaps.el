@@ -1,8 +1,4 @@
 (define-key evil-normal-state-map ",," 'evil-buffer)
-(define-key evil-normal-state-map "\C-j" 'evil-forward-paragraph)
-(define-key evil-normal-state-map "\C-k" 'evil-backward-paragraph)
-(define-key evil-normal-state-map "\C-l" 'evil-forward-word-begin)
-(define-key evil-normal-state-map "\C-h" 'evil-backward-word-begin)
 (define-key evil-normal-state-map "\M-t" 'anything-for-files)
 (define-key evil-normal-state-map "\M-j" 'evil-window-next)
 (define-key evil-normal-state-map "E" 'ido-find-file)
@@ -15,6 +11,21 @@
 (define-key evil-normal-state-map "\M-f" 'sunrise-cd)
 (define-key evil-normal-state-map "\M-." 'find-tag)
 
+; (define-key evil-normal-state-map (kbd "<M-]>") 'textmate-shift-right)
+; (define-key evil-normal-state-map (kbd "<M-[>") 'textmate-shift-left)
+; (define-key evil-visual-state-map (kbd "<M-]>") 'textmate-shift-right)
+; (define-key evil-visual-state-map (kbd "<M-[>") 'textmate-shift-left)
+
+
+(define-key evil-normal-state-map "\C-j" 'evil-forward-paragraph)
+(define-key evil-normal-state-map "\C-k" 'evil-backward-paragraph)
+(define-key evil-normal-state-map "\C-l" 'evil-forward-word-begin)
+(define-key evil-normal-state-map "\C-h" 'evil-backward-word-begin)
+(define-key evil-visual-state-map "\C-j" 'evil-forward-paragraph)
+(define-key evil-visual-state-map "\C-k" 'evil-backward-paragraph)
+(define-key evil-visual-state-map "\C-l" 'evil-forward-word-begin)
+(define-key evil-visual-state-map "\C-h" 'evil-backward-word-begin)
+
 (define-key evil-normal-state-map ",sc" 'rinari-find-controller)
 (define-key evil-normal-state-map ",sh" 'rinari-find-helper)
 (define-key evil-normal-state-map ",si" 'rinari-find-migration)
@@ -25,6 +36,8 @@
 
 (define-key evil-insert-state-map "RET" 'newline-and-indent)
 
+(global-set-key (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "RET") 'newline-and-indent)
