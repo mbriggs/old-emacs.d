@@ -13,3 +13,14 @@
 (load "~/.emacs.d/config/hex-colors.el")    ; color hex code backgrounds
 (load "~/.emacs.d/config/mode-bindings.el") ; bind modes to file extensions
 (load "~/.emacs.d/config/color-hacks.el")   ; hacks to themes
+
+(custom-set-variables
+ '(js2-always-indent-assigned-expr-in-decls-p t)
+ '(js2-auto-indent-p t)
+ '(js2-basic-offset 2)
+ '(js2-consistent-level-indent-inner-bracket-p t)
+ '(js2-enter-indents-newline t)
+ '(js2-highlight-level 3)
+ '(js2-indent-on-enter-key t)
+ '(js2-mirror-mode t)
+ '(js2-strict-missing-semi-warning nil))
