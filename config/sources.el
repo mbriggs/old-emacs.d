@@ -22,6 +22,12 @@
         (:name rinari
                :type git
                :url "https://github.com/technomancy/rinari.git")
+        (:name my-mooz-js2-mode
+               :type git
+               :url "https://github.com/mbriggs/js2-mode.git")
+        (:name lua-mode
+               :type git
+               :url "https://github.com/immerrr/lua-mode.git")
         (:name mo-git-blame
                :type git
                :url "https://github.com/mbunkus/mo-git-blame.git")
@@ -74,11 +80,13 @@
          color-theme-zen-and-art
          color-theme-tango-2
          csv-mode
+         lua-mode
          evil
          flymake-ruby
          haml-mode
          inf-ruby
          json
+         my-mooz-js2-mode
          linum-ex
          magit
          markdown-mode
