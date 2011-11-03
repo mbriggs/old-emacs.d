@@ -10,6 +10,7 @@
 (define-key evil-normal-state-map "\M-b" 'ibuffer)
 (define-key evil-normal-state-map "\M-f" 'sunrise-cd)
 (define-key evil-normal-state-map "\M-." 'find-tag)
+(define-key evil-normal-state-map "\C-w" 'delete-trailing-whitespace)
 
 (define-key evil-normal-state-map (kbd "<M-]>") 'textmate-shift-right)
 (define-key evil-normal-state-map (kbd "<M-[>") 'textmate-shift-left)
@@ -38,7 +39,6 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "RET") 'newline-and-indent)
-(add-hook 'ruby-mode-hook 
+(add-hook 'ruby-mode-hook
 	(lambda ()
 	  (local-set-key (kbd "RET") 'newline-and-indent)))
-			
