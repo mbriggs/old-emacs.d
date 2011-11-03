@@ -17,3 +17,9 @@
 (add-to-list 'auto-mode-alist '("Guardfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("config.ru" . ruby-mode))
+
+(autoload 'lua-mode "lua-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
