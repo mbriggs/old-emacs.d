@@ -31,6 +31,9 @@
         (:name haml-mode
                :type git
                :url "https://github.com/nex3/haml-mode.git")
+        (:name markdown-mode
+               :type git
+               :url "git://jblevins.org/git/markdown-mode.git")
         (:name fill-column-mode
                :type git
                :url "https://github.com/alpaker/Fill-Column-Indicator.git")
@@ -78,6 +81,7 @@
          json
          linum-ex
          magit
+         markdown-mode
          mustache-mode
          textmate
          rainbow-delimiters
