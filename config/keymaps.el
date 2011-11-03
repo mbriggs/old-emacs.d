@@ -11,11 +11,10 @@
 (define-key evil-normal-state-map "\M-f" 'sunrise-cd)
 (define-key evil-normal-state-map "\M-." 'find-tag)
 
-; (define-key evil-normal-state-map (kbd "<M-]>") 'textmate-shift-right)
-; (define-key evil-normal-state-map (kbd "<M-[>") 'textmate-shift-left)
-; (define-key evil-visual-state-map (kbd "<M-]>") 'textmate-shift-right)
-; (define-key evil-visual-state-map (kbd "<M-[>") 'textmate-shift-left)
-
+(define-key evil-normal-state-map (kbd "<M-]>") 'textmate-shift-right)
+(define-key evil-normal-state-map (kbd "<M-[>") 'textmate-shift-left)
+(define-key evil-visual-state-map (kbd "<M-]>") 'textmate-shift-right)
+(define-key evil-visual-state-map (kbd "<M-[>") 'textmate-shift-left)
 
 (define-key evil-normal-state-map "\C-j" 'evil-forward-paragraph)
 (define-key evil-normal-state-map "\C-k" 'evil-backward-paragraph)
@@ -34,10 +33,12 @@
 (define-key evil-normal-state-map ",sv" 'rinari-find-view)
 (define-key evil-normal-state-map ",sl" 'rinari-find-lib)
 
-(define-key evil-insert-state-map "RET" 'newline-and-indent)
-
 (global-set-key (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "RET") 'newline-and-indent)
+(add-hook 'ruby-mode-hook 
+	(lambda ()
+	  (local-set-key (kbd "RET") 'newline-and-indent)))
+			
