@@ -72,6 +72,7 @@
          auto-complete-css
          auto-complete-etags
          auto-complete-ruby
+         auto-complete-yasnippet
          coffee-mode
          color-theme-sanityinc-solarized
          color-theme-sanityinc

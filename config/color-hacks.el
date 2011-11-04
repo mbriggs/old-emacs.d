@@ -30,6 +30,7 @@
 (custom-set-faces
  '(trailing-whitespace ((t (:background "#c7c0a9" :foreground "#e9e2cb" :inverse-video t))))
  '(lazy-highlight ((((class color)) (:background "#5859b7" :foreground "#fcf4dc"))))
+ '(anything-header ((((class color)) (:background "#81908F" :foreground "#fcf4dc"))))
  '(isearch ((((class color)) (:background "#a57705" :foreground "#fcf4dc" :inverse-video nil))))
  '(flymake-errline ((((class color)) (:underline "#c60007"))))
  '(flymake-warnline ((((class color)) (:underline "#2075c7"))))
