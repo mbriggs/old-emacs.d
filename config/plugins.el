@@ -19,6 +19,7 @@
 (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
 (textmate-mode)
+(substitute-key-definition 'ac-complete nil ac-completing-map)
 
 (require 'auto-complete-yasnippet)
 (require 'tidy)
