@@ -9,7 +9,7 @@
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
 (define-key evil-normal-state-map "\M-b" 'anything-for-buffers)
 (define-key evil-normal-state-map "\M-B" 'ibuffer)
-(define-key evil-normal-state-map "\M-f" 'sunrise-cd)
+(define-key evil-normal-state-map "\M-f" 'dired)
 (define-key evil-normal-state-map "\M-." 'find-tag)
 (define-key evil-normal-state-map "\C-w" 'delete-trailing-whitespace)
 
@@ -46,3 +46,8 @@
 (add-hook 'change-major-mode-hook
           (lambda ()
             (global-set-key (kbd "C-/") 'comment-or-uncomment-region-or-line)))
+
+
+(add-hook 'dired-mode-hook (lambda ()
+  (define-key dired-mode-map "U" 'dired-up-directory)
+  (define-key dired-mode-map "/" 'dired-isearch-filenames)))
