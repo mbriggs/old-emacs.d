@@ -10,9 +10,11 @@
 (load "~/.emacs.d/config/functions.el")     ; random functions
 (load "~/.emacs.d/config/keymaps.el")       ; key bindings
 (load "~/.emacs.d/config/settings.el")      ; random settings
-(load "~/.emacs.d/config/hex-colors.el")    ; color hex code backgrounds
 (load "~/.emacs.d/config/mode-bindings.el") ; bind modes to file extensions
 (load "~/.emacs.d/config/color-hacks.el")   ; hacks to themes
+
+;; random elisp from various places
+(load "~/.emacs.d/config/hex-colors.el")
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
