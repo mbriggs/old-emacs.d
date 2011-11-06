@@ -3,6 +3,7 @@
 
 (evil-mode 1)
 (evil-initial-state 'mo-git-blame 'emacs)
+(evil-initial-state 'dired 'emacs)
 (setq-default evil-shift-width 2)
 
 (require 'rainbow-delimiters)
@@ -25,6 +26,7 @@
 (require 'rinari)
 
 (ruby-block-mode t)
+(setq ruby-end-insert-newline nil)
 
 (setq linum-format "%3d ")
 (global-linum-mode)

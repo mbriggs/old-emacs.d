@@ -25,6 +25,10 @@
         (:name my-mooz-js2-mode
                :type git
                :url "https://github.com/mbriggs/js2-mode.git")
+        (:name my-ruby-end
+               :type http
+               :url "https://raw.github.com/mbriggs/ruby-end/master/ruby-end.el"
+	       :features ruby-end)
         (:name lua-mode
                :type git
                :url "https://github.com/immerrr/lua-mode.git")
@@ -87,11 +91,12 @@
          haml-mode
          inf-ruby
          json
-         my-mooz-js2-mode
          linum-ex
          magit
          markdown-mode
          mustache-mode
+         my-ruby-end
+         my-mooz-js2-mode
          textmate
          rainbow-delimiters
          rspec-mode
