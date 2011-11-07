@@ -25,10 +25,17 @@
         (:name my-mooz-js2-mode
                :type git
                :url "https://github.com/mbriggs/js2-mode.git")
+        (:name anything-project-files
+               :type http
+               :url "https://raw.github.com/lewang/anything-project-files/master/anything-project-files.el")
         (:name my-ruby-end
                :type http
                :url "https://raw.github.com/mbriggs/ruby-end/master/ruby-end.el"
-	       :features ruby-end)
+               :features ruby-end)
+        (:name anything-rails
+               :type git
+               :url "https://github.com/wolfmanjm/anything-on-rails.git"
+               :features anything-rails)
         (:name lua-mode
                :type git
                :url "https://github.com/immerrr/lua-mode.git")
@@ -53,9 +60,6 @@
         (:name full-ack
                :type git
                :url "https://github.com/nschum/full-ack.git")
-        (:name anything-config
-               :type git
-               :url "git://repo.or.cz/anything-config.git")
         (:name ack-and-a-half
                :type git
                :url "https://github.com/jhelwig/ack-and-a-half.git")
@@ -71,7 +75,11 @@
 (setq my-packages
       (append
        '(ack-and-a-half
-         anything-config
+         inf-ruby
+         ruby-compilation
+         anything
+         anything-project-files
+         anything-rails
          auto-complete
          auto-complete-css
          auto-complete-etags
@@ -89,7 +97,6 @@
          evil
          flymake-ruby
          haml-mode
-         inf-ruby
          json
          linum-ex
          magit
@@ -105,8 +112,6 @@
          sass-mode
          scss-mode
          smex
-         sunrise-commander
-         sunrise-x-buttons
          textile-mode
          tidy
          rvm

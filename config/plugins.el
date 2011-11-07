@@ -9,6 +9,8 @@
 (require 'rainbow-delimiters)
 (global-rainbow-delimiters-mode)
 
+(require 'anything-project-files)
+
 (autoload 'ack-and-a-half-same "ack-and-a-half" nil t)
 (autoload 'ack-and-a-half "ack-and-a-half" nil t)
 (autoload 'ack-and-a-half-find-file-samee "ack-and-a-half" nil t)
