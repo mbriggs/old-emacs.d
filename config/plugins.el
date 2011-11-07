@@ -24,7 +24,6 @@
 (textmate-mode)
 (substitute-key-definition 'ac-complete nil ac-completing-map)
 
-(require 'auto-complete-yasnippet)
 (require 'tidy)
 (require 'rinari)
 
@@ -37,10 +36,3 @@
 (setq ibuffer-default-sorting-mode 'major-mode)
 
 (setq show-trailing-whitespace t)
-
-(setq yas/root-directory "~/.emacs.d/snippets/")
-(yas/load-directory yas/root-directory)
-(yas/global-mode)
-(add-hook 'rinari-minor-mode-hook
-          (lambda ()
-            (setq yas/mode-symbol 'rails-mode)))

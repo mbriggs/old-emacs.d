@@ -84,7 +84,6 @@
          auto-complete-css
          auto-complete-etags
          auto-complete-ruby
-         auto-complete-yasnippet
          coffee-mode
          color-theme-sanityinc-solarized
          color-theme-sanityinc
@@ -115,8 +114,7 @@
          textile-mode
          tidy
          rvm
-         yaml-mode
-         yasnippet)
+         yaml-mode)
        (mapcar 'el-get-source-name el-get-sources)))
 
 
