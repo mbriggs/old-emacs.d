@@ -34,14 +34,6 @@
 (define-key evil-normal-state-map ",sv" 'rinari-find-view)
 (define-key evil-normal-state-map ",sl" 'rinari-find-lib)
 
-(setq yas/trigger-key nil)
-(setq yas/next-field-key nil)
-(setq yas/prev-field-key nil)
-(yas/reload-all)
-
-(global-set-key (kbd "C-SPC") 'yas/expand)
-(global-set-key (kbd "M-SPC") 'yas/next-field-or-maybe-expand)
-(global-set-key (kbd "M-S-SPC") 'yas/prev-field)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "RET") 'newline-and-indent)
