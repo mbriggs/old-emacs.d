@@ -1,5 +1,5 @@
 (autoload 'rhtml-mode "rhtml-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode)) 
+(add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode))
 
 (evil-mode 1)
 (evil-initial-state 'mo-git-blame 'emacs)
@@ -23,6 +23,25 @@
 
 (textmate-mode)
 (substitute-key-definition 'ac-complete nil ac-completing-map)
+
+;(defun my-ido-fuzzy-match (str items)
+;  "Better ido fuzzy matching"
+;
+;(defvar my-ido-use-fuzzy-match t
+;  "*Use my-ido-fuzzy-match for ido matching")
+;
+;(defadvice ido-set-matches-1 (around my-ido-set-matches-1 activate)
+;  "Choose between the regular ido-set-matches-1 and my-ido-fuzzy-match"
+;  (if my-ido-use-fuzzy-match
+;      (setq ad-return-value (my-ido-fuzzy-match ido-text (ad-get-arg 0)))
+;    ad-do-it))
+(setq anything-input-idle-delay 1)
+
+;; Display ido results vertically, rather than horizontally
+(setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+(defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
+(add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
+
 
 (require 'auto-complete-yasnippet)
 (require 'tidy)

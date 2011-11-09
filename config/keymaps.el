@@ -1,5 +1,5 @@
 (define-key evil-normal-state-map ",," 'evil-buffer)
-(define-key evil-normal-state-map "\M-t" 'textmate-goto-file)
+(define-key evil-normal-state-map "\M-t" 'anything-project-files-find)
 (define-key evil-normal-state-map "\M-s" 'textmate-goto-symbol)
 (define-key evil-normal-state-map "\M-j" 'evil-window-next)
 (define-key evil-normal-state-map "E" 'ido-find-file)
