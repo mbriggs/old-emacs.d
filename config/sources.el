@@ -102,7 +102,6 @@
          color-theme-tango-2
          csv-mode
          lua-mode
-         ;elscreen
          el-expectations
          evil
          flymake-ruby
