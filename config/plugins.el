@@ -24,6 +24,12 @@
 (textmate-mode)
 (substitute-key-definition 'ac-complete nil ac-completing-map)
 
+(setq rspec-use-rake-flag nil)
+(setq rspec-spec-command "rspec")
+
+(require 'autopair)
+(autopair-global-mode)
+
 ;(defun my-ido-fuzzy-match (str items)
 ;  "Better ido fuzzy matching"
 ;
@@ -43,7 +49,6 @@
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
 
 
-(require 'auto-complete-yasnippet)
 (require 'tidy)
 (require 'rinari)
 

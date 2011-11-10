@@ -17,14 +17,22 @@
 ;    (cyan    "#2aa198" "#259185" "#00afaf" "#00cdcd")
 ;    (green   "#859900" "#728a05" "#5f8700" "#00cd00"))
 
+(setq ansi-color-names-vector
+      ["black" "#c60007" "#728a05" "#a57705" "#2075c7" "#c61b6e" "#259185" "white"])
 
-(defface solarized-string-delimiter-face
-  '((t (:foreground "#c60007" :weight bold)))
-   "string delimiters being the start and end sigil")
+
+;; (defface solarized-string-delimiter-face
+;;   '((t (:foreground "#c60007" :weight bold)))
+;;    "string delimiters being the start and end sigil")
+
+;; (mapchar (lambda (mode)
+;;            (font-lock-add-keywords mode
+;;                                    '(("\\s\"\\|\\s|" 0 'solarized-string-delimiter-face t))
+;;                                    t)))
+
 
 (add-hook 'after-change-major-mode-hook
           (lambda ()
-            (font-lock-add-keywords nil '(("\\s\"\\|\\s|" 0 'solarized-string-delimiter-face t)))
             (setq show-trailing-whitespace t)))
 
 (custom-set-faces
@@ -33,7 +41,20 @@
  '(lazy-highlight ((((class color)) (:background "#5859b7" :foreground "#fcf4dc"))))
  '(anything-header ((((class color)) (:background "#81908F" :foreground "#fcf4dc"))))
  '(isearch ((((class color)) (:background "#a57705" :foreground "#fcf4dc" :inverse-video nil))))
+
+ '(rainbow-delimiters-depth-1-face ((((class color)) (:foreground "#c60007"))))
+ '(rainbow-delimiters-depth-2-face ((((class color)) (:foreground "#a57705"))))
+ '(rainbow-delimiters-depth-3-face ((((class color)) (:foreground "#bd3612"))))
+ '(rainbow-delimiters-depth-4-face ((((class color)) (:foreground "#c61b6e"))))
+ '(rainbow-delimiters-depth-5-face ((((class color)) (:foreground "#5859b7"))))
+ '(rainbow-delimiters-depth-6-face ((((class color)) (:foreground "#2075c7"))))
+ '(rainbow-delimiters-depth-7-face ((((class color)) (:foreground "#259185"))))
+ '(rainbow-delimiters-depth-8-face ((((class color)) (:foreground "#728a05"))))
+ '(rainbow-delimiters-depth-9-face ((((class color)) (:foreground "#042028"))))
+
  '(flymake-errline ((((class color)) (:underline "#c60007"))))
  '(flymake-warnline ((((class color)) (:underline "#2075c7"))))
+ '(magit-diff-add ((((class color)) (:foreground "#728a05"))))
+ '(magit-diff-del ((((class color)) (:foreground "#c60007"))))
  '(magit-branch ((((class color)) (:background "#81908F" :foreground "#FCF4DC"))))
  '(magit-section-title ((((class color)) (:background "#81908F" :foreground "#FCF4DC")))))

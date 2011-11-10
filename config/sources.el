@@ -13,6 +13,7 @@
                :url "git://github.com/defunkt/textmate.el"
                :load "textmate.el")
         (:name css-mode :type elpa)
+        (:name ansi-color :type emacswiki)
         (:name rvm
                :type git
                :url "http://github.com/djwhitt/rvm.el.git"
@@ -25,6 +26,9 @@
         (:name my-mooz-js2-mode
                :type git
                :url "https://github.com/mbriggs/js2-mode.git")
+        (:name autopair
+               :type http
+               :url "http://autopair.googlecode.com/svn/trunk/autopair.el")
         (:name anything-project-files
                :type http
                :url "https://raw.github.com/lewang/anything-project-files/master/anything-project-files.el")
@@ -74,7 +78,9 @@
 
 (setq my-packages
       (append
-       '(ack-and-a-half
+       '(autopair
+         ansi-color
+         ack-and-a-half
          inf-ruby
          ruby-compilation
          anything
@@ -93,6 +99,8 @@
          color-theme-tango-2
          csv-mode
          lua-mode
+         ;elscreen
+         el-expectations
          evil
          flymake-ruby
          haml-mode
@@ -100,6 +108,7 @@
          linum-ex
          magit
          markdown-mode
+         mode-compile
          mustache-mode
          my-ruby-end
          my-mooz-js2-mode
