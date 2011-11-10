@@ -29,6 +29,9 @@
         (:name autopair
                :type http
                :url "http://autopair.googlecode.com/svn/trunk/autopair.el")
+        (:name escreen
+               :type http
+               :url "http://www.splode.com/~friedman/software/emacs-lisp/src/escreen.el")
         (:name anything-project-files
                :type http
                :url "https://raw.github.com/lewang/anything-project-files/master/anything-project-files.el")
