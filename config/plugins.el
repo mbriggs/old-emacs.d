@@ -21,14 +21,11 @@
 (defalias 'ack-find-file 'ack-and-a-half-find-file)
 (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
-(textmate-mode)
 (substitute-key-definition 'ac-complete nil ac-completing-map)
 
 (setq rspec-use-rake-flag nil)
 (setq rspec-spec-command "rspec")
 
-(require 'autopair)
-(autopair-global-mode)
 
 ;(defun my-ido-fuzzy-match (str items)
 ;  "Better ido fuzzy matching"
@@ -41,13 +38,16 @@
 ;  (if my-ido-use-fuzzy-match
 ;      (setq ad-return-value (my-ido-fuzzy-match ido-text (ad-get-arg 0)))
 ;    ad-do-it))
-(setq anything-input-idle-delay 1)
+(setq anything-input-idle-delay 0.6)
+(textmate-mode)
 
 ;; Display ido results vertically, rather than horizontally
 (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
 (defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
 
+(require 'autopair)
+(autopair-global-mode)
 
 (require 'tidy)
 (require 'rinari)
