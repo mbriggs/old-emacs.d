@@ -5,7 +5,9 @@
 
 (push "~/scripts" exec-path)
 
-(load "~/.emacs.d/config/color-hacks.el")   ; hacks to themes
+(setq ansi-color-names-vector
+      ["black" "#c60007" "#728a05" "#a57705" "#2075c7" "#c61b6e" "#259185" "white"])
+
 (load "~/.emacs.d/config/sources.el")       ; plugins and where to get them
 (load "~/.emacs.d/config/plugins.el")       ; plugin configuration
 (load "~/.emacs.d/config/escreen.el")       ; tab replacement
@@ -13,6 +15,7 @@
 (load "~/.emacs.d/config/keymaps.el")       ; key bindings
 (load "~/.emacs.d/config/settings.el")      ; random settings
 (load "~/.emacs.d/config/mode-bindings.el") ; bind modes to file extensions
+(load "~/.emacs.d/config/color-hacks.el")   ; hacks to themes
 
 ;; random elisp from various places
 (load "~/.emacs.d/config/hex-colors.el")
