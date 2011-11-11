@@ -5,6 +5,8 @@
 (define-key evil-normal-state-map "\\" 'evil-repeat-find-char-reverse)
 (define-key evil-normal-state-map "H" 'evil-first-non-blank)
 (define-key evil-normal-state-map "L" 'evil-last-non-blank)
+(define-key evil-normal-state-map (kbd "<right>") 'next-error)
+(define-key evil-normal-state-map (kbd "<left>") 'previous-error)
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
 (define-key evil-normal-state-map (kbd "M-t") 'anything-project-files-find)
 (define-key evil-normal-state-map (kbd "M-s") 'textmate-goto-symbol)
