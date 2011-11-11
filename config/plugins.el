@@ -38,7 +38,8 @@
 ;  (if my-ido-use-fuzzy-match
 ;      (setq ad-return-value (my-ido-fuzzy-match ido-text (ad-get-arg 0)))
 ;    ad-do-it))
-(setq anything-input-idle-delay 0.6)
+(setq anything-input-idle-delay 0.1)
+(setq anything-idle-delay 0.1)
 (textmate-mode)
 
 ;; Display ido results vertically, rather than horizontally
