@@ -17,8 +17,6 @@
 ;    (cyan    "#2aa198" "#259185" "#00afaf" "#00cdcd")
 ;    (green   "#859900" "#728a05" "#5f8700" "#00cd00"))
 
-(setq ansi-color-names-vector
-      ["black" "#c60007" "#728a05" "#a57705" "#2075c7" "#c61b6e" "#259185" "white"])
 
 
 ;; (defface solarized-string-delimiter-face
@@ -36,12 +34,19 @@
             (setq show-trailing-whitespace t)))
 
 (custom-set-faces
- '(trailing-whitespace ((t (:background "#c7c0a9" :foreground "#e9e2cb" :inverse-video t))))
- '(erb-face ((((class color) (min-colors 88) (background light)) (:background "#fcf4dc"))))
- '(lazy-highlight ((((class color)) (:background "#5859b7" :foreground "#fcf4dc"))))
  '(anything-header ((((class color)) (:background "#81908F" :foreground "#fcf4dc"))))
- '(isearch ((((class color)) (:background "#a57705" :foreground "#fcf4dc" :inverse-video nil))))
-
+ '(erb-face ((((class color) (min-colors 88) (background light)) (:background "#fcf4dc"))))
+ '(flymake-errline ((((class color)) (:underline "#c60007"))))
+ '(flymake-warnline ((((class color)) (:underline "#2075c7"))))
+ '(isearch ((((class color)) (:background "#a57705" :foreground "#fcf4dc"))))
+ '(js2-error-face ((((class color) (background light)) (:foreground "#c60007"))))
+ '(js2-external-variable-face ((t (:foreground "#bd3612"))))
+ '(js2-function-param-face ((t (:foreground "#728a05"))))
+ '(lazy-highlight ((((class color)) (:background "#5859b7" :foreground "#fcf4dc"))))
+ '(magit-branch ((((class color)) (:background "#81908F" :foreground "#FCF4DC"))))
+ '(magit-diff-add ((((class color)) (:foreground "#728a05"))))
+ '(magit-diff-del ((((class color)) (:foreground "#c60007"))))
+ '(magit-section-title ((((class color)) (:background "#81908F" :foreground "#FCF4DC"))))
  '(rainbow-delimiters-depth-1-face ((((class color)) (:foreground "#c60007"))))
  '(rainbow-delimiters-depth-2-face ((((class color)) (:foreground "#a57705"))))
  '(rainbow-delimiters-depth-3-face ((((class color)) (:foreground "#bd3612"))))
@@ -51,10 +56,4 @@
  '(rainbow-delimiters-depth-7-face ((((class color)) (:foreground "#259185"))))
  '(rainbow-delimiters-depth-8-face ((((class color)) (:foreground "#728a05"))))
  '(rainbow-delimiters-depth-9-face ((((class color)) (:foreground "#042028"))))
-
- '(flymake-errline ((((class color)) (:underline "#c60007"))))
- '(flymake-warnline ((((class color)) (:underline "#2075c7"))))
- '(magit-diff-add ((((class color)) (:foreground "#728a05"))))
- '(magit-diff-del ((((class color)) (:foreground "#c60007"))))
- '(magit-branch ((((class color)) (:background "#81908F" :foreground "#FCF4DC"))))
- '(magit-section-title ((((class color)) (:background "#81908F" :foreground "#FCF4DC")))))
+ '(trailing-whitespace ((t (:background "#c7c0a9" :foreground "#e9e2cb" :inverse-video t)))))
