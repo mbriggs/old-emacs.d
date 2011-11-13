@@ -6,6 +6,7 @@
 (evil-initial-state 'dired 'emacs)
 (setq-default evil-shift-width 2)
 
+
 (require 'rainbow-delimiters)
 (global-rainbow-delimiters-mode)
 
@@ -25,6 +26,9 @@
 
 (setq rspec-use-rake-flag nil)
 (setq rspec-spec-command "rspec")
+
+;; (enclose-global-mode t)
+;; (enclose-add-encloser "|" "|")
 
 
 ;(defun my-ido-fuzzy-match (str items)
