@@ -18,7 +18,6 @@
 ;    (green   "#859900" "#728a05" "#5f8700" "#00cd00"))
 
 
-
 ;; (defface solarized-string-delimiter-face
 ;;   '((t (:foreground "#c60007" :weight bold)))
 ;;    "string delimiters being the start and end sigil")
@@ -38,7 +37,10 @@
  '(erb-face ((((class color) (min-colors 88) (background light)) (:background "#fcf4dc"))))
  '(flymake-errline ((((class color)) (:underline "#c60007"))))
  '(flymake-warnline ((((class color)) (:underline "#2075c7"))))
- '(isearch ((((class color)) (:background "#a57705" :foreground "#fcf4dc"))))
+ '(isearch ((((class color)) (:background "#a57705"
+                              :underline "#a57705"
+                              :bold t
+                              :foreground "#fcf4dc"))))
  '(js2-error-face ((((class color) (background light)) (:foreground "#c60007"))))
  '(js2-external-variable-face ((t (:foreground "#bd3612"))))
  '(js2-function-param-face ((t (:foreground "#728a05"))))
