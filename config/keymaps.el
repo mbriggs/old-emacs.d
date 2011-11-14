@@ -73,4 +73,4 @@
 (evil-define-motion evil-jump-to-previous-tag ()
   :jump t
   (let ((tag (thing-at-point 'symbol)))
-    (find-tag tag "-")))
+    (find-tag tag ?-)))
