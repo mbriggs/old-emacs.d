@@ -26,6 +26,9 @@
         (:name my-mooz-js2-mode
                :type git
                :url "https://github.com/mbriggs/js2-mode.git")
+        (:name autopair
+               :type http
+               :url "http://autopair.googlecode.com/svn/trunk/autopair.el")
         (:name enclose
                :type http
                :url "https://raw.github.com/rejeep/enclose/master/enclose.el")
