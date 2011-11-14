@@ -53,9 +53,14 @@
 
 (require 'autopair)
 (autopair-global-mode)
+(require 'fuzzy-find-in-project)
 
 (require 'tidy)
 (require 'rinari)
+
+;; (add-hook 'rinari-minor-mode-hook
+;;           (lambda ()
+;;             (fuzzy-find-project-root (rinari-root))))
 
 (ruby-block-mode t)
 (setq ruby-end-insert-newline nil)

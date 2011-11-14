@@ -6,16 +6,21 @@
   (evil-force-normal-state)
   (evil-goto-mark ?z))
 
-(defun hex-codes (limit) 
-  (remove-overlays (point) limit 'fontify-hex-colors t) 
-  (while (re-search-forward "\\(#[[:xdigit:]]\\{6\\}\\)" limit t) 
-    (let ((ov (make-overlay (match-beginning 0) 
-                            (match-end 0)))) 
-      (overlay-put ov 'face  (list :background (match-string 1))) 
-      (overlay-put ov 'fontify-hex-colors t) 
-      (overlay-put ov 'evaporate t))) 
-  ;; return nil telling font-lock not to fontify anything from this 
-  ;; function 
-  nil) 
+(defun command-t ()
+  (interactive)
+  (fuzzy-find-project-root (eproject-root))
+  (fuzzy-find-in-project))
+
+(defun hex-codes (limit)
+  (remove-overlays (point) limit 'fontify-hex-colors t)
+  (while (re-search-forward "\\(#[[:xdigit:]]\\{6\\}\\)" limit t)
+    (let ((ov (make-overlay (match-beginning 0)
+                            (match-end 0))))
+      (overlay-put ov 'face  (list :background (match-string 1)))
+      (overlay-put ov 'fontify-hex-colors t)
+      (overlay-put ov 'evaporate t)))
+  ;; return nil telling font-lock not to fontify anything from this
+  ;; function
+  nil)
 
 (defalias 'git-blame 'vc-annotate)

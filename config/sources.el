@@ -14,6 +14,12 @@
                :load "textmate.el")
         (:name css-mode :type elpa)
         (:name ansi-color :type emacswiki)
+        (:name eproject
+               :type git
+               :url "https://github.com/jrockway/eproject")
+        (:name fuzzy-find-in-project
+               :type git
+               :url "https://github.com/justinweiss/fuzzy-find-in-project")
         (:name rvm
                :type git
                :url "http://github.com/djwhitt/rvm.el.git"
@@ -26,9 +32,18 @@
         (:name my-mooz-js2-mode
                :type git
                :url "https://github.com/mbriggs/js2-mode.git")
+        (:name evil-surround
+               :type http
+               :url "https://raw.github.com/timcharper/evil-surround/master/evil-surround.el")
         (:name autopair
                :type http
                :url "http://autopair.googlecode.com/svn/trunk/autopair.el")
+        (:name json
+               :type http
+               :url "https://raw.github.com/thorstadt/json.el/master/json.el")
+        (:name json-pretty-print
+               :type http
+               :url "https://raw.github.com/thorstadt/json-pretty-print.el/master/json-pretty-print.el")
         (:name enclose
                :type http
                :url "https://raw.github.com/rejeep/enclose/master/enclose.el")
@@ -107,9 +122,11 @@
          lua-mode
          el-expectations
          evil
+         evil-surround
          flymake-ruby
          haml-mode
          json
+         json-pretty-print
          linum-ex
          magit
          markdown-mode
