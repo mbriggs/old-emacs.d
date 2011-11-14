@@ -21,6 +21,9 @@
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
 
+(define-key evil-normal-state-map (kbd "C-}") 'evil-jump-to-next-tag)
+(define-key evil-normal-state-map (kbd "C-{") 'evil-jump-to-previous-tag)
+
 (define-key evil-normal-state-map (kbd "C-j") 'evil-forward-paragraph)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-backward-paragraph)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-forward-word-begin)
@@ -61,3 +64,13 @@
 (add-hook 'dired-mode-hook (lambda ()
   (define-key dired-mode-map "U" 'dired-up-directory)
   (define-key dired-mode-map "/" 'dired-isearch-filenames)))
+
+(evil-define-motion evil-jump-to-next-tag ()
+  :jump t
+  (let ((tag (thing-at-point 'symbol)))
+    (find-tag tag t)))
+
+(evil-define-motion evil-jump-to-previous-tag ()
+  :jump t
+  (let ((tag (thing-at-point 'symbol)))
+    (find-tag tag "-")))
