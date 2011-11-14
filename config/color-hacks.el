@@ -32,6 +32,9 @@
           (lambda ()
             (setq show-trailing-whitespace t)))
 
+(set-face-foreground 'vertical-border "#fcf6e3")
+(set-face-background 'vertical-border "#fcf6e3")
+
 (custom-set-faces
  '(anything-header ((((class color)) (:background "#81908F" :foreground "#fcf4dc"))))
  '(erb-face ((((class color) (min-colors 88) (background light)) (:background "#fcf4dc"))))

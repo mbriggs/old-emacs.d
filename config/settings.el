@@ -4,9 +4,16 @@
 (setq-default indent-tabs-mode nil)
 (setq inhibit-startup-message t)
 (setq fill-column 85)
+(setq initial-major-mode 'emacs-lisp-mode)
+(setq browse-url-generic-program "google-chrome")
+
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
+(require 'hl-line)
+(hl-line-mode)
 
 (fset 'yes-or-no-p 'y-or-n-p)
-
 (delete-selection-mode t)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
