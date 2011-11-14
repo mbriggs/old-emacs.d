@@ -1,6 +1,8 @@
 (autoload 'rhtml-mode "rhtml-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode))
 
+(require 'surround)
+(global-surround-mode 1)
 (evil-mode 1)
 (evil-initial-state 'mo-git-blame 'emacs)
 (evil-initial-state 'dired 'emacs)
