@@ -2,7 +2,8 @@
 My Emacs
 ========
 
-![facepalm](http://imagur.com/YGMcv)
+
+![facepalm](https://github.com/mbriggs/.emacs.d/raw/master/picard-facepalm.jpg)
 
 Install
 -------
