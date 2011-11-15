@@ -34,7 +34,7 @@
                :url "https://github.com/mbriggs/js2-mode.git")
         (:name evil-surround
                :type http
-               :url "https://raw.github.com/timcharper/evil-surround/master/evil-surround.el")
+               :url "https://raw.github.com/timcharper/evil-surround/master/surround.el")
         (:name autopair
                :type http
                :url "http://autopair.googlecode.com/svn/trunk/autopair.el")
