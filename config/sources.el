@@ -14,6 +14,7 @@
                :load "textmate.el")
         (:name css-mode :type elpa)
         (:name ansi-color :type emacswiki)
+        (:name linum-off :type emacswiki)
         (:name eproject
                :type git
                :url "https://github.com/jrockway/eproject")

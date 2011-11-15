@@ -29,6 +29,8 @@
 (setq rspec-use-rake-flag nil)
 (setq rspec-spec-command "rspec")
 
+(require 'linum-off)
+
 ;; (enclose-global-mode t)
 ;; (enclose-add-encloser "|" "|")
 
