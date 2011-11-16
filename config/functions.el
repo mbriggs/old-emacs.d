@@ -6,6 +6,11 @@
   (evil-force-normal-state)
   (evil-goto-mark ?z))
 
+(defun format-json ()
+  (interactive)
+  (let ((cmd "python -mjson.tool"))
+    (shell-command-on-region (region-beginning) (region-end) cmd nil t)))
+
 (defun command-t ()
   (interactive)
   (fuzzy-find-project-root (eproject-root))
