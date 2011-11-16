@@ -21,4 +21,5 @@ Using el-get, so everything should just magically download itself on first launc
 Dependancies
 ------------
 
+sudo apt-get install texi2html texinfo python
 rubygems + ruby + `gem install fuzzy_file_finder`
