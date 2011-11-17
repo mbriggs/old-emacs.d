@@ -11,7 +11,6 @@
 (load "~/.emacs.d/config/sources.el")             ; plugins and where to get them
 (load "~/.emacs.d/config/plugins.el")             ; plugin configuration
 (load "~/.emacs.d/config/escreen.el")             ; tab replacement
-(load "~/.emacs.d/config/popup-shell.el")         ; fuck guake
 (load "~/.emacs.d/config/projects.el")            ; project configs
 (load "~/.emacs.d/config/functions.el")           ; random functions
 (load "~/.emacs.d/config/keymaps.el")             ; key bindings
@@ -22,3 +21,4 @@
 
 ;; random elisp from various places
 (load "~/.emacs.d/config/hex-colors.el")
+(load "~/.emacs.d/config/popup-shell.el")
