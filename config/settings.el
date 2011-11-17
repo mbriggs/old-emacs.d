@@ -10,9 +10,6 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-(require 'hl-line)
-(hl-line-mode)
-
 (fset 'yes-or-no-p 'y-or-n-p)
 (delete-selection-mode t)
 (scroll-bar-mode -1)
