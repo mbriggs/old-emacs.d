@@ -33,6 +33,9 @@
         (:name my-mooz-js2-mode
                :type git
                :url "https://github.com/mbriggs/js2-mode.git")
+        (:name shoulda-mode
+               :type http
+               :url "https://raw.github.com/pezra/shoulda-mode/master/shoulda-mode.el")
         (:name evil-surround
                :type http
                :url "https://raw.github.com/timcharper/evil-surround/master/surround.el")

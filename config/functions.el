@@ -29,3 +29,27 @@
   nil)
 
 (defalias 'git-blame 'vc-annotate)
+
+(defun test-verify ()
+  (interactive)
+  (if (eproject-attribute :use-shoulda)
+      (shoulda-verify)
+      (rspec-verify)))
+
+(defun test-verify-all ()
+  (interactive)
+  (if (eproject-attribute :use-shoulda)
+      (shoulda-verify-all)
+      (rspec-verify-all)))
+
+(defun test-toggle ()
+  (interactive)
+  (if (eproject-attribute :use-shoulda)
+      (shoulda-toggle-spec-and-target)
+      (rspec-toggle-spec-and-target)))
+
+(defun test-verify-single ()
+  (interactive)
+  (if (eproject-attribute :use-shoulda)
+      (shoulda-verify-single)
+      (rspec-verify-single)))

@@ -11,6 +11,8 @@ _-Sean McGrathi_
 >>"While any text editor can save your files, only Emacs can save your soul."
 _-Per Abrahamseni_
 
+
+
 ![facepalm](https://github.com/mbriggs/.emacs.d/raw/master/picard-facepalm.jpg)
 
 Install

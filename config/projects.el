@@ -8,3 +8,12 @@
 
 (define-project-type vim (generic)
   (look-for "vimrc"))
+
+(define-project-attribute '("dev" . :project-name)
+  '(:use-shoulda t :packman t))
+
+(define-project-attribute '("release" . :project-name)
+  '(:use-shoulda t :packman t))
+
+(define-project-attribute '("packmanager" . :project-name)
+  '(:use-shoulda t :packman t))

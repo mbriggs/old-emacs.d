@@ -26,6 +26,8 @@
 
 (substitute-key-definition 'ac-complete nil ac-completing-map)
 
+(require 'shoulda-mode)
+(setq shoulda-use-rvm t)
 (setq rspec-use-rake-flag nil)
 (setq rspec-spec-command "rspec")
 

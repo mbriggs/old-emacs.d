@@ -40,10 +40,10 @@
 (define-key evil-normal-state-map ",sv" 'rinari-find-view)
 (define-key evil-normal-state-map ",sl" 'rinari-find-lib)
 
-(define-key evil-normal-state-map ",tf" 'rspec-verify)
-(define-key evil-normal-state-map ",ta" 'rspec-verify-all)
-(define-key evil-normal-state-map ",t," 'rspec-toggle-spec-and-target)
-(define-key evil-normal-state-map ",tt" 'rspec-verify-single)
+(define-key evil-normal-state-map ",tf" 'test-verify)
+(define-key evil-normal-state-map ",ta" 'test-verify-all)
+(define-key evil-normal-state-map ",t," 'test-toggle)
+(define-key evil-normal-state-map ",tt" 'test-verify-single)
 
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "M-x") 'smex)
