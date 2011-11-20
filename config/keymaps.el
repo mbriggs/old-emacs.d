@@ -19,6 +19,8 @@
 (define-key evil-normal-state-map (kbd "M-.") 'find-tag)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
+(define-key evil-normal-state-map (kbd "<F5>") 'build-ctags)
+(define-key evil-normal-state-map (kbd "C-]") 'my-find-tag)
 
 (define-key evil-normal-state-map (kbd "C-}") 'evil-jump-to-next-tag)
 (define-key evil-normal-state-map (kbd "C-{") 'evil-jump-to-previous-tag)
@@ -51,6 +53,7 @@
 (global-set-key (kbd "M-]") 'textmate-shift-right)
 (global-set-key (kbd "M-[") 'textmate-shift-left)
 (global-set-key (kbd "M-j") 'other-window)
+(global-set-key (kbd "M-.") 'etags-select-find-tag)
 
 (add-hook 'ruby-mode-hook
           (lambda ()
