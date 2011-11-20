@@ -35,30 +35,7 @@
 (set-face-foreground 'vertical-border "#fcf6e3")
 (set-face-background 'vertical-border "#fcf6e3")
 
-(custom-set-faces
- '(anything-header ((((class color)) (:background "#81908F" :foreground "#fcf4dc"))))
- '(erb-face ((((class color) (min-colors 88) (background light)) (:background "#fcf4dc"))))
- '(flymake-errline ((((class color)) (:underline "#c60007"))))
- '(flymake-warnline ((((class color)) (:underline "#2075c7"))))
- '(isearch ((((class color)) (:background "#a57705"
-                              :underline "#a57705"
-                              :bold t
-                              :foreground "#fcf4dc"))))
- '(js2-error-face ((((class color) (background light)) (:foreground "#c60007"))))
- '(js2-external-variable-face ((t (:foreground "#bd3612"))))
- '(js2-function-param-face ((t (:foreground "#728a05"))))
- '(lazy-highlight ((((class color)) (:background "#5859b7" :foreground "#fcf4dc"))))
- '(magit-branch ((((class color)) (:background "#81908F" :foreground "#FCF4DC"))))
- '(magit-diff-add ((((class color)) (:foreground "#728a05"))))
- '(magit-diff-del ((((class color)) (:foreground "#c60007"))))
- '(magit-section-title ((((class color)) (:background "#81908F" :foreground "#FCF4DC"))))
- '(rainbow-delimiters-depth-1-face ((((class color)) (:foreground "#c60007"))))
- '(rainbow-delimiters-depth-2-face ((((class color)) (:foreground "#a57705"))))
- '(rainbow-delimiters-depth-3-face ((((class color)) (:foreground "#bd3612"))))
- '(rainbow-delimiters-depth-4-face ((((class color)) (:foreground "#c61b6e"))))
- '(rainbow-delimiters-depth-5-face ((((class color)) (:foreground "#5859b7"))))
- '(rainbow-delimiters-depth-6-face ((((class color)) (:foreground "#2075c7"))))
- '(rainbow-delimiters-depth-7-face ((((class color)) (:foreground "#259185"))))
- '(rainbow-delimiters-depth-8-face ((((class color)) (:foreground "#728a05"))))
- '(rainbow-delimiters-depth-9-face ((((class color)) (:foreground "#042028"))))
- '(trailing-whitespace ((t (:background "#c7c0a9" :foreground "#e9e2cb" :inverse-video t)))))
+(setq hl-paren-colors '("#c60007"
+                        "#a57705"
+                        "#bd3612"
+                        "#c61b6e"))
