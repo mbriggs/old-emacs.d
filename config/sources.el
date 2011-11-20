@@ -15,6 +15,10 @@
         (:name css-mode :type elpa)
         (:name ansi-color :type emacswiki)
         (:name linum-off :type emacswiki)
+        (:name etags-select :type emacswiki :features etags-select)
+        (:name highlight-parenthesis
+               :type http
+               :url "http://nschum.de/src/emacs/highlight-parentheses/highlight-parentheses.el")
         (:name ruby-compilation :type elpa :features ruby-compilation)
         (:name eproject
                :type git
