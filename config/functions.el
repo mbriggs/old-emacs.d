@@ -30,6 +30,22 @@
 
 (defalias 'git-blame 'vc-annotate)
 
+(defun build-ctags ()
+  (interactive)
+  (message "building project tags")
+  (let ((root (eproject-root)))
+    (shell-command (concat "ctags -e -R -f " root "TAGS " root)))
+  (visit-project-tags)
+  (message "tags built successfully"))
+
+(defun my-find-tag ()
+  (interactive)
+  (visit-project-tags)
+  (etags-select-find-tag-at-point))
+
+(defun visit-project-tags ()
+  (visit-tags-table (concat (eproject-root) "TAGS")))
+
 (defun test-verify ()
   (interactive)
   (if (eproject-attribute :use-shoulda)
