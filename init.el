@@ -22,6 +22,17 @@
 ;; random elisp from various places
 (load "~/.emacs.d/config/hex-colors.el")
 (load "~/.emacs.d/config/popup-shell.el")
+
+
+
+
+
+
+
+
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

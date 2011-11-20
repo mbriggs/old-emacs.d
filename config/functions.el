@@ -34,7 +34,7 @@
   (interactive)
   (message "building project tags")
   (let ((root (eproject-root)))
-    (shell-command (concat "ctags -e -R -f " root "TAGS " root)))
+    (shell-command (concat "ctags -e -R --exclude=db --exclude=test -f " root "TAGS " root)))
   (visit-project-tags)
   (message "tags built successfully"))
 
