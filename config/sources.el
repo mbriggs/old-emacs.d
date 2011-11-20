@@ -15,6 +15,7 @@
         (:name css-mode :type elpa)
         (:name ansi-color :type emacswiki)
         (:name linum-off :type emacswiki)
+        (:name ruby-compilation :type elpa :features ruby-compilation)
         (:name eproject
                :type git
                :url "https://github.com/jrockway/eproject")
@@ -45,32 +46,12 @@
         (:name json
                :type http
                :url "https://raw.github.com/thorstadt/json.el/master/json.el")
-        (:name json-pretty-print
-               :type http
-               :url "https://raw.github.com/thorstadt/json-pretty-print.el/master/json-pretty-print.el")
-        (:name enclose
-               :type http
-               :url "https://raw.github.com/rejeep/enclose/master/enclose.el")
         (:name escreen
                :type http
                :url "http://www.splode.com/~friedman/software/emacs-lisp/src/escreen.el")
-        (:name anything-project-files
-               :type http
-               :url "https://raw.github.com/lewang/anything-project-files/master/anything-project-files.el")
-        (:name my-ruby-end
-               :type http
-               :url "https://raw.github.com/mbriggs/ruby-end/master/ruby-end.el"
-               :features ruby-end)
-        (:name anything-rails
-               :type git
-               :url "https://github.com/wolfmanjm/anything-on-rails.git"
-               :features anything-rails)
         (:name lua-mode
                :type git
                :url "https://github.com/immerrr/lua-mode.git")
-        (:name mo-git-blame
-               :type git
-               :url "https://github.com/mbunkus/mo-git-blame.git")
         (:name sass-mode
                :type git
                :url "https://github.com/nex3/sass-mode.git")
@@ -80,15 +61,6 @@
         (:name markdown-mode
                :type git
                :url "git://jblevins.org/git/markdown-mode.git")
-        (:name fill-column-mode
-               :type git
-               :url "https://github.com/alpaker/Fill-Column-Indicator.git")
-        (:name color-theme-sanityinc-solarized
-               :type git
-               :url "https://github.com/purcell/color-theme-sanityinc-solarized.git")
-        (:name full-ack
-               :type git
-               :url "https://github.com/nschum/full-ack.git")
         (:name ack-and-a-half
                :type git
                :url "https://github.com/jhelwig/ack-and-a-half.git")
@@ -106,22 +78,15 @@
        '(autopair
          ansi-color
          ack-and-a-half
-         inf-ruby
          ruby-compilation
+         inf-ruby
          anything
-         anything-project-files
-         anything-rails
          auto-complete
          auto-complete-css
          auto-complete-etags
          auto-complete-ruby
          coffee-mode
-         color-theme-sanityinc-solarized
-         color-theme-sanityinc
          color-theme-solarized
-         color-theme-mac-classic
-         color-theme-zen-and-art
-         color-theme-tango-2
          csv-mode
          lua-mode
          el-expectations
@@ -130,13 +95,12 @@
          flymake-ruby
          haml-mode
          json
-         json-pretty-print
          linum-ex
          magit
          markdown-mode
          mode-compile
          mustache-mode
-         my-ruby-end
+         ruby-end
          my-mooz-js2-mode
          textmate
          rainbow-delimiters
@@ -147,7 +111,6 @@
          scss-mode
          smex
          textile-mode
-         tidy
          rvm
          yaml-mode)
        (mapcar 'el-get-source-name el-get-sources)))
