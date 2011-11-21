@@ -3,9 +3,6 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
-(push "/usr/local/bin" exec-path)
-(push "~/scripts" exec-path)
-
 (setq ansi-color-names-vector
       ["black" "#c60007" "#728a05" "#a57705" "#2075c7" "#c61b6e" "#259185" "white"])
 
@@ -24,6 +21,8 @@
 (load "~/.emacs.d/config/hex-colors.el")
 (load "~/.emacs.d/config/popup-shell.el")
 
+(push "/usr/local/bin" exec-path)
+(push (expand-file-name "~/scripts") exec-path)
 
 
 

@@ -24,3 +24,4 @@
     (set-frame-font "Menlo-11"))
 
 (color-theme-solarized-light)
+(setq shell-command-switch "-ic")

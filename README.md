@@ -26,3 +26,5 @@ Dependancies
 `sudo apt-get install texi2html texinfo python`
 
 rubygems + ruby + `gem install fuzzy_file_finder fastri rcodetools`
+
+`lein plugin install swank-clojure 1.3.3`

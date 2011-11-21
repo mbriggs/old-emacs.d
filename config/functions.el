@@ -11,6 +11,10 @@
   (let ((cmd "python -mjson.tool"))
     (shell-command-on-region (region-beginning) (region-end) cmd nil t)))
 
+(defun copy-to-end-of-line ()
+  (interactive)
+  (evil-yank (point) (point-at-eol)))
+
 (defun command-t ()
   (interactive)
   (fuzzy-find-project-root (eproject-root))

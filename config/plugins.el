@@ -22,6 +22,9 @@
 (defalias 'ack-find-file 'ack-and-a-half-find-file)
 (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
+(add-hook 'sldb-mode-hook
+          #'(lambda () (setq autopair-dont-activate t)))
+
 (require 'highlight-parentheses)
 (define-globalized-minor-mode global-highlight-parentheses-mode
   highlight-parentheses-mode
@@ -39,13 +42,6 @@
                     '((lambda (action pair pos-before)
                         (hl-paren-color-update)))))))
 
-(defun css-complete ()
-  (setq ac-sources (append ac-sources '(ac-source-css-property))))
-
-(setq-default ac-sources (append ac-sources '(ac-source-etags)))
-(add-hook 'css-mode-hook 'css-complete)
-(add-hook 'sass-mode-hook 'css-complete)
-(add-hook 'scss-mode-hook 'css-complete)
 (substitute-key-definition 'ac-complete nil ac-completing-map)
 
 (require 'shoulda-mode)

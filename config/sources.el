@@ -90,6 +90,7 @@
          auto-complete-css
          auto-complete-etags
          auto-complete-ruby
+         clojure-mode
          coffee-mode
          color-theme-solarized
          csv-mode
