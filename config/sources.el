@@ -14,6 +14,7 @@
                :load "textmate.el")
         (:name css-mode :type elpa)
         (:name ansi-color :type emacswiki)
+        (:name yari :type emacswiki :features yari)
         (:name linum-off :type emacswiki)
         (:name etags-select :type emacswiki :features etags-select)
         (:name highlight-parenthesis
@@ -116,6 +117,7 @@
          smex
          textile-mode
          rvm
+         yari
          yaml-mode)
        (mapcar 'el-get-source-name el-get-sources)))
 

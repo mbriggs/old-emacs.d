@@ -57,7 +57,8 @@
 
 (add-hook 'ruby-mode-hook
           (lambda ()
-            (local-set-key (kbd "RET") 'newline-and-indent)))
+            (local-set-key (kbd "RET") 'newline-and-indent)
+            (local-set-key [f1] 'yari)))
 
 (add-hook 'change-major-mode-hook
           (lambda ()

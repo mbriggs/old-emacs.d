@@ -3,6 +3,7 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
+(push "/usr/local/bin" exec-path)
 (push "~/scripts" exec-path)
 
 (setq ansi-color-names-vector
