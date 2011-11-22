@@ -32,3 +32,5 @@ Dependancies
 rubygems + ruby + `gem install fuzzy_file_finder fastri rcodetools`
 
 `lein plugin install swank-clojure 1.3.3`
+
+`lein plugin install clj-stacktrace 0.2.3`
