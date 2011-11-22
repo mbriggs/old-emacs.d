@@ -71,30 +71,5 @@
 (defun test-toggle ()
   (interactive)
   (if (eproject-attribute :use-shoulda)
-      (shoulda-toggle-spec-and-target)
+      (rtt/toggle-test-and-implementation)
       (rspec-toggle-spec-and-target)))
-
-;; (defun toggle-test-unit ()
-;;   (interactive)
-;;   (let ((file (buffer-name)))
-;;     (if (file-is-test? file)
-;;         (find-target-by-test-type file (test-type-of file))
-;;         (rinari-find-test))))
-
-;; (defun file-is-test? (file)
-;;   (string-match "\\/test\\/" file))
-
-;; (defun file-is-unit-test? (file)
-;;   (string-match "\\/test\\/" file))
-
-;; (defun file-is-functional-test? (file)
-;;   (string-match "\\/test\\/" file))
-
-;; (defun find-target-by-test-type (file test-type))
-
-;; (defun test-type-of (test-file)
-;;   (cond ((((file-is-unit-test? test-file)) (find-unit-test test-file))
-;;          (((file-is-functional-test? test-file)) (find-functional-test test-file)))))
-
-;; (defun find-functional-test (test-file))
-;; (defun find-unit-test (test-file))

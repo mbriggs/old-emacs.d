@@ -20,7 +20,7 @@
 (set-fringe-style -1)
 (tooltip-mode -1)
 (if (featurep 'ns)
-    (set-frame-font "Menlo-15")
+    (set-frame-font "Menlo-14")
     (set-frame-font "Menlo-11"))
 
 (color-theme-solarized-light)

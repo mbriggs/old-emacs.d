@@ -42,6 +42,10 @@
         (:name shoulda-mode
                :type http
                :url "https://raw.github.com/pezra/shoulda-mode/master/shoulda-mode.el")
+        (:name rails-test-toggler
+               :type http
+               :url "https://raw.github.com/mbriggs/rails-test-toggler/master/rails-test-toggler.el"
+               :features rails-test-toggler)
         (:name evil-surround
                :type http
                :url "https://raw.github.com/timcharper/evil-surround/master/surround.el")
@@ -110,6 +114,7 @@
          my-mooz-js2-mode
          textmate
          rainbow-delimiters
+         rails-test-toggler
          rspec-mode
          rhtml-mode
          ruby-block

@@ -1,6 +1,6 @@
 
-My Emacs
-========
+My Emacs Config
+===============
 
 >>"Show me your ~/.emacs and I will tell you who you are."
 _-Bogdan Maryniuk_
@@ -11,7 +11,11 @@ _-Sean McGrathi_
 >>"While any text editor can save your files, only Emacs can save your soul."
 _-Per Abrahamseni_
 
+>>"Lisp isn't a language, it's a building material."
+_- Alan Kay_
 
+>>"The reasonable man adapts himself to Emacs; the unreasonable one persists in trying to adapt Emacs to himself. Therefore all progress depends on the unreasonable man." 
+_- G.B. Shaw_
 
 ![facepalm](https://github.com/mbriggs/.emacs.d/raw/master/picard-facepalm.jpg)
 
