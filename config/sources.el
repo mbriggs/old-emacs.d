@@ -94,6 +94,7 @@
          auto-complete-css
          auto-complete-etags
          auto-complete-ruby
+         ac-slime
          clojure-mode
          coffee-mode
          color-theme-solarized

@@ -51,6 +51,10 @@
 
 (require 'linum-off)
 
+(ac-config-default)
+(add-hook 'slime-mode-hook 'set-up-slime-ac)
+(add-to-list 'ac-sources 'ac-source-etags)
+
 ;; (enclose-global-mode t)
 ;; (enclose-add-encloser "|" "|")
 
