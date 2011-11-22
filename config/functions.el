@@ -48,7 +48,10 @@
   (etags-select-find-tag-at-point))
 
 (defun visit-project-tags ()
-  (visit-tags-table (concat (eproject-root) "TAGS")))
+  (interactive)
+  (let ((tags-file (concat (eproject-root) "TAGS")))
+    (visit-tags-table tags-file)
+    (message (concat "Loaded " tags-file))))
 
 (defun test-verify ()
   (interactive)

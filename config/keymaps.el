@@ -20,7 +20,6 @@
 (define-key evil-normal-state-map (kbd "M-.") 'find-tag)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
-(define-key evil-normal-state-map [f5] 'build-ctags)
 (define-key evil-normal-state-map (kbd "C-]") 'my-find-tag)
 
 (define-key evil-normal-state-map (kbd "C-}") 'evil-jump-to-next-tag)

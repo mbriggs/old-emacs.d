@@ -17,6 +17,9 @@
         (:name yari :type emacswiki :features yari)
         (:name linum-off :type emacswiki)
         (:name etags-select :type emacswiki :features etags-select)
+        (:name mo-git-blame
+               :type http
+               :url "https://raw.github.com/voins/mo-git-blame/master/mo-git-blame.el")
         (:name multi-web-mode
                :type http
                :url "https://raw.github.com/fgallina/multi-web-mode/master/multi-web-mode.el")

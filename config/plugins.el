@@ -14,6 +14,9 @@
 (add-to-list 'auto-mode-alist '("\\.rhtml\\'" . eruby-html-mumamo))
 (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-html-mumamo))
 
+(autoload 'mo-git-blame-file "mo-git-blame" nil t)
+(autoload 'mo-git-blame-current "mo-git-blame" nil t)
+
 (require 'surround)
 (global-surround-mode 1)
 (evil-mode 1)
@@ -55,7 +58,6 @@
                     '((lambda (action pair pos-before)
                         (hl-paren-color-update)))))))
 
-(substitute-key-definition 'ac-complete nil ac-completing-map)
 
 (require 'shoulda-mode)
 (setq shoulda-use-rvm t)
@@ -64,6 +66,8 @@
 
 (require 'linum-off)
 
+(require 'auto-complete-etags)
+(substitute-key-definition 'ac-complete nil ac-completing-map)
 (ac-config-default)
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 (add-to-list 'ac-sources 'ac-source-etags)
