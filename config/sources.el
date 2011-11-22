@@ -17,6 +17,9 @@
         (:name yari :type emacswiki :features yari)
         (:name linum-off :type emacswiki)
         (:name etags-select :type emacswiki :features etags-select)
+        (:name multi-web-mode
+               :type http
+               :url "https://raw.github.com/fgallina/multi-web-mode/master/multi-web-mode.el")
         (:name highlight-parenthesis
                :type http
                :url "http://nschum.de/src/emacs/highlight-parentheses/highlight-parentheses.el")
@@ -111,13 +114,15 @@
          markdown-mode
          mode-compile
          mustache-mode
+         ;multi-web-mode
+         nxhtml
          ruby-end
          my-mooz-js2-mode
          textmate
          rainbow-delimiters
          rails-test-toggler
          rspec-mode
-         rhtml-mode
+         ;; rhtml-mode
          ruby-block
          sass-mode
          scss-mode

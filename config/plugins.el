@@ -1,5 +1,18 @@
-(autoload 'rhtml-mode "rhtml-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode))
+;; (autoload 'rhtml-mode "rhtml-mode" nil t)
+;; (add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode))
+
+;; (require 'multi-web-mode)
+;; (setq mweb-default-major-mode 'html-mode)
+;; (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
+;;                   (ruby-mode "<%\\|<%=" "%>")
+;;                   (js2-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
+;;                   (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
+;; (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "erb"))
+;; (multi-web-global-mode 1)
+
+(require 'mumamo-fun)
+(add-to-list 'auto-mode-alist '("\\.rhtml\\'" . eruby-html-mumamo))
+(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-html-mumamo))
 
 (require 'surround)
 (global-surround-mode 1)
