@@ -117,15 +117,15 @@
          markdown-mode
          mode-compile
          mustache-mode
-         ;multi-web-mode
-         nxhtml
+         ;; multi-web-mode
+         ;; nxhtml
          ruby-end
          my-mooz-js2-mode
          textmate
          rainbow-delimiters
          rails-test-toggler
          rspec-mode
-         ;; rhtml-mode
+         rhtml-mode
          ruby-block
          sass-mode
          scss-mode

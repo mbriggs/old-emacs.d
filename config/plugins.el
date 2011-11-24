@@ -1,5 +1,5 @@
-;; (autoload 'rhtml-mode "rhtml-mode" nil t)
-;; (add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode))
+(autoload 'rhtml-mode "rhtml-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode))
 
 ;; (require 'multi-web-mode)
 ;; (setq mweb-default-major-mode 'html-mode)
@@ -10,12 +10,12 @@
 ;; (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "erb"))
 ;; (multi-web-global-mode 1)
 
-(require 'mumamo-fun)
-(add-to-list 'auto-mode-alist '("\\.rhtml\\'" . eruby-html-mumamo))
-(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-html-mumamo))
+;; (require 'mumamo-fun)
+;; (add-to-list 'auto-mode-alist '("\\.rhtml\\'" . eruby-html-mumamo))
+;; (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-html-mumamo))
 
-(autoload 'mo-git-blame-file "mo-git-blame" nil t)
-(autoload 'mo-git-blame-current "mo-git-blame" nil t)
+;; (autoload 'mo-git-blame-file "mo-git-blame" nil t)
+;; (autoload 'mo-git-blame-current "mo-git-blame" nil t)
 
 (require 'surround)
 (global-surround-mode 1)
