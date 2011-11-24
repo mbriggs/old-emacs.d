@@ -47,6 +47,14 @@
 (define-key evil-normal-state-map ",t," 'test-toggle)
 (define-key evil-normal-state-map ",tt" 'test-verify-single)
 
+(require 'org)
+(evil-define-key 'normal org-mode-map (kbd "M-L") 'org-metaright)
+(evil-define-key 'normal org-mode-map (kbd "M-H") 'org-metaleft)
+(evil-define-key 'normal org-mode-map (kbd "M-J") 'org-metadown)
+(evil-define-key 'normal org-mode-map (kbd "M-K") 'org-metaup)
+(evil-define-key 'normal org-mode-map (kbd "C-=") 'org-todo)
+(evil-define-key 'normal org-mode-map (kbd "o") 'org-insert-heading-respect-content)
+
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "RET") 'newline-and-indent)
