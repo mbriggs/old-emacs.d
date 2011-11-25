@@ -21,12 +21,6 @@
                :type http
                :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
                :features pretty-mode)
-        (:name mo-git-blame
-               :type http
-               :url "https://raw.github.com/voins/mo-git-blame/master/mo-git-blame.el")
-        (:name git-blame
-               :type http
-               :url "http://files.taesoo.org/git-emacs/git-blame.el")
         (:name dired-plus
                :type http
                :url "https://raw.github.com/emacsmirror/dired-plus/master/dired+.el")
@@ -42,7 +36,8 @@
                :url "https://github.com/jrockway/eproject")
         (:name fuzzy-find-in-project
                :type git
-               :url "https://github.com/justinweiss/fuzzy-find-in-project")
+               :url "https://github.com/justinweiss/fuzzy-find-in-project"
+               :features fuzzy-find-in-project)
         (:name rvm
                :type git
                :url "http://github.com/djwhitt/rvm.el.git"
@@ -126,7 +121,7 @@
          evil
          evil-surround
          flymake-ruby
-         git-blame
+         fuzzy-find-in-project
          haml-mode
          json
          linum-ex

@@ -49,8 +49,6 @@
         (set-buffer-modified-p nil)))))
 
 
-(defalias 'git-blame 'vc-annotate)
-
 (defun build-ctags ()
   (interactive)
   (message "building project tags")

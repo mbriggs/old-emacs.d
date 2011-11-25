@@ -28,6 +28,7 @@
 (require 'init-eproject)
 (require 'init-js)
 (require 'init-lua)
+(require 'init-git-blame)
 
 (require 'my-defuns)
 (require 'my-keymaps)
