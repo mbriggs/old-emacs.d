@@ -17,9 +17,19 @@
         (:name yari :type emacswiki :features yari)
         (:name linum-off :type emacswiki :features linum-off)
         (:name etags-select :type emacswiki :features etags-select)
+        (:name pretty-mode
+               :type http
+               :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
+               :features pretty-mode)
         (:name mo-git-blame
                :type http
                :url "https://raw.github.com/voins/mo-git-blame/master/mo-git-blame.el")
+        (:name git-blame
+               :type http
+               :url "http://files.taesoo.org/git-emacs/git-blame.el")
+        (:name dired-plus
+               :type http
+               :url "https://raw.github.com/emacsmirror/dired-plus/master/dired+.el")
         (:name multi-web-mode
                :type http
                :url "https://raw.github.com/fgallina/multi-web-mode/master/multi-web-mode.el")
@@ -77,6 +87,9 @@
         (:name markdown-mode
                :type git
                :url "git://jblevins.org/git/markdown-mode.git")
+        (:name ac-dabbrev
+               :type http
+               :url "https://raw.github.com/emacsmirror/ac-dabbrev/master/ac-dabbrev.el")
         (:name ack-and-a-half
                :type git
                :url "https://github.com/jhelwig/ack-and-a-half.git")
@@ -102,15 +115,18 @@
          auto-complete-etags
          auto-complete-ruby
          ac-slime
+         ac-dabbrev
          clojure-mode
          coffee-mode
          color-theme-solarized
          csv-mode
+         dired-plus
          lua-mode
          el-expectations
          evil
          evil-surround
          flymake-ruby
+         git-blame
          haml-mode
          json
          linum-ex
@@ -118,11 +134,9 @@
          markdown-mode
          mode-compile
          mustache-mode
-         ;; multi-web-mode
-         ;; nxhtml
-         ruby-end
          my-mooz-js2-mode
-         textmate
+         pretty-mode
+         ruby-end
          rainbow-delimiters
          rails-test-toggler
          rspec-mode
@@ -130,6 +144,7 @@
          ruby-block
          sass-mode
          scss-mode
+         textmate
          smex
          textile-mode
          rvm

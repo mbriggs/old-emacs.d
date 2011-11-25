@@ -1,4 +1,5 @@
 (require 'auto-complete-etags)
+(require 'ac-dabbrev)
 (substitute-key-definition 'ac-complete nil ac-completing-map)
 (ac-config-default)
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
