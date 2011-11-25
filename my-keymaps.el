@@ -86,3 +86,5 @@
   :jump t
   (let ((tag (thing-at-point 'symbol)))
     (find-tag tag ?-)))
+
+(provide 'my-keymaps)

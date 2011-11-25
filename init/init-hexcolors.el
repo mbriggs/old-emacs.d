@@ -24,3 +24,5 @@
 (add-hook 'emacs-lisp-mode-hook 'hexcolour-add-to-font-lock)
 (add-hook 'scss-mode-hook 'hexcolour-add-to-font-lock)
 (add-hook 'sass-mode-hook 'hexcolour-add-to-font-lock)
+
+(provide 'init-hexcolors)

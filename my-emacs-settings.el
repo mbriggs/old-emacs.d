@@ -26,3 +26,15 @@
 
 (color-theme-solarized-light)
 (setq shell-command-switch "-ic")
+
+(add-hook 'after-change-major-mode-hook
+          (lambda ()
+            (setq show-trailing-whitespace t)))
+
+(set-face-foreground 'vertical-border "#fcf6e3")
+(set-face-background 'vertical-border "#fcf6e3")
+
+(push "/usr/local/bin" exec-path)
+(push (expand-file-name "~/scripts") exec-path)
+
+(provide 'my-emacs-settings)

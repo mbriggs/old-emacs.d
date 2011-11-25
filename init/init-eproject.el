@@ -20,3 +20,5 @@
 
 (define-project-attribute '("packmanager" . :project-name)
   '(:use-shoulda t :packman t))
+
+(provide 'init-eproject)

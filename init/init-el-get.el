@@ -15,7 +15,7 @@
         (:name css-mode :type elpa)
         (:name ansi-color :type emacswiki)
         (:name yari :type emacswiki :features yari)
-        (:name linum-off :type emacswiki)
+        (:name linum-off :type emacswiki :features linum-off)
         (:name etags-select :type emacswiki :features etags-select)
         (:name mo-git-blame
                :type http
@@ -41,7 +41,8 @@
                :after (lambda() (rvm-use-default)))
         (:name rinari
                :type git
-               :url "https://github.com/technomancy/rinari.git")
+               :url "https://github.com/technomancy/rinari.git"
+               :features rinari)
         (:name my-mooz-js2-mode
                :type git
                :url "https://github.com/mbriggs/js2-mode.git")
@@ -138,3 +139,5 @@
 
 
 (el-get 'sync my-packages)
+
+(provide 'init-el-get)

@@ -1,37 +1,37 @@
-(setq mac-option-key-is-meta nil)
-(setq mac-command-key-is-meta t)
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier nil)
+;; -*- coding: utf-8 -*-
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/init"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
-(setq ansi-color-names-vector
-      ["black" "#c60007" "#728a05" "#a57705" "#2075c7" "#c61b6e" "#259185" "white"])
+(require 'init-pre-package-variables)
+(require 'init-el-get)
+(require 'init-rhtml)
+(require 'init-evil)
+(require 'init-rainbow-delims)
+(require 'init-ack)
+(require 'init-autopair)
+(require 'init-highlight-parens)
+(require 'init-shoulda)
+(require 'init-textmate)
+(require 'init-rspec)
+(require 'init-autocomplete)
+(require 'init-anything)
+(require 'init-ruby)
+(require 'init-sass)
+(require 'init-markdown)
+(require 'init-moustache)
+(require 'init-yaml)
+(require 'init-ruby-block)
+(require 'init-ruby-end)
+(require 'init-linum)
+(require 'init-escreen)
+(require 'init-eproject)
+(require 'init-js)
+(require 'init-lua)
+(require 'init-hexcolors)
 
-(load "~/.emacs.d/config/sources.el")             ; plugins and where to get them
-(load "~/.emacs.d/config/plugins.el")             ; plugin configuration
-(load "~/.emacs.d/config/escreen.el")             ; tab replacement
-(load "~/.emacs.d/config/projects.el")            ; project configs
-(load "~/.emacs.d/config/functions.el")           ; random functions
-(load "~/.emacs.d/config/keymaps.el")             ; key bindings
-(load "~/.emacs.d/config/settings.el")            ; random settings
-(load "~/.emacs.d/config/mode-bindings.el")       ; bind modes to file extensions
-(load "~/.emacs.d/config/color-hacks.el")         ; hacks to themes
-(load "~/.emacs.d/config/customize-variables.el") ; customize-set-variables
-
-;; random elisp from various places
-(load "~/.emacs.d/config/hex-colors.el")
-(load "~/.emacs.d/config/popup-shell.el")
-
-(push "/usr/local/bin" exec-path)
-(push (expand-file-name "~/scripts") exec-path)
-
-
-
-
-
-
-
-
-
+(require 'my-defuns)
+(require 'my-keymaps)
+(require 'my-emacs-settings)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
