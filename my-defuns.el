@@ -20,18 +20,17 @@
   (fuzzy-find-project-root (eproject-root))
   (fuzzy-find-in-project))
 
-(defun hex-codes (limit)
-  (remove-overlays (point) limit 'fontify-hex-colors t)
-  (while (re-search-forward "\\(#[[:xdigit:]]\\{6\\}\\)" limit t)
-    (let ((ov (make-overlay (match-beginning 0)
-                            (match-end 0))))
-      (overlay-put ov 'face  (list :background (match-string 1)))
-      (overlay-put ov 'fontify-hex-colors t)
-      (overlay-put ov 'evaporate t)))
-  ;; return nil telling font-lock not to fontify anything from this
-  ;; function
-  nil)
-
+(defun sort-lines-random (beg end)
+  "Sort lines in region randomly."
+  (interactive "r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region beg end)
+      (goto-char (point-min))
+      (let ;; To make `end-of-line' and etc. to ignore fields.
+          ((inhibit-field-text-motion t))
+        (sort-subr nil 'forward-line 'end-of-line nil nil
+                   (lambda (s1 s2) (eq (random 2) 0)))))))
 
 (defun rename-this-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."

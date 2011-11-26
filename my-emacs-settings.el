@@ -40,4 +40,11 @@
 (push "/usr/local/bin" exec-path)
 (push (expand-file-name "~/scripts") exec-path)
 
+(paren-activate) ; mic-paren
+(setq default-indicate-empty-lines t)
+(recentf-mode 1)
+(setq recentf-max-saved-items 50
+      recentf-exclude '("/tmp/" "/ssh:"))
+
 (provide 'my-emacs-settings)
+

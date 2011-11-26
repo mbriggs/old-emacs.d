@@ -55,8 +55,6 @@
 (evil-define-key 'normal org-mode-map (kbd "C-=") 'org-todo)
 (evil-define-key 'normal org-mode-map (kbd "o") 'org-insert-heading-respect-content)
 
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-]") 'textmate-shift-right)
 (global-set-key (kbd "M-[") 'textmate-shift-left)

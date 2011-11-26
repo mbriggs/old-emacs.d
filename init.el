@@ -6,6 +6,16 @@
 (require 'init-pre-package-variables)
 (require 'init-packages)
 (require 'init-rhtml)
+(require 'init-crontab)
+(require 'init-css)
+(require 'init-csv)
+(require 'init-dired)
+(require 'init-flymake)
+(require 'init-haml)
+(require 'init-ido)
+(require 'init-maxframe)
+(require 'init-org)
+(require 'init-rinari)
 (require 'init-evil)
 (require 'init-rainbow-delims)
 (require 'init-ack)
@@ -42,3 +52,5 @@
 
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
+
+(maybe-maximize-frame)
