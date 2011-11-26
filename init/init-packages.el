@@ -133,7 +133,6 @@
 (require-package 'rspec-mode)
 (require-package 'sass-mode)
 (require-package 'scss-mode)
-(require-package 'textmate)
 (require-package 'scratch)
 (require-package 'smex)
 (require-package 'yari)
