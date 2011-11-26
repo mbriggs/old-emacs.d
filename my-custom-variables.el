@@ -28,7 +28,7 @@
  '(js2-error-face ((((class color) (background light)) (:foreground "#c60007"))))
  '(js2-external-variable-face ((t (:foreground "#bd3612"))))
  '(js2-function-param-face ((t (:foreground "#728a05"))))
- '(lazy-highlight ((((class color)) (:background "#5859b7" :foreground "#fcf4dc"))))
+ '(lazy-highlight ((((class color)) (:foreground "#5859b7" :background "#fcf4dc"))))
  '(magit-branch ((((class color)) (:background "#81908F" :foreground "#FCF4DC"))))
  '(magit-diff-add ((((class color)) (:foreground "#728a05"))))
  '(magit-diff-del ((((class color)) (:foreground "#c60007"))))
