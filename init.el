@@ -4,7 +4,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
 (require 'init-pre-package-variables)
-(require 'init-el-get)
+(require 'init-packages)
 (require 'init-rhtml)
 (require 'init-evil)
 (require 'init-rainbow-delims)
