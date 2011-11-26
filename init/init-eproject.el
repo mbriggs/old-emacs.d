@@ -1,4 +1,5 @@
 (require 'eproject)
+(require 'eproject-extras)
 
 (define-project-type ruby (generic)
   (look-for "Gemfile"))

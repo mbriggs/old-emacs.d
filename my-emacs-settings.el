@@ -7,6 +7,8 @@
 (setq initial-major-mode 'emacs-lisp-mode)
 (setq browse-url-generic-program "google-chrome")
 
+(require 'smex)
+(smex-initialize)
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
@@ -24,6 +26,7 @@
     (set-frame-font "Menlo-14")
     (set-frame-font "Menlo-11"))
 
+(require 'color-theme)
 (color-theme-solarized-light)
 (setq shell-command-switch "-ic")
 

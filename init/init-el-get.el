@@ -1,3 +1,31 @@
+;;; Package.el
+
+(require 'compile)
+(defun require-package (package &optional min-version)
+  "Ask elpa to install given PACKAGE."
+  (unless (package-installed-p package min-version)
+    (package-install package)))
+
+;; When switching between Emacs 23 and 24, we always use the bundled package.el in Emacs 24
+(let ((package-el-site-lisp-dir (expand-file-name "~/.emacs.d/site-lisp/package")))
+  (when (and (file-directory-p package-el-site-lisp-dir)
+             (> emacs-major-version 23))
+    (message "Removing local package.el from load-path to avoid shadowing bundled version")
+    (setq load-path (remove package-el-site-lisp-dir load-path))))
+
+(require 'package)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
+
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(when (< emacs-major-version 24)
+  (require-package 'color-theme))
+
+
+;;; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil t)
   (with-current-buffer
@@ -8,32 +36,17 @@
 
 
 (setq el-get-sources
-      '((:name textmate
-               :type git
-               :url "git://github.com/defunkt/textmate.el"
-               :load "textmate.el")
-        (:name css-mode :type elpa)
-        (:name ansi-color :type emacswiki)
-        (:name yari :type emacswiki :features yari)
-        (:name linum-off :type emacswiki :features linum-off)
-        (:name etags-select :type emacswiki :features etags-select)
+      '((:name ansi-color :type emacswiki)
         (:name pretty-mode
                :type http
                :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
                :features pretty-mode)
-        (:name dired-plus
-               :type http
-               :url "https://raw.github.com/emacsmirror/dired-plus/master/dired+.el")
-        (:name multi-web-mode
-               :type http
-               :url "https://raw.github.com/fgallina/multi-web-mode/master/multi-web-mode.el")
-        (:name highlight-parenthesis
-               :type http
-               :url "http://nschum.de/src/emacs/highlight-parentheses/highlight-parentheses.el")
-        (:name ruby-compilation :type elpa :features ruby-compilation)
         (:name eproject
                :type git
                :url "https://github.com/jrockway/eproject")
+        (:name dired-plus
+               :type http
+               :url "https://raw.github.com/emacsmirror/dired-plus/master/dired+.el")
         (:name fuzzy-find-in-project
                :type git
                :url "https://github.com/justinweiss/fuzzy-find-in-project"
@@ -44,10 +57,6 @@
                :load "rvm.el"
                :compile ("rvm.el")
                :after (lambda() (rvm-use-default)))
-        (:name rinari
-               :type git
-               :url "https://github.com/technomancy/rinari.git"
-               :features rinari)
         (:name my-mooz-js2-mode
                :type git
                :url "https://github.com/mbriggs/js2-mode.git")
@@ -61,27 +70,12 @@
         (:name evil-surround
                :type http
                :url "https://raw.github.com/timcharper/evil-surround/master/surround.el")
-        (:name autopair
-               :type http
-               :url "http://autopair.googlecode.com/svn/trunk/autopair.el")
-        (:name json
-               :type http
-               :url "https://raw.github.com/thorstadt/json.el/master/json.el")
         (:name escreen
                :type http
                :url "http://www.splode.com/~friedman/software/emacs-lisp/src/escreen.el")
         (:name lua-mode
                :type git
                :url "https://github.com/immerrr/lua-mode.git")
-        (:name sass-mode
-               :type git
-               :url "https://github.com/nex3/sass-mode.git")
-        (:name haml-mode
-               :type git
-               :url "https://github.com/nex3/haml-mode.git")
-        (:name markdown-mode
-               :type git
-               :url "git://jblevins.org/git/markdown-mode.git")
         (:name ac-dabbrev
                :type http
                :url "https://raw.github.com/emacsmirror/ac-dabbrev/master/ac-dabbrev.el")
@@ -91,60 +85,71 @@
         (:name rhtml
                :type git
                :url "https://github.com/eschulte/rhtml.git"
-               :features rhtml-mode)
-        (:name yaml-mode
-               :type git
-               :url "http://github.com/yoshiki/yaml-mode.git"
-               :features yaml-mode)))
+               :features rhtml-mode)))
 
+;;; get what we can from elpa
+(require-package 'autopair)
+(require-package 'css-mode)
+(require-package 'ruby-compilation)
+(require-package 'inf-ruby)
+(require-package 'anything)
+(require-package 'auto-complete)
+(require-package 'ac-slime)
+(require-package 'clojure-mode)
+(require-package 'coffee-mode)
+(require-package 'color-theme-solarized)
+(require-package 'csv-mode)
+(require-package 'etags-select)
+(require-package 'flymake-coffee)
+(require-package 'flymake-ruby)
+(require-package 'flymake-cursor)
+(require-package 'flymake-haml)
+(require-package 'flymake-sass)
+(require-package 'flymake-shell)
+(require-package 'haml-mode)
+(require-package 'highlight-parentheses)
+(require-package 'json)
+(require-package 'linum-off)
+(require-package 'magit)
+(require-package 'markdown-mode)
+(require-package 'mode-compile)
+(require-package 'mustache-mode)
+(require-package 'paredit)
+(require-package 'rinari)
+(require-package 'ruby-end)
+(require-package 'ruby-block)
+(require-package 'rainbow-delimiters)
+(require-package 'rspec-mode)
+(require-package 'sass-mode)
+(require-package 'scss-mode)
+(require-package 'textmate)
+(require-package 'smex)
+(require-package 'yari)
+(require-package 'yaml-mode)
+
+;;; el-get the rest
 (setq my-packages
       (append
-       '(autopair
-         ansi-color
+       '(ansi-color
          ack-and-a-half
-         ruby-compilation
-         inf-ruby
-         anything
-         auto-complete
          auto-complete-css
-         auto-complete-etags
          auto-complete-ruby
-         ac-slime
          ac-dabbrev
-         clojure-mode
-         coffee-mode
-         color-theme-solarized
-         csv-mode
          dired-plus
          lua-mode
          el-expectations
+         eproject
          evil
          evil-surround
-         flymake-ruby
          fuzzy-find-in-project
-         haml-mode
-         json
          linum-ex
-         magit
-         markdown-mode
-         mode-compile
-         mustache-mode
          my-mooz-js2-mode
          pretty-mode
-         ruby-end
-         rainbow-delimiters
          rails-test-toggler
-         rspec-mode
          rhtml-mode
-         ruby-block
-         sass-mode
-         scss-mode
-         textmate
-         smex
+         shoulda-mode
          textile-mode
-         rvm
-         yari
-         yaml-mode)
+         rvm)
        (mapcar 'el-get-source-name el-get-sources)))
 
 

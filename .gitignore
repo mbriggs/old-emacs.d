@@ -2,6 +2,8 @@ el-get
 ac-comphist.dat
 eshell
 auto-save-list
-/.org-id-locations
-/TAGS
+.org-id-locations
+TAGS
+elpa
 swank
+/eproject.lst
