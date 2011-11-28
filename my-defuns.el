@@ -70,19 +70,25 @@
 (defun test-verify ()
   (interactive)
   (if (eproject-attribute :use-shoulda)
-      (shoulda-verify)
+      (progn
+        (set-shoulda-command-to-proj-root)
+        (shoulda-verify))
       (rspec-verify)))
 
 (defun test-verify-all ()
   (interactive)
   (if (eproject-attribute :use-shoulda)
-      (shoulda-verify-all)
+      (progn
+        (set-shoulda-command-to-proj-root)
+        (shoulda-verify-all))
       (rspec-verify-all)))
 
 (defun test-verify-single ()
   (interactive)
   (if (eproject-attribute :use-shoulda)
-      (shoulda-verify-single)
+      (progn
+        (set-shoulda-command-to-proj-root)
+        (shoulda-verify-single))
       (rspec-verify-single)))
 
 (defun test-toggle ()
@@ -90,5 +96,10 @@
   (if (eproject-attribute :use-shoulda)
       (rtt/toggle-test-and-implementation)
       (rspec-toggle-spec-and-target)))
+
+(defun set-shoulda-command-to-proj-root ()
+  (interactive)
+  (let ((command (concat "(cd " (eproject-root) ";bundle exec ruby \"%f\" %o)")))
+    (setq shoulda-command command)))
 
 (provide 'my-defuns)
