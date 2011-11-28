@@ -1,3 +1,5 @@
+(require 'anything-config)
+
 (setq anything-input-idle-delay 0.1)
 (setq anything-idle-delay 0.1)
 

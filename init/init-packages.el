@@ -92,7 +92,7 @@
 (require-package 'css-mode)
 (require-package 'ruby-compilation)
 (require-package 'inf-ruby)
-(require-package 'anything)
+(require-package 'anything-config)
 (require-package 'auto-complete)
 (require-package 'ac-slime)
 (require-package 'clojure-mode)
