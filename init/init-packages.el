@@ -64,6 +64,9 @@
         (:name my-mooz-js2-mode
                :type git
                :url "https://github.com/mbriggs/js2-mode.git")
+        (:name mustache-mode
+               :type http
+               :url "https://raw.github.com/mustache/emacs/master/mustache-mode.el")
         (:name shoulda-mode
                :type http
                :url "https://raw.github.com/mbriggs/shoulda-mode/master/shoulda-mode.el")
@@ -132,7 +135,6 @@
 (require-package 'marmalade)
 (require-package 'mic-paren)
 (require-package 'mode-compile)
-(require-package 'mustache-mode)
 (require-package 'org)
 (require-package 'paredit)
 (require-package 'rinari)
@@ -165,6 +167,7 @@
          fuzzy-find-in-project
          linum-ex
          my-mooz-js2-mode
+         mustache-mode
          pretty-mode
          rails-test-toggler
          rhtml-mode
