@@ -16,7 +16,7 @@
 (define-project-attribute '("dev" . :project-name)
   '(:use-shoulda t :packman t))
 
-(define-project-attribute '("release" . :project-name)
+(define-project-attribute '("rel" . :project-name)
   '(:use-shoulda t :packman t))
 
 (define-project-attribute '("packmanager" . :project-name)
