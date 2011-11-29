@@ -62,7 +62,7 @@
                :url "https://github.com/mbriggs/js2-mode.git")
         (:name shoulda-mode
                :type http
-               :url "https://raw.github.com/pezra/shoulda-mode/master/shoulda-mode.el")
+               :url "https://raw.github.com/mbriggs/shoulda-mode/master/shoulda-mode.el")
         (:name rails-test-toggler
                :type http
                :url "https://raw.github.com/mbriggs/rails-test-toggler/master/rails-test-toggler.el"

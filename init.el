@@ -5,6 +5,7 @@
 
 (require 'init-pre-package-variables)
 (require 'init-packages)
+(require 'init-ansi-color)
 (require 'init-rhtml)
 (require 'init-crontab)
 (require 'init-css)
