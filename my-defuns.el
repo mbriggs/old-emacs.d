@@ -10,9 +10,13 @@
   (interactive)
 
   (let* ((name (replace-regexp-in-string ".rb$" "s" (buffer-name)))
-         (root (eproject-root)))
+         (root (eproject-root))
+         (regexp (concat "create_table \"" name "\"")))
     (find-file (concat root "db/schema.rb"))
-    (re-search-forward (concat "create_table \"" name "\"") nil t -1)))
+    (or
+     (re-search-forward regexp nil t)
+     (re-search-backward regexp nil t))
+    (message (concat "looking for " name))))
 
 (defun format-json ()
   (interactive)
