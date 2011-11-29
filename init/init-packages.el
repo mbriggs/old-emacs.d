@@ -44,6 +44,10 @@
         (:name eproject
                :type git
                :url "https://github.com/jrockway/eproject")
+        (:name cycle-buffer
+               :type http
+               :url "https://raw.github.com/emacsmirror/cycle-buffer/master/cycle-buffer.el"
+               :features cycle-buffer)
         (:name dired-plus
                :type http
                :url "https://raw.github.com/emacsmirror/dired-plus/master/dired+.el")
@@ -63,6 +67,9 @@
         (:name shoulda-mode
                :type http
                :url "https://raw.github.com/mbriggs/shoulda-mode/master/shoulda-mode.el")
+        (:name rspec-mode
+               :type git
+               :url "git@github.com:mbriggs/rspec-mode.git")
         (:name rails-test-toggler
                :type http
                :url "https://raw.github.com/mbriggs/rails-test-toggler/master/rails-test-toggler.el"
@@ -92,6 +99,7 @@
 (require-package 'css-mode)
 (require-package 'ruby-compilation)
 (require-package 'inf-ruby)
+(require-package 'anything)
 (require-package 'anything-config)
 (require-package 'anything-match-plugin)
 (require-package 'auto-complete)
@@ -112,6 +120,7 @@
 (require-package 'flymake-sass)
 (require-package 'flymake-shell)
 (require-package 'haml-mode)
+(require-package 'http-twiddle)
 (require-package 'highlight-parentheses)
 (require-package 'json)
 (require-package 'js-comint)
@@ -131,7 +140,6 @@
 (require-package 'ruby-block)
 (require-package 'rainbow-delimiters)
 (require-package 'rainbow-mode)
-(require-package 'rspec-mode)
 (require-package 'sass-mode)
 (require-package 'scss-mode)
 (require-package 'scratch)
@@ -147,6 +155,7 @@
          auto-complete-css
          auto-complete-ruby
          ac-dabbrev
+         cycle-buffer
          dired-plus
          lua-mode
          el-expectations
@@ -160,6 +169,7 @@
          rails-test-toggler
          rhtml-mode
          shoulda-mode
+         rspec-mode
          textile-mode
          rvm)
        (mapcar 'el-get-source-name el-get-sources)))

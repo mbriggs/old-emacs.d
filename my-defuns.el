@@ -97,9 +97,4 @@
       (rtt/toggle-test-and-implementation)
       (rspec-toggle-spec-and-target)))
 
-(defun set-shoulda-command-to-proj-root ()
-  (interactive)
-  (let ((command (concat "(cd " (eproject-root) ";bundle exec ruby \"%f\" %o)")))
-    (setq shoulda-command command)))
-
 (provide 'my-defuns)
