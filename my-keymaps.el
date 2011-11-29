@@ -11,7 +11,7 @@
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
 (define-key evil-normal-state-map (kbd "M-t") 'command-t)
 (define-key evil-normal-state-map (kbd "M-s") 'textmate-goto-symbol)
-(define-key evil-normal-state-map (kbd "M-b") 'anything-for-buffers)
+(define-key evil-normal-state-map (kbd "M-b") 'anything-opened)
 (define-key evil-normal-state-map (kbd "M-B") 'ibuffer)
 (define-key evil-normal-state-map (kbd "M-f") 'dired)
 (define-key evil-normal-state-map (kbd "M-.") 'find-tag)
