@@ -6,6 +6,14 @@
   (evil-force-normal-state)
   (evil-goto-mark ?z))
 
+(defun schema ()
+  (interactive)
+
+  (let* ((name (replace-regexp-in-string ".rb$" "s" (buffer-name)))
+         (root (eproject-root)))
+    (find-file (concat root "db/schema.rb"))
+    (re-search-forward (concat "create_table \"" name "\"") nil t -1)))
+
 (defun format-json ()
   (interactive)
   (let ((cmd "python -mjson.tool"))
