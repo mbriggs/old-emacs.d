@@ -98,7 +98,6 @@
                :features rhtml-mode)))
 
 ;;; get what we can from elpa
-(require-package 'autopair)
 (require-package 'css-mode)
 (require-package 'ruby-compilation)
 (require-package 'inf-ruby)
