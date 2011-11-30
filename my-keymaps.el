@@ -46,6 +46,8 @@
 (define-key evil-normal-state-map ",ta" 'test-verify-all)
 (define-key evil-normal-state-map ",t," 'test-toggle)
 (define-key evil-normal-state-map ",tt" 'test-verify-single)
+(define-key evil-normal-state-map ",te" (lambda ()
+                                          (compile "lein expectations")))
 
 (require 'org)
 (evil-define-key 'normal org-mode-map (kbd "M-L") 'org-metaright)
