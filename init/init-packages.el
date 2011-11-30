@@ -123,7 +123,6 @@
 (require-package 'flymake-shell)
 (require-package 'haml-mode)
 (require-package 'http-twiddle)
-(require-package 'highlight-parentheses)
 (require-package 'json)
 (require-package 'js-comint)
 (require-package 'linum-off)
