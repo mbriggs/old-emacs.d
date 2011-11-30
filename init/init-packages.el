@@ -166,6 +166,7 @@
          fuzzy-find-in-project
          linum-ex
          my-mooz-js2-mode
+         midje-mode
          mustache-mode
          pretty-mode
          rails-test-toggler
