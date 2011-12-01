@@ -107,6 +107,7 @@
 (require-package 'auto-complete)
 (require-package 'ac-slime)
 (require-package 'clojure-mode)
+(require-package 'clojure-test-mode)
 (require-package 'crontab-mode)
 (require-package 'coffee-mode)
 (require-package 'color-theme-solarized)

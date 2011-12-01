@@ -7,7 +7,6 @@
 (require 'init-packages)
 (require 'init-ansi-color)
 (require 'init-rhtml)
-(require 'init-midje)
 (require 'init-crontab)
 (require 'init-css)
 (require 'init-csv)

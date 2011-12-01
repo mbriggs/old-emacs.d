@@ -20,6 +20,9 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(anything-header ((((class color)) (:background "#81908F" :foreground "#fcf4dc"))))
+ '(clojure-test-error-face ((((class color) (background light)) (:underline "#a57705"))))
+ '(clojure-test-failure-face ((((class color) (background light)) (:underline "#c60007"))))
+ '(clojure-test-success-face ((((class color) (background light)) (:background "#728a05" :foreground "#fcf4dc"))))
  '(erb-face ((((class color) (min-colors 88) (background light)) (:background "#fcf4dc"))))
  '(flymake-errline ((((class color)) (:underline "#c60007"))))
  '(flymake-warnline ((((class color)) (:underline "#2075c7"))))
