@@ -70,6 +70,9 @@
         (:name shoulda-mode
                :type http
                :url "https://raw.github.com/mbriggs/shoulda-mode/master/shoulda-mode.el")
+        (:name solarized
+               :type git
+               :url "git@github.com:mbriggs/emacs-color-theme-solarized.git")
         (:name rspec-mode
                :type git
                :url "git@github.com:mbriggs/rspec-mode.git")
@@ -104,13 +107,10 @@
 (require-package 'anything)
 (require-package 'anything-config)
 (require-package 'anything-match-plugin)
-(require-package 'auto-complete)
-(require-package 'ac-slime)
 (require-package 'clojure-mode)
 (require-package 'clojure-test-mode)
 (require-package 'crontab-mode)
 (require-package 'coffee-mode)
-(require-package 'color-theme-solarized)
 (require-package 'csv-mode)
 (require-package 'diminish)
 (require-package 'durendal)
@@ -153,8 +153,10 @@
       (append
        '(ansi-color
          ack-and-a-half
+         auto-complete
          auto-complete-css
          auto-complete-ruby
+         ac-slime
          ac-dabbrev
          cycle-buffer
          dired-plus
@@ -172,6 +174,7 @@
          rails-test-toggler
          rhtml-mode
          shoulda-mode
+         solarized
          rspec-mode
          textile-mode
          rvm)
