@@ -42,6 +42,9 @@
 (define-key evil-normal-state-map ",sv" 'rinari-find-view)
 (define-key evil-normal-state-map ",sl" 'rinari-find-lib)
 
+(define-key evil-visual-state-map ",ve" 'extract-variable)
+(define-key evil-normal-state-map ",vi" 'inline-variable)
+
 (define-key evil-normal-state-map ",tf" 'test-verify)
 (define-key evil-normal-state-map ",ta" 'test-verify-all)
 (define-key evil-normal-state-map ",t," 'test-toggle)

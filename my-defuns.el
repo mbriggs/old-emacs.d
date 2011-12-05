@@ -6,6 +6,26 @@
   (evil-force-normal-state)
   (evil-goto-mark ?z))
 
+;;; no worky
+(defun extract-variable ()
+  (interactive)
+  (let ((name (read-from-minibuffer "Variable name: ")))
+    (evil-change (region-beginning) (region-end))
+    (insert name)
+    (evil-open-above 1)
+    (insert (concat name " = "))
+    (evil-paste-after 1)))
+
+;;; no worky
+(defun inline-variable ()
+  (interactive)
+  (let ((name (current-word)))
+    (re-search-forward "= ")
+    (let ((value (buffer-substring (point) (point-at-eol))))
+      (kill-whole-line)
+      (search-forward value)
+      (replace-match name))))
+
 (defun schema ()
   (interactive)
 
