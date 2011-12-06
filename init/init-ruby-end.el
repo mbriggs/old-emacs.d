@@ -2,8 +2,7 @@
 (setq ruby-end-insert-newline nil)
 
 (add-hook 'ruby-mode-hook (lambda ()
-                            (ruby-end-mode)
-                            (newline)))
+                            (ruby-end-mode)))
 
 (define-key ruby-end-mode-map (kbd "RET") (lambda ()
                                             (interactive)
