@@ -83,6 +83,12 @@
         (:name evil-surround
                :type http
                :url "https://raw.github.com/timcharper/evil-surround/master/surround.el")
+        (:name enclose
+               :type http
+               :url "https://raw.github.com/rejeep/enclose/master/enclose.el"
+               :after (lambda ()
+                        (require 'enclose)
+                        (enclose-global-mode t)))
         (:name escreen
                :type http
                :url "http://www.splode.com/~friedman/software/emacs-lisp/src/escreen.el")
@@ -163,6 +169,7 @@
          lua-mode
          el-expectations
          eproject
+         enclose
          evil
          evil-surround
          fuzzy-find-in-project
