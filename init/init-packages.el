@@ -37,6 +37,10 @@
 
 (setq el-get-sources
       '((:name ansi-color :type emacswiki)
+        (:name find-file-in-project
+               :type http
+               :url "https://raw.github.com/dburger/find-file-in-project/master/find-file-in-project.el"
+               :features find-file-in-project)
         (:name pretty-mode
                :type http
                :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
@@ -133,7 +137,6 @@
 (require-package 'json)
 (require-package 'js-comint)
 (require-package 'linum-off)
-(require-package 'magit)
 (require-package 'markdown-mode)
 (require-package 'maxframe)
 (require-package 'move-text)
@@ -142,6 +145,7 @@
 (require-package 'mode-compile)
 (require-package 'org)
 (require-package 'paredit)
+(require-package 'popwin)
 (require-package 'rinari)
 (require-package 'ruby-end)
 (require-package 'ruby-block)
@@ -173,7 +177,9 @@
          evil
          evil-surround
          fuzzy-find-in-project
+         find-file-in-project
          linum-ex
+         magit
          my-mooz-js2-mode
          midje-mode
          mustache-mode

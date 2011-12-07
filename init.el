@@ -17,6 +17,7 @@
 (require 'init-maxframe)
 (require 'init-org)
 (require 'init-paredit)
+(require 'init-popwin)
 (require 'init-rinari)
 (require 'init-evil)
 (require 'init-rainbow-delims)
