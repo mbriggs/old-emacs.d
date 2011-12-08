@@ -101,7 +101,7 @@
                :url "https://github.com/jhelwig/ack-and-a-half.git")
         (:name rhtml
                :type git
-               :url "https://github.com/eschulte/rhtml.git"
+               :url "https://github.com/mbriggs/rhtml.git"
                :features rhtml-mode)))
 
 ;;; get what we can from elpa
@@ -174,9 +174,10 @@
          my-mooz-js2-mode
          midje-mode
          mustache-mode
+         nxhtml
          pretty-mode
          rails-test-toggler
-         rhtml-mode
+         rhtml
          shoulda-mode
          solarized
          rspec-mode
