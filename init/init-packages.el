@@ -87,12 +87,6 @@
         (:name evil-surround
                :type http
                :url "https://raw.github.com/timcharper/evil-surround/master/surround.el")
-        (:name enclose
-               :type http
-               :url "https://raw.github.com/rejeep/enclose/master/enclose.el"
-               :after (lambda ()
-                        (require 'enclose)
-                        (enclose-global-mode t)))
         (:name escreen
                :type http
                :url "http://www.splode.com/~friedman/software/emacs-lisp/src/escreen.el")
@@ -145,7 +139,6 @@
 (require-package 'mode-compile)
 (require-package 'org)
 (require-package 'paredit)
-(require-package 'popwin)
 (require-package 'rinari)
 (require-package 'ruby-end)
 (require-package 'ruby-block)
@@ -161,7 +154,8 @@
 ;;; el-get the rest
 (setq my-packages
       (append
-       '(ansi-color
+       '(autopair
+         ansi-color
          ack-and-a-half
          auto-complete
          auto-complete-css
@@ -173,12 +167,9 @@
          lua-mode
          el-expectations
          eproject
-         enclose
          evil
          evil-surround
          fuzzy-find-in-project
-         find-file-in-project
-         linum-ex
          magit
          my-mooz-js2-mode
          midje-mode
