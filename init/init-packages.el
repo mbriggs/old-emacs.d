@@ -101,7 +101,7 @@
                :url "https://github.com/jhelwig/ack-and-a-half.git")
         (:name rhtml
                :type git
-               :url "https://github.com/mbriggs/rhtml.git"
+               :url "git@github.com:mbriggs/rhtml.git"
                :features rhtml-mode)))
 
 ;;; get what we can from elpa
