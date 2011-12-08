@@ -19,7 +19,6 @@
 (require 'init-org)
 (require 'init-rinari)
 (require 'init-linum)
-(require 'init-ruby-complexity)
 (require 'init-evil)
 (require 'init-rainbow-delims)
 (require 'init-ack)
