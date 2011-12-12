@@ -1,8 +1,8 @@
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(js2-always-indent-assigned-expr-in-decls-p t)
  '(js2-auto-indent-p t)
  '(js2-basic-offset 2)
@@ -15,10 +15,10 @@
  '(mumamo-chunk-coloring 1))
 
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(anything-header ((((class color)) (:background "#81908F" :foreground "#fcf4dc"))))
  '(clojure-test-error-face ((((class color) (background light)) (:underline "#a57705"))))
  '(clojure-test-failure-face ((((class color) (background light)) (:underline "#c60007"))))
@@ -26,6 +26,7 @@
  '(erb-face ((((class color) (min-colors 88) (background light)) (:background "#fcf4dc"))))
  '(flymake-errline ((((class color)) (:underline "#c60007"))))
  '(flymake-warnline ((((class color)) (:underline "#2075c7"))))
+ '(font-lock-function-name-face ((t (:background "#52676f" :foreground "#FCF4DC" :weight bold :inverse-video t))))
  '(hl-paren-face ((t (:weight bold))) t)
  '(isearch ((((class color)) (:background "#a57705" :underline "#a57705" :bold t :foreground "#fcf4dc"))))
  '(js2-error-face ((((class color) (background light)) (:foreground "#c60007"))))

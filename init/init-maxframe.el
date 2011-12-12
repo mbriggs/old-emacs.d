@@ -1,9 +1,7 @@
 (require 'maxframe)
 
 (setq mf-max-width 1920)
-
-(if (eq system-type 'darwin)
-    (setq mf-offset-x 75))
+(setq mf-offset-x 75)
 
 
 (defun maybe-maximize-frame ()

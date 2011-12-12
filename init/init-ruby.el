@@ -22,6 +22,11 @@
   '(progn
      (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)))
 
+;; (defface ruby-def-face
+;;   '((t (:foreground "#0a2832" :weight bold)))
+;;    "My custom face for string delimiters")
+;; (font-lock-add-keywords 'ruby-mode '(("\\<\\(def\\|class\\)\\>" . ruby-def-face)))
+
 
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
 (setq compile-command "rake ")
