@@ -65,9 +65,12 @@
                :load "rvm.el"
                :compile ("rvm.el")
                :after (lambda() (rvm-use-default)))
-        (:name my-mooz-js2-mode
+        (:name js3-mode
                :type git
-               :url "https://github.com/mbriggs/js2-mode.git")
+               :url "https://github.com/thomblake/js3-mode.git")
+        ;; (:name my-mooz-js2-mode
+        ;;        :type git
+        ;;        :url "https://github.com/mbriggs/js2-mode.git")
         (:name mustache-mode
                :type http
                :url "https://raw.github.com/mustache/emacs/master/mustache-mode.el")
@@ -171,7 +174,8 @@
          evil-surround
          fuzzy-find-in-project
          magit
-         my-mooz-js2-mode
+         js3-mode
+         ;; my-mooz-js2-mode
          midje-mode
          mustache-mode
          nxhtml
