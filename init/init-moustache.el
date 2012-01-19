@@ -1,5 +1,5 @@
-(add-to-list 'auto-mode-alist '("\\.hbs$" . mustache-mode))
-(add-to-list 'auto-mode-alist '("\\.hbs.erb$" . mustache-mode))
-(add-to-list 'auto-mode-alist '("\\.jst$" . mustache-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs$" . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs.erb$" . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.jst$" . nxml-mode))
 
 (provide 'init-moustache)
