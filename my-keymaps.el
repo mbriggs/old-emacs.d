@@ -68,6 +68,11 @@
 (global-set-key (kbd "M-k") 'cycle-buffer)
 (global-set-key (kbd "M-K") 'cycle-buffer-backward)
 
+(add-hook 'ido-minibuffer-setup-hook
+          (lambda ()
+            (define-key ido-completion-map "\C-n" 'ido-next-match)
+            (define-key ido-completion-map "\C-p" 'ido-prev-match)))
+
 (add-hook 'ruby-mode-hook
           (lambda ()
             (local-set-key (kbd "RET") 'newline-and-indent)
