@@ -129,4 +129,33 @@
       (rtt/toggle-test-and-implementation)
       (rspec-toggle-spec-and-target)))
 
+(defun solarized-find-color (name)
+  (let ((index (if window-system
+                   (if solarized-degrade
+                       3
+                     (if solarized-srgb
+                         1
+                       2))
+                 (if (= solarized-termcolors 256)
+                     3
+                   4))))
+    (nth index (assoc name solarized-colors))))
+
+(setq sol-base03    (solarized-find-color 'base03)
+      sol-base02    (solarized-find-color 'base02)
+      sol-base01    (solarized-find-color 'base01)
+      sol-base00    (solarized-find-color 'base00)
+      sol-base0     (solarized-find-color 'base0)
+      sol-base1     (solarized-find-color 'base1)
+      sol-base2     (solarized-find-color 'base2)
+      sol-base3     (solarized-find-color 'base3)
+      sol-yellow    (solarized-find-color 'yellow)
+      sol-orange    (solarized-find-color 'orange)
+      sol-red       (solarized-find-color 'red)
+      sol-magenta   (solarized-find-color 'magenta)
+      sol-violet    (solarized-find-color 'violet)
+      sol-blue      (solarized-find-color 'blue)
+      sol-cyan      (solarized-find-color 'cyan)
+      sol-green     (solarized-find-color 'green))
+
 (provide 'my-defuns)

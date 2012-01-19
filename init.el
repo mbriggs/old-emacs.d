@@ -40,9 +40,9 @@
 (require 'init-lua)
 (require 'init-git-blame)
 
+(require 'my-emacs-settings)
 (require 'my-defuns)
 (require 'my-keymaps)
-(require 'my-emacs-settings)
 
 (require 'hexcolors)
 
