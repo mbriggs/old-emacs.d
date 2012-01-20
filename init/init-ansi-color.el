@@ -1,3 +1,6 @@
+(setq ansi-color-names-vector
+      ["black" sol-red sol-green sol-yellow sol-blue sol-magenta sol-cyan "white"])
+
 (require 'ansi-color)
 
 (defun colorize-compilation-buffer ()

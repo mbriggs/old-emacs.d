@@ -7,8 +7,7 @@
 (setq initial-major-mode 'emacs-lisp-mode)
 (setq browse-url-generic-program "google-chrome")
 
-(setq ansi-color-names-vector
-      ["black" sol-red sol-green sol-yellow sol-blue sol-magenta sol-cyan "white"])
+
 
 (require 'smex)
 (smex-initialize)

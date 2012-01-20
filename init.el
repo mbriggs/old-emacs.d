@@ -6,7 +6,6 @@
 (require 'init-pre-package-variables)
 (require 'init-packages)
 (require 'init-autopair)
-(require 'init-ansi-color)
 (require 'init-rhtml)
 (require 'init-crontab)
 (require 'init-css)
@@ -42,6 +41,7 @@
 
 (require 'my-emacs-settings)
 (require 'my-defuns)
+(require 'init-ansi-color) ; needs to be after colors have been defined
 (require 'my-keymaps)
 
 (require 'hexcolors)
