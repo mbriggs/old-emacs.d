@@ -13,13 +13,16 @@
 (define-project-type clojure (generic)
   (look-for "project.clj"))
 
-(define-project-attribute '("dev" . :project-name)
-  '(:use-shoulda t :packman t))
+(defun packman-eproject (name)
+  (define-project-attribute `(,name . :project-name)
+	   '(:use-shoulda t :packman t)))
 
-(define-project-attribute '("rel" . :project-name)
-  '(:use-shoulda t :packman t))
-
-(define-project-attribute '("packmanager" . :project-name)
-  '(:use-shoulda t :packman t))
+(mapc 'packman-eproject
+      '("d"
+        "r"
+        "dev"
+        "rel"
+        "packmanager"
+        "production"))
 
 (provide 'init-eproject)
