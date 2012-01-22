@@ -105,27 +105,24 @@
 
 (defun test-verify ()
   (interactive)
-  (if (eproject-attribute :use-shoulda)
-      (progn
-        (set-shoulda-command-to-proj-root)
-        (shoulda-verify))
-      (rspec-verify)))
+  (when (eproject-attribute :use-shoulda)
+    (set-shoulda-command-to-proj-root)
+    (shoulda-verify))
+  (rspec-verify))
 
 (defun test-verify-all ()
   (interactive)
-  (if (eproject-attribute :use-shoulda)
-      (progn
-        (set-shoulda-command-to-proj-root)
-        (shoulda-verify-all))
-      (rspec-verify-all)))
+  (when (eproject-attribute :use-shoulda)
+    (set-shoulda-command-to-proj-root)
+    (shoulda-verify-all))
+  (rspec-verify-all))
 
 (defun test-verify-single ()
   (interactive)
-  (if (eproject-attribute :use-shoulda)
-      (progn
-        (set-shoulda-command-to-proj-root)
-        (shoulda-verify-single))
-      (rspec-verify-single)))
+  (when (eproject-attribute :use-shoulda)
+    (set-shoulda-command-to-proj-root)
+    (shoulda-verify-single))
+  (rspec-verify-single))
 
 (defun test-toggle ()
   (interactive)
