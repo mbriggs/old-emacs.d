@@ -25,6 +25,7 @@
 (require 'init-textmate)
 (require 'init-rspec)
 (require 'init-autocomplete)
+(require 'init-ansi-color)
 (require 'init-anything)
 (require 'init-ruby)
 (require 'init-sass)
@@ -41,7 +42,6 @@
 
 (require 'my-emacs-settings)
 (require 'my-defuns)
-(require 'init-ansi-color) ; needs to be after colors have been defined
 (require 'my-keymaps)
 
 (require 'hexcolors)
