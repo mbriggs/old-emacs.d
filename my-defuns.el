@@ -6,25 +6,29 @@
   (evil-force-normal-state)
   (evil-goto-mark ?z))
 
-;;; no worky
 (defun extract-variable ()
   (interactive)
   (let ((name (read-from-minibuffer "Variable name: ")))
     (evil-change (region-beginning) (region-end))
     (insert name)
     (evil-open-above 1)
-    (insert (concat name " = "))
-    (evil-paste-after 1)))
+    (insert (concat name " ="))
+    (evil-paste-after 1))
+    (indent-for-tab-command)
+  (evil-normal-state))
 
-;;; no worky
 (defun inline-variable ()
   (interactive)
   (let ((name (current-word)))
     (re-search-forward "= ")
     (let ((value (buffer-substring (point) (point-at-eol))))
       (kill-whole-line)
-      (search-forward value)
-      (replace-match name))))
+      (search-forward name)
+      (replace-match value)))
+  (evil-normal-state))
+
+;; foo = 1.4 * whatever()
+;; blah.blah(foo)
 
 (defun schema ()
   (interactive)
@@ -32,10 +36,10 @@
   (let* ((name (replace-regexp-in-string ".rb$" "s" (buffer-name)))
          (root (eproject-root))
          (regexp (concat "create_table \"" name "\"")))
+
     (find-file (concat root "db/schema.rb"))
-    (or
-     (re-search-forward regexp nil t)
-     (re-search-backward regexp nil t))
+    (or (re-search-forward regexp nil t)
+        (re-search-backward regexp nil t))
     (message (concat "looking for " name))))
 
 (defun format-json ()
