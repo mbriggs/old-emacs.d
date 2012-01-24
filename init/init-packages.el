@@ -126,7 +126,6 @@
 (require-package 'flymake-haml)
 (require-package 'flymake-sass)
 (require-package 'flymake-shell)
-(require-package 'haml-mode)
 (require-package 'http-twiddle)
 (require-package 'json)
 (require-package 'js-comint)
@@ -174,6 +173,7 @@
          js3-mode
          ;; my-mooz-js2-mode
          midje-mode
+         haml-mode
          nxhtml
          pretty-mode
          prolog-el
