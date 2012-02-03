@@ -8,6 +8,7 @@
 (setq browse-url-generic-program "google-chrome")
 (setq initial-scratch-message nil)
 
+(global-auto-revert-mode 1)
 
 (require 'smex)
 (smex-initialize)
