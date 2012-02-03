@@ -1,3 +1,4 @@
+(require 'org)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
 ;; Various preferences
@@ -22,5 +23,12 @@
 ; Targets complete in steps so we start with filename, TAB shows the next level of targets etc 
 (setq org-outline-path-complete-in-steps t)
 
+; keymaps
+(evil-define-key 'normal org-mode-map (kbd "M-L") 'org-metaright)
+(evil-define-key 'normal org-mode-map (kbd "M-H") 'org-metaleft)
+(evil-define-key 'normal org-mode-map (kbd "M-J") 'org-metadown)
+(evil-define-key 'normal org-mode-map (kbd "M-K") 'org-metaup)
+(evil-define-key 'normal org-mode-map (kbd "C-=") 'org-todo)
+(evil-define-key 'normal org-mode-map (kbd "C-o") 'org-insert-heading-respect-content)
 
 (provide 'init-org)
