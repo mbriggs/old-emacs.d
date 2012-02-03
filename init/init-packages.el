@@ -41,6 +41,9 @@
                :type http
                :url "https://raw.github.com/dburger/find-file-in-project/master/find-file-in-project.el"
                :features find-file-in-project)
+        (:name expand-region
+               :type git
+               :url "https://github.com/magnars/expand-region.el.git")
         (:name pretty-mode
                :type http
                :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
@@ -168,10 +171,10 @@
          eproject
          evil
          evil-surround
+         expand-region
          fuzzy-find-in-project
          magit
          js3-mode
-         ;; my-mooz-js2-mode
          midje-mode
          haml-mode
          nxhtml
