@@ -14,6 +14,7 @@
 (require 'init-flymake)
 (require 'init-haml)
 (require 'init-ido)
+(require 'init-expand-region)
 (require 'init-maxframe)
 (require 'init-org)
 (require 'init-rinari)
