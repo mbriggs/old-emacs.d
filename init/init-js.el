@@ -1,6 +1,7 @@
 (autoload 'js3-mode "js3" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js3-mode))
+(add-to-list 'auto-mode-alist '("\\.json.erb$" . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 
 (eval-after-load "coffee-mode"
