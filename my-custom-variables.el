@@ -50,7 +50,7 @@
  `(js2-error-face ((((class color) (background light)) (:foreground ,sol-red))))
  `(js2-external-variable-face ((t (:foreground ,sol-orange))))
  `(js2-function-param-face ((t (:foreground ,sol-green))))
- `(lazy-highlight ((((class color)) (:underline ,sol-violet :foreground ,sol-violet :background ,sol-base3))))
+ `(lazy-highlight ((((class color)) (:background ,sol-blue :foreground ,sol-base03 :bold t))))
  `(magit-branch ((((class color)) (:background ,sol-base1 :foreground ,sol-base3))))
  `(magit-diff-add ((((class color)) (:foreground ,sol-green))))
  `(magit-diff-del ((((class color)) (:foreground ,sol-red))))
