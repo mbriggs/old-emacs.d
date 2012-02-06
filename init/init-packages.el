@@ -37,6 +37,10 @@
 
 (setq el-get-sources
       '((:name ansi-color :type emacswiki)
+        (:name gtags
+               :type http
+               :url "https://raw.github.com/mbriggs/gtags.el/master/gtags.el"
+               :features gtags)
         (:name find-file-in-project
                :type http
                :url "https://raw.github.com/dburger/find-file-in-project/master/find-file-in-project.el"
@@ -44,6 +48,15 @@
         (:name expand-region
                :type git
                :url "https://github.com/magnars/expand-region.el.git")
+        (:name js2-highlight-vars
+               :type http
+               :url "http://mihai.bazon.net/projects/editing-javascript-with-emacs-js2-mode/js2-highlight-vars-mode/js2-highlight-vars.el")
+        (:name deferred
+               :type git
+               :url "https://github.com/kiwanami/emacs-deferred")
+        (:name popup-gtags
+               :type git
+               :url "https://github.com/koko1000ban/emacs-popup-gtags")
         (:name pretty-mode
                :type http
                :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
@@ -68,12 +81,12 @@
                :load "rvm.el"
                :compile ("rvm.el")
                :after (lambda() (rvm-use-default)))
-        (:name js3-mode
-               :type git
-               :url "https://github.com/thomblake/js3-mode.git")
-        ;; (:name my-mooz-js2-mode
+        ;; (:name js3-mode
         ;;        :type git
-        ;;        :url "https://github.com/mbriggs/js2-mode.git")
+        ;;        :url "https://github.com/thomblake/js3-mode.git")
+        (:name mooz-js2-mode
+               :type git
+               :url "https://github.com/mooz/js2-mode.git")
         (:name shoulda-mode
                :type http
                :url "https://raw.github.com/mbriggs/shoulda-mode/master/shoulda-mode.el")
@@ -166,6 +179,7 @@
          ac-dabbrev
          cycle-buffer
          dired-plus
+         deferred
          lua-mode
          el-expectations
          eproject
@@ -173,13 +187,15 @@
          evil-surround
          expand-region
          fuzzy-find-in-project
+         gtags
          magit
-         js3-mode
+         mooz-js2-mode
          midje-mode
          haml-mode
          nxhtml
          pretty-mode
          prolog-el
+         popup-gtags
          rails-test-toggler
          rhtml
          shoulda-mode

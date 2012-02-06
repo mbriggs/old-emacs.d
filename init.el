@@ -10,6 +10,7 @@
 (require 'init-crontab)
 (require 'init-css)
 (require 'init-csv)
+(require 'init-gtags)
 (require 'init-dired)
 (require 'init-flymake)
 (require 'init-haml)

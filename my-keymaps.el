@@ -21,10 +21,8 @@
 (define-key evil-normal-state-map (kbd "M-.") 'find-tag)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
-(define-key evil-normal-state-map (kbd "C-]") 'my-find-tag)
-
-(define-key evil-normal-state-map (kbd "C-}") 'evil-jump-to-next-tag)
-(define-key evil-normal-state-map (kbd "C-{") 'evil-jump-to-previous-tag)
+(define-key evil-normal-state-map (kbd "C-]") 'tb:gtags-find-tag)
+(define-key evil-normal-state-map (kbd "C-}") 'tb:gtags-find-rtag)
 
 (define-key evil-normal-state-map (kbd "C-j") 'evil-forward-paragraph)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-backward-paragraph)
@@ -59,7 +57,8 @@
 (global-set-key (kbd "M-]") 'textmate-shift-right)
 (global-set-key (kbd "M-[") 'textmate-shift-left)
 (global-set-key (kbd "M-j") 'other-window)
-(global-set-key (kbd "M-.") 'etags-select-find-tag)
+;; (global-set-key (kbd "M-.") 'etags-select-find-tag)
+(global-set-key (kbd "M-.") 'gtags-find-symbol)
 (global-set-key (kbd "M-k") 'cycle-buffer)
 (global-set-key (kbd "M-K") 'cycle-buffer-backward)
 

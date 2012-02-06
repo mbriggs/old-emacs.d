@@ -92,6 +92,14 @@
   (visit-project-tags)
   (message "tags built successfully"))
 
+(defun build-gtags ()
+  (interactive)
+  (message "building gtags")
+  (let ((root (eproject-root)))
+    ; really REALLY need to fix the rtags ruby 1.9.3 issue
+    (shell-command (concat "(rvm ree-1.8.7-2011.03 && cd " root " && gtags)"))
+    (message "tags loaded")))
+
 (defun my-find-tag ()
   (interactive)
   (visit-project-tags)

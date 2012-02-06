@@ -28,9 +28,9 @@ Using el-get, so everything should just magically download itself on first launc
 Dependancies
 ------------
 
-`sudo apt-get install texi2html texinfo python`
+`sudo apt-get install texi2html texinfo python global`
 
-rubygems + ruby + `gem install fuzzy_file_finder fastri rcodetools`
+ruby + `gem install fuzzy_file_finder rtags`
 
 `lein plugin install swank-clojure 1.3.3`
 
