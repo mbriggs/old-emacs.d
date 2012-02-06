@@ -1,6 +1,7 @@
-(autoload 'js3-mode "js3" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
-(add-to-list 'auto-mode-alist '("\\.js.erb$" . js3-mode))
+(autoload 'js2-mode "js2" nil t)
+(require 'js2-highlight-vars)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js.erb$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json.erb$" . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 
@@ -18,8 +19,12 @@
   (local-set-key "\C-cb" 'js-send-buffer)
   (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
   (local-set-key "\C-cl" 'js-load-file-and-go))
-(add-hook 'js2-mode-hook 'add-inferior-js-keys)
 (add-hook 'js-mode-hook 'add-inferior-js-keys)
+
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (add-inferior-js-keys)
+            (js2-highlight-vars-mode)))
 
 
 (provide 'init-javascript)
