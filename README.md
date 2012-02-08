@@ -30,8 +30,10 @@ Dependancies
 
 `sudo apt-get install texi2html texinfo python global`
 
-ruby + `gem install fuzzy_file_finder rtags`
+ruby + `gem install fuzzy_file_finder`
 
 `lein plugin install swank-clojure 1.3.3`
 
 `lein plugin install clj-stacktrace 0.2.3`
+
+to install rtags, clone gaizkas fork: `git clone git@github.com:gaizka/rtags.git && sudo rtags/install.sh`
