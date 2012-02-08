@@ -9,6 +9,7 @@
  '(js2-auto-indent-p t)
  '(js2-basic-offset 2)
  '(js2-global-externs '("it" "expect" "describe" "beforeEach" "spyOn" "jasmine" "$" "_" "qcloud" "Nulogy" "qc" "Backbone"))
+ '(js3-global-externs '("it" "expect" "describe" "beforeEach" "spyOn" "jasmine" "$" "_" "qcloud" "Nulogy" "qc" "Backbone"))
  '(js2-bounce-indent-p nil)
  '(js2-consistent-level-indent-inner-bracket-p t)
  '(js2-enter-indents-newline t)

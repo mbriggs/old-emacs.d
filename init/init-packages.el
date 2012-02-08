@@ -81,12 +81,12 @@
                :load "rvm.el"
                :compile ("rvm.el")
                :after (lambda() (rvm-use-default)))
-        ;; (:name js3-mode
-        ;;        :type git
-        ;;        :url "https://github.com/thomblake/js3-mode.git")
-        (:name mooz-js2-mode
+        (:name js3-mode
                :type git
-               :url "https://github.com/mooz/js2-mode.git")
+               :url "https://github.com/thomblake/js3-mode.git")
+        ;; (:name mooz-js2-mode
+        ;;        :type git
+        ;;        :url "https://github.com/mbriggs/js2-mode.git")
         (:name shoulda-mode
                :type http
                :url "https://raw.github.com/mbriggs/shoulda-mode/master/shoulda-mode.el")
@@ -189,7 +189,8 @@
          fuzzy-find-in-project
          gtags
          magit
-         mooz-js2-mode
+         ;; mooz-js2-mode
+         js3-mode
          midje-mode
          haml-mode
          nxhtml
