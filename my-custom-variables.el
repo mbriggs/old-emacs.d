@@ -1,3 +1,6 @@
+(defvar my-global-externs '("it" "expect" "describe" "beforeEach" "spyOn" "jasmine"
+                            "$" "$j" "jQuery" "_" "qcloud" "Nulogy" "qc" "Backbone"))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -8,8 +11,8 @@
  '(js2-always-indent-assigned-expr-in-decls-p nil)
  '(js2-auto-indent-p t)
  '(js2-basic-offset 2)
- '(js2-global-externs '("it" "expect" "describe" "beforeEach" "spyOn" "jasmine" "$" "_" "qcloud" "Nulogy" "qc" "Backbone"))
- '(js3-global-externs '("it" "expect" "describe" "beforeEach" "spyOn" "jasmine" "$" "_" "qcloud" "Nulogy" "qc" "Backbone"))
+ '(js2-global-externs my-global-externs)
+ '(js3-global-externs my-global-externs)
  '(js2-bounce-indent-p nil)
  '(js2-consistent-level-indent-inner-bracket-p t)
  '(js2-enter-indents-newline t)
