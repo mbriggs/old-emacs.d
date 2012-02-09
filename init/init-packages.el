@@ -203,6 +203,7 @@
          solarized
          rspec-mode
          textile-mode
+         xml-parse
          rvm)
        (mapcar 'el-get-source-name el-get-sources)))
 
