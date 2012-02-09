@@ -37,3 +37,5 @@ ruby + `gem install fuzzy_file_finder`
 `lein plugin install clj-stacktrace 0.2.3`
 
 to install rtags, clone gaizkas fork: `git clone git@github.com:gaizka/rtags.git && sudo rtags/install.sh`
+
+it depends on a `~/.secrets.el` file being there. This is a good place to put passwords or other sensitive information required for plugins, but that you don't want sitting on public github.
