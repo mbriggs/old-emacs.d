@@ -48,6 +48,7 @@
 (require 'my-keymaps)
 
 (require 'hexcolors)
+(require 'mingle)
 
 (require 'server)
 (unless (server-running-p)
