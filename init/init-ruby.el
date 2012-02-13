@@ -27,7 +27,7 @@
 ;;    "My custom face for string delimiters")
 ;; (font-lock-add-keywords 'ruby-mode '(("\\<\\(def\\|class\\)\\>" . ruby-def-face)))
 
-
+(add-hook 'ruby-mode-hook 'rvm-activate-corresponding-ruby)
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
 (setq compile-command "rake ")
 
