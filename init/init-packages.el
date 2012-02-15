@@ -131,6 +131,7 @@
 (require-package 'clojure-test-mode)
 (require-package 'crontab-mode)
 (require-package 'coffee-mode)
+(require-package 'color-theme)
 (require-package 'csv-mode)
 (require-package 'diminish)
 (require-package 'durendal)
@@ -204,6 +205,8 @@
          rspec-mode
          textile-mode
          xml-parse
+         wanderlust
+         highlight-symbol
          rvm)
        (mapcar 'el-get-source-name el-get-sources)))
 

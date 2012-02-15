@@ -19,6 +19,7 @@
 (require 'init-expand-region)
 (require 'init-maxframe)
 (require 'init-org)
+(require 'init-highlight-symbol)
 (require 'init-rinari)
 (require 'init-linum)
 (require 'init-evil)

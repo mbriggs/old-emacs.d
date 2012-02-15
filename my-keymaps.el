@@ -51,6 +51,9 @@
 (define-key evil-normal-state-map ",te" (lambda ()
                                           (compile "lein expectations")))
 
+
+(global-set-key (kbd "M-n") 'highlight-symbol-next)
+(global-set-key (kbd "M-p") 'highlight-symbol-prev)
 (global-set-key (kbd "C-;") 'er/expand-region)
 (global-set-key (kbd "C-:") 'er/contract-region)
 (global-set-key (kbd "RET") 'newline-and-indent)
