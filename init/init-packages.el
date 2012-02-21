@@ -48,9 +48,6 @@
         (:name expand-region
                :type git
                :url "https://github.com/magnars/expand-region.el.git")
-        (:name js2-highlight-vars
-               :type http
-               :url "http://mihai.bazon.net/projects/editing-javascript-with-emacs-js2-mode/js2-highlight-vars-mode/js2-highlight-vars.el")
         (:name deferred
                :type git
                :url "https://github.com/kiwanami/emacs-deferred")
