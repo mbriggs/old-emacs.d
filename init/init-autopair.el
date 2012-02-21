@@ -5,4 +5,6 @@
           (lambda ()
             (setq autopair-dont-activate t)))
 
+(set-default 'autopair-dont-activate #'(lambda () (eq major-mode 'sldb-mode)))
+
 (provide 'init-autopair)
