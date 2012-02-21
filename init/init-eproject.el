@@ -21,6 +21,7 @@
       '("d"
         "r"
         "dev"
+        "icg"
         "rel"
         "packmanager"
         "production"))
