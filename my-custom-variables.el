@@ -1,5 +1,5 @@
 (defvar my-global-externs '("it" "loadFixtures" "expect" "describe" "beforeEach" "spyOn" "jasmine"
-                            "$" "$j" "jQuery" "_" "qcloud" "Nulogy" "qc" "Backbone"))
+                            "$" "$j" "Mustache" "jQuery" "_" "qcloud" "Nulogy" "qc" "Backbone"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
