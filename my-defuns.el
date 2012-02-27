@@ -1,3 +1,11 @@
+(defun send-current-line-to-next-window ()
+  "Send current line to next window"
+  (interactive)
+  (let ((current-line (buffer-substring-no-properties (point-at-bol) (point-at-eol)))
+        (target (window-buffer (next-window))))
+    (with-current-buffer target
+      (insert current-line))))
+
 (defun new-line-in-normal-mode ()
   "make a new line without moving the cursor or leaving normal mode"
   (interactive)
