@@ -98,6 +98,9 @@
                :type http
                :url "https://raw.github.com/mbriggs/rails-test-toggler/master/rails-test-toggler.el"
                :features rails-test-toggler)
+        (:name volatile-highlights
+               :type http
+               :url "https://raw.github.com/k-talo/volatile-highlights.el/master/volatile-highlights.el")
         (:name evil-surround
                :type http
                :url "https://raw.github.com/timcharper/evil-surround/master/surround.el")
@@ -202,6 +205,7 @@
          solarized
          rspec-mode
          textile-mode
+         volatile-highlights
          xml-parse
          wanderlust
          highlight-symbol

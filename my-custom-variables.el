@@ -45,6 +45,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(vhl/default-face ((t (:background "#EAE2CB"))))
  '(anything-header ((((class color)) (:background "#93a1a1" :foreground "#fdf6e3"))))
  '(clojure-test-error-face ((((class color) (background light)) (:underline "#b58900"))))
  '(clojure-test-failure-face ((((class color) (background light)) (:underline "#dc322f"))))
