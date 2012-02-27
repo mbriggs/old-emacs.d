@@ -30,10 +30,14 @@
 ;; foo = 1.4 * whatever()
 ;; blah.blah(foo)
 
+
 (defun schema ()
   (interactive)
 
-  (let* ((name (replace-regexp-in-string ".rb$" "s" (buffer-name)))
+  (let* ((model-dir (concat (eproject-root) "app/models/"))
+         (model (replace-regexp-in-string model-dir "" (buffer-file-name)))
+         (file (replace-regexp-in-string "/" "_" model))
+         (name (replace-regexp-in-string ".rb$" "s" file))
          (root (eproject-root))
          (regexp (concat "create_table \"" name "\"")))
 

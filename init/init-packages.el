@@ -84,9 +84,10 @@
         ;; (:name mooz-js2-mode
         ;;        :type git
         ;;        :url "https://github.com/mbriggs/js2-mode.git")
-        (:name shoulda-mode
+        (:name shoulda-test
                :type http
-               :url "https://raw.github.com/mbriggs/shoulda-mode/master/shoulda-mode.el")
+               :url "https://raw.github.com/mbriggs/shoulda-test/master/shoulda-test.el"
+               :features shoulda-test)
         (:name solarized
                :type git
                :url "git@github.com:mbriggs/emacs-color-theme-solarized.git")
@@ -197,7 +198,7 @@
          popup-gtags
          rails-test-toggler
          rhtml
-         shoulda-mode
+         shoulda-test
          solarized
          rspec-mode
          textile-mode
