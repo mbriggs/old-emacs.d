@@ -49,6 +49,7 @@
 (require 'my-emacs-settings)
 (require 'my-defuns)
 (require 'my-keymaps)
+(require 'my-modeline)
 
 (require 'hexcolors)
 (require 'mingle)

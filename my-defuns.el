@@ -38,14 +38,18 @@
 ;; foo = 1.4 * whatever()
 ;; blah.blah(foo)
 
+(defun table-name-from-current-file (&optional ns)
+  "get an underscored version of the current models name, passing in what to use as namespace delimiter"
+  (let* ((delim-with (or ns "_"))
+         (model-dir (concat (eproject-root) "app/models/"))
+         (model (replace-regexp-in-string model-dir "" (buffer-file-name)))
+         (file (replace-regexp-in-string "/" delim-with model))))
+  (replace-regexp-in-string ".rb$" "" file))
 
 (defun schema ()
   (interactive)
 
-  (let* ((model-dir (concat (eproject-root) "app/models/"))
-         (model (replace-regexp-in-string model-dir "" (buffer-file-name)))
-         (file (replace-regexp-in-string "/" "_" model))
-         (name (replace-regexp-in-string ".rb$" "s" file))
+  (let* ((name (pluralize-string (table-name-from-current-file "_")))
          (root (eproject-root))
          (regexp (concat "create_table \"" name "\"")))
 
@@ -150,9 +154,7 @@
   (let ((index (if window-system
                    (if solarized-degrade
                        3
-                     (if solarized-srgb
-                         1
-                       2))
+                     (if solarized-broken-srgb 2 1))
                  (if (= solarized-termcolors 256)
                      3
                    4))))
