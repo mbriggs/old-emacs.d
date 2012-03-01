@@ -11,16 +11,17 @@
  '(js2-always-indent-assigned-expr-in-decls-p nil)
  '(js2-auto-indent-p t)
  '(js2-basic-offset 2)
- '(js2-global-externs my-global-externs)
- '(js3-global-externs my-global-externs)
  '(js2-bounce-indent-p nil)
  '(js2-consistent-level-indent-inner-bracket-p t)
  '(js2-enter-indents-newline t)
+ '(js2-global-externs my-global-externs)
  '(js2-highlight-level 3)
  '(js2-indent-on-enter-key t)
  '(js2-mirror-mode nil)
  '(js2-strict-missing-semi-warning nil)
- '(mumamo-chunk-coloring 1))
+ '(js3-global-externs my-global-externs)
+ '(mumamo-chunk-coloring 1)
+ '(scss-compile-at-save nil))
 
   ;; name    sRGB      Gen RGB   degraded  ANSI(Solarized terminal)
   ;; '((base03  "#002b36" "#042028" "#1c1c1c" "#7f7f7f")
@@ -45,7 +46,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(vhl/default-face ((t (:background "#EAE2CB"))))
  '(anything-header ((((class color)) (:background "#93a1a1" :foreground "#fdf6e3"))))
  '(clojure-test-error-face ((((class color) (background light)) (:underline "#b58900"))))
  '(clojure-test-failure-face ((((class color) (background light)) (:underline "#dc322f"))))
@@ -76,4 +76,5 @@
  '(rainbow-delimiters-depth-7-face ((((class color)) (:foreground "#2aa198"))))
  '(rainbow-delimiters-depth-8-face ((((class color)) (:foreground "#859900"))))
  '(rainbow-delimiters-depth-9-face ((((class color)) (:foreground "#002b36"))))
- '(trailing-whitespace ((t (:background "#c7c0a9" :foreground "#EAE2CB" :inverse-video t)))))
+ '(trailing-whitespace ((t (:background "#c7c0a9" :foreground "#EAE2CB" :inverse-video t))))
+ '(vhl/default-face ((t (:background "#F3EEDE")))))
