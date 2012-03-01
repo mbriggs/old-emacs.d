@@ -9,6 +9,7 @@
 (require 'init-rhtml)
 (require 'init-crontab)
 (require 'init-css)
+(require 'init-diminish)
 (require 'init-clojure)
 (require 'init-secrets)
 (require 'init-csv)

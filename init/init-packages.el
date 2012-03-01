@@ -90,10 +90,15 @@
                :features shoulda-test)
         (:name solarized
                :type git
-               :url "git@github.com:mbriggs/emacs-color-theme-solarized.git")
+               :url "https://github.com/sellout/emacs-color-theme-solarized.git")
+               ;; :url "git@github.com:mbriggs/emacs-color-theme-solarized.git")
         (:name rspec-mode
                :type git
                :url "git@github.com:mbriggs/rspec-mode.git")
+        (:name smartchr
+               :type http
+               :url "https://raw.github.com/imakado/emacs-smartchr/master/smartchr.el"
+               :features smartchr)
         (:name rails-test-toggler
                :type http
                :url "https://raw.github.com/mbriggs/rails-test-toggler/master/rails-test-toggler.el"
@@ -182,6 +187,7 @@
          cycle-buffer
          dired-plus
          deferred
+         diminish
          lua-mode
          el-expectations
          eproject
@@ -190,6 +196,7 @@
          expand-region
          fuzzy-find-in-project
          gtags
+         gist
          magit
          ;; mooz-js2-mode
          js3-mode
