@@ -5,6 +5,7 @@
 (add-hook 'scss-mode-hook 'rainbow-turn-on)
 (add-hook 'haml-mode-hook 'rainbow-turn-on)
 
+(setq css-indent-offset 2)
 
 (eval-after-load "auto-complete"
   '(progn
