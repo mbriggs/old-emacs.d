@@ -4,15 +4,13 @@
 
 (setq-default
  mode-line-format
- '(; Position, including warning for 80 columns
+ '(
    ; dont need line numbers, cause i use linum
    ;; (:propertize "%4l:" face mode-line-position-face)
    (:eval (propertize "%3c" 'face
                       (if (>= (current-column) 75)
                           'mode-line-80col-face
                         'mode-line-position-face)))
-   ; emacsclient [default -- keep?]
-   mode-line-client
    " "
    ; read-only or modified status
    (:eval
@@ -20,29 +18,28 @@
            (propertize "!RO" 'face 'mode-line-read-only-face))
           ((buffer-modified-p)
            (propertize "!**" 'face 'mode-line-modified-face))
-          (t(propertize " λ " 'face 'mode-line-minor-mode-face))))
-   " "
+          (t(propertize " λ " 'face 'mode-line-folder-face))))
+   ; emacsclient [default -- keep?]
+   ;; mode-line-client
+   ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
+   ;; (vc-mode vc-mode)
    ; directory and buffer/file name
+   " "
    (:propertize (:eval (shorten-directory default-directory 10))
                 face mode-line-folder-face)
    (:propertize "%b"
                 face mode-line-filename-face)
-   ; narrow [default -- keep?]
-   " %n"
-   ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
-   ;; (vc-mode vc-mode)
-   " %["
+   " ("
    (:propertize mode-name
                 face mode-line-mode-face)
-   "%] "
+   ")"
    (:eval (propertize (format-mode-line minor-mode-alist)
                       'face 'mode-line-minor-mode-face))
    (:propertize mode-line-process
                 face mode-line-process-face)
    (global-mode-string global-mode-string)
-   "  "
    ; nyan-mode uses nyan cat as an alternative to %p
-   (:eval (when nyan-mode (list (nyan-create))))
+   ;; (:eval (when nyan-mode (list (nyan-create))))
    ))
 
 ;; Helper function
