@@ -21,8 +21,6 @@
           (t(propertize " λ " 'face 'mode-line-folder-face))))
    ; emacsclient [default -- keep?]
    ;; mode-line-client
-   ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
-   ;; (vc-mode vc-mode)
    ; directory and buffer/file name
    " "
    (:propertize (:eval (shorten-directory default-directory 10))
@@ -33,8 +31,14 @@
    (:propertize mode-name
                 face mode-line-mode-face)
    ")"
+   ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
+   (:propertize (vc-mode vc-mode)
+                face mode-line-minor-mode-face)
+   
+   " ["
    (:eval (propertize (format-mode-line minor-mode-alist)
                       'face 'mode-line-minor-mode-face))
+   " ]"
    (:propertize mode-line-process
                 face mode-line-process-face)
    (global-mode-string global-mode-string)
