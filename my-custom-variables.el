@@ -22,7 +22,8 @@
  '(js2-strict-missing-semi-warning nil)
  '(js3-global-externs my-global-externs)
  '(mumamo-chunk-coloring 1)
- '(scss-compile-at-save nil))
+ '(scss-compile-at-save nil)
+ '(tags-case-fold-search nil))
 
   ;; name    sRGB      Gen RGB   degraded  ANSI(Solarized terminal)
   ;; '((base03  "#002b36" "#042028" "#1c1c1c" "#7f7f7f")
