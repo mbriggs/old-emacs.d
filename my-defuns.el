@@ -6,6 +6,8 @@
     (with-current-buffer target
       (insert current-line))))
 
+
+
 (defun new-line-in-normal-mode ()
   "make a new line without moving the cursor or leaving normal mode"
   (interactive)
@@ -35,7 +37,7 @@
       (replace-match value)))
   (evil-normal-state))
 
-;; foo = 1.4 * whatever()
+;; Foo = 1.4 * whatever()
 ;; blah.blah(foo)
 
 (defun table-name-from-current-file (&optional ns)
@@ -43,8 +45,26 @@
   (let* ((delim-with (or ns "_"))
          (model-dir (concat (eproject-root) "app/models/"))
          (model (replace-regexp-in-string model-dir "" (buffer-file-name)))
-         (file (replace-regexp-in-string "/" delim-with model))))
-  (replace-regexp-in-string ".rb$" "" file))
+         (filename (replace-regexp-in-string "/" delim-with model)))
+    (replace-regexp-in-string ".rb$" "" filename)))
+
+(defun current-rails-class ()
+  (let* ((table-name (table-name-from-current-file "::"))
+         (capitalized (capitalize table-name)))
+    (replace-regexp-in-string "_" "" capitalized)))
+
+(defun find-blueprint ()
+  (interactive)
+  (let* ((model (current-rails-class))
+         (root (eproject-root))
+         (input (read-from-minibuffer (concat "Model (default: " model "): ")))
+         (target (if (string= "" input) model input))
+         (search (concat target ".blueprint")))
+    (with-temp-file
+      (find-file (concat root "test/blueprints.rb"))
+      (or (re-search-forward search nil t)
+          (re-search-backward search nil t))
+      (message (concat "looking for " search)))))
 
 (defun schema ()
   (interactive)
@@ -126,22 +146,31 @@
     (visit-tags-table tags-file)
     (message (concat "Loaded " tags-file))))
 
+(defun set-relative-shoulda-command ()
+  (setq shoulda-command (concat "(cd " (eproject-root) " && ruby \"%f\" %o)")))
+
 (defun test-verify ()
   (interactive)
   (if (eproject-attribute :use-shoulda)
-      (shoulda-verify)
+      (progn
+        (set-relative-shoulda-command)
+        (shoulda-verify))
     (rspec-verify)))
 
 (defun test-verify-all ()
   (interactive)
   (if (eproject-attribute :use-shoulda)
-      (shoulda-verify-all)
+      (progn
+        (set-relative-shoulda-command)
+        (shoulda-verify-all))
     (rspec-verify-all)))
 
 (defun test-verify-single ()
   (interactive)
   (if (eproject-attribute :use-shoulda)
-      (shoulda-verify-single)
+      (progn
+        (set-relative-shoulda-command)
+        (shoulda-verify-single))
     (rspec-verify-single)))
 
 (defun test-toggle ()
