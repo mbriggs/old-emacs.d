@@ -125,7 +125,7 @@
   (interactive)
   (message "building project tags")
   (let ((root (eproject-root)))
-    (shell-command (concat "ctags -e -R --exclude=db --exclude=test -f " root "TAGS " root)))
+    (shell-command (concat "ctags -e -R -L --verbose --excmd=n --extra=+fq --fields=+afiKlmnsSzt --file-scope=no --exclude=db --exclude=test --exclude=.git --exclude=public -f " root "TAGS " root)))
   (visit-project-tags)
   (message "tags built successfully"))
 
@@ -138,7 +138,9 @@
 
 (defun my-find-tag ()
   (interactive)
-  (visit-project-tags)
+  (if (file-exists-p (concat (eproject-root) "TAGS"))
+      (visit-project-tags)
+    (build-ctags))
   (etags-select-find-tag-at-point))
 
 (defun visit-project-tags ()

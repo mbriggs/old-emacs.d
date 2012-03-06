@@ -18,11 +18,9 @@
 (define-key evil-normal-state-map (kbd "M-.") 'find-tag)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "M-j") 'evil-window-next)
-(define-key evil-normal-state-map (kbd "M-.") 'find-tag)
+(define-key evil-normal-state-map (kbd "M-.") 'my-find-tag)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
-(define-key evil-normal-state-map (kbd "C-]") 'tb:gtags-find-tag)
-(define-key evil-normal-state-map (kbd "C-}") 'tb:gtags-find-rtag)
 
 (define-key evil-normal-state-map (kbd "C-j") 'evil-forward-paragraph)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-backward-paragraph)
