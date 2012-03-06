@@ -13,7 +13,6 @@
 (require 'init-clojure)
 (require 'init-secrets)
 (require 'init-csv)
-(require 'init-gtags)
 (require 'init-dired)
 (require 'init-flymake)
 (require 'init-haml)

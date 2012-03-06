@@ -37,10 +37,11 @@
 
 (setq el-get-sources
       '((:name ansi-color :type emacswiki)
-        (:name gtags
-               :type http
-               :url "https://raw.github.com/mbriggs/gtags.el/master/gtags.el"
-               :features gtags)
+        ;; (:name gtags
+        ;;        :type http
+        ;;        :url "https://raw.github.com/mbriggs/gtags.el/master/gtags.el"
+        ;;        :features gtags)
+        (:name etags-select :type emacswiki)
         (:name find-file-in-project
                :type http
                :url "https://raw.github.com/dburger/find-file-in-project/master/find-file-in-project.el"
@@ -51,9 +52,9 @@
         (:name deferred
                :type git
                :url "https://github.com/kiwanami/emacs-deferred")
-        (:name popup-gtags
-               :type git
-               :url "https://github.com/koko1000ban/emacs-popup-gtags")
+        ;; (:name popup-gtags
+        ;;        :type git
+        ;;        :url "https://github.com/koko1000ban/emacs-popup-gtags")
         (:name pretty-mode
                :type http
                :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
@@ -141,7 +142,7 @@
 (require-package 'csv-mode)
 (require-package 'diminish)
 (require-package 'durendal)
-(require-package 'etags-select)
+;; (require-package 'etags-select)
 (require-package 'elein)
 (require-package 'flymake-coffee)
 (require-package 'flymake-ruby)
@@ -194,8 +195,9 @@
          evil
          evil-surround
          expand-region
+         etags-select
          fuzzy-find-in-project
-         gtags
+         ;; gtags
          gist
          magit
          ;; mooz-js2-mode
@@ -205,7 +207,7 @@
          nxhtml
          pretty-mode
          prolog-el
-         popup-gtags
+         ;; popup-gtags
          rails-test-toggler
          rhtml
          shoulda-test
