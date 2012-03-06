@@ -6,8 +6,6 @@
     (with-current-buffer target
       (insert current-line))))
 
-
-
 (defun new-line-in-normal-mode ()
   "make a new line without moving the cursor or leaving normal mode"
   (interactive)
@@ -26,6 +24,10 @@
     (evil-paste-after 1))
     (indent-for-tab-command)
   (evil-normal-state))
+
+(defun is-rails-model-p ()
+  (let ((model-regexp (concat "^" (eproject-root) "app/models")))
+    (string-match model-regexp (buffer-file-name))))
 
 (defun inline-variable ()
   (interactive)
@@ -57,14 +59,13 @@
   (interactive)
   (let* ((model (current-rails-class))
          (root (eproject-root))
-         (input (read-from-minibuffer (concat "Model (default: " model "): ")))
+         (default-text (if (is-rails-model-p) (concat " (default: " model ")")))
+         (input (read-from-minibuffer (concat "Model" default-text ": ")))
          (target (if (string= "" input) model input))
          (search (concat target ".blueprint")))
-    (with-temp-file
-      (find-file (concat root "test/blueprints.rb"))
-      (or (re-search-forward search nil t)
-          (re-search-backward search nil t))
-      (message (concat "looking for " search)))))
+    (find-file (concat root "test/blueprints.rb"))
+    (or (re-search-forward search nil t)
+        (re-search-backward search nil t))))
 
 (defun schema ()
   (interactive)
