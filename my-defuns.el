@@ -85,7 +85,7 @@
   (interactive)
   (let* ((root (eproject-root))
          (target (rails-prompt-for-model))
-         (search (concat target ".blueprint")))
+         (search (concat "^" target ".blueprint")))
     (find-file (concat root "test/blueprints.rb"))
     (or (re-search-forward search nil t)
         (re-search-backward search nil t))))
