@@ -42,13 +42,14 @@
         ;;        :url "https://raw.github.com/mbriggs/gtags.el/master/gtags.el"
         ;;        :features gtags)
         (:name etags-select :type emacswiki)
+        (:name joseph-file-util :type emacswiki :features joseph-file-util)
         (:name find-file-in-project
                :type http
                :url "https://raw.github.com/dburger/find-file-in-project/master/find-file-in-project.el"
                :features find-file-in-project)
         (:name expand-region
                :type git
-               :url "https://github.com/magnars/expand-region.el.git")
+               :url "https://github.com/mbriggs/expand-region.el.git")
         (:name deferred
                :type git
                :url "https://github.com/kiwanami/emacs-deferred")
@@ -197,6 +198,7 @@
          expand-region
          etags-select
          fuzzy-find-in-project
+         joseph-file-util
          ;; gtags
          gist
          magit
