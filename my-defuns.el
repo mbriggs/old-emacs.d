@@ -25,9 +25,6 @@
     (indent-for-tab-command)
   (evil-normal-state))
 
-(defun is-rails-model-p ()
-  (let ((model-regexp (concat "^" (eproject-root) "app/models")))
-    (string-match model-regexp (buffer-file-name))))
 
 (defun inline-variable ()
   (interactive)
@@ -41,27 +38,53 @@
 
 ;; Foo = 1.4 * whatever()
 ;; blah.blah(foo)
+(defvar rails/models-alist nil)
+(defun rails-model-files ()
+  (all-files-under-dir-recursively (concat (eproject-root) "app/models") ".rb$"))
 
-(defun table-name-from-current-file (&optional ns)
+(defun rails-models-alist ()
+  (or rails/models-alist
+      (setq rails/models-alist (mapcar 'rails-class-and-table-name
+                                       (rails-model-files)))))
+
+(defun rails-models ()
+  (mapcar 'car (rails-models-alist)))
+
+(defun rails-class-and-table-name (file-name)
+  (let ((class (rails-class-from-file-name file-name))
+        (table (rails-table-name-from-file-name file-name)))
+    `(,class . ,table)))
+
+(defun is-rails-model-p ()
+  (let ((model-regexp (concat "^" (eproject-root) "app/models")))
+    (string-match model-regexp (buffer-file-name))))
+
+(defun rails-table-name-from-file-name (file-name &optional ns)
   "get an underscored version of the current models name, passing in what to use as namespace delimiter"
   (let* ((delim-with (or ns "_"))
          (model-dir (concat (eproject-root) "app/models/"))
-         (model (replace-regexp-in-string model-dir "" (buffer-file-name)))
+         (model (replace-regexp-in-string model-dir "" file-name))
          (filename (replace-regexp-in-string "/" delim-with model)))
     (replace-regexp-in-string ".rb$" "" filename)))
 
-(defun current-rails-class ()
-  (let* ((table-name (table-name-from-current-file "::"))
+(defun rails-class-from-file-name (file-name)
+  (let* ((table-name (rails-table-name-from-file-name file-name "::"))
          (capitalized (capitalize table-name)))
     (replace-regexp-in-string "_" "" capitalized)))
 
+(defun rails-prompt-for-model ()
+  (let* ((model (rails-class-from-file-name (buffer-file-name)))
+         (initial-value (if (is-rails-model-p) model))
+         (input (ido-completing-read "Model: " (rails-models) nil t initial-value)))
+    (if (string= "" input) model input)))
+
+(defun rails-table-name-for-model (model)
+  (pluralize-string (cdr (assoc model rails/models-alist))))
+
 (defun find-blueprint ()
   (interactive)
-  (let* ((model (current-rails-class))
-         (root (eproject-root))
-         (default-text (if (is-rails-model-p) (concat " (default: " model ")")))
-         (input (read-from-minibuffer (concat "Model" default-text ": ")))
-         (target (if (string= "" input) model input))
+  (let* ((root (eproject-root))
+         (target (rails-prompt-for-model))
          (search (concat target ".blueprint")))
     (find-file (concat root "test/blueprints.rb"))
     (or (re-search-forward search nil t)
@@ -70,7 +93,7 @@
 (defun schema ()
   (interactive)
 
-  (let* ((name (pluralize-string (table-name-from-current-file "_")))
+  (let* ((name (rails-table-name-for-model (rails-prompt-for-model)))
          (root (eproject-root))
          (regexp (concat "create_table \"" name "\"")))
 
