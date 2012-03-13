@@ -20,10 +20,11 @@
  '(js2-indent-on-enter-key t)
  '(js2-mirror-mode nil)
  '(js2-strict-missing-semi-warning nil)
+ '(js3-consistent-level-indent-inner-bracket t)
  '(js3-global-externs my-global-externs)
  '(mumamo-chunk-coloring 1)
- '(scss-compile-at-save nil)
  '(rng-auto-validate-flag nil)
+ '(scss-compile-at-save nil)
  '(tags-case-fold-search nil))
 
   ;; name    sRGB      Gen RGB   degraded  ANSI(Solarized terminal)
