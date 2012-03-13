@@ -28,14 +28,17 @@ Using el-get, so everything should just magically download itself on first launc
 Dependancies
 ------------
 
-`sudo apt-get install texi2html texinfo python global`
+`sudo apt-get install texi2html texinfo python nodejs ctags-exuberant` 
+if ctags isn't pointing at the right version, run
+
+`sudo update-alternatives --config ctags`
+
+and choose `ctags-exuberant`
 
 ruby + `gem install fuzzy_file_finder`
 
 `lein plugin install swank-clojure 1.3.3`
 
 `lein plugin install clj-stacktrace 0.2.3`
-
-to install rtags, clone gaizkas fork: `git clone git@github.com:gaizka/rtags.git && sudo rtags/install.sh`
 
 it depends on a `~/.secrets.el` file being there. This is a good place to put passwords or other sensitive information required for plugins, but that you don't want sitting on public github.
