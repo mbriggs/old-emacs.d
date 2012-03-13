@@ -1,3 +1,4 @@
+(require 'js-comint)
 (autoload 'js3-mode "js3" nil t)
 ;(require 'js2-highlight-vars)
 (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
@@ -12,7 +13,6 @@
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
 
 
-(setq inferior-js-program-command "node")
 (defun add-inferior-js-keys ()
   (local-set-key "\C-x\C-e" 'js-send-last-sexp)
   (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
@@ -26,7 +26,14 @@
 ;             (add-inferior-js-keys)
 ;             (js2-highlight-vars-mode)))
 
-
-(provide 'init-javascript)
-
+(setq inferior-js-program-command "node")
+(setq inferior-js-mode-hook
+      (lambda ()
+        ;; We like nice colors
+        (ansi-color-for-comint-mode-on)
+        ;; Deal with some prompt nonsense
+        (add-to-list 'comint-preoutput-filter-functions
+                     (lambda (output)
+                       (replace-regexp-in-string ".*1G\.\.\..*5G" "... "
+                     (replace-regexp-in-string ".*1G.*3G" "> " output))))))
 (provide 'init-js)

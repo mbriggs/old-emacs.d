@@ -204,6 +204,7 @@
          magit
          ;; mooz-js2-mode
          js3-mode
+         js-comint
          midje-mode
          haml-mode
          nxhtml
