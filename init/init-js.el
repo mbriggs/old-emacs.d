@@ -12,6 +12,8 @@
 
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
 
+(setq flymake-node-jshint-config "~/.jshint.json")
+(add-hook 'js3-mode-hook (lambda () (flymake-mode t)))
 
 (defun add-inferior-js-keys ()
   (local-set-key "\C-x\C-e" 'js-send-last-sexp)

@@ -46,6 +46,8 @@ then install jshint
 
 `sudo npm install -g jshint`
 
+and configure jshint options in `~/.jshint.json`
+
 if ctags isn't pointing at the right version, run
 
 `sudo update-alternatives --config ctags`

@@ -56,6 +56,10 @@
         ;; (:name popup-gtags
         ;;        :type git
         ;;        :url "https://github.com/koko1000ban/emacs-popup-gtags")
+        (:name flymake-node-jshint
+               :type git
+               :url "https://github.com/jegbjerg/flymake-node-jshint.git"
+               :features flymake-node-jshint)
         (:name pretty-mode
                :type http
                :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
@@ -209,6 +213,7 @@
          haml-mode
          nxhtml
          pretty-mode
+         flymake-node-jshint
          prolog-el
          ;; popup-gtags
          rails-test-toggler
