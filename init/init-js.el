@@ -13,8 +13,8 @@
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
 
 (setq flymake-node-jshint-config "~/.jshint.json")
-(add-hook 'js3-mode-hook (lambda () (flymake-mode t)))
 
+(setq inferior-js-program-command "node-no-readline")
 (defun add-inferior-js-keys ()
   (local-set-key "\C-x\C-e" 'js-send-last-sexp)
   (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
@@ -23,19 +23,4 @@
   (local-set-key "\C-cl" 'js-load-file-and-go))
 (add-hook 'js-mode-hook 'add-inferior-js-keys)
 
-; (add-hook 'js3-mode-hook
-;           (lambda ()
-;             (add-inferior-js-keys)
-;             (js2-highlight-vars-mode)))
-
-(setq inferior-js-program-command "node")
-(setq inferior-js-mode-hook
-      (lambda ()
-        ;; We like nice colors
-        (ansi-color-for-comint-mode-on)
-        ;; Deal with some prompt nonsense
-        (add-to-list 'comint-preoutput-filter-functions
-                     (lambda (output)
-                       (replace-regexp-in-string ".*1G\.\.\..*5G" "... "
-                     (replace-regexp-in-string ".*1G.*3G" "> " output))))))
 (provide 'init-js)
