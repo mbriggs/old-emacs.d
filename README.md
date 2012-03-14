@@ -28,7 +28,24 @@ Using el-get, so everything should just magically download itself on first launc
 Dependancies
 ------------
 
-`sudo apt-get install texi2html texinfo python nodejs ctags-exuberant` 
+`sudo apt-get install texi2html texinfo python ctags-exuberant`
+
+install nodejs
+
+```bash
+git clone git@github.com:joyent/node.git
+cd node
+./configure && make && make install
+```
+
+install npm
+
+`curl http://npmjs.org/install.sh | sh`
+
+then install jshint
+
+`sudo npm install -g jshint`
+
 if ctags isn't pointing at the right version, run
 
 `sudo update-alternatives --config ctags`
@@ -42,3 +59,5 @@ ruby + `gem install fuzzy_file_finder`
 `lein plugin install clj-stacktrace 0.2.3`
 
 it depends on a `~/.secrets.el` file being there. This is a good place to put passwords or other sensitive information required for plugins, but that you don't want sitting on public github.
+
+I use it to set `github-user` and `github-token`
