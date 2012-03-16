@@ -29,6 +29,13 @@
 (evil-define-key 'normal org-mode-map (kbd "M-J") 'org-metadown)
 (evil-define-key 'normal org-mode-map (kbd "M-K") 'org-metaup)
 (evil-define-key 'normal org-mode-map (kbd "C-=") 'org-todo)
-(evil-define-key 'normal org-mode-map (kbd "C-o") 'org-insert-heading-respect-content)
+(evil-define-key 'normal org-mode-map (kbd "C-o") 'evil-org-insert-heading)
+(evil-define-key 'normal org-mode-map (kbd "C-j") 'org-forward-same-level)
+(evil-define-key 'normal org-mode-map (kbd "C-k") 'org-backward-same-level)
+
+(defun evil-org-insert-heading ()
+  (interactive)
+  (org-insert-heading-respect-content)
+  (evil-insert-state))
 
 (provide 'init-org)
