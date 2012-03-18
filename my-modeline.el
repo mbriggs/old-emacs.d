@@ -27,18 +27,15 @@
                 face mode-line-folder-face)
    (:propertize "%b"
                 face mode-line-filename-face)
-   " ("
+   " "
    (:propertize mode-name
                 face mode-line-mode-face)
-   ")"
    ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
    (:propertize (vc-mode vc-mode)
                 face mode-line-minor-mode-face)
-   
-   " ["
+
    (:eval (propertize (format-mode-line minor-mode-alist)
                       'face 'mode-line-minor-mode-face))
-   " ]"
    (:propertize mode-line-process
                 face mode-line-process-face)
    (global-mode-string global-mode-string)
@@ -73,31 +70,31 @@
 
 (set-face-attribute 'mode-line nil
     :foreground "gray80"
-    :background "#0B5568"
+    :background sol-base02
     :inverse-video nil
-    :box '(:color "#0B5568" :style nil))
+    :box `(:color ,sol-base02 :style nil))
 
 (set-face-attribute 'mode-line-inactive nil
-    :foreground "gray80" :background "#586e75"
+    :foreground "gray80" :background sol-base01
     :inverse-video nil
-    :box '(:color "#586e75" :style nil))
+    :box `(:color ,sol-base01 :style nil))
 
 (set-face-attribute 'mode-line-read-only-face nil
     :inherit 'mode-line-face
-    :foreground "#6DB3E4"
-    :box '(:color "#6DB3E4"))
+    :foreground sol-blue
+    :box `(:color ,sol-blue))
 
 (set-face-attribute 'mode-line-modified-face nil
     :inherit 'mode-line-face
-    :foreground "#dc322f"
-    :background "#fdf6e3"
-    :box '(:color "#dc322f"))
+    :foreground sol-red
+    :background sol-base3
+    :box `(:color ,sol-red))
 (set-face-attribute 'mode-line-folder-face nil
     :inherit 'mode-line-face
     :foreground "gray60")
 (set-face-attribute 'mode-line-filename-face nil
     :inherit 'mode-line-face
-    :foreground "#d9a400"
+    :foreground sol-yellow
     :weight 'bold)
 (set-face-attribute 'mode-line-position-face nil
     :inherit 'mode-line-face
@@ -110,9 +107,9 @@
     :foreground "gray70")
 (set-face-attribute 'mode-line-process-face nil
     :inherit 'mode-line-face
-    :foreground "#B4CF00")
+    :foreground sol-green)
 (set-face-attribute 'mode-line-80col-face nil
     :inherit 'mode-line-position-face
-    :foreground "black" :background "#b58900")
+    :foreground "black" :background sol-yellow)
 
 (provide 'my-modeline)
