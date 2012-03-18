@@ -59,8 +59,8 @@
 (global-set-key (kbd "M-]") 'textmate-shift-right)
 (global-set-key (kbd "M-[") 'textmate-shift-left)
 (global-set-key (kbd "M-j") 'other-window)
-;; (global-set-key (kbd "M-.") 'etags-select-find-tag)
-(global-set-key (kbd "M-.") 'gtags-find-symbol)
+(global-set-key (kbd "M-.") 'my-find-tag)
+;; (global-set-key (kbd "M-.") 'gtags-find-symbol)
 (global-set-key (kbd "M-k") 'cycle-buffer)
 (global-set-key (kbd "M-K") 'cycle-buffer-backward)
 
