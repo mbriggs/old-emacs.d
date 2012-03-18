@@ -28,9 +28,16 @@ Using el-get, so everything should just magically download itself on first launc
 Dependancies
 ------------
 
+ubuntu:
+
 `sudo apt-get install texi2html texinfo python ctags-exuberant`
 
-install nodejs
+osx:
+
+`brew install ctags node`
+
+
+install node on linux
 
 ```bash
 git clone git@github.com:joyent/node.git
@@ -42,17 +49,27 @@ install npm
 
 `curl http://npmjs.org/install.sh | sh`
 
+make sure node can find npm modules
+
+`echo 'export NODE_PATH="'$(npm root -g)'"' >> ~/.zshrc`
+
 then install jshint
 
 `sudo npm install -g jshint`
 
 and configure jshint options in `~/.jshint.json`
 
-if ctags isn't pointing at the right version, run
+if ctags isn't pointing at the right version
+
+on ubuntu run
 
 `sudo update-alternatives --config ctags`
 
 and choose `ctags-exuberant`
+
+on osx lion do
+
+`sudo mv /usr/bin/ctags /usr/bin/ctags-old`
 
 ruby + `gem install fuzzy_file_finder`
 

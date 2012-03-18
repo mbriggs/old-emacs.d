@@ -60,4 +60,9 @@
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
 
+(when (eq system-type 'darwin)
+  (setq-default mf-offset-x 58)
+  (setq-default mf-offset-y 26)
+  (setq-default mf-display-padding-width 57)
+  (setq-default mf-display-padding-height 45))
 (maybe-maximize-frame)
