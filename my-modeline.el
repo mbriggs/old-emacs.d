@@ -27,9 +27,10 @@
                 face mode-line-folder-face)
    (:propertize "%b"
                 face mode-line-filename-face)
-   " "
+   "  ("
    (:propertize mode-name
                 face mode-line-mode-face)
+   ") "
    ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
    (:propertize (vc-mode vc-mode)
                 face mode-line-minor-mode-face)

@@ -43,7 +43,6 @@
 (require 'init-lua)
 (require 'init-git-blame)
 (require 'init-volatile-highlight)
-(require 'init-nxml)
 
 (require 'my-emacs-settings)
 (require 'my-defuns)

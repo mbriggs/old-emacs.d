@@ -211,7 +211,6 @@
          js-comint
          midje-mode
          haml-mode
-         nxhtml
          pretty-mode
          flymake-node-jshint
          prolog-el
