@@ -1,8 +1,9 @@
+;;;; global
+
 (define-key evil-normal-state-map ",," 'evil-buffer)
 (define-key evil-normal-state-map "-" 'delete-other-windows)
 (define-key evil-normal-state-map "E" 'ido-find-file)
 (define-key evil-normal-state-map "  " 'evil-jump-item)
-(define-key evil-visual-state-map "  " 'evil-jump-item)
 (define-key evil-normal-state-map "\\" 'evil-repeat-find-char-reverse)
 (define-key evil-normal-state-map "H" 'evil-first-non-blank)
 (define-key evil-normal-state-map "Y" 'copy-to-end-of-line)
@@ -21,6 +22,8 @@
 (define-key evil-normal-state-map (kbd "M-.") 'my-find-tag)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
+(define-key evil-visual-state-map ",ve" 'extract-variable)
+(define-key evil-normal-state-map ",vi" 'inline-variable)
 
 (define-key evil-normal-state-map (kbd "C-j") 'evil-forward-paragraph)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-backward-paragraph)
@@ -31,37 +34,6 @@
 (define-key evil-visual-state-map (kbd "C-l") 'evil-forward-word-begin)
 (define-key evil-visual-state-map (kbd "C-h") 'evil-backward-word-begin)
 
-(define-key evil-normal-state-map ",sc" 'rinari-find-controller)
-(define-key evil-normal-state-map ",sh" 'rinari-find-helper)
-(define-key evil-normal-state-map ",si" 'rinari-find-migration)
-(define-key evil-normal-state-map ",sm" 'rinari-find-model)
-(define-key evil-normal-state-map ",st" 'rinari-find-test)
-(define-key evil-normal-state-map ",sv" 'rinari-find-view)
-(define-key evil-normal-state-map ",sl" 'rinari-find-lib)
-
-(define-key evil-visual-state-map ",ve" 'extract-variable)
-(define-key evil-normal-state-map ",vi" 'inline-variable)
-
-(define-key evil-normal-state-map ",tf" 'test-verify)
-(define-key evil-normal-state-map ",ta" 'test-verify-all)
-(define-key evil-normal-state-map ",t," 'test-toggle)
-(define-key evil-normal-state-map ",tt" 'test-verify-single)
-(define-key evil-normal-state-map ",te" (lambda ()
-                                          (compile "lein expectations")))
-
-(define-key evil-normal-state-map ",ck" 'slime-compile-and-load-file)
-(define-key evil-normal-state-map ",cK" 'slime-repl-compile-and-load)
-(define-key evil-normal-state-map ",cd" 'slime-documentation)
-(define-key evil-normal-state-map ",cr" 'slime-repl-set-package)
-(define-key evil-normal-state-map ",c," 'midje-check-fact)
-(define-key evil-normal-state-map ",cl" 'midje-recheck-last-fact-checked)
-(define-key evil-normal-state-map ",cn" 'midje-next-fact)
-(define-key evil-normal-state-map ",cu" 'midje-unfinished)
-(define-key evil-normal-state-map ",cs" 'midje-show-all-facts)
-(define-key evil-normal-state-map ",ch" 'midje-hide-all-facts)
-(define-key evil-normal-state-map (kbd "M-n") 'midje-next-fact)
-(define-key evil-normal-state-map (kbd "M-p") 'midje-previous-fact)
-
 (global-set-key (kbd "C-\\") 'highlight-symbol-at-point)
 (global-set-key (kbd "C-;") 'er/expand-region)
 (global-set-key (kbd "C-:") 'er/contract-region)
@@ -70,9 +42,30 @@
 (global-set-key (kbd "M-[") 'textmate-shift-left)
 (global-set-key (kbd "M-j") 'other-window)
 (global-set-key (kbd "M-.") 'my-find-tag)
-;; (global-set-key (kbd "M-.") 'gtags-find-symbol)
 (global-set-key (kbd "M-k") 'cycle-buffer)
 (global-set-key (kbd "M-K") 'cycle-buffer-backward)
+
+;;; ruby
+
+(evil-declare-key 'normal ruby-mode-map ",tf" 'test-verify)
+(evil-declare-key 'normal ruby-mode-map ",tf" 'test-verify)
+(evil-declare-key 'normal ruby-mode-map ",ta" 'test-verify-all)
+(evil-declare-key 'normal ruby-mode-map ",t," 'test-toggle)
+(evil-declare-key 'normal ruby-mode-map ",tt" 'test-verify-single)
+
+;;; clojure
+
+(evil-declare-key 'normal clojure-mode-map ",k" 'slime-compile-and-load-file)
+(evil-declare-key 'normal clojure-mode-map ",K" 'slime-repl-compile-and-load)
+(evil-declare-key 'normal clojure-mode-map ",d" 'slime-documentation)
+(evil-declare-key 'normal clojure-mode-map ",r" 'slime-repl-set-package)
+(evil-declare-key 'normal clojure-mode-map ",t" 'midje-check-fact)
+(evil-declare-key 'normal clojure-mode-map ",l" 'midje-recheck-last-fact-checked)
+(evil-declare-key 'normal clojure-mode-map ",n" 'midje-next-fact)
+(evil-declare-key 'normal clojure-mode-map ",u" 'midje-unfinished)
+(evil-declare-key 'normal clojure-mode-map ",s" 'midje-show-all-facts)
+(evil-declare-key 'normal clojure-mode-map ",h" 'midje-hide-all-facts)
+
 
 (add-hook 'ido-minibuffer-setup-hook
           (lambda ()

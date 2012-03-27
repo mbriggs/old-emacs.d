@@ -20,7 +20,7 @@
     (evil-change (region-beginning) (region-end))
     (insert name)
     (evil-open-above 1)
-    (insert (concat name " ="))
+    (insert (concat name " = "))
     (evil-paste-after 1))
     (indent-for-tab-command)
   (evil-normal-state))
