@@ -29,7 +29,7 @@
 (require 'init-rspec)
 (require 'init-autocomplete)
 (require 'init-ansi-color)
-(require 'init-anything)
+(require 'init-helm)
 (require 'init-ruby)
 (require 'init-sass)
 (require 'init-markdown)

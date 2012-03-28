@@ -37,25 +37,21 @@
 
 (setq el-get-sources
       '((:name ansi-color :type emacswiki)
-        ;; (:name gtags
-        ;;        :type http
-        ;;        :url "https://raw.github.com/mbriggs/gtags.el/master/gtags.el"
-        ;;        :features gtags)
         (:name etags-select :type emacswiki)
         (:name joseph-file-util :type emacswiki :features joseph-file-util)
         (:name find-file-in-project
                :type http
                :url "https://raw.github.com/dburger/find-file-in-project/master/find-file-in-project.el"
                :features find-file-in-project)
+        (:name helm
+               :type git
+               :url "https://github.com/emacs-helm/helm.git")
         (:name expand-region
                :type git
                :url "https://github.com/mbriggs/expand-region.el.git")
         (:name deferred
                :type git
                :url "https://github.com/kiwanami/emacs-deferred")
-        ;; (:name popup-gtags
-        ;;        :type git
-        ;;        :url "https://github.com/koko1000ban/emacs-popup-gtags")
         (:name flymake-node-jshint
                :type git
                :url "https://github.com/jegbjerg/flymake-node-jshint.git"
@@ -87,9 +83,6 @@
         (:name js3-mode
                :type git
                :url "https://github.com/thomblake/js3-mode.git")
-        ;; (:name mooz-js2-mode
-        ;;        :type git
-        ;;        :url "https://github.com/mbriggs/js2-mode.git")
         (:name shoulda-test
                :type http
                :url "https://raw.github.com/mbriggs/shoulda-test/master/shoulda-test.el"
@@ -136,9 +129,6 @@
 (require-package 'css-mode)
 (require-package 'ruby-compilation)
 (require-package 'inf-ruby)
-(require-package 'anything)
-(require-package 'anything-config)
-(require-package 'anything-match-plugin)
 (require-package 'clojure-mode)
 (require-package 'clojure-test-mode)
 (require-package 'crontab-mode)
@@ -147,7 +137,6 @@
 (require-package 'csv-mode)
 (require-package 'diminish)
 (require-package 'durendal)
-;; (require-package 'etags-select)
 (require-package 'elein)
 (require-package 'flymake-coffee)
 (require-package 'flymake-ruby)
@@ -203,18 +192,16 @@
          etags-select
          fuzzy-find-in-project
          joseph-file-util
-         ;; gtags
          gist
          magit
-         ;; mooz-js2-mode
          js3-mode
          js-comint
          midje-mode
          haml-mode
+         helm
          pretty-mode
          flymake-node-jshint
          prolog-el
-         ;; popup-gtags
          rails-test-toggler
          rhtml
          shoulda-test
