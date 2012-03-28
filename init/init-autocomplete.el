@@ -10,6 +10,7 @@
                           c++-mode
                           java-mode
                           perl-mode
+                          clojure-mode
                           cperl-mode
                           python-mode
                           ruby-mode
