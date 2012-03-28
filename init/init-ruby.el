@@ -31,6 +31,11 @@
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
 (setq compile-command "rake ")
 
+
+(defun insert-hashrocket ()
+  (interactive)
+  (insert " => "))
+
 (defalias 'ri 'yari)
 
 ; run the current buffer using Shift-F7

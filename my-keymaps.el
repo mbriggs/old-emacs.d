@@ -47,24 +47,33 @@
 
 ;;; ruby
 
-(evil-declare-key 'normal ruby-mode-map ",tf" 'test-verify)
-(evil-declare-key 'normal ruby-mode-map ",tf" 'test-verify)
-(evil-declare-key 'normal ruby-mode-map ",ta" 'test-verify-all)
-(evil-declare-key 'normal ruby-mode-map ",t," 'test-toggle)
-(evil-declare-key 'normal ruby-mode-map ",tt" 'test-verify-single)
+(evil-declare-key 'normal ruby-mode-map
+                  ",tf" 'test-verify
+                  ",ta" 'test-verify-all
+                  ",t," 'test-toggle
+                  ",tt" 'test-verify-single)
+
+(evil-declare-key 'insert rhtml-mode-map
+                  (kbd "M-=") 'insert-rhtml-%=
+                  (kbd "M--") 'insert-rhtml-%)
+
+(evil-declare-key 'insert ruby-mode-map
+                  (kbd "M-k") 'insert-hashrocket)
+
 
 ;;; clojure
 
-(evil-declare-key 'normal clojure-mode-map ",k" 'slime-compile-and-load-file)
-(evil-declare-key 'normal clojure-mode-map ",K" 'slime-repl-compile-and-load)
-(evil-declare-key 'normal clojure-mode-map ",d" 'slime-documentation)
-(evil-declare-key 'normal clojure-mode-map ",r" 'slime-repl-set-package)
-(evil-declare-key 'normal clojure-mode-map ",t" 'midje-check-fact)
-(evil-declare-key 'normal clojure-mode-map ",l" 'midje-recheck-last-fact-checked)
-(evil-declare-key 'normal clojure-mode-map ",n" 'midje-next-fact)
-(evil-declare-key 'normal clojure-mode-map ",u" 'midje-unfinished)
-(evil-declare-key 'normal clojure-mode-map ",s" 'midje-show-all-facts)
-(evil-declare-key 'normal clojure-mode-map ",h" 'midje-hide-all-facts)
+(evil-declare-key 'normal clojure-mode-map
+                  ",k" 'slime-compile-and-load-file
+                  ",K" 'slime-repl-compile-and-load
+                  ",d" 'slime-documentation
+                  ",r" 'slime-repl-set-package
+                  ",t" 'midje-check-fact
+                  ",l" 'midje-recheck-last-fact-checked
+                  ",n" 'midje-next-fact
+                  ",u" 'midje-unfinished
+                  ",s" 'midje-show-all-facts
+                  ",h" 'midje-hide-all-facts)
 
 
 (add-hook 'ido-minibuffer-setup-hook

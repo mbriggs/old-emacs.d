@@ -5,4 +5,14 @@
             (rng-validate-mode 0))
           t)
 
+(defun insert-rhtml-%= ()
+  (interactive)
+  (insert "<%=  %>")
+  (backward-char 3))
+
+(defun insert-rhtml-% ()
+  (interactive)
+  (insert "<% %>")
+  (backward-char 3))
+
 (provide 'init-rhtml)
