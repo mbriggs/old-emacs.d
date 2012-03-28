@@ -12,7 +12,7 @@
 
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
 
-(setq flymake-node-jshint-config "~/.jshint.json")
+;;; inf-js
 
 (setq inferior-js-program-command "node-no-readline")
 (defun add-inferior-js-keys ()
@@ -22,5 +22,21 @@
   (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
   (local-set-key "\C-cl" 'js-load-file-and-go))
 (add-hook 'js-mode-hook 'add-inferior-js-keys)
+
+
+;;; make functions pretty
+
+(eval-after-load 'js3-mode
+  '(font-lock-add-keywords
+    'js3-mode `(("\\(function\\)("
+                 (0 (progn (compose-region (match-beginning 1)
+                                           (match-end 1) "λ")
+                           nil))))))
+(defun insert-js-function ()
+  (interactive)
+  (insert "function()")
+  (backward-char))
+
+(evil-declare-key 'insert js3-mode-map (kbd "M-k") 'insert-js-function)
 
 (provide 'init-js)

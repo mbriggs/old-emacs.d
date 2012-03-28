@@ -24,6 +24,8 @@
 (define-key evil-normal-state-map (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
 (define-key evil-visual-state-map ",ve" 'extract-variable)
 (define-key evil-normal-state-map ",vi" 'inline-variable)
+(define-key evil-normal-state-map (kbd "M-k") 'cycle-buffer)
+(define-key evil-normal-state-map (kbd "M-K") 'cycle-buffer-backward)
 
 (define-key evil-normal-state-map (kbd "C-j") 'evil-forward-paragraph)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-backward-paragraph)
@@ -42,8 +44,6 @@
 (global-set-key (kbd "M-[") 'textmate-shift-left)
 (global-set-key (kbd "M-j") 'other-window)
 (global-set-key (kbd "M-.") 'my-find-tag)
-(global-set-key (kbd "M-k") 'cycle-buffer)
-(global-set-key (kbd "M-K") 'cycle-buffer-backward)
 
 ;;; ruby
 

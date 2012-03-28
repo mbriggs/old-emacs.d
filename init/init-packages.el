@@ -52,10 +52,10 @@
         (:name deferred
                :type git
                :url "https://github.com/kiwanami/emacs-deferred")
-        (:name flymake-node-jshint
-               :type git
-               :url "https://github.com/jegbjerg/flymake-node-jshint.git"
-               :features flymake-node-jshint)
+        ;; (:name flymake-node-jshint
+        ;;        :type git
+        ;;        :url "https://github.com/jegbjerg/flymake-node-jshint.git"
+        ;;        :features flymake-node-jshint)
         (:name pretty-mode
                :type http
                :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
@@ -200,7 +200,7 @@
          haml-mode
          helm
          pretty-mode
-         flymake-node-jshint
+         ;; flymake-node-jshint
          prolog-el
          rails-test-toggler
          rhtml
