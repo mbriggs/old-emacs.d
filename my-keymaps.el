@@ -14,10 +14,7 @@
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
 (define-key evil-normal-state-map (kbd "M-t") 'command-t)
 (define-key evil-normal-state-map (kbd "M-s") 'textmate-goto-symbol)
-(define-key evil-normal-state-map (kbd "M-b") 'helm-opened)
-(define-key evil-normal-state-map (kbd "M-B") 'ibuffer)
 (define-key evil-normal-state-map (kbd "M-f") 'dired)
-(define-key evil-normal-state-map (kbd "M-.") 'find-tag)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "M-j") 'evil-window-next)
 (define-key evil-normal-state-map (kbd "M-.") 'my-find-tag)
@@ -45,7 +42,7 @@
 (global-set-key (kbd "M-[") 'textmate-shift-left)
 (global-set-key (kbd "M-j") 'other-window)
 (global-set-key (kbd "M-.") 'my-find-tag)
-
+(global-set-key (kbd "M-b") 'helm-opened)
 ;;; ruby
 
 (evil-declare-key 'normal ruby-mode-map
