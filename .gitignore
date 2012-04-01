@@ -6,6 +6,7 @@ auto-save-list
 TAGS
 elpa
 swank
+.DS_Store
 /eproject.lst
 /anything-c-adaptive-history
 /url/cookies

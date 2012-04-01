@@ -186,6 +186,7 @@
          lua-mode
          el-expectations
          eproject
+         emacs-w3m
          evil
          evil-surround
          expand-region

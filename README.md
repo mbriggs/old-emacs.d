@@ -30,11 +30,11 @@ Dependancies
 
 ubuntu:
 
-`sudo apt-get install texi2html texinfo python ctags-exuberant`
+`sudo apt-get install texi2html texinfo python ctags-exuberant w3m`
 
 osx:
 
-`brew install ctags node`
+`brew install ctags node w3m`
 
 
 install node on linux
