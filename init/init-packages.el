@@ -89,8 +89,10 @@
                :features shoulda-test)
         (:name solarized
                :type git
-               :url "https://github.com/sellout/emacs-color-theme-solarized.git")
+               :url "https://github.com/sellout/emacs-color-theme-solarized.git"
+               :features color-theme-solarized)
                ;; :url "git@github.com:mbriggs/emacs-color-theme-solarized.git")
+               ;; :url "https://github.com/bbatsov/solarized-emacs.git")
         (:name rspec-mode
                :type git
                :url "git@github.com:mbriggs/rspec-mode.git")

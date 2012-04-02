@@ -1,3 +1,4 @@
+(require 'magit)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq-default tab-width 2)
@@ -34,7 +35,7 @@
   (set-frame-font "Menlo-11"))
 
 (require 'color-theme)
-(color-theme-solarized-light)
+;(color-theme-solarized-light)
 (setq shell-command-switch "-ic")
 
 (add-hook 'after-change-major-mode-hook
@@ -47,6 +48,7 @@
 (push "/usr/local/bin" exec-path)
 (push (expand-file-name "~/scripts") exec-path)
 (push (expand-file-name "/usr/local/bin") exec-path)
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/el-get/solarized")
 
 (paren-activate) ; mic-paren
 (setq default-indicate-empty-lines t)
@@ -54,5 +56,8 @@
 (setq recentf-max-saved-items 50
       recentf-exclude '("/tmp/" "/ssh:"))
 
+(color-theme-solarized-light)
+
+;; (load-theme 'solarized-light t)
 (provide 'my-emacs-settings)
 

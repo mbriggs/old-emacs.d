@@ -205,14 +205,31 @@
       (rtt/toggle-test-and-implementation)
       (rspec-toggle-spec-and-target)))
 
+
+(defvar solarized-colors
+  ;; name    sRGB      Gen RGB   
+  '((base03  "#002b36" "#042028")
+    (base02  "#073642" "#0a2832")
+    (base01  "#586e75" "#465a61")
+    (base00  "#657b83" "#52676f")
+    (base0   "#839496" "#708183")
+    (base1   "#93a1a1" "#81908f")
+    (base2   "#eee8d5" "#e9e2cb")
+    (base3   "#fdf6e3" "#fcf4dc")
+    (yellow  "#b58900" "#a57705")
+    (orange  "#cb4b16" "#bd3612")
+    (red     "#dc322f" "#c60007")
+    (magenta "#d33682" "#c61b6e")
+    (violet  "#6c71c4" "#5859b7")
+    (blue    "#268bd2" "#2075c7")
+    (cyan    "#2aa198" "#259185")
+    (green   "#859900" "#728a05"))
+  "This is a table of all the colors used by the Solarized color theme. Each
+   column is a different set, one of which will be chosen based on term
+   capabilities, etc.")
+
 (defun solarized-find-color (name)
-  (let ((index (if window-system
-                   (if solarized-degrade
-                       3
-                     (if solarized-broken-srgb 2 1))
-                 (if (= solarized-termcolors 256)
-                     3
-                   4))))
+  (let ((index (if (eq system-type 'darwin) 2 1)))
     (nth index (assoc name solarized-colors))))
 
 (setq sol-base03    (solarized-find-color 'base03)
