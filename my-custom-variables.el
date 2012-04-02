@@ -64,7 +64,7 @@
  `(erb-face ((((class color) (min-colors 88) (background light)) (:background ,sol-base3))))
  `(flymake-errline ((((class color)) (:underline ,sol-red))))
  `(flymake-warnline ((((class color)) (:underline ,sol-blue))))
- `(font-lock-function-name-face ((t (:background ,sol-base00 :foreground ,sol-base3 :weight bold :inverse-video t))))
+ `(font-lock-function-name-face ((t (:foreground ,sol-base00 :weight bold))))
  `(hl-paren-face ((t (:weight bold))) t)
  `(isearch ((((class color)) (:background ,sol-yellow :underline ,sol-yellow :bold t :foreground ,sol-base3))))
  `(js2-error-face ((((class color) (background light)) (:foreground ,sol-red))))
