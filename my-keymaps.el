@@ -46,6 +46,7 @@
 ;;; ruby
 
 (evil-declare-key 'normal ruby-mode-map
+                  ",m" 'rails-find-model
                   ",tf" 'test-verify
                   ",ta" 'test-verify-all
                   ",t," 'test-toggle

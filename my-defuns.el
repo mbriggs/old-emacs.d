@@ -38,17 +38,32 @@
 
 ;; Foo = 1.4 * whatever()
 ;; blah.blah(foo)
-(defvar rails/models-alist nil)
 (defun rails-model-files ()
   (all-files-under-dir-recursively (concat (eproject-root) "app/models") ".rb$"))
 
+(defvar rails/models-alist nil)
 (defun rails-models-alist ()
   (or rails/models-alist
       (setq rails/models-alist (mapcar 'rails-class-and-table-name
                                        (rails-model-files)))))
 
+(defvar rails/model-files-alist nil)
+(defun rails-model-files-alist ()
+  (or rails/model-files-alist
+      (setq rails/model-files-alist (mapcar 'rails-class-and-file-name
+                                            (rails-model-files)))))
+
+(defun rails-clear-model-caches ()
+  (interactive)
+  (setq rails/models-alist nil)
+  (setq rails/model-files-alist nil))
+
 (defun rails-models ()
   (mapcar 'car (rails-models-alist)))
+
+(defun rails-class-and-file-name (file-name)
+  (let ((class (rails-class-from-file-name file-name)))
+    `(,class . ,file-name)))
 
 (defun rails-class-and-table-name (file-name)
   (let ((class (rails-class-from-file-name file-name))
@@ -79,7 +94,14 @@
     (if (string= "" input) model input)))
 
 (defun rails-table-name-for-model (model)
-  (pluralize-string (cdr (assoc model rails/models-alist))))
+  (pluralize-string (cdr (assoc model (rails-models-alist)))))
+
+(defun rails-file-name-for-model (model)
+  (cdr (assoc model (rails-model-files-alist))))
+
+(defun rails-find-model ()
+  (interactive)
+  (find-file (rails-file-name-for-model (rails-prompt-for-model))))
 
 (defun find-blueprint ()
   (interactive)
