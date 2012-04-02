@@ -8,4 +8,10 @@
 (defalias 'ack-find-file 'ack-and-a-half-find-file)
 (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
+(defun ack-location ()
+  (interactive)
+  (let ((pattern (read-from-minibuffer "Ack: "))
+        (location (ido-read-directory-name "Location: " (eproject-root))))
+    (ack-and-a-half pattern t location)))
+
 (provide 'init-ack)
