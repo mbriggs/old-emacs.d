@@ -103,6 +103,13 @@
   (interactive)
   (find-file (rails-file-name-for-model (rails-prompt-for-model))))
 
+(defun rails-find-controller ()
+  (interactive)
+  (let* ((model-location (rails-file-name-for-model (rails-prompt-for-model)))
+         (dir (replace-regexp-in-string "/models/" "/controllers" model-location))
+         (controller (replace-regexp-in-string ".rb$" "_controller.rb" dir)))
+    (find-file controller)))
+
 (defun find-blueprint ()
   (interactive)
   (let* ((root (eproject-root))
