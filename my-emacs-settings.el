@@ -19,16 +19,19 @@
 (delete-selection-mode t)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-(menu-bar-mode -1)
 (blink-cursor-mode t)
 (show-paren-mode t)
 (column-number-mode t)
 (set-fringe-style -1)
 (tooltip-mode -1)
 
+;; only turn off menus if not osx
+(if (not (eq system-type 'darwin))
+    (menu-bar-mode -1))
+
 (if (featurep 'ns)
     (set-frame-font "Menlo-15")
-    (set-frame-font "Menlo-11"))
+  (set-frame-font "Menlo-11"))
 
 (require 'color-theme)
 (color-theme-solarized-light)
@@ -43,6 +46,7 @@
 
 (push "/usr/local/bin" exec-path)
 (push (expand-file-name "~/scripts") exec-path)
+(push (expand-file-name "/usr/local/bin") exec-path)
 
 (paren-activate) ; mic-paren
 (setq default-indicate-empty-lines t)
