@@ -34,6 +34,7 @@
 (define-key evil-visual-state-map (kbd "C-l") 'evil-forward-word-begin)
 (define-key evil-visual-state-map (kbd "C-h") 'evil-backward-word-begin)
 
+(global-set-key [f1] 'magit-status)
 (global-set-key (kbd "C-\\") 'highlight-symbol-at-point)
 (global-set-key (kbd "C-;") 'er/expand-region)
 (global-set-key (kbd "C-:") 'er/contract-region)
@@ -82,8 +83,7 @@
 
 (add-hook 'ruby-mode-hook
           (lambda ()
-            (local-set-key (kbd "RET") 'newline-and-indent)
-            (local-set-key [f1] 'yari)))
+            (local-set-key (kbd "RET") 'newline-and-indent)))
 
 (add-hook 'change-major-mode-hook
           (lambda ()
