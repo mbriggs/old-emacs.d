@@ -36,8 +36,18 @@ osx:
 
 `brew install ctags node w3m`
 
+ruby + `gem install fuzzy_file_finder`
 
-install node on linux
+`lein plugin install swank-clojure 1.3.3`
+
+`lein plugin install clj-stacktrace 0.2.3`
+
+it depends on a `~/.secrets.el` file being there. This is a good place to put passwords or other sensitive information required for plugins, but that you don't want sitting on public github.
+
+I use it to set `github-user` and `github-token`
+
+Install node on Linux
+---------------------
 
 ```bash
 git clone git@github.com:joyent/node.git
@@ -59,7 +69,8 @@ then install jshint
 
 and configure jshint options in `~/.jshint.json`
 
-if ctags isn't pointing at the right version
+If ctags isn't pointing at the right version
+--------------------------------------------
 
 on ubuntu run
 
@@ -70,13 +81,3 @@ and choose `ctags-exuberant`
 on osx lion do
 
 `sudo mv /usr/bin/ctags /usr/bin/ctags-old`
-
-ruby + `gem install fuzzy_file_finder`
-
-`lein plugin install swank-clojure 1.3.3`
-
-`lein plugin install clj-stacktrace 0.2.3`
-
-it depends on a `~/.secrets.el` file being there. This is a good place to put passwords or other sensitive information required for plugins, but that you don't want sitting on public github.
-
-I use it to set `github-user` and `github-token`
