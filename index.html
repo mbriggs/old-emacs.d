@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>.emacs.d by mbriggs</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/mbriggs/.emacs.d">Fork Me on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>.emacs.d</h1>
+            <h2>Rather elaborate configuration of an ex-vimmer</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/mbriggs/.emacs.d/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/mbriggs/.emacs.d/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+      <span class="banner-fix"></span>
+
+      <section id="main_content">
+        <h1>My Emacs Config</h1>
+<blockquote>
+<blockquote>
+<p>"Emacs outshines all other editing software in approximately the same way that the noonday sun does the stars. It is not just bigger and brighter; it simply makes everything else vanish."
+<em>-Neal Stephenson, "In the Beginning was the Command Line"</em></p>
+
+<p>"Show me your ~/.emacs and I will tell you who you are."
+<em>-Bogdan Maryniuk</em></p>
+
+<p>"Emacs is like a laser guided missile. It only has to be slightly mis-configured to ruin your whole day."
+<em>-Sean McGrathi</em></p>
+
+<p>"While any text editor can save your files, only Emacs can save your soul."
+<em>-Per Abrahamseni</em></p>
+
+<p>"Lisp isn't a language, it's a building material."
+<em>- Alan Kay</em></p>
+
+<p>"The reasonable man adapts himself to Emacs; the unreasonable one persists in trying to adapt Emacs to himself. Therefore all progress depends on the unreasonable man." 
+<em>- G.B. Shaw</em></p>
+</blockquote>
+</blockquote>
+<h2>Install</h2>
+
+<p>Using el-get, so everything should just magically download itself on first launch. Lots of plugins, so expect it to take some time, and probably crash once or twice</p>
+
+<h2>Dependancies</h2>
+
+<p>ubuntu:</p>
+
+<p><code>sudo apt-get install texi2html texinfo python ctags-exuberant w3m</code></p>
+
+<p>osx:</p>
+
+<p><code>brew install ctags node w3m</code></p>
+
+<p>ruby + <code>gem install fuzzy_file_finder</code></p>
+
+<p><code>lein plugin install swank-clojure 1.3.3</code></p>
+
+<p><code>lein plugin install clj-stacktrace 0.2.3</code></p>
+
+<p>it depends on a <code>~/.secrets.el</code> file being there. This is a good place to put passwords or other sensitive information required for plugins, but that you don't want sitting on public github.</p>
+
+<p>I use it to set <code>github-user</code> and <code>github-token</code></p>
+
+<h2>Install node on Linux</h2>
+
+<div class="highlight">
+<pre>git clone git@github.com:joyent/node.git
+<span class="nb">cd </span>node
+./configure <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make install
+</pre>
+</div>
+
+
+<p>install npm</p>
+
+<p><code>curl <a href="http://npmjs.org/install.sh">http://npmjs.org/install.sh</a> | sh</code></p>
+
+<p>make sure node can find npm modules</p>
+
+<p><code>echo 'export NODE_PATH="'$(npm root -g)'"' &gt;&gt; ~/.zshrc</code></p>
+
+<p>then install jshint</p>
+
+<p><code>sudo npm install -g jshint</code></p>
+
+<p>and configure jshint options in <code>~/.jshint.json</code></p>
+
+<h2>If ctags isn't pointing at the right version</h2>
+
+<p>on ubuntu run</p>
+
+<p><code>sudo update-alternatives --config ctags</code></p>
+
+<p>and choose <code>ctags-exuberant</code></p>
+
+<p>on osx lion do</p>
+
+<p><code>sudo mv /usr/bin/ctags /usr/bin/ctags-old</code></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/mbriggs">mbriggs</a> can be found on <a href="https://github.com/mbriggs/.emacs.d">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
