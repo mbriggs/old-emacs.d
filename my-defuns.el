@@ -10,131 +10,13 @@
   (interactive)
   (delete-region (point) (progn (evil-backward-word-begin) (point))))
 
-
 (defun new-line-in-normal-mode ()
   "make a new line without moving the cursor or leaving normal mode"
   (interactive)
-  (evil-set-marker ?z)
-  (evil-insert-newline-below)
-  (evil-force-normal-state)
-  (evil-goto-mark ?z))
+  (save-excursion
+    (evil-insert-newline-below)
+    (evil-force-normal-state)))
 
-(defun extract-variable ()
-  (interactive)
-  (let ((name (read-from-minibuffer "Variable name: ")))
-    (evil-change (region-beginning) (region-end))
-    (insert name)
-    (evil-open-above 1)
-    (insert (concat name " = "))
-    (evil-paste-after 1))
-    (indent-for-tab-command)
-  (evil-normal-state))
-
-
-(defun inline-variable ()
-  (interactive)
-  (let ((name (current-word)))
-    (re-search-forward "= ")
-    (let ((value (buffer-substring (point) (point-at-eol))))
-      (kill-whole-line)
-      (search-forward name)
-      (replace-match value)))
-  (evil-normal-state))
-
-;; Foo = 1.4 * whatever()
-;; blah.blah(foo)
-(defun rails-model-files ()
-  (all-files-under-dir-recursively (concat (eproject-root) "app/models") ".rb$"))
-
-(defvar rails/models-alist nil)
-(defun rails-models-alist ()
-  (or rails/models-alist
-      (setq rails/models-alist (mapcar 'rails-class-and-table-name
-                                       (rails-model-files)))))
-
-(defvar rails/model-files-alist nil)
-(defun rails-model-files-alist ()
-  (or rails/model-files-alist
-      (setq rails/model-files-alist (mapcar 'rails-class-and-file-name
-                                            (rails-model-files)))))
-
-(defun rails-clear-model-caches ()
-  (interactive)
-  (setq rails/models-alist nil)
-  (setq rails/model-files-alist nil))
-
-(defun rails-models ()
-  (mapcar 'car (rails-models-alist)))
-
-(defun rails-class-and-file-name (file-name)
-  (let ((class (rails-class-from-file-name file-name)))
-    `(,class . ,file-name)))
-
-(defun rails-class-and-table-name (file-name)
-  (let ((class (rails-class-from-file-name file-name))
-        (table (rails-table-name-from-file-name file-name)))
-    `(,class . ,table)))
-
-(defun is-rails-model-p ()
-  (let ((model-regexp (concat "^" (eproject-root) "app/models")))
-    (string-match model-regexp (buffer-file-name))))
-
-(defun rails-table-name-from-file-name (file-name &optional ns)
-  "get an underscored version of the current models name, passing in what to use as namespace delimiter"
-  (let* ((delim-with (or ns "_"))
-         (model-dir (concat (eproject-root) "app/models/"))
-         (model (replace-regexp-in-string model-dir "" file-name))
-         (filename (replace-regexp-in-string "/" delim-with model)))
-    (replace-regexp-in-string ".rb$" "" filename)))
-
-(defun rails-class-from-file-name (file-name)
-  (let* ((table-name (rails-table-name-from-file-name file-name "::"))
-         (capitalized (capitalize table-name)))
-    (replace-regexp-in-string "_" "" capitalized)))
-
-(defun rails-prompt-for-model ()
-  (let* ((model (rails-class-from-file-name (buffer-file-name)))
-         (initial-value (if (is-rails-model-p) model))
-         (input (ido-completing-read "Model: " (rails-models) nil t initial-value)))
-    (if (string= "" input) model input)))
-
-(defun rails-table-name-for-model (model)
-  (pluralize-string (cdr (assoc model (rails-models-alist)))))
-
-(defun rails-file-name-for-model (model)
-  (cdr (assoc model (rails-model-files-alist))))
-
-(defun rails-find-model ()
-  (interactive)
-  (find-file (rails-file-name-for-model (rails-prompt-for-model))))
-
-(defun rails-find-controller ()
-  (interactive)
-  (let* ((model-location (rails-file-name-for-model (rails-prompt-for-model)))
-         (dir (replace-regexp-in-string "/models/" "/controllers" model-location))
-         (controller (replace-regexp-in-string ".rb$" "_controller.rb" dir)))
-    (find-file controller)))
-
-(defun find-blueprint ()
-  (interactive)
-  (let* ((root (eproject-root))
-         (target (rails-prompt-for-model))
-         (search (concat "^" target ".blueprint")))
-    (find-file (concat root "test/blueprints.rb"))
-    (or (re-search-forward search nil t)
-        (re-search-backward search nil t))))
-
-(defun schema ()
-  (interactive)
-
-  (let* ((name (rails-table-name-for-model (rails-prompt-for-model)))
-         (root (eproject-root))
-         (regexp (concat "create_table \"" name "\"")))
-
-    (find-file (concat root "db/schema.rb"))
-    (or (re-search-forward regexp nil t)
-        (re-search-backward regexp nil t))
-    (message (concat "looking for " name))))
 
 (defun format-json ()
   (interactive)
@@ -143,7 +25,7 @@
 
 (defun copy-to-end-of-line ()
   (interactive)
-  (evil-yank (point) (point-at-eol)))
+  (copy-region-as-kill (point) (point-at-eol)))
 
 (defun command-t ()
   (interactive)
