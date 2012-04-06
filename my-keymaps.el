@@ -49,7 +49,7 @@
 ;;; ruby
 
 (evil-declare-key 'normal ruby-mode-map
-                  ",m" 'rails-find-model
+                  ",m" 'railgun-find-model
                   ",tf" 'test-verify
                   ",ta" 'test-verify-all
                   ",t," 'test-toggle
@@ -114,15 +114,5 @@
 (add-hook 'dired-mode-hook (lambda ()
   (define-key dired-mode-map "U" 'dired-up-directory)
   (define-key dired-mode-map "/" 'dired-isearch-filenames)))
-
-(evil-define-motion evil-jump-to-next-tag ()
-  :jump t
-  (let ((tag (thing-at-point 'symbol)))
-    (find-tag tag t)))
-
-(evil-define-motion evil-jump-to-previous-tag ()
-  :jump t
-  (let ((tag (thing-at-point 'symbol)))
-    (find-tag tag ?-)))
 
 (provide 'my-keymaps)
