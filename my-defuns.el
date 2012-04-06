@@ -6,6 +6,11 @@
     (with-current-buffer target
       (insert current-line))))
 
+(defun my-delete-backwards ()
+  (interactive)
+  (delete-region (point) (progn (evil-backward-word-begin) (point))))
+
+
 (defun new-line-in-normal-mode ()
   "make a new line without moving the cursor or leaving normal mode"
   (interactive)

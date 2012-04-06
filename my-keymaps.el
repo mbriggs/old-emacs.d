@@ -38,12 +38,14 @@
 (global-set-key (kbd "C-\\") 'highlight-symbol-at-point)
 (global-set-key (kbd "C-;") 'er/expand-region)
 (global-set-key (kbd "C-:") 'er/contract-region)
+(global-set-key (kbd "C-<backspace>") 'my-delete-backwards)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-]") 'textmate-shift-right)
 (global-set-key (kbd "M-[") 'textmate-shift-left)
 (global-set-key (kbd "M-j") 'other-window)
 (global-set-key (kbd "M-.") 'my-find-tag)
 (global-set-key (kbd "M-b") 'helm-opened)
+
 ;;; ruby
 
 (evil-declare-key 'normal ruby-mode-map
@@ -74,6 +76,25 @@
                   ",u" 'midje-unfinished
                   ",s" 'midje-show-all-facts
                   ",h" 'midje-hide-all-facts)
+
+
+
+;;; org
+
+(evil-define-key 'normal org-mode-map
+  (kbd "<tab>") 'org-cycle
+  (kbd "M-L") 'org-metaright
+  (kbd "M-H") 'org-metaleft
+  (kbd "M-J") 'org-metadown
+  (kbd "M-K") 'org-metaup
+  (kbd "C-=") 'org-todo
+  (kbd "C-o") 'evil-org-insert-heading
+  (kbd "C-j") 'org-forward-same-level
+  (kbd "C-k") 'org-backward-same-level)
+
+(evil-define-key 'insert org-mode-map
+  (kbd "C-=") 'org-todo
+  (kbd "C-RET") 'evil-org-insert-heading)
 
 
 (add-hook 'ido-minibuffer-setup-hook
