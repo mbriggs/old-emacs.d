@@ -43,6 +43,8 @@
 (require 'init-lua)
 (require 'init-git-blame)
 (require 'init-volatile-highlight)
+(require 'dumb-refactorings)
+(require 'railgun)
 
 (require 'my-emacs-settings)
 (require 'my-defuns)
