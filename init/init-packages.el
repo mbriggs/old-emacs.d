@@ -46,6 +46,10 @@
         (:name helm
                :type git
                :url "https://github.com/emacs-helm/helm.git")
+        (:name popwin
+               :type git
+               :url "https://github.com/m2ym/popwin-el.git"
+               :features popwin)
         (:name expand-region
                :type git
                :url "https://github.com/mbriggs/expand-region.el.git")
@@ -203,6 +207,7 @@
          haml-mode
          helm
          pretty-mode
+         popwin
          ;; flymake-node-jshint
          prolog-el
          rails-test-toggler
