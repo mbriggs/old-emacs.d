@@ -25,7 +25,7 @@
 (defun railgun-find-blueprint ()
   (interactive)
   (let* ((root (eproject-root))
-         (target (rails-prompt-for-model))
+         (target (railgun-prompt-for-model))
          (search (concat "^" target ".blueprint")))
     (find-file (concat root "test/blueprints.rb"))
     (or (re-search-forward search nil t)
@@ -33,7 +33,7 @@
 
 (defun railgun-find-schema ()
   (interactive)
-  (let* ((name (rails-table-name-for-model (rails-prompt-for-model)))
+  (let* ((name (railgun-table-name-for-model (railgun-prompt-for-model)))
          (root (eproject-root))
          (regexp (concat "create_table \"" name "\"")))
 
