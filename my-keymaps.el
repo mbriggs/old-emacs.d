@@ -35,6 +35,7 @@
 (define-key evil-visual-state-map (kbd "C-h") 'evil-backward-word-begin)
 
 (global-set-key [f1] 'magit-status)
+(global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-\\") 'highlight-symbol-at-point)
 (global-set-key (kbd "C-;") 'er/expand-region)
 (global-set-key (kbd "C-:") 'er/contract-region)
