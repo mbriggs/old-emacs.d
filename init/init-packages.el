@@ -197,6 +197,7 @@
          evil-surround
          expand-region
          etags-select
+         haskell-mode
          fuzzy-find-in-project
          joseph-file-util
          gist
