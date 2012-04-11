@@ -8,7 +8,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ac-modes (quote (emacs-lisp-mode lisp-interaction-mode c-mode cc-mode c++-mode java-mode perl-mode cperl-mode python-mode ruby-mode ecmascript-mode javascript-mode js2-mode js3-mode php-mode css-mode sass-mode scss-mode nxml-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode)))
- '(erc-autojoin-channels-alist (quote (("freenode.net" "##javascript" "#RubyOnRails" "#clojure" "#emacs" "#ruby" "#git" "#rubyonrails" "#javascript"))))
+ '(erc-autojoin-channels-alist (quote (("freenode.net" "#clojure" "#emacs" "#ruby-lang" "#documentcloud" "#meteor"))))
  '(erc-modules (quote (autoaway autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring stamp spelling track)))
  '(erc-nick "mbriggs")
  '(erc-prompt ">")
