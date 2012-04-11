@@ -12,7 +12,7 @@
 
 (defun insert-rhtml-% ()
   (interactive)
-  (insert "<% %>")
+  (insert "<%  %>")
   (backward-char 3))
 
 (provide 'init-rhtml)
