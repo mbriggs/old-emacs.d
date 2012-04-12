@@ -51,10 +51,25 @@
     (cd current-dir)))
 
 
+;;;; Finders
+
+(defun railgun-find-model ()
+  (interactive)
+  (find-file (railgun-file-name-for-model (railgun-prompt-for-resource))))
+
+(defun railgun-find-controller ()
+  (interactive)
+  (let* ((model-location (railgun-file-name-for-model (railgun-prompt-for-resource)))
+         (dir (replace-regexp-in-string "/models/" "/controllers" model-location))
+         (controller (replace-regexp-in-string ".rb$" "_controller.rb" dir)))
+    (find-file controller)))
+
+;;;; jump to points in massive files
+
 (defun railgun-find-blueprint ()
   (interactive)
   (let* ((root (eproject-root))
-         (target (railgun-prompt-for-model))
+         (target (railgun-prompt-for-resource))
          (search (concat "^" target ".blueprint")))
     (find-file (concat root "test/blueprints.rb"))
     (or (re-search-forward search nil t)
@@ -62,7 +77,7 @@
 
 (defun railgun-find-schema ()
   (interactive)
-  (let* ((name (railgun-table-name-for-model (railgun-prompt-for-model)))
+  (let* ((name (railgun-table-name-for-model (railgun-prompt-for-resource)))
          (root (eproject-root))
          (regexp (concat "create_table \"" name "\"")))
 
@@ -71,44 +86,87 @@
         (re-search-backward regexp nil t))
     (message (concat "looking for " name))))
 
+;;;; prompts
+
+(defun railgun-prompt-for-resource ()
+  (let* ((model (railgun-class-from-file-name (buffer-file-name)))
+         (default (if (is-railgun-model-p) model)))
+    (railgun-prompt "Model" (railgun-models) default)))
+
+(defun railgun-prompt (prompt list & default)
+  (let* ((prompt (concat prompt (if default (concat "(" default ")")) ": "))
+         (value (ido-completing-read prompt list nil t)))
+    (if (string= "" value) default value)))
+
+;;;; Data
 
 (defun railgun-model-files ()
   (all-files-under-dir-recursively (concat (eproject-root) "app/models") ".rb$"))
 
-(defvar railgun/models-alist nil)
-(defun railgun-models-alist ()
-  (or railgun/models-alist
-      (setq railgun/models-alist (mapcar 'railgun-class-and-table-name
-                                       (railgun-model-files)))))
-
-(defvar railgun/model-files-alist nil)
-(defun railgun-model-files-alist ()
-  (or railgun/model-files-alist
-      (setq railgun/model-files-alist (mapcar 'railgun-class-and-file-name
-                                            (railgun-model-files)))))
-
-(defun railgun-clear-model-caches ()
-  (interactive)
-  (setq railgun/models-alist nil)
-  (setq railgun/model-files-alist nil))
+(defun railgun-controllers ()
+  (mapcar 'railgun-controller-for-model (railgun-models)))
 
 (defun railgun-models ()
   (mapcar 'car (railgun-models-alist)))
+
+(defun railgun-table-name-for-model (model)
+  (let* ((file (railgun-file-name-for-model model))
+         (table (railgun-underscored-model-from-file-name file)))
+    (pluralize-string table)))
+
+(defun railgun-file-name-for-model (model)
+  (cdr (assoc model (railgun-model-files-alist))))
+
+(defun railgun-controller-for-model (model)
+  (concat model "Controller"))
+
+
+;;;; locations
+
+(defvar railgun/locations
+  '((models . "app/models/")
+    (views . "app/views/")
+    (controllers . "app/controllers/")
+    (libs . "lib/")
+    (configs . "config/")
+    (unit-tests . "test/unit/")
+    (functional-tests . "test/functional/")
+    (specs . "spec/")))
+
+(defun railgun-location (entity)
+  (concat (eproject-root)
+          (cdr (assoc entity (railgun/locations)))))
+
+(defun railgun-file-name-from-path (entity path)
+  (replace-regexp-in-string (railgun-location entity) "" path))
+
+;;;; Caching
+
+(defvar railgun/models-alist nil)
+(defun railgun-models-alist ()
+  (or railgun/models-alist
+      (setq railgun/models-alist (mapcar 'railgun-class-and-file-name
+                                         (railgun-model-files)))))
+
+(defun railgun-clear-model-caches ()
+  (interactive)
+  (setq railgun/models-alist nil))
+
+;;;; build cache
 
 (defun railgun-class-and-file-name (file-name)
   (let ((class (railgun-class-from-file-name file-name)))
     `(,class . ,file-name)))
 
-(defun railgun-class-and-table-name (file-name)
-  (let ((class (railgun-class-from-file-name file-name))
-        (table (railgun-table-name-from-file-name file-name)))
-    `(,class . ,table)))
+;;;; Predicates
 
 (defun is-railgun-model-p ()
   (let ((model-regexp (concat "^" (eproject-root) "app/models")))
     (string-match model-regexp (buffer-file-name))))
 
-(defun railgun-table-name-from-file-name (file-name &optional ns)
+;;;; Parsing
+
+(defun railgun-underscored-model-from-file-name (file-name &optional ns)
   "get an underscored version of the current models name, passing in what to use as namespace delimiter"
   (let* ((delim-with (or ns "_"))
          (model-dir (concat (eproject-root) "app/models/"))
@@ -117,32 +175,10 @@
     (replace-regexp-in-string ".rb$" "" filename)))
 
 (defun railgun-class-from-file-name (file-name)
-  (let* ((table-name (railgun-table-name-from-file-name file-name "::"))
+  (let* ((table-name (railgun-underscored-model-from-file-name file-name "::"))
          (capitalized (capitalize table-name)))
     (replace-regexp-in-string "_" "" capitalized)))
 
-(defun railgun-prompt-for-model ()
-  (let* ((model (railgun-class-from-file-name (buffer-file-name)))
-         (initial-value (if (is-railgun-model-p) model))
-         (input (ido-completing-read "Model: " (railgun-models) nil t initial-value)))
-    (if (string= "" input) model input)))
-
-(defun railgun-table-name-for-model (model)
-  (pluralize-string (cdr (assoc model (railgun-models-alist)))))
-
-(defun railgun-file-name-for-model (model)
-  (cdr (assoc model (railgun-model-files-alist))))
-
-(defun railgun-find-model ()
-  (interactive)
-  (find-file (railgun-file-name-for-model (railgun-prompt-for-model))))
-
-(defun railgun-find-controller ()
-  (interactive)
-  (let* ((model-location (railgun-file-name-for-model (railgun-prompt-for-model)))
-         (dir (replace-regexp-in-string "/models/" "/controllers" model-location))
-         (controller (replace-regexp-in-string ".rb$" "_controller.rb" dir)))
-    (find-file controller)))
 
 
 (provide 'railgun)
