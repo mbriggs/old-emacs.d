@@ -7,6 +7,7 @@
 (define-key evil-normal-state-map " m" 'evil-jump-item)
 (define-key evil-normal-state-map ",," 'evil-buffer)
 (define-key evil-normal-state-map "-" 'delete-other-windows)
+(define-key evil-normal-state-map "b" 'helm-opened)
 (define-key evil-normal-state-map "E" 'ido-find-file)
 (define-key evil-normal-state-map "\\" 'evil-repeat-find-char-reverse)
 (define-key evil-normal-state-map "H" 'evil-first-non-blank)
@@ -36,8 +37,16 @@
 (define-key evil-visual-state-map (kbd "C-k") 'evil-backward-paragraph)
 (define-key evil-visual-state-map (kbd "C-l") 'evil-forward-word-begin)
 (define-key evil-visual-state-map (kbd "C-h") 'evil-backward-word-begin)
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 
 (global-set-key [f1] 'magit-status)
+(global-set-key [escape] 'keyboard-quit)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-\\") 'highlight-symbol-at-point)
 (global-set-key (kbd "C-;") 'er/expand-region)
@@ -48,7 +57,7 @@
 (global-set-key (kbd "M-[") 'textmate-shift-left)
 (global-set-key (kbd "M-j") 'other-window)
 (global-set-key (kbd "M-.") 'my-find-tag)
-(global-set-key (kbd "M-b") 'helm-opened)
+(global-set-key (kbd "M-b") 'ibuffer)
 
 ;;; ruby
 
