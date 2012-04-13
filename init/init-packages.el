@@ -178,6 +178,7 @@
 (setq my-packages
       (append
        '(autopair
+         ace-jump-mode
          ansi-color
          ack-and-a-half
          auto-complete
