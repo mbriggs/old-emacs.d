@@ -88,4 +88,4 @@
  `(rainbow-delimiters-depth-8-face ((((class color)) (:foreground ,sol-green))))
  `(rainbow-delimiters-depth-9-face ((((class color)) (:foreground ,sol-base03))))
  `(trailing-whitespace ((t (:background "#c7c0a9" :foreground ,sol-base2 :inverse-video t))))
- `(vhl/default-face ((t (:background ,sol-base3)))))
+ `(vhl/default-face ((t (:background ,sol-base2)))))
