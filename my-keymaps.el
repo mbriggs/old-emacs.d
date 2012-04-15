@@ -29,22 +29,6 @@
 (define-key evil-normal-state-map (kbd "M-k") 'cycle-buffer)
 (define-key evil-normal-state-map (kbd "M-K") 'cycle-buffer-backward)
 
-(define-key evil-normal-state-map (kbd "C-j") 'evil-forward-paragraph)
-(define-key evil-normal-state-map (kbd "C-k") 'evil-backward-paragraph)
-(define-key evil-normal-state-map (kbd "C-l") 'evil-forward-word-begin)
-(define-key evil-normal-state-map (kbd "C-h") 'evil-backward-word-begin)
-(define-key evil-visual-state-map (kbd "C-j") 'evil-forward-paragraph)
-(define-key evil-visual-state-map (kbd "C-k") 'evil-backward-paragraph)
-(define-key evil-visual-state-map (kbd "C-l") 'evil-forward-word-begin)
-(define-key evil-visual-state-map (kbd "C-h") 'evil-backward-word-begin)
-(define-key evil-normal-state-map [escape] 'keyboard-quit)
-(define-key evil-visual-state-map [escape] 'keyboard-quit)
-(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
-
 (global-set-key [f1] 'magit-status)
 (global-set-key [escape] 'keyboard-quit)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
@@ -59,6 +43,33 @@
 (global-set-key (kbd "M-.") 'my-find-tag)
 (global-set-key (kbd "M-b") 'ibuffer)
 
+;;; fast navigation
+
+(define-key evil-normal-state-map (kbd "C-j") 'evil-forward-paragraph)
+(define-key evil-normal-state-map (kbd "C-k") 'evil-backward-paragraph)
+(define-key evil-normal-state-map (kbd "C-l") 'evil-forward-word-begin)
+(define-key evil-normal-state-map (kbd "C-h") 'evil-backward-word-begin)
+(define-key evil-visual-state-map (kbd "C-j") 'evil-forward-paragraph)
+(define-key evil-visual-state-map (kbd "C-k") 'evil-backward-paragraph)
+(define-key evil-visual-state-map (kbd "C-l") 'evil-forward-word-begin)
+(define-key evil-visual-state-map (kbd "C-h") 'evil-backward-word-begin)
+
+
+;;; esc quits
+
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+
+;;; helm
+
+(define-key helm-map (kbd "M-n") 'helm-next-line)
+(define-key helm-map (kbd "M-p") 'helm-previous-line)
+
 ;;; ruby
 
 (evil-declare-key 'normal ruby-mode-map
@@ -68,9 +79,17 @@
                   ",t," 'test-toggle
                   ",tt" 'test-verify-single)
 
+(evil-declare-key 'normal rhtml-mode-map
+                  ",m" 'railgun-find-model
+                  ",tf" 'test-verify
+                  ",ta" 'test-verify-all
+                  ",t," 'test-toggle
+                  ",tt" 'test-verify-single)
+
 (evil-declare-key 'insert rhtml-mode-map
                   (kbd "M-=") 'insert-rhtml-%=
-                  (kbd "M--") 'insert-rhtml-%)
+                  (kbd "M--") 'insert-rhtml-%
+                  (kbd "M-k") 'insert-hashrocket)
 
 (evil-declare-key 'insert ruby-mode-map
                   (kbd "M-k") 'insert-hashrocket)
@@ -108,6 +127,10 @@
 (evil-define-key 'insert org-mode-map
   (kbd "C-=") 'org-todo
   (kbd "C-RET") 'evil-org-insert-heading)
+
+;;; Magit
+
+(evil-define-key 'normal magit-log-edit-mode-map "q" 'magit-log-edit-commit)
 
 
 (add-hook 'ido-minibuffer-setup-hook
