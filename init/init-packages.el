@@ -100,6 +100,10 @@
         (:name rspec-mode
                :type git
                :url "git@github.com:mbriggs/rspec-mode.git")
+        (:name weather
+               :type http
+               :url "https://raw.github.com/mbriggs/weather.el/master/weather.el"
+               :features weather)
         (:name smartchr
                :type http
                :url "https://raw.github.com/imakado/emacs-smartchr/master/smartchr.el"
@@ -222,6 +226,7 @@
          xml-parse
          wanderlust
          highlight-symbol
+         weather
          rvm)
        (mapcar 'el-get-source-name el-get-sources)))
 

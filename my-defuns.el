@@ -6,16 +6,6 @@
     (with-current-buffer target
       (insert current-line))))
 
-(defun my-esc ()
-  (interactive)
-  (keyboard-quit)
-  (evil-force-normal-state))
-
-(defadvice evil-keyboard-quit (after keyboard-quit)
-  (evil-force-normal-state))
-
-(ad-activate 'evil-keyboard-quit)
-
 (defun my-delete-backwards ()
   (interactive)
   (delete-region (point) (progn (evil-backward-word-begin) (point))))
