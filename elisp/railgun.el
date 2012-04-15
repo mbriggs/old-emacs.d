@@ -20,6 +20,35 @@
 ;; - railgun-find-model - jump to a given model
 ;; - railgun-find-schema - find model entry in schema.rb file
 ;; - railgun-find-blueprint - find the entry in blueprints.rb for a given model (if you use machinist)
+;; - railgun-start-server - start the server specified by the current project
+;; - railgun-register-server - tell railgun how to register a new server
+
+;;; servers
+
+(defvar railgun/default-server 'thin)
+
+(defvar railgun/servers
+  '((thin      . ("rails" "server" "thin"))
+    (passenger . ("passenger" "start"))
+    (puma      . ("rails" "server" "puma"))
+    (unicorn   . ("unicorn start"))))
+
+(defun railgun-start-project-server ()
+  (interactive)
+  (let ((proj-server (eproject-attribute :rails-server)))
+    (railgun-start-server proj-server)))
+
+(defun railgun-start-server (&optional server)
+  (interactive)
+  (let ((current-dir (default-directory)))
+    (cd (eproject-root))
+    (let* ((server-name (or server railgun/default-server))
+           (config (cdr (assoc server-name railgun/servers)))
+           (command (car config))
+           (args (cdr config))
+           (out (apply 'make-comint "rails-server" command nil args)))
+      (popwin:popup-buffer out :noselect t))
+    (cd current-dir)))
 
 
 (defun railgun-find-blueprint ()

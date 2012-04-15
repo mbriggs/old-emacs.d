@@ -15,7 +15,9 @@
 
 (defun packman-eproject (name)
   (define-project-attribute `(,name . :project-name)
-	   '(:use-shoulda t :packman t)))
+	   '(:use-shoulda t
+       :packman t
+       :rails-server passenger)))
 
 (mapc 'packman-eproject
       '("d"
