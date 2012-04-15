@@ -43,6 +43,24 @@
 (global-set-key (kbd "M-.") 'my-find-tag)
 (global-set-key (kbd "M-b") 'ibuffer)
 
+(evil-ex-define-cmd "align" 'align-regexp)
+(evil-ex-define-cmd "eval" 'eval-region)
+(evil-ex-define-cmd "eval-buffer" 'eval-buffer)
+(evil-ex-define-cmd "ack" 'ack)
+(evil-ex-define-cmd "ack-location" 'ack-location)
+(evil-ex-define-cmd "run-clojure" 'clojure-jack-in)
+(evil-ex-define-cmd "run-ruby" 'run-ruby)
+(evil-ex-define-cmd "run-js" 'run-js)
+(evil-ex-define-cmd "run-elisp" 'ielm)
+(evil-ex-define-cmd "run-haskell" 'run-haskell)
+(evil-ex-define-cmd "serve-rails" 'railgun-start-project-server)
+(evil-ex-define-cmd "erc" 'erc)
+(evil-ex-define-cmd "weather" 'weather)
+(evil-ex-define-cmd "rename-in-project" 'dr/rename-in-project)
+(evil-ex-define-cmd "shell" 'shell)
+(evil-ex-define-cmd "debug-elisp" 'edebug-defun)
+(evil-ex-define-cmd "dired" 'dired)
+
 ;;; fast navigation
 
 (define-key evil-normal-state-map (kbd "C-j") 'evil-forward-paragraph)
@@ -70,6 +88,16 @@
 (define-key helm-map (kbd "M-n") 'helm-next-line)
 (define-key helm-map (kbd "M-p") 'helm-previous-line)
 
+;;; comint
+
+(defun kill-comint ()
+  (interactive)
+  (comint-interrupt-subjob)
+  (popwin:close-popup-window))
+
+(evil-define-key 'normal comint-mode-map (kbd "q") 'kill-comint)
+
+
 ;;; ruby
 
 (evil-declare-key 'normal ruby-mode-map
@@ -93,6 +121,7 @@
 
 (evil-declare-key 'insert ruby-mode-map
                   (kbd "M-k") 'insert-hashrocket)
+
 
 
 ;;; clojure
