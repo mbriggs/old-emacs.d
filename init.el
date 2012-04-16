@@ -44,7 +44,6 @@
           init-eproject
           init-js
           init-lua
-          init-annoying-arrows
           init-git-blame
           init-volatile-highlight
           init-whitespace
