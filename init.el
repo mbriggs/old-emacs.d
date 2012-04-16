@@ -3,59 +3,63 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/elisp"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
-(require 'init-pre-package-variables)
-(require 'init-packages)
-(require 'init-autopair)
-(require 'init-rhtml)
-(require 'init-crontab)
-(require 'init-css)
-(require 'init-diminish)
-(require 'init-clojure)
-(require 'init-secrets)
-(require 'init-csv)
-(require 'init-dired)
-(require 'init-flymake)
-(require 'init-haml)
-(require 'init-ido)
-(require 'init-magit)
-(require 'init-expand-region)
-(require 'init-maxframe)
-(require 'init-org)
-(require 'init-rinari)
-(require 'init-linum)
-(require 'init-evil)
-(require 'init-rainbow-delims)
-(require 'init-ack)
-(require 'init-textmate)
-(require 'init-rspec)
-(require 'init-autocomplete)
-(require 'init-ansi-color)
-(require 'init-helm)
-(require 'init-ruby)
-(require 'init-sass)
-(require 'init-markdown)
-(require 'init-moustache)
-(require 'init-yaml)
-(require 'init-ruby-block)
-(require 'init-ruby-end)
-(require 'init-escreen)
-(require 'init-eproject)
-(require 'init-js)
-(require 'init-lua)
-(require 'init-git-blame)
-(require 'init-volatile-highlight)
-(require 'dumb-refactorings)
-(require 'railgun)
+(mapcar 'require
+        '(init-pre-package-variables
+          init-packages
+          init-autopair
+          init-rhtml
+          init-crontab
+          init-css
+          init-diminish
+          init-clojure
+          init-secrets
+          init-csv
+          init-dired
+          init-flymake
+          init-haml
+          init-ido
+          init-magit
+          init-expand-region
+          init-maxframe
+          init-org
+          init-rinari
+          init-linum
+          init-evil
+          init-rainbow-delims
+          init-ack
+          init-textmate
+          init-rspec
+          init-autocomplete
+          init-ansi-color
+          init-helm
+          init-ruby
+          init-sass
+          init-markdown
+          init-moustache
+          init-yaml
+          init-ruby-block
+          init-ruby-end
+          init-escreen
+          init-eproject
+          init-js
+          init-lua
+          init-git-blame
+          init-volatile-highlight
+          init-whitespace
+          dumb-refactorings
+          railgun
 
-(require 'my-emacs-settings)
-(require 'my-defuns)
-(require 'my-keymaps)
-(require 'my-modeline)
+          my-emacs-settings
+          my-defuns
+          my-keymaps
+          my-modeline
 
-(require 'hexcolors)
-(require 'mingle)
+          hexcolors
+          mingle
 
-(require 'server)
+          server))
+
+
 (unless (server-running-p)
   (server-start))
 

@@ -43,6 +43,7 @@
 (global-set-key (kbd "M-.") 'my-find-tag)
 (global-set-key (kbd "M-b") 'ibuffer)
 
+(evil-ex-define-cmd "semicolons" 'semi-colonize)
 (evil-ex-define-cmd "align" 'align-regexp)
 (evil-ex-define-cmd "eval" 'eval-region)
 (evil-ex-define-cmd "eval-buffer" 'eval-buffer)
@@ -161,6 +162,7 @@
 
 (evil-define-key 'normal magit-log-edit-mode-map "q" 'magit-log-edit-commit)
 
+;;; Stuff I had some trouble defining normally
 
 (add-hook 'ido-minibuffer-setup-hook
           (lambda ()

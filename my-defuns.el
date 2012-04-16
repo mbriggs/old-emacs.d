@@ -17,6 +17,9 @@
     (evil-insert-newline-below)
     (evil-force-normal-state)))
 
+(defun semi-colonize ()
+  (interactive)
+  (query-replace-regexp " *.+[^;,{}\n]$" "\\&;"))
 
 (defun format-json ()
   (interactive)
@@ -64,7 +67,7 @@
   (interactive)
   (message "building project tags")
   (let ((root (eproject-root)))
-    (shell-command (concat "ctags -e -R --extra=+fq --exclude=db --exclude=test --exclude=.git --exclude=public -f " root "TAGS " root)))
+    (shell-command (concat "ctags -e -R --exclude=db --exclude=test --exclude=.git --exclude=public -f " root "TAGS " root)))
   (visit-project-tags)
   (message "tags built successfully"))
 

@@ -16,7 +16,7 @@ _-Per Abrahamseni_
 >>"Lisp isn't a language, it's a building material."
 _- Alan Kay_
 
->>"The reasonable man adapts himself to Emacs; the unreasonable one persists in trying to adapt Emacs to himself. Therefore all progress depends on the unreasonable man." 
+>>"The reasonable man adapts himself to Emacs; the unreasonable one persists in trying to adapt Emacs to himself. Therefore all progress depends on the unreasonable man."
 _- G.B. Shaw_
 
 
