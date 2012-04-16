@@ -30,11 +30,11 @@ Dependancies
 
 ubuntu:
 
-`sudo apt-get install texi2html texinfo python ctags-exuberant w3m`
+`sudo apt-get install texi2html texinfo python ctags-exuberant w3m gpg`
 
 osx:
 
-`brew install ctags node w3m`
+`brew install ctags node w3m gpg`
 
 ruby + `gem install fuzzy_file_finder`
 

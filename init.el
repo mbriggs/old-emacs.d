@@ -27,6 +27,7 @@
           init-evil
           init-rainbow-delims
           init-ack
+          init-twit
           init-textmate
           init-rspec
           init-autocomplete

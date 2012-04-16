@@ -220,6 +220,7 @@
          rhtml
          shoulda-test
          solarized
+         twittering-mode
          rspec-mode
          textile-mode
          volatile-highlights

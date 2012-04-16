@@ -61,6 +61,7 @@
 (evil-ex-define-cmd "shell" 'shell)
 (evil-ex-define-cmd "debug-elisp" 'edebug-defun)
 (evil-ex-define-cmd "dired" 'dired)
+(evil-ex-define-cmd "twit" 'twit)
 
 ;;; fast navigation
 
