@@ -1,0 +1,5 @@
+(require 'annoying-arrows-mode)
+(add-annoying-arrows-advice evil-forward-char)
+(add-annoying-arrows-advice evil-backward-char)
+(global-annoying-arrows-mode)
+(provide 'init-annoying-arrows)

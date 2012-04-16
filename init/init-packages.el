@@ -118,6 +118,9 @@
         (:name evil-surround
                :type http
                :url "https://raw.github.com/timcharper/evil-surround/master/surround.el")
+        (:name annoying-arrows
+               :type http
+               :url "https://raw.github.com/magnars/annoying-arrows-mode.el/master/annoying-arrows-mode.el")
         (:name escreen
                :type http
                :url "http://www.splode.com/~friedman/software/emacs-lisp/src/escreen.el")
