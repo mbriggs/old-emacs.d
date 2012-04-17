@@ -40,7 +40,7 @@
 
 (defun railgun-start-server (&optional server)
   (interactive)
-  (let ((current-dir (default-directory)))
+  (let ((current-dir default-directory))
     (cd (eproject-root))
     (let* ((server-name (or server railgun/default-server))
            (config (cdr (assoc server-name railgun/servers)))
