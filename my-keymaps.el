@@ -94,6 +94,7 @@
 
 (evil-declare-key 'insert js3-mode-map (kbd "M-k") 'insert-js-function)
 (evil-declare-key 'normal js3-mode-map ",t," 'rtt/toggle-test-and-implementation)
+(evil-declare-key 'normal js3-mode-map ",g" 'add-to-js-globals)
 
 ;;; comint
 

@@ -20,14 +20,15 @@
   (let ((var (word-at-point)))
     (save-excursion
       (beginning-of-buffer)
-      (when (not (match-string "^/\\* global " (current-line)))
+      (when (not (string-match "^/\\* global " (current-line)))
           (newline)
           (previous-line)
           (insert "/* global */"))
-      (while (not (match-string "*/" (current-line)))
+      (while (not (string-match "*/" (current-line)))
         (next-line))
+      (end-of-line)
       (delete-char -2)
-      (insert (concat " " var " */")))))
+      (insert (concat var " */")))))
 
 (defun new-line-in-normal-mode ()
   "make a new line without moving the cursor or leaving normal mode"
