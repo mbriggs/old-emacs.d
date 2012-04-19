@@ -118,13 +118,6 @@
         (shoulda-verify-single))
     (rspec-verify-single)))
 
-(defun test-toggle ()
-  (interactive)
-  (if (eproject-attribute :use-shoulda)
-      (rtt/toggle-test-and-implementation)
-      (rspec-toggle-spec-and-target)))
-
-
 (defvar solarized-colors
   ;; name    sRGB      Gen RGB   
   '((base03  "#002b36" "#042028")

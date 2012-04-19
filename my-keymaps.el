@@ -106,15 +106,11 @@
                   ",m" 'railgun-find-model
                   ",tf" 'test-verify
                   ",ta" 'test-verify-all
-                  ",t," 'test-toggle
+                  ",t," 'rtt/toggle-test-and-implementation
                   ",tt" 'test-verify-single)
 
 (evil-declare-key 'normal rhtml-mode-map
-                  ",m" 'railgun-find-model
-                  ",tf" 'test-verify
-                  ",ta" 'test-verify-all
-                  ",t," 'test-toggle
-                  ",tt" 'test-verify-single)
+                  ",m" 'railgun-find-model)
 
 (evil-declare-key 'insert rhtml-mode-map
                   (kbd "M-=") 'insert-rhtml-%=
@@ -123,6 +119,7 @@
 
 (evil-declare-key 'insert ruby-mode-map
                   (kbd "M-k") 'insert-hashrocket)
+
 
 
 
