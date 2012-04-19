@@ -159,6 +159,12 @@
   (kbd "C-=") 'org-todo
   (kbd "C-RET") 'evil-org-insert-heading)
 
+;;; fuzzy find
+
+(fuzzy-find-initialize)
+(define-key fuzzy-find-keymap "\M-n" 'fuzzy-find-next-completion)
+(define-key fuzzy-find-keymap "\M-p" 'fuzzy-find-previous-completion)
+
 ;;; Magit
 
 (evil-define-key 'normal magit-log-edit-mode-map "q" 'magit-log-edit-commit)
@@ -167,8 +173,8 @@
 
 (add-hook 'ido-minibuffer-setup-hook
           (lambda ()
-            (define-key ido-completion-map "\C-n" 'ido-next-match)
-            (define-key ido-completion-map "\C-p" 'ido-prev-match)))
+            (define-key ido-completion-map (kbd "M-n") 'ido-next-match)
+            (define-key ido-completion-map (kbd "M-p") 'ido-prev-match)))
 
 (add-hook 'ruby-mode-hook
           (lambda ()
