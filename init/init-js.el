@@ -32,12 +32,6 @@
                  (0 (progn (compose-region (match-beginning 1)
                                            (match-end 1) "λ")
                            nil))))))
-(defun insert-js-function ()
-  (interactive)
-  (insert "function()")
-  (backward-char))
 
-(evil-declare-key 'insert js3-mode-map (kbd "M-k") 'insert-js-function)
-(evil-declare-key 'normal js3-mode-map ",t," 'rtt/toggle-test-and-implementation)
 
 (provide 'init-js)

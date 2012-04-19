@@ -90,6 +90,11 @@
 (define-key helm-map (kbd "M-n") 'helm-next-line)
 (define-key helm-map (kbd "M-p") 'helm-previous-line)
 
+;;; javascript
+
+(evil-declare-key 'insert js3-mode-map (kbd "M-k") 'insert-js-function)
+(evil-declare-key 'normal js3-mode-map ",t," 'rtt/toggle-test-and-implementation)
+
 ;;; comint
 
 (defun kill-comint ()

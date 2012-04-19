@@ -10,6 +10,25 @@
   (interactive)
   (delete-region (point) (progn (evil-backward-word-begin) (point))))
 
+(defun insert-js-function ()
+  (interactive)
+  (insert "function()")
+  (backward-char))
+
+(defun add-to-js-globals ()
+  (interactive)
+  (let ((var (word-at-point)))
+    (save-excursion
+      (beginning-of-buffer)
+      (when (not (match-string "^/\\* global " (current-line)))
+          (newline)
+          (previous-line)
+          (insert "/* global */"))
+      (while (not (match-string "*/" (current-line)))
+        (next-line))
+      (delete-char -2)
+      (insert (concat " " var " */")))))
+
 (defun new-line-in-normal-mode ()
   "make a new line without moving the cursor or leaving normal mode"
   (interactive)
