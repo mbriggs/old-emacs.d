@@ -55,7 +55,7 @@
 (evil-ex-define-cmd "run-elisp" 'ielm)
 (evil-ex-define-cmd "run-haskell" 'run-haskell)
 (evil-ex-define-cmd "serve-rails" 'railgun-start-project-server)
-(evil-ex-define-cmd "erc" 'erc)
+(evil-ex-define-cmd "erc" 'start-erc)
 (evil-ex-define-cmd "weather" 'weather)
 (evil-ex-define-cmd "rename-in-project" 'dr/rename-in-project)
 (evil-ex-define-cmd "shell" 'shell)

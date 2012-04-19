@@ -13,6 +13,7 @@
           init-diminish
           init-clojure
           init-secrets
+          init-erc
           init-csv
           init-dired
           init-flymake
