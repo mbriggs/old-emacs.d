@@ -21,7 +21,6 @@
 ;; - railgun-find-schema - find model entry in schema.rb file
 ;; - railgun-find-blueprint - find the entry in blueprints.rb for a given model (if you use machinist)
 ;; - railgun-start-server - start the server specified by the current project
-;; - railgun-register-server - tell railgun how to register a new server
 
 ;;; servers
 
@@ -56,7 +55,7 @@
 (defun railgun-find-blueprint ()
   (interactive)
   (let* ((root (eproject-root))
-         (target (railgun-prompt-for-model))
+         (target (railgun-prompt-for-resource "Blueprint for"))
          (search (concat "^" target ".blueprint")))
     (find-file (concat root "test/blueprints.rb"))
     (or (re-search-forward search nil t)
@@ -64,7 +63,7 @@
 
 (defun railgun-find-schema ()
   (interactive)
-  (let* ((name (railgun-table-name-for-model (railgun-prompt-for-model)))
+  (let* ((name (railgun-table-name-for-model (railgun-prompt-for-resource "Schema of")))
          (root (eproject-root))
          (regexp (concat "create_table \"" name "\"")))
 
@@ -75,22 +74,24 @@
 
 (defun railgun-find-model ()
   (interactive)
-  (find-file (railgun-file-name-for-model (railgun-prompt-for-model))))
+  (find-file (railgun-file-name-for-model (railgun-prompt-for-resource "Model"))))
 
 (defun railgun-find-controller ()
   (interactive)
-  (let* ((model-location (railgun-file-name-for-model (railgun-prompt-for-model)))
-         (dir (replace-regexp-in-string "/models/" "/controllers" model-location))
+  (let* ((model-location (railgun-file-name-for-model (railgun-prompt-for-resource "Controller for")))
+         (dir (replace-regexp-in-string "/models/" "/controllers/" model-location))
          (controller (replace-regexp-in-string ".rb$" "_controller.rb" dir)))
     (find-file controller)))
 
 
-(defun railgun-prompt-for-model ()
+(defun railgun-prompt-for-resource (prompt)
   (let* ((model (railgun-class-from-file-name (buffer-file-name)))
          (initial-value (if (is-railgun-model-p) model))
-         (input (ido-completing-read "Model: " (railgun-models) nil t initial-value)))
+         (input (ido-completing-read (concat prompt ": ") (railgun-models) nil t initial-value)))
     (if (string= "" input) model input)))
 
+;; comint-buffer-maximum-size
+;; comint-truncate-buffer
 
 ;; resources
 
@@ -100,19 +101,12 @@
 (defvar railgun/models-alist nil)
 (defun railgun-models-alist ()
   (or railgun/models-alist
-      (setq railgun/models-alist (mapcar 'railgun-class-and-table-name
-                                       (railgun-model-files)))))
+      (setq railgun/model-alist (mapcar 'railgun-class-and-file-name
+                                        (railgun-model-files)))))
 
-(defvar railgun/model-files-alist nil)
-(defun railgun-model-files-alist ()
-  (or railgun/model-files-alist
-      (setq railgun/model-files-alist (mapcar 'railgun-class-and-file-name
-                                            (railgun-model-files)))))
-
-(defun railgun-clear-model-caches ()
+(defun railgun-clear-caches ()
   (interactive)
-  (setq railgun/models-alist nil)
-  (setq railgun/model-files-alist nil))
+  (setq railgun/models-alist nil))
 
 (defun railgun-models ()
   (mapcar 'car (railgun-models-alist)))
@@ -146,9 +140,10 @@
     (replace-regexp-in-string "_" "" capitalized)))
 
 (defun railgun-table-name-for-model (model)
-  (pluralize-string (cdr (assoc model (railgun-models-alist)))))
+  (pluralize-string (railgun-table-name-from-file-name
+                     (railgun-file-name-for-model model))))
 
 (defun railgun-file-name-for-model (model)
-  (cdr (assoc model (railgun-model-files-alist))))
+  (cdr (assoc model (railgun-models-alist))))
 
 (provide 'railgun)
