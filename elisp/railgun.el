@@ -78,22 +78,28 @@
 
 (defun railgun-find-controller ()
   (interactive)
-  (let* ((model-location (railgun-file-name-for-model (railgun-prompt-for-resource "Controller for")))
-         (dir (replace-regexp-in-string "/models/" "/controllers/" model-location))
-         (controller (replace-regexp-in-string ".rb$" "_controller.rb" dir)))
-    (find-file controller)))
+  (find-file (railgun-file-name-for-controller (railgun-prompt-for-controller))))
 
 
 (defun railgun-prompt-for-resource (prompt)
-  (let* ((model (railgun-class-from-file-name (buffer-file-name)))
-         (initial-value (if (is-railgun-model-p) model))
-         (input (ido-completing-read (concat prompt ": ") (railgun-models) nil t initial-value)))
+  (let ((model (railgun-class-from-file-name (buffer-file-name))))
+    (railgun-prompt prompt (railgun-models) (if (is-railgun-model-p) model))))
+
+(defun railgun-prompt-for-controller ()
+  (railgun-prompt "Controller" (railgun-controllers)))
+
+(defun railgun-prompt (prompt list &optional initial-value)
+  (let ((input (ido-completing-read (concat prompt ": ") list nil t initial-value)))
     (if (string= "" input) model input)))
 
 ;; comint-buffer-maximum-size
 ;; comint-truncate-buffer
 
 ;; resources
+
+(defun railgun-clear-caches ()
+  (interactive)
+  (setq railgun/models-alist nil))
 
 (defun railgun-model-files ()
   (all-files-under-dir-recursively (concat (eproject-root) "app/models") ".rb$"))
@@ -104,18 +110,50 @@
       (setq railgun/model-alist (mapcar 'railgun-class-and-file-name
                                         (railgun-model-files)))))
 
-(defun railgun-clear-caches ()
-  (interactive)
-  (setq railgun/models-alist nil))
-
 (defun railgun-models ()
   (mapcar 'car (railgun-models-alist)))
 
-;; parsing
+(defun railgun-controller-files ()
+  (all-files-under-dir-recursively (concat (eproject-root) "app/controllers") ".rb$"))
+
+(defvar railgun/controllers-alist nil)
+(defun railgun-controllers-alist ()
+  (or railgun/controllers-alist
+      (setq railgun/controllers-alist (mapcar 'railgun-class-and-file-name
+                                        (railgun-controller-files)))))
+
+(defun railgun-controllers ()
+  (mapcar 'car (railgun-controllers-alist)))
+
+
+;; parse entities
+
+
+(defun railgun-table-name-for-model (model)
+  (pluralize-string (railgun-table-name-from-file-name
+                     (railgun-file-name-for-model model))))
+
+(defun railgun-file-name-for-model (model)
+  (cdr (assoc model (railgun-models-alist))))
+
+(defun railgun-file-name-for-controller (controller)
+  (cdr (assoc controller (railgun-controllers-alist))))
+
+;; predicates
+
 
 (defun is-railgun-model-p ()
   (let ((model-regexp (concat "^" (eproject-root) "app/models")))
     (string-match model-regexp (buffer-file-name))))
+
+(defun railgun-model? (file-name)
+  (string-match "app/models" file-name))
+
+(defun railgun-controller? (file-name)
+  (string-match "app/controllers" file-name))
+
+;; parsing
+
 
 (defun railgun-class-and-file-name (file-name)
   (let ((class (railgun-class-from-file-name file-name)))
@@ -129,21 +167,18 @@
 (defun railgun-table-name-from-file-name (file-name &optional ns)
   "get an underscored version of the current models name, passing in what to use as namespace delimiter"
   (let* ((delim-with (or ns "_"))
-         (model-dir (concat (eproject-root) "app/models/"))
-         (model (replace-regexp-in-string model-dir "" file-name))
-         (filename (replace-regexp-in-string "/" delim-with model)))
+         (dir (concat (eproject-root) (railgun-dir-name-for-file-name file-name)))
+         (resource (replace-regexp-in-string dir "" file-name))
+         (filename (replace-regexp-in-string "/" delim-with resource)))
     (replace-regexp-in-string ".rb$" "" filename)))
+
+(defun railgun-dir-name-for-file-name (file-name)
+  (if (railgun-model? file-name) "app/models/" "app/controllers/"))
 
 (defun railgun-class-from-file-name (file-name)
   (let* ((table-name (railgun-table-name-from-file-name file-name "::"))
          (capitalized (capitalize table-name)))
     (replace-regexp-in-string "_" "" capitalized)))
 
-(defun railgun-table-name-for-model (model)
-  (pluralize-string (railgun-table-name-from-file-name
-                     (railgun-file-name-for-model model))))
-
-(defun railgun-file-name-for-model (model)
-  (cdr (assoc model (railgun-models-alist))))
 
 (provide 'railgun)
