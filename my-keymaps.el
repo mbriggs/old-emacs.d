@@ -112,6 +112,7 @@
 (evil-declare-key 'normal ruby-mode-map
                   ",m" 'railgun-find-model
                   ",c" 'railgun-find-controller
+                  ",h" 'railgun-find-helper
                   ",p" 'railgun-find-presenter
 
                   ",tf" 'test-verify
@@ -121,6 +122,7 @@
 
 (evil-declare-key 'normal rhtml-mode-map
                   ",c" 'railgun-find-controller
+                  ",h" 'railgun-find-helper
                   ",p" 'railgun-find-presenter
                   ",m" 'railgun-find-model)
 

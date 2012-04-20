@@ -13,15 +13,13 @@
 ;; want to be.
 
 ;; NOT DONE - railgun-find-views - show a list of views
-;; NOT DONE - railgun-toggle-test - toggle between test and implementation (rspec or test/unit)
-;; NOT DONE - railgun-create-test - create a test for a given thing
-;; NOT DONE - railgun-create-spec - create a spec file for a given thing
-;; - railgun-find-controller - jump to a given controller
-;; - railgun-find-presenter - jump to a given presenter
-;; - railgun-find-model - jump to a given model
-;; - railgun-find-schema - find model entry in schema.rb file
-;; - railgun-find-blueprint - find the entry in blueprints.rb for a given model (if you use machinist)
-;; - railgun-start-server - start the server specified by the current project
+;; railgun-find-controller  - jump to a given controller
+;; railgun-find-presenter   - jump to a given presenter
+;; railgun-find-helper      - jump to a given helper
+;; railgun-find-model       - jump to a given model
+;; railgun-find-schema      - find model entry in schema.rb file
+;; railgun-find-blueprint   - find the entry in blueprints.rb for a given model (if you use machinist)
+;; railgun-start-server     - start the server specified by the current project
 
 ;;; servers
 
@@ -85,6 +83,10 @@
   (interactive)
   (find-file (railgun-file-name-for-presenter (railgun-prompt-for-presenter))))
 
+(defun railgun-find-helper ()
+  (interactive)
+  (find-file (railgun-file-name-for-helper (railgun-prompt-for-helper))))
+
 ;;; Prompts
 
 (defun railgun-prompt-for-resource (prompt)
@@ -96,6 +98,9 @@
 
 (defun railgun-prompt-for-presenter ()
   (railgun-prompt "Presenter" (railgun-presenters)))
+
+(defun railgun-prompt-for-helper ()
+  (railgun-prompt "Helper" (railgun-helpers)))
 
 (defun railgun-prompt (prompt list &optional initial-value)
   (let ((input (ido-completing-read (concat prompt ": ") list nil t initial-value)))
@@ -110,6 +115,7 @@
   (interactive)
   (setq railgun/models-alist nil)
   (setq railgun/presenters-alist nil)
+  (setq railgun/helpers-alist nil)
   (setq railgun/controllers-alist nil))
 
 (defun railgun-model-files ()
@@ -152,6 +158,20 @@
 (defun railgun-presenters ()
   (mapcar 'car (railgun-presenters-alist)))
 
+; helpers
+
+(defun railgun-helper-files ()
+  (all-files-under-dir-recursively (concat (eproject-root) "app/helpers") ".rb$"))
+
+(defvar railgun/helpers-alist nil)
+(defun railgun-helpers-alist ()
+  (or railgun/helpers-alist
+      (setq railgun/helpers-alist (mapcar 'railgun-class-and-file-name
+                                          (railgun-helper-files)))))
+
+(defun railgun-helpers ()
+  (mapcar 'car (railgun-helpers-alist)))
+
 ;; parse entities
 
 
@@ -168,6 +188,9 @@
 (defun railgun-file-name-for-presenter (presenter)
   (cdr (assoc presenter (railgun-presenters-alist))))
 
+(defun railgun-file-name-for-helper (helper)
+  (cdr (assoc helper (railgun-helpers-alist))))
+
 ;; predicates
 
 
@@ -183,6 +206,9 @@
 
 (defun railgun-presenter-p (file-name)
   (string-match "app/presenters" file-name))
+
+(defun railgun-helper-p (file-name)
+  (string-match "app/helpers" file-name))
 
 ;; parsing
 
@@ -207,6 +233,7 @@
 (defun railgun-dir-name-for-file-name (file-name)
   (cond ((railgun-model-p file-name) "app/models/" )
         ((railgun-controller-p file-name) "app/controllers/" )
+        ((railgun-helper-p file-name) "app/helpers/" )
         ((railgun-presenter-p file-name) "app/presenters/" )))
 
 (defun railgun-class-from-file-name (file-name)
