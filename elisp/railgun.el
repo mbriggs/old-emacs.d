@@ -16,7 +16,8 @@
 ;; NOT DONE - railgun-toggle-test - toggle between test and implementation (rspec or test/unit)
 ;; NOT DONE - railgun-create-test - create a test for a given thing
 ;; NOT DONE - railgun-create-spec - create a spec file for a given thing
-;; NOT DONE - railgun-find-controller - jump to a given controller
+;; - railgun-find-controller - jump to a given controller
+;; - railgun-find-presenter - jump to a given presenter
 ;; - railgun-find-model - jump to a given model
 ;; - railgun-find-schema - find model entry in schema.rb file
 ;; - railgun-find-blueprint - find the entry in blueprints.rb for a given model (if you use machinist)
@@ -80,6 +81,11 @@
   (interactive)
   (find-file (railgun-file-name-for-controller (railgun-prompt-for-controller))))
 
+(defun railgun-find-presenter ()
+  (interactive)
+  (find-file (railgun-file-name-for-presenter (railgun-prompt-for-presenter))))
+
+;;; Prompts
 
 (defun railgun-prompt-for-resource (prompt)
   (let ((model (railgun-class-from-file-name (buffer-file-name))))
@@ -87,6 +93,9 @@
 
 (defun railgun-prompt-for-controller ()
   (railgun-prompt "Controller" (railgun-controllers)))
+
+(defun railgun-prompt-for-presenter ()
+  (railgun-prompt "Presenter" (railgun-presenters)))
 
 (defun railgun-prompt (prompt list &optional initial-value)
   (let ((input (ido-completing-read (concat prompt ": ") list nil t initial-value)))
@@ -99,7 +108,9 @@
 
 (defun railgun-clear-caches ()
   (interactive)
-  (setq railgun/models-alist nil))
+  (setq railgun/models-alist nil)
+  (setq railgun/presenters-alist nil)
+  (setq railgun/controllers-alist nil))
 
 (defun railgun-model-files ()
   (all-files-under-dir-recursively (concat (eproject-root) "app/models") ".rb$"))
@@ -113,6 +124,8 @@
 (defun railgun-models ()
   (mapcar 'car (railgun-models-alist)))
 
+; controllers
+
 (defun railgun-controller-files ()
   (all-files-under-dir-recursively (concat (eproject-root) "app/controllers") ".rb$"))
 
@@ -125,6 +138,19 @@
 (defun railgun-controllers ()
   (mapcar 'car (railgun-controllers-alist)))
 
+; presenters
+
+(defun railgun-presenter-files ()
+  (all-files-under-dir-recursively (concat (eproject-root) "app/presenters") ".rb$"))
+
+(defvar railgun/presenters-alist nil)
+(defun railgun-presenters-alist ()
+  (or railgun/presenters-alist
+      (setq railgun/presenters-alist (mapcar 'railgun-class-and-file-name
+                                        (railgun-presenter-files)))))
+
+(defun railgun-presenters ()
+  (mapcar 'car (railgun-presenters-alist)))
 
 ;; parse entities
 
@@ -139,6 +165,9 @@
 (defun railgun-file-name-for-controller (controller)
   (cdr (assoc controller (railgun-controllers-alist))))
 
+(defun railgun-file-name-for-presenter (presenter)
+  (cdr (assoc presenter (railgun-presenters-alist))))
+
 ;; predicates
 
 
@@ -146,11 +175,14 @@
   (let ((model-regexp (concat "^" (eproject-root) "app/models")))
     (string-match model-regexp (buffer-file-name))))
 
-(defun railgun-model? (file-name)
+(defun railgun-model-p (file-name)
   (string-match "app/models" file-name))
 
-(defun railgun-controller? (file-name)
+(defun railgun-controller-p (file-name)
   (string-match "app/controllers" file-name))
+
+(defun railgun-presenter-p (file-name)
+  (string-match "app/presenters" file-name))
 
 ;; parsing
 
@@ -173,7 +205,9 @@
     (replace-regexp-in-string ".rb$" "" filename)))
 
 (defun railgun-dir-name-for-file-name (file-name)
-  (if (railgun-model? file-name) "app/models/" "app/controllers/"))
+  (cond ((railgun-model-p file-name) "app/models/" )
+        ((railgun-controller-p file-name) "app/controllers/" )
+        ((railgun-presenter-p file-name) "app/presenters/" )))
 
 (defun railgun-class-from-file-name (file-name)
   (let* ((table-name (railgun-table-name-from-file-name file-name "::"))
