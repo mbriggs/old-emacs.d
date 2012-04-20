@@ -44,6 +44,7 @@
 (global-set-key (kbd "M-b") 'ibuffer)
 
 (evil-ex-define-cmd "semicolons" 'semi-colonize)
+(evil-ex-define-cmd "create-spec" 'rtt/create-spec)
 (evil-ex-define-cmd "align" 'align-regexp)
 (evil-ex-define-cmd "eval" 'eval-region)
 (evil-ex-define-cmd "eval-buffer" 'eval-buffer)
@@ -110,12 +111,17 @@
 
 (evil-declare-key 'normal ruby-mode-map
                   ",m" 'railgun-find-model
+                  ",c" 'railgun-find-controller
+                  ",p" 'railgun-find-presenter
+
                   ",tf" 'test-verify
                   ",ta" 'test-verify-all
                   ",t," 'rtt/toggle-test-and-implementation
                   ",tt" 'test-verify-single)
 
 (evil-declare-key 'normal rhtml-mode-map
+                  ",c" 'railgun-find-controller
+                  ",p" 'railgun-find-presenter
                   ",m" 'railgun-find-model)
 
 (evil-declare-key 'insert rhtml-mode-map
