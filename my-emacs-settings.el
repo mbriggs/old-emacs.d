@@ -53,7 +53,7 @@
 (paren-activate) ; mic-paren
 (setq default-indicate-empty-lines t)
 (recentf-mode 1)
-(setq recentf-max-saved-items 50
+(setq recentf-max-saved-items 80
       recentf-exclude '("/tmp/" "/ssh:"))
 
 (color-theme-solarized-light)
