@@ -99,12 +99,6 @@
 (evil-declare-key 'normal js3-mode-map ",t," 'rtt/toggle-test-and-implementation)
 (evil-declare-key 'normal js3-mode-map ",g" 'add-to-js-globals)
 
-(evil-declare-key 'normal js3-mode-map
-                  ",c" 'railgun-find-controller
-                  ",h" 'railgun-find-helper
-                  ",p" 'railgun-find-presenter
-                  ",m" 'railgun-find-model)
-
 ;;; comint
 
 (defun kill-comint ()
@@ -117,22 +111,17 @@
 
 ;;; ruby
 
-(evil-declare-key 'normal ruby-mode-map
+(evil-declare-key 'normal railgun-minor-mode-map
                   ",m" 'railgun-find-model
                   ",c" 'railgun-find-controller
                   ",h" 'railgun-find-helper
-                  ",p" 'railgun-find-presenter
+                  ",p" 'railgun-find-presenter)
 
+(evil-declare-key 'normal ruby-mode-map
                   ",tf" 'test-verify
                   ",ta" 'test-verify-all
                   ",t," 'rtt/toggle-test-and-implementation
                   ",tt" 'test-verify-single)
-
-(evil-declare-key 'normal rhtml-mode-map
-                  ",c" 'railgun-find-controller
-                  ",h" 'railgun-find-helper
-                  ",p" 'railgun-find-presenter
-                  ",m" 'railgun-find-model)
 
 (evil-declare-key 'insert rhtml-mode-map
                   (kbd "M-=") 'insert-rhtml-%=

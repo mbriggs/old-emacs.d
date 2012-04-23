@@ -262,7 +262,10 @@
 
 (define-minor-mode railgun-minor-mode
   "Railgun Mode"
-  nil "rgun" railgun-minor-mode-map)
+  :lighter " rgun"
+  :keymap railgun-minor-mode-map
+  :group 'railgun
+  (evil-normalize-keymaps)) ; pull this out into config
 
 (defun railgun-maybe-launch ()
   (interactive)
@@ -274,5 +277,7 @@
 
 (defadvice cd (after railgun-cd activate)
   (railgun-maybe-launch))
+
+(add-hook 'after-change-major-mode-hook 'railgun-maybe-launch)
 
 (provide 'railgun)

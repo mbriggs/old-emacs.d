@@ -1,4 +1,5 @@
 (require 'magit)
+(require 'ace-jump-mode)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq-default tab-width 2)
