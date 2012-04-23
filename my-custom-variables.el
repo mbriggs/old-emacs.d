@@ -53,7 +53,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- `(helm-header ((((class color)) (:background ,sol-base1 :foreground ,sol-base3))))
+ `(helm-selection ((((class color)) (:background ,sol-yellow :foreground ,sol-base3))))
+ `(helm-source-header ((((class color)) (:background ,sol-base00 :foreground ,sol-base3))))
  `(clojure-test-error-face ((((class color) (background light)) (:underline ,sol-yellow))))
  `(clojure-test-failure-face ((((class color) (background light)) (:underline ,sol-red))))
  `(clojure-test-success-face ((((class color) (background light)) (:background ,sol-green :foreground ,sol-base3))))
