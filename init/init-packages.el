@@ -169,7 +169,6 @@
 (require-package 'mode-compile)
 (require-package 'org)
 (require-package 'paredit)
-(require-package 'rinari)
 (require-package 'ruby-end)
 (require-package 'ruby-block)
 (require-package 'rainbow-delimiters)
@@ -208,7 +207,6 @@
          haskell-mode
          fuzzy-find-in-project
          joseph-file-util
-         gist
          magit
          js3-mode
          js-comint
