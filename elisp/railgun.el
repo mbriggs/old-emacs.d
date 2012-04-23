@@ -23,6 +23,8 @@
 
 ;;; servers
 
+(require 'inflections)
+
 (defvar railgun/default-server 'thin)
 
 (defvar railgun/servers
@@ -39,7 +41,7 @@
 (defun railgun-start-server (&optional server)
   (interactive)
   (let ((current-dir default-directory))
-    (cd (eproject-root))
+    (cd (railgun-root))
     (let* ((server-name (or server railgun/default-server))
            (config (cdr (assoc server-name railgun/servers)))
            (command (car config))
@@ -53,7 +55,7 @@
 
 (defun railgun-find-blueprint ()
   (interactive)
-  (let* ((root (eproject-root))
+  (let* ((root (railgun-root))
          (target (railgun-prompt-for-resource "Blueprint for"))
          (search (concat "^" target ".blueprint")))
     (find-file (concat root "test/blueprints.rb"))
@@ -63,7 +65,7 @@
 (defun railgun-find-schema ()
   (interactive)
   (let* ((name (railgun-table-name-for-model (railgun-prompt-for-resource "Schema of")))
-         (root (eproject-root))
+         (root (railgun-root))
          (regexp (concat "create_table \"" name "\"")))
 
     (find-file (concat root "db/schema.rb"))
@@ -119,7 +121,7 @@
   (setq railgun/controllers-alist nil))
 
 (defun railgun-model-files ()
-  (all-files-under-dir-recursively (concat (eproject-root) "app/models") ".rb$"))
+  (all-files-under-dir-recursively (concat (railgun-root) "app/models") ".rb$"))
 
 (defvar railgun/models-alist nil)
 (defun railgun-models-alist ()
@@ -133,7 +135,7 @@
 ; controllers
 
 (defun railgun-controller-files ()
-  (all-files-under-dir-recursively (concat (eproject-root) "app/controllers") ".rb$"))
+  (all-files-under-dir-recursively (concat (railgun-root) "app/controllers") ".rb$"))
 
 (defvar railgun/controllers-alist nil)
 (defun railgun-controllers-alist ()
@@ -147,7 +149,7 @@
 ; presenters
 
 (defun railgun-presenter-files ()
-  (all-files-under-dir-recursively (concat (eproject-root) "app/presenters") ".rb$"))
+  (all-files-under-dir-recursively (concat (railgun-root) "app/presenters") ".rb$"))
 
 (defvar railgun/presenters-alist nil)
 (defun railgun-presenters-alist ()
@@ -161,7 +163,7 @@
 ; helpers
 
 (defun railgun-helper-files ()
-  (all-files-under-dir-recursively (concat (eproject-root) "app/helpers") ".rb$"))
+  (all-files-under-dir-recursively (concat (railgun-root) "app/helpers") ".rb$"))
 
 (defvar railgun/helpers-alist nil)
 (defun railgun-helpers-alist ()
@@ -195,7 +197,7 @@
 
 
 (defun is-railgun-model-p ()
-  (let ((model-regexp (concat "^" (eproject-root) "app/models")))
+  (let ((model-regexp (concat "^" (railgun-root) "app/models")))
     (string-match model-regexp (buffer-file-name))))
 
 (defun railgun-model-p (file-name)
@@ -225,7 +227,7 @@
 (defun railgun-table-name-from-file-name (file-name &optional ns)
   "get an underscored version of the current models name, passing in what to use as namespace delimiter"
   (let* ((delim-with (or ns "_"))
-         (dir (concat (eproject-root) (railgun-dir-name-for-file-name file-name)))
+         (dir (concat (railgun-root) (railgun-dir-name-for-file-name file-name)))
          (resource (replace-regexp-in-string dir "" file-name))
          (filename (replace-regexp-in-string "/" delim-with resource)))
     (replace-regexp-in-string ".rb$" "" filename)))
@@ -241,5 +243,36 @@
          (capitalized (capitalize table-name)))
     (replace-regexp-in-string "_" "" capitalized)))
 
+;;; mode and maps
+
+
+;; stolen from rinari
+(defun railgun-root (&optional dir home)
+  (or dir (setq dir default-directory))
+  (if (file-exists-p (expand-file-name
+                      "environment.rb" (expand-file-name "config" dir)))
+      dir
+    (let ((new-dir (expand-file-name (file-name-as-directory "..") dir)))
+      ;; regexp to match windows roots, tramp roots, or regular posix roots
+      (unless (string-match "\\(^[[:alpha:]]:/$\\|^/[^\/]+:/?$\\|^/$\\)" dir)
+        (railgun-root new-dir)))))
+
+(defvar railgun-minor-mode-map (make-sparse-keymap))
+(defvar railgun-minor-mode-hook nil)
+
+(define-minor-mode railgun-minor-mode
+  "Railgun Mode"
+  nil "rgun" railgun-minor-mode-map)
+
+(defun railgun-maybe-launch ()
+  (interactive)
+  (if (railgun-root)
+      (progn
+        (run-hooks 'railgun-minor-mode-hook)
+        (railgun-minor-mode t))
+    (if railgun-minor-mode (railgun-minor-mode))))
+
+(defadvice cd (after railgun-cd activate)
+  (railgun-maybe-launch))
 
 (provide 'railgun)
