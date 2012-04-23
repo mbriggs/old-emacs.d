@@ -3,7 +3,8 @@
 
   (setq erc-autojoin-channels-alist '(("freenode.net"
                                        "#clojure" "#emacs" "#ruby-lang"
-                                       "#documentcloud" "#javascript")))
+                                       "#documentcloud" "#javascript"
+                                       "#nulogy")))
 
   (setq erc-modules '(autoaway autojoin button completion fill irccontrols
                                list match menu move-to-prompt netsplit networks
