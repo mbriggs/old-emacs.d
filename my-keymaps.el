@@ -63,6 +63,8 @@
 (evil-ex-define-cmd "debug-elisp" 'edebug-defun)
 (evil-ex-define-cmd "dired" 'dired)
 (evil-ex-define-cmd "twit" 'twit)
+(evil-ex-define-cmd "[fb]find-blueprint" 'railgun-find-blueprint)
+(evil-ex-define-cmd "[fs]find-schema" 'railgun-find-schema)
 
 ;;; fast navigation
 
@@ -96,6 +98,12 @@
 (evil-declare-key 'insert js3-mode-map (kbd "M-k") 'insert-js-function)
 (evil-declare-key 'normal js3-mode-map ",t," 'rtt/toggle-test-and-implementation)
 (evil-declare-key 'normal js3-mode-map ",g" 'add-to-js-globals)
+
+(evil-declare-key 'normal js3-mode-map
+                  ",c" 'railgun-find-controller
+                  ",h" 'railgun-find-helper
+                  ",p" 'railgun-find-presenter
+                  ",m" 'railgun-find-model)
 
 ;;; comint
 
