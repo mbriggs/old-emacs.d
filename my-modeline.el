@@ -44,6 +44,8 @@
    ;; (:eval (when nyan-mode (list (nyan-create))))
    ))
 
+
+
 ;; Helper function
 (defun shorten-directory (dir max-length)
   "Show up to `max-length' characters of a directory name `dir'."

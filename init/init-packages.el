@@ -121,9 +121,6 @@
         (:name annoying-arrows
                :type http
                :url "https://raw.github.com/magnars/annoying-arrows-mode.el/master/annoying-arrows-mode.el")
-        (:name escreen
-               :type http
-               :url "http://www.splode.com/~friedman/software/emacs-lisp/src/escreen.el")
         (:name lua-mode
                :type git
                :url "https://github.com/immerrr/lua-mode.git")
