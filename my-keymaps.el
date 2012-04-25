@@ -112,6 +112,9 @@
 
 ;;; ruby
 
+(evil-declare-key 'insert inf-ruby-mode-map
+                  (kbd "M-k") 'require-absolute-ruby-path)
+
 (evil-declare-key 'normal railgun-minor-mode-map
                   ",m" 'railgun-find-model
                   ",c" 'railgun-find-controller

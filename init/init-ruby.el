@@ -31,6 +31,11 @@
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
 (setq compile-command "rake ")
 
+(defun require-absolute-ruby-path ()
+  (interactive)
+  (insert (concat "require '" (railgun-root) "'"))
+  (backward-char 1))
+
 
 (defun insert-hashrocket ()
   (interactive)
