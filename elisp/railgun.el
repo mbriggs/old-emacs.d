@@ -7,6 +7,9 @@
 ;; Version: 1
 
 
+;;; Dependancies: popwin.el, eproject
+
+
 ;;; Commentary:
 
 ;; The goal of this project is to provide easy ways to get to the places you
@@ -20,6 +23,7 @@
 ;; railgun-find-schema      - find model entry in schema.rb file
 ;; railgun-find-blueprint   - find the entry in blueprints.rb for a given model (if you use machinist)
 ;; railgun-start-server     - start the server specified by the current project
+
 
 ;;; servers
 
@@ -38,6 +42,8 @@
   (let ((proj-server (eproject-attribute :rails-server)))
     (railgun-start-server proj-server)))
 
+;; comint-buffer-maximum-size
+;; comint-truncate-buffer
 (defun railgun-start-server (&optional server)
   (interactive)
   (let ((current-dir default-directory))
@@ -47,6 +53,12 @@
            (command (car config))
            (args (cdr config))
            (out (apply 'make-comint "rails-server" command nil args)))
+
+      (with-current-buffer out
+        (make-local-variable 'comint-buffer-maximum-size)
+        (setq comint-buffer-maximum-size 3000)
+        (add-hook 'comint-output-filter-functions 'comint-truncate-buffer t t))
+
       (popwin:popup-buffer out :noselect t))
     (cd current-dir)))
 
@@ -107,9 +119,6 @@
 (defun railgun-prompt (prompt list &optional initial-value)
   (let ((input (ido-completing-read (concat prompt ": ") list nil t initial-value)))
     (if (string= "" input) model input)))
-
-;; comint-buffer-maximum-size
-;; comint-truncate-buffer
 
 ;; resources
 
