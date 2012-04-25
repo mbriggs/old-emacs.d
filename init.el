@@ -41,7 +41,6 @@
           init-yaml
           init-ruby-block
           init-ruby-end
-          init-escreen
           init-eproject
           init-js
           init-lua
