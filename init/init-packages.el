@@ -87,6 +87,18 @@
         (:name js3-mode
                :type git
                :url "https://github.com/thomblake/js3-mode.git")
+        (:name serve-rails
+               :type http
+               :url "https://raw.github.com/mbriggs/serve-rails.el/master/serve-rails.el"
+               :features serve-rails)
+        (:name dumb-refactorings
+               :type http
+               :url "https://raw.github.com/mbriggs/dumb-refactorings.el/master/dumb-refactoring.el"
+               :features dumb-refactorings)
+        (:name railgun
+               :type http
+               :url "https://raw.github.com/mbriggs/railgun.el/master/railgun.el"
+               :features railgun)
         (:name shoulda-test
                :type http
                :url "https://raw.github.com/mbriggs/shoulda-test/master/shoulda-test.el"
@@ -193,6 +205,7 @@
          dired-plus
          deferred
          diminish
+         dumb-refactorings
          lua-mode
          el-expectations
          eproject
@@ -217,6 +230,8 @@
          rails-test-toggler
          rhtml
          shoulda-test
+         serve-rails
+         railgun
          solarized
          twittering-mode
          rspec-mode

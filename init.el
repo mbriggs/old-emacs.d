@@ -47,8 +47,6 @@
           init-git-blame
           init-volatile-highlight
           init-whitespace
-          dumb-refactorings
-          railgun
 
           my-emacs-settings
           my-defuns
