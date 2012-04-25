@@ -28,7 +28,7 @@
                                        "#nulogy")))
 
   (setq erc-track-position-in-mode-line t)
-  (setq erc-track-shorten-start 5)
+  (setq erc-track-shorten-start 4)
   (setq erc-track-exclude '("irc.freenode.net"))
 
   (setq erc-modules '(autoaway autojoin button completion fill irccontrols

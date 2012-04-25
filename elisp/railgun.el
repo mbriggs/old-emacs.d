@@ -74,6 +74,18 @@
     (or (re-search-forward search nil t)
         (re-search-backward search nil t))))
 
+(defun railgun-find-factory ()
+  (interactive)
+  (let* ((root (railgun-root))
+         (target (railgun-prompt-for-resource "Factory for"))
+         (klass (concat "factory.*" target))
+         (sym (concat "factory +:" (railgun-table-name-for-model target))))
+    (find-file (concat root "spec/factories.rb"))
+    (or (or (re-search-forward klass nil t)
+            (re-search-backward klass nil t))
+        (or (re-search-forward sym nil t)
+            (re-search-backward sym nil t)))))
+
 (defun railgun-find-schema ()
   (interactive)
   (let* ((name (railgun-table-name-for-model (railgun-prompt-for-resource "Schema of")))
