@@ -93,7 +93,7 @@
                :features serve-rails)
         (:name dumb-refactorings
                :type http
-               :url "https://raw.github.com/mbriggs/dumb-refactorings.el/master/dumb-refactoring.el"
+               :url "https://raw.github.com/mbriggs/dumb-refactorings.el/master/dumb-refactorings.el"
                :features dumb-refactorings)
         (:name railgun
                :type http
@@ -180,7 +180,6 @@
 (require-package 'paredit)
 (require-package 'ruby-end)
 (require-package 'ruby-block)
-(require-package 'rainbow-delimiters)
 (require-package 'rainbow-mode)
 (require-package 'sass-mode)
 (require-package 'scss-mode)

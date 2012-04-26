@@ -26,7 +26,6 @@
           init-rinari
           init-linum
           init-evil
-          init-rainbow-delims
           init-ack
           init-twit
           init-textmate
