@@ -23,9 +23,8 @@
   (interactive)
 
   (setq erc-autojoin-channels-alist '(("freenode.net"
-                                       "#clojure" "#emacs" "#ruby-lang"
-                                       "#documentcloud" "#javascript"
-                                       "#nulogy")))
+                                       "#clojure" "#emacs" "#meteor"
+                                       "#javascript" "#nulogy")))
 
   (setq erc-track-position-in-mode-line t)
   (setq erc-track-shorten-start 4)

@@ -54,6 +54,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  `(helm-selection ((((class color)) (:background ,sol-yellow :foreground ,sol-base3))))
+ `(paren-face-match ((((class color)) (:background ,sol-orange :foreground ,sol-base3))))
+ `(show-paren-match-face ((((class color)) (:background ,sol-yellow :foreground ,sol-base3))))
  `(helm-source-header ((((class color)) (:background ,sol-base00 :foreground ,sol-base3))))
  `(clojure-test-error-face ((((class color) (background light)) (:underline ,sol-yellow))))
  `(clojure-test-failure-face ((((class color) (background light)) (:underline ,sol-red))))

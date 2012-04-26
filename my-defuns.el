@@ -1,3 +1,4 @@
+
 (defun send-current-line-to-next-window ()
   "Send current line to next window"
   (interactive)
@@ -180,5 +181,23 @@
       sol-blue      (solarized-find-color 'blue)
       sol-cyan      (solarized-find-color 'cyan)
       sol-green     (solarized-find-color 'green))
+
+
+
+(defface  my-parens       `((((class color)) (:foreground "#BEA75D"))) "custom parens"  :group 'faces)
+(defface  my-braces       `((((class color)) (:foreground ,sol-blue  ))) "custom braces"  :group 'faces)
+(defface  my-brackets     `((((class color)) (:foreground ,sol-violet))) "custom brackets" :group 'faces)
+(defface  my-double-quote `((((class color)) (:foreground ,sol-red   ))) "custom special" :group 'faces)
+
+(defun tweak-syntax ()
+  (if (not (eq 'magit-status-mode major-mode))
+      (mapcar (lambda (x) (font-lock-add-keywords nil x))
+              '((("#?['`]*(\\|)" . 'my-parens))
+                (("#?\\^?{\\|}" . 'my-braces))
+                (("\\[\\|\\]" . 'my-brackets))
+                (("#?\"" 0 'my-double-quote prepend))
+                (("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 'font-lock-warning-face t))))))
+
+(add-hook 'after-change-major-mode-hook 'tweak-syntax)
 
 (provide 'my-defuns)
