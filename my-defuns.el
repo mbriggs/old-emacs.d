@@ -190,6 +190,8 @@
 (defface  my-double-quote `((((class color)) (:foreground ,sol-red   ))) "custom special" :group 'faces)
 
 (defvar tweak-syntax-blacklist '(magit-status-mode
+                                 gfm-mode
+                                 org-mode
                                  erc-mode))
 
 (defun tweak-syntax ()
