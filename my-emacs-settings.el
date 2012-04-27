@@ -11,11 +11,7 @@
 (setq initial-scratch-message nil)
 
 (global-auto-revert-mode 1)
-
-(require 'smex)
-(smex-initialize)
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
+(ido-hacks-mode 1)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (delete-selection-mode t)

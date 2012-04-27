@@ -74,10 +74,14 @@
         (:name dired-plus
                :type http
                :url "https://raw.github.com/emacsmirror/dired-plus/master/dired+.el")
-        (:name fuzzy-find-in-project
+        ;; (:name fuzzy-find-in-project
+        ;;        :type git
+        ;;        :url "https://github.com/justinweiss/fuzzy-find-in-project"
+        ;;        :features fuzzy-find-in-project)
+        (:name ido-hacks
                :type git
-               :url "https://github.com/justinweiss/fuzzy-find-in-project"
-               :features fuzzy-find-in-project)
+               :url "https://github.com/scottjad/ido-hacks"
+               :features ido-hacks)
         (:name rvm
                :type git
                :url "http://github.com/djwhitt/rvm.el.git"
@@ -184,7 +188,6 @@
 (require-package 'sass-mode)
 (require-package 'scss-mode)
 (require-package 'scratch)
-(require-package 'smex)
 (require-package 'yari)
 (require-package 'yaml-mode)
 
@@ -213,8 +216,8 @@
          evil-surround
          expand-region
          etags-select
+         ido-hacks
          haskell-mode
-         fuzzy-find-in-project
          joseph-file-util
          magit
          js3-mode
@@ -224,6 +227,7 @@
          helm
          pretty-mode
          popwin
+         textmate
          ;; flymake-node-jshint
          prolog-el
          rails-test-toggler

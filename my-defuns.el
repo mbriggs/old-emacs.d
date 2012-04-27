@@ -189,13 +189,17 @@
 (defface  my-brackets     `((((class color)) (:foreground ,sol-violet))) "custom brackets" :group 'faces)
 (defface  my-double-quote `((((class color)) (:foreground ,sol-red   ))) "custom special" :group 'faces)
 
+(defvar tweak-syntax-blacklist '(magit-status-mode
+                                 erc-mode))
+
 (defun tweak-syntax ()
-  (if (not (eq 'magit-status-mode major-mode))
+  (if (not (member major-mode tweak-syntax-blacklist))
       (mapcar (lambda (x) (font-lock-add-keywords nil x))
               '((("#?['`]*(\\|)" . 'my-parens))
                 (("#?\\^?{\\|}" . 'my-braces))
                 (("\\[\\|\\]" . 'my-brackets))
                 (("#?\"" 0 'my-double-quote prepend))
+                (("#?\'" 0 'my-double-quote prepend))
                 (("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 'font-lock-warning-face t))))))
 
 (add-hook 'after-change-major-mode-hook 'tweak-syntax)

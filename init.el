@@ -28,7 +28,7 @@
           init-evil
           init-ack
           init-twit
-          init-textmate
+          ;; init-textmate
           init-rspec
           init-autocomplete
           init-ansi-color

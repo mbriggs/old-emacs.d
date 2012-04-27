@@ -9,11 +9,5 @@
 ;; Allow the same buffer to be open in different frames
 (setq ido-default-buffer-method 'selected-window)
 
-;;----------------------------------------------------------------------------
-;; ido completion in M-x
-;;----------------------------------------------------------------------------
-(smex-initialize)
-(global-set-key "\M-x" 'smex)
-
 
 (provide 'init-ido)

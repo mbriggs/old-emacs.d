@@ -17,7 +17,7 @@
 (define-key evil-normal-state-map (kbd "<right>") 'next-error)
 (define-key evil-normal-state-map (kbd "<left>") 'previous-error)
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
-(define-key evil-normal-state-map (kbd "M-t") 'command-t)
+(define-key evil-normal-state-map (kbd "M-t") 'textmate-goto-file)
 (define-key evil-normal-state-map (kbd "M-f") 'dired)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "M-j") 'evil-window-next)
@@ -171,11 +171,11 @@
   (kbd "C-=") 'org-todo
   (kbd "C-RET") 'evil-org-insert-heading)
 
-;;; fuzzy find
+;; ;;; fuzzy find
 
-(fuzzy-find-initialize)
-(define-key fuzzy-find-keymap "\M-n" 'fuzzy-find-next-completion)
-(define-key fuzzy-find-keymap "\M-p" 'fuzzy-find-previous-completion)
+;; (fuzzy-find-initialize)
+;; (define-key fuzzy-find-keymap "\M-n" 'fuzzy-find-next-completion)
+;; (define-key fuzzy-find-keymap "\M-p" 'fuzzy-find-previous-completion)
 
 ;;; Magit
 
