@@ -99,6 +99,10 @@
                :type http
                :url "https://raw.github.com/mbriggs/dumb-refactorings.el/master/dumb-refactorings.el"
                :features dumb-refactorings)
+        (:name railway
+               :type http
+               :url "https://raw.github.com/mbriggs/railway.el/master/railway.el"
+               :features railway)
         (:name railgun
                :type http
                :url "https://raw.github.com/mbriggs/railgun.el/master/railgun.el"
@@ -235,6 +239,7 @@
          shoulda-test
          serve-rails
          railgun
+         railway
          solarized
          twittering-mode
          rspec-mode

@@ -115,7 +115,7 @@
 (evil-declare-key 'insert inf-ruby-mode-map
                   (kbd "M-k") 'require-absolute-ruby-path)
 
-(evil-declare-key 'normal railgun-minor-mode-map
+(evil-declare-key 'normal railway-minor-mode-map
                   ",m" 'railgun-find-model
                   ",c" 'railgun-find-controller
                   ",h" 'railgun-find-helper
@@ -200,5 +200,7 @@
 (add-hook 'dired-mode-hook (lambda ()
   (define-key dired-mode-map "U" 'dired-up-directory)
   (define-key dired-mode-map "/" 'dired-isearch-filenames)))
+
+(add-hook 'railway-minor-mode-hook 'evil-normalize-keymaps)
 
 (provide 'my-keymaps)
