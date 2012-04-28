@@ -15,6 +15,21 @@
         (concat "ERC: name mentioned on: " (buffer-name (current-buffer)))
         message)))
 
+(defun ido-erc-buffer()
+  (interactive)
+  (switch-to-buffer
+   (ido-completing-read "Channel:"
+                        (save-excursion
+                          (delq nil
+                                (mapcar (lambda (buf)
+                                          (when (buffer-live-p buf)
+                                            (with-current-buffer buf
+                                              (and (eq major-mode 'erc-mode)
+                                                   (buffer-name buf)))))
+                                        (buffer-list)))))))
+
+  (global-set-key (kbd "C-c e") 'rgr/ido-erc-buffer)
+
 (if (eq system-type 'darwin)
     (add-hook 'erc-text-matched-hook 'osx-erc-mention))
 
@@ -23,8 +38,7 @@
   (interactive)
 
   (setq erc-autojoin-channels-alist '(("freenode.net"
-                                       "#clojure" "#emacs" "#meteor"
-                                       "#javascript" "#nulogy")))
+                                       "#clojure" "#emacs" "#meteor" "#javascript")))
 
   (setq erc-track-position-in-mode-line t)
   (setq erc-track-shorten-start 4)

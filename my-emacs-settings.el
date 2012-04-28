@@ -1,5 +1,7 @@
-(require 'magit)
+(require 'uniquify)
+(require 'color-theme)
 (require 'ace-jump-mode)
+
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq-default tab-width 2)
@@ -23,6 +25,10 @@
 (set-fringe-style -1)
 (tooltip-mode -1)
 
+(push "/usr/local/bin" exec-path)
+(push (expand-file-name "~/scripts") exec-path)
+(push (expand-file-name "/usr/local/bin") exec-path)
+
 ;; only turn off menus if not osx
 (if (not (eq system-type 'darwin))
     (menu-bar-mode -1))
@@ -31,8 +37,6 @@
     (set-frame-font "Menlo-15")
   (set-frame-font "Menlo-11"))
 
-(require 'color-theme)
-;(color-theme-solarized-light)
 (setq shell-command-switch "-ic")
 
 (add-hook 'after-change-major-mode-hook
@@ -42,19 +46,15 @@
 (set-face-foreground 'vertical-border "#fcf6e3")
 (set-face-background 'vertical-border "#fcf6e3")
 
-(push "/usr/local/bin" exec-path)
-(push (expand-file-name "~/scripts") exec-path)
-(push (expand-file-name "/usr/local/bin") exec-path)
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/el-get/solarized")
-
 (paren-activate) ; mic-paren
+
 (setq default-indicate-empty-lines t)
+
 (recentf-mode 1)
 (setq recentf-max-saved-items 80
       recentf-exclude '("/tmp/" "/ssh:"))
 
 (color-theme-solarized-light)
 
-;; (load-theme 'solarized-light t)
 (provide 'my-emacs-settings)
 

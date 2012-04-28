@@ -99,6 +99,10 @@
                :type http
                :url "https://raw.github.com/mbriggs/dumb-refactorings.el/master/dumb-refactorings.el"
                :features dumb-refactorings)
+        (:name less-mode
+               :type http
+               :url "https://raw.github.com/purcell/less-css-mode/master/less-css-mode.el"
+               :features less-css-mode)
         (:name railway
                :type http
                :url "https://raw.github.com/mbriggs/railway.el/master/railway.el"
@@ -240,6 +244,7 @@
          serve-rails
          railgun
          railway
+         less-mode
          solarized
          twittering-mode
          rspec-mode

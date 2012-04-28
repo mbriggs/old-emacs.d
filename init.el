@@ -28,7 +28,6 @@
           init-evil
           init-ack
           init-twit
-          ;; init-textmate
           init-rspec
           init-autocomplete
           init-ansi-color
@@ -56,7 +55,6 @@
           mingle
 
           server))
-
 
 (unless (server-running-p)
   (server-start))

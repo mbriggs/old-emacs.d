@@ -30,6 +30,7 @@
 (define-key evil-normal-state-map (kbd "M-K") 'cycle-buffer-backward)
 
 (global-set-key [f1] 'magit-status)
+(global-set-key [f5] 'textmate-clear-cache)
 (global-set-key [escape] 'keyboard-quit)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-\\") 'highlight-symbol-at-point)
@@ -43,6 +44,9 @@
 (global-set-key (kbd "M-.") 'my-find-tag)
 (global-set-key (kbd "M-b") 'ibuffer)
 
+(evil-ex-define-cmd "!" 'shell-command)
+(evil-ex-define-cmd "history" 'magit-file-log)
+(evil-ex-define-cmd "channel" 'ido-erc-buffer)
 (evil-ex-define-cmd "semicolons" 'semi-colonize)
 (evil-ex-define-cmd "create-spec" 'rtt/create-spec)
 (evil-ex-define-cmd "align" 'align-regexp)
@@ -50,19 +54,20 @@
 (evil-ex-define-cmd "eval-buffer" 'eval-buffer)
 (evil-ex-define-cmd "ack" 'ack)
 (evil-ex-define-cmd "ack-location" 'ack-location)
-(evil-ex-define-cmd "run-clojure" 'clojure-jack-in)
-(evil-ex-define-cmd "run-ruby" 'run-ruby)
-(evil-ex-define-cmd "run-js" 'run-js)
-(evil-ex-define-cmd "run-elisp" 'ielm)
-(evil-ex-define-cmd "run-haskell" 'run-haskell)
+(evil-ex-define-cmd "[rc]run-clojure" 'clojure-jack-in)
+(evil-ex-define-cmd "[rr]run-ruby" 'run-ruby)
+(evil-ex-define-cmd "[rj]run-js" 'run-js)
+(evil-ex-define-cmd "[re]run-elisp" 'ielm)
+(evil-ex-define-cmd "[rh]run-haskell" 'run-haskell)
 (evil-ex-define-cmd "serve-rails" 'serve-rails:start-project-server)
 (evil-ex-define-cmd "erc" 'start-erc)
 (evil-ex-define-cmd "weather" 'weather)
 (evil-ex-define-cmd "rename-in-project" 'dr/rename-in-project)
-(evil-ex-define-cmd "shell" 'shell)
-(evil-ex-define-cmd "debug-elisp" 'edebug-defun)
+(evil-ex-define-cmd "[sh]shell" 'shell)
+(evil-ex-define-cmd "[de]debug-elisp" 'edebug-defun)
 (evil-ex-define-cmd "dired" 'dired)
 (evil-ex-define-cmd "twit" 'twit)
+(evil-ex-define-cmd "create-spec" 'rtt/create-spec)
 (evil-ex-define-cmd "[fb]find-blueprint" 'railgun-find-blueprint)
 (evil-ex-define-cmd "[ff]find-factory" 'railgun-find-factory)
 (evil-ex-define-cmd "[fs]find-schema" 'railgun-find-schema)
@@ -109,6 +114,10 @@
 
 (evil-define-key 'normal comint-mode-map (kbd "q") 'kill-comint)
 
+
+;;; magit
+
+(define-key magit-branch-manager-mode-map (kbd "/") 'evil-search-forward)
 
 ;;; ruby
 

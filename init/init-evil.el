@@ -1,8 +1,11 @@
 (require 'surround)
 (global-surround-mode 1)
 (evil-mode 1)
-(evil-initial-state 'mo-git-blame 'emacs)
-(evil-initial-state 'dired 'emacs)
+(evil-set-initial-state 'dired 'emacs)
+(evil-set-initial-state 'magit-branch-manager-mode 'emacs)
+(evil-set-initial-state 'magit-commit-mode 'emacs)
+(evil-set-initial-state 'magit-log-mode 'emacs)
+(evil-set-initial-state 'log-view-mode 'emacs)
 (setq-default evil-shift-width 2)
 
 (provide 'init-evil)

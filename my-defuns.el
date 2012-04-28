@@ -88,7 +88,7 @@
   (interactive)
   (message "building project tags")
   (let ((root (eproject-root)))
-    (shell-command (concat "ctags -e -R --exclude=db --exclude=test --exclude=.git --exclude=public -f " root "TAGS " root)))
+    (shell-command (concat "ctags -e -R --extra=+q --exclude=db --exclude=test --exclude=.git --exclude=public -f " root "TAGS " root)))
   (visit-project-tags)
   (message "tags built successfully"))
 
@@ -190,6 +190,9 @@
 (defface  my-double-quote `((((class color)) (:foreground ,sol-red   ))) "custom special" :group 'faces)
 
 (defvar tweak-syntax-blacklist '(magit-status-mode
+                                 magit-log-mode
+                                 magit-commit-mode
+                                 magit-branch-manager-mode
                                  gfm-mode
                                  org-mode
                                  erc-mode))

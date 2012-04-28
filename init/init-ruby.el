@@ -18,6 +18,9 @@
 
 (setq ruby-use-encoding-map nil)
 
+; make :: symbol constituents
+;(modify-syntax-entry ?: "_" ruby-mode-syntax-table)
+
 (eval-after-load "ruby-mode"
   '(progn
      (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)))
