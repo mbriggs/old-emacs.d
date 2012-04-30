@@ -36,7 +36,7 @@
 
 (defun require-absolute-ruby-path ()
   (interactive)
-  (insert (concat "require '" (railgun-root) "'"))
+  (insert (concat "require '" (railway-root) "'"))
   (backward-char 1))
 
 
