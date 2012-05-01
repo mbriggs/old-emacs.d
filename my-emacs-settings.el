@@ -12,6 +12,9 @@
 (setq browse-url-generic-program "google-chrome")
 (setq initial-scratch-message nil)
 
+(setq uniquify-buffer-name-style 'post-forward
+      uniquify-separator ":")
+
 (global-auto-revert-mode 1)
 (ido-hacks-mode 1)
 

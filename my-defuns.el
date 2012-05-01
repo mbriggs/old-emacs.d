@@ -7,6 +7,11 @@
     (with-current-buffer target
       (insert current-line))))
 
+(defun my-clear-all-caches ()
+  (interactive)
+  (textmate-clear-cache)
+  (railgun-clear-caches))
+
 (defun my-delete-backwards ()
   (interactive)
   (delete-region (point) (progn (evil-backward-word-begin) (point))))

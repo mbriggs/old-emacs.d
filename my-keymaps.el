@@ -30,7 +30,7 @@
 (define-key evil-normal-state-map (kbd "M-K") 'cycle-buffer-backward)
 
 (global-set-key [f1] 'magit-status)
-(global-set-key [f5] 'textmate-clear-cache)
+(global-set-key [f5] 'my-clear-all-caches)
 (global-set-key [escape] 'keyboard-quit)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-\\") 'highlight-symbol-at-point)
@@ -50,10 +50,10 @@
 (evil-ex-define-cmd "semicolons" 'semi-colonize)
 (evil-ex-define-cmd "create-spec" 'rtt/create-spec)
 (evil-ex-define-cmd "align" 'align-regexp)
-(evil-ex-define-cmd "eval" 'eval-region)
-(evil-ex-define-cmd "eval-buffer" 'eval-buffer)
+(evil-ex-define-cmd "[er]eval-region" 'eval-region)
+(evil-ex-define-cmd "[eb]eval-buffer" 'eval-buffer)
 (evil-ex-define-cmd "ack" 'ack)
-(evil-ex-define-cmd "ack-location" 'ack-location)
+(evil-ex-define-cmd "[al]ack-location" 'ack-location)
 (evil-ex-define-cmd "[rc]run-clojure" 'clojure-jack-in)
 (evil-ex-define-cmd "[rr]run-ruby" 'run-ruby)
 (evil-ex-define-cmd "[rj]run-js" 'run-js)
@@ -128,6 +128,7 @@
                   ",m" 'railgun-find-model
                   ",c" 'railgun-find-controller
                   ",h" 'railgun-find-helper
+                  ",v" 'railgun-find-view
                   ",p" 'railgun-find-presenter)
 
 (evil-declare-key 'normal ruby-mode-map
