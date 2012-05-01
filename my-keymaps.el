@@ -29,6 +29,11 @@
 (define-key evil-normal-state-map (kbd "M-k") 'cycle-buffer)
 (define-key evil-normal-state-map (kbd "M-K") 'cycle-buffer-backward)
 
+(define-key evil-normal-state-map (kbd "C-k") 'textmate-column-up)
+(define-key evil-normal-state-map (kbd "C-j") 'textmate-column-down)
+(define-key evil-normal-state-map (kbd "C-l") 'evil-forward-word-begin)
+(define-key evil-normal-state-map (kbd "C-h") 'evil-backward-word-begin)
+
 (global-set-key [f1] 'magit-status)
 (global-set-key [f5] 'my-clear-all-caches)
 (global-set-key [escape] 'keyboard-quit)
@@ -72,16 +77,6 @@
 (evil-ex-define-cmd "[ff]find-factory" 'railgun-find-factory)
 (evil-ex-define-cmd "[fs]find-schema" 'railgun-find-schema)
 
-;;; fast navigation
-
-(define-key evil-normal-state-map (kbd "C-j") 'evil-forward-paragraph)
-(define-key evil-normal-state-map (kbd "C-k") 'evil-backward-paragraph)
-(define-key evil-normal-state-map (kbd "C-l") 'evil-forward-word-begin)
-(define-key evil-normal-state-map (kbd "C-h") 'evil-backward-word-begin)
-(define-key evil-visual-state-map (kbd "C-j") 'evil-forward-paragraph)
-(define-key evil-visual-state-map (kbd "C-k") 'evil-backward-paragraph)
-(define-key evil-visual-state-map (kbd "C-l") 'evil-forward-word-begin)
-(define-key evil-visual-state-map (kbd "C-h") 'evil-backward-word-begin)
 
 
 ;;; esc quits
