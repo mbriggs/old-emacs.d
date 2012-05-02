@@ -77,7 +77,6 @@
 (evil-ex-define-cmd "[fb]find-blueprint" 'railgun-find-blueprint)
 (evil-ex-define-cmd "[ff]find-factory" 'railgun-find-factory)
 (evil-ex-define-cmd "[fs]find-schema" 'railgun-find-schema)
-(evil-ex-define-cmd "js-ifi" 'toggle-js-ifi)
 
 
 
