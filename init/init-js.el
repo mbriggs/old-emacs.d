@@ -12,6 +12,16 @@
 
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
 
+(defun toggle-js-ifi ()
+  (interactive)
+  (if js3-consistent-level-indent-inner-bracket
+      (progn
+        (setq js3-consistent-level-indent-inner-bracket nil)
+        (message "IFI Mode Off"))
+    (progn
+      (setq js3-consistent-level-indent-inner-bracket t)
+      (message "IFI Mode On"))))
+
 ;;; inf-js
 
 (setq inferior-js-program-command "node-no-readline")
