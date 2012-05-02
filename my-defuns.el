@@ -7,6 +7,12 @@
     (with-current-buffer target
       (insert current-line))))
 
+(defun reset-current-dir ()
+  (interactive)
+  (let ((dir (file-name-directory (buffer-file-name))))
+    (cd dir)
+    (message (concat "Set the current buffer directory to " dir))))
+
 (defun my-clear-all-caches ()
   (interactive)
   (textmate-clear-cache)
