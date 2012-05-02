@@ -99,6 +99,10 @@
                :type http
                :url "https://raw.github.com/mbriggs/dumb-refactorings.el/master/dumb-refactorings.el"
                :features dumb-refactorings)
+        (:name partially
+               :type http
+               :url "https://raw.github.com/mbriggs/partially.el/master/partially.el"
+               :features partially)
         (:name less-mode
                :type http
                :url "https://raw.github.com/purcell/less-css-mode/master/less-css-mode.el"

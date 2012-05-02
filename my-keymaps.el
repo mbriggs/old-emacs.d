@@ -76,6 +76,7 @@
 (evil-ex-define-cmd "[fb]find-blueprint" 'railgun-find-blueprint)
 (evil-ex-define-cmd "[ff]find-factory" 'railgun-find-factory)
 (evil-ex-define-cmd "[fs]find-schema" 'railgun-find-schema)
+(evil-ex-define-cmd "js-ifi" 'toggle-js-ifi)
 
 
 
@@ -136,6 +137,9 @@
                   (kbd "M-=") 'insert-rhtml-%=
                   (kbd "M--") 'insert-rhtml-%
                   (kbd "M-k") 'insert-hashrocket)
+
+(evil-declare-key 'normal rhtml-mode-map
+                  (kbd "M->") 'partially/visit-partial)
 
 (evil-declare-key 'insert ruby-mode-map
                   (kbd "M-k") 'insert-hashrocket)
