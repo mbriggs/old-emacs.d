@@ -3,6 +3,7 @@
 (require 'ace-jump-mode)
 
 (setq make-backup-files nil)
+(setq shell-file-name "/bin/bash")
 (setq auto-save-default nil)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)

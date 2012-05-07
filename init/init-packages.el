@@ -255,7 +255,6 @@
          textile-mode
          volatile-highlights
          xml-parse
-         wanderlust
          highlight-symbol
          weather
          rvm)
