@@ -172,6 +172,7 @@
 (require-package 'crontab-mode)
 (require-package 'coffee-mode)
 (require-package 'color-theme)
+(require-package 'gist)
 (require-package 'csv-mode)
 (require-package 'diminish)
 (require-package 'durendal)
