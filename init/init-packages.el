@@ -43,6 +43,9 @@
                :type http
                :url "https://raw.github.com/dburger/find-file-in-project/master/find-file-in-project.el"
                :features find-file-in-project)
+        (:name gh
+               :type git
+               :url "https://github.com/sigma/gh.el.git")
         (:name helm
                :type git
                :url "https://github.com/emacs-helm/helm.git")
@@ -67,6 +70,12 @@
         (:name eproject
                :type git
                :url "https://github.com/jrockway/eproject")
+        (:name logito
+               :type http
+               :url "https://raw.github.com/sigma/logito/master/logito.el")
+        (:name pcache
+               :type http
+               :url "https://raw.github.com/sigma/pcache/master/pcache.el")
         (:name cycle-buffer
                :type http
                :url "https://raw.github.com/emacsmirror/cycle-buffer/master/cycle-buffer.el"
@@ -95,6 +104,9 @@
                :type http
                :url "https://raw.github.com/mbriggs/serve-rails.el/master/serve-rails.el"
                :features serve-rails)
+        (:name gist
+               :type http
+               :url "https://raw.github.com/defunkt/gist.el/master/gist.el")
         (:name dumb-refactorings
                :type http
                :url "https://raw.github.com/mbriggs/dumb-refactorings.el/master/dumb-refactorings.el"
@@ -172,7 +184,6 @@
 (require-package 'crontab-mode)
 (require-package 'coffee-mode)
 (require-package 'color-theme)
-(require-package 'gist)
 (require-package 'csv-mode)
 (require-package 'diminish)
 (require-package 'durendal)
@@ -244,6 +255,10 @@
          ;; flymake-node-jshint
          prolog-el
          rails-test-toggler
+	 gh
+ 	 pcache
+	 logito
+         gist
          rhtml
          shoulda-test
          serve-rails
