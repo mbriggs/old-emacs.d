@@ -1,3 +1,26 @@
+(defun current-line-number ()
+  (+ 1 (count-lines 1 (point))))
+
+(defun js-alert-line ()
+  (interactive)
+  (newline)
+  (indent-for-tab-command)
+  (insert
+   (concat "alert(\"DBG: Made it to line '" (number-to-string (current-line-number)) "'!!\")")))
+
+(defun js-log-line ()
+  (interactive)
+  (newline)
+  (indent-for-tab-command)
+  (insert
+   (concat "console.log(\"DBG: Made it to line '" (number-to-string (current-line-number)) "'!!\")")))
+
+(defun js-console-log ()
+  (interactive)
+  (newline)
+  (indent-for-tab-command)
+  (insert "console.log()")
+  (backward-char 1))
 
 (defun send-current-line-to-next-window ()
   "Send current line to next window"
