@@ -50,6 +50,7 @@
 (global-set-key (kbd "M-b") 'ibuffer)
 
 (evil-ex-define-cmd "!" 'shell-command)
+(evil-ex-define-cmd "log" 'magit-log)
 (evil-ex-define-cmd "reset-directory" 'reset-current-dir)
 (evil-ex-define-cmd "history" 'magit-file-log)
 (evil-ex-define-cmd "channel" 'ido-erc-buffer)
