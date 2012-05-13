@@ -13,6 +13,12 @@
     (cd dir)
     (message (concat "Set the current buffer directory to " dir))))
 
+(defun what-face (pos)
+  (interactive "d")
+  (let ((face (or (get-char-property (point) 'read-face-name)
+                  (get-char-property (point) 'face))))
+    (if face (message "Face: %s" face) (message "No face at %d" pos))))
+
 (defun my-clear-all-caches ()
   (interactive)
   (textmate-clear-cache)
@@ -198,6 +204,7 @@
 (defface  my-parens       `((((class color)) (:foreground "#BEA75D"))) "custom parens"  :group 'faces)
 (defface  my-braces       `((((class color)) (:foreground ,sol-blue  ))) "custom braces"  :group 'faces)
 (defface  my-brackets     `((((class color)) (:foreground ,sol-violet))) "custom brackets" :group 'faces)
+(defface  my-dot          `((((class color)) (:foreground "#BEA75D"))) "custom brackets" :group 'faces)
 (defface  my-double-quote `((((class color)) (:foreground ,sol-red   ))) "custom special" :group 'faces)
 
 (defvar tweak-syntax-blacklist '(magit-status-mode
@@ -214,6 +221,7 @@
               '((("#?['`]*(\\|)" . 'my-parens))
                 (("#?\\^?{\\|}" . 'my-braces))
                 (("\\[\\|\\]" . 'my-brackets))
+                (("\\." . 'my-dot))
                 (("#?\"" 0 'my-double-quote prepend))
                 (("#?\'" 0 'my-double-quote prepend))
                 (("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 'font-lock-warning-face t))))))
