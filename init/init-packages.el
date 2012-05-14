@@ -14,6 +14,7 @@
     (setq load-path (remove package-el-site-lisp-dir load-path))))
 
 (require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
 
@@ -46,9 +47,6 @@
         (:name gh
                :type git
                :url "https://github.com/sigma/gh.el.git")
-        (:name helm
-               :type git
-               :url "https://github.com/emacs-helm/helm.git")
         (:name popwin
                :type git
                :url "https://github.com/m2ym/popwin-el.git"
@@ -67,6 +65,49 @@
                :type http
                :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
                :features pretty-mode)
+        (:name htmlize
+               :website "http://www.emacswiki.org/emacs/Htmlize"
+               :description "Convert buffer text and decorations to HTML."
+               :type http
+               :url "http://fly.srk.fer.hr/~hniksic/emacs/htmlize.el.cgi"
+               :localname "htmlize.el"
+               :feature htmlize)
+        (:name toggle-friend-file
+               :type http
+               :website "https://github.com/gizmomogwai/toggle-friend-file"
+               :description "Toggles between friend files (e.g. h and cpp). See customize-group toggle-friend-file."
+               :url "https://github.com/gizmomogwai/toggle-friend-file/raw/master/toggle-friend-file.el"
+               :features toggle-friend-file)
+        (:name rdebug
+               :description "Ruby debugger user interface, startup file."
+               :type svn
+               :url "http://ruby-debug.rubyforge.org/svn/trunk/emacs/")
+        (:name minimap
+               :description "Minimap sidebar for Emacs"
+               :type git
+               :url "git://randomsample.de/minimap.git"
+               :features minimap)
+        (:name hl-tags-mode
+               :website "http://www.reddit.com/r/emacs/comments/ha7l9/html_matching_tag_highlighting/"
+               :description "if the cursor is inside of a '<div ....>' tag, it will highlight it and the corresponding '</div>' tag"
+               :type git
+               :url "https://github.com/deactivated/hl-tags-mode"
+               :features hl-tags-mode)
+        (:name hlinum
+               :description "Extension for linum.el to highlight current line number"
+               :type http :url "http://hlinum-mode.googlecode.com/hg/hlinum.el"
+               :features hlinum
+               :depends linum-ex)
+        (:name auto-complete-emacs-lisp
+               :description "Auto-complete sources for emacs lisp"
+               :type http
+               :url "http://www.cx4a.org/pub/auto-complete-emacs-lisp.el"
+               :depends auto-complete)
+        ;(:name auto-complete-ruby
+        ;       :description "Auto-complete sources for Ruby"
+        ;       :type http
+        ;       :url "http://www.cx4a.org/pub/auto-complete-ruby.el"
+        ;       :depends (auto-complete rcodetools))
         (:name eproject
                :type git
                :url "https://github.com/jrockway/eproject")
@@ -224,10 +265,18 @@
          ack-and-a-half
          auto-complete
          auto-complete-css
-         auto-complete-ruby
+         ;auto-complete-ruby
          ac-slime
          ac-dabbrev
          cycle-buffer
+         hlinum
+         htmlize
+         toggle-friend-file
+         rdebug
+         minimap
+         hl-tags-mode
+         auto-complete-emacs-lisp
+         auto-complete-ruby
          dired-plus
          deferred
          diminish
@@ -248,16 +297,15 @@
          js-comint
          midje-mode
          haml-mode
-         helm
          pretty-mode
          popwin
          textmate
          ;; flymake-node-jshint
          prolog-el
          rails-test-toggler
-	 gh
- 	 pcache
-	 logito
+         gh
+         pcache
+         logito
          gist
          rhtml
          shoulda-test

@@ -7,7 +7,7 @@
 (define-key evil-normal-state-map " m" 'evil-jump-item)
 (define-key evil-normal-state-map ",," 'evil-buffer)
 (define-key evil-normal-state-map "-" 'delete-other-windows)
-(define-key evil-normal-state-map "b" 'helm-opened)
+(define-key evil-normal-state-map "b" 'ido-switch-buffer)
 (define-key evil-normal-state-map "E" 'ido-find-file)
 (define-key evil-normal-state-map "\\" 'evil-repeat-find-char-reverse)
 (define-key evil-normal-state-map "H" 'evil-first-non-blank)
@@ -51,6 +51,8 @@
 
 (evil-ex-define-cmd "!" 'shell-command)
 (evil-ex-define-cmd "log" 'magit-log)
+(evil-ex-define-cmd "htmlize" 'htmlize-region)
+(evil-ex-define-cmd "[mm]minimap" 'toggle-minimap)
 (evil-ex-define-cmd "reset-directory" 'reset-current-dir)
 (evil-ex-define-cmd "history" 'magit-file-log)
 (evil-ex-define-cmd "channel" 'ido-erc-buffer)

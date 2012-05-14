@@ -29,9 +29,6 @@
 (set-fringe-style -1)
 (tooltip-mode -1)
 
-(push "/usr/local/bin" exec-path)
-(push (expand-file-name "~/scripts") exec-path)
-(push (expand-file-name "/usr/local/bin") exec-path)
 
 ;; only turn off menus if not osx
 (if (not (eq system-type 'darwin))

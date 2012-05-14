@@ -1,6 +1,17 @@
 (defun current-line-number ()
   (+ 1 (count-lines 1 (point))))
 
+(defun minimap-visible-p ()
+  (and minimap-bufname
+       (get-buffer minimap-bufname)
+       (get-buffer-window (get-buffer minimap-bufname))))
+
+(defun toggle-minimap ()
+  (interactive)
+  (if (minimap-visible-p)
+      (minimap-kill)
+    (minimap-create)))
+
 (defun js-alert-line ()
   (interactive)
   (newline)
