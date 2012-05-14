@@ -98,8 +98,8 @@
 
 ;;; helm
 
-(define-key helm-map (kbd "M-n") 'helm-next-line)
-(define-key helm-map (kbd "M-p") 'helm-previous-line)
+;; (define-key helm-map (kbd "M-n") 'helm-next-line)
+;; (define-key helm-map (kbd "M-p") 'helm-previous-line)
 
 ;;; javascript
 

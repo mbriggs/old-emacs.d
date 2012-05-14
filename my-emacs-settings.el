@@ -38,8 +38,6 @@
     (set-frame-font "Menlo-15")
   (set-frame-font "Menlo-11"))
 
-(setq shell-command-switch "-ic")
-
 (add-hook 'after-change-major-mode-hook
           (lambda ()
             (setq show-trailing-whitespace t)))

@@ -40,10 +40,6 @@
       '((:name ansi-color :type emacswiki)
         (:name etags-select :type emacswiki)
         (:name joseph-file-util :type emacswiki :features joseph-file-util)
-        (:name find-file-in-project
-               :type http
-               :url "https://raw.github.com/dburger/find-file-in-project/master/find-file-in-project.el"
-               :features find-file-in-project)
         (:name gh
                :type git
                :url "https://github.com/sigma/gh.el.git")
@@ -57,10 +53,10 @@
         (:name deferred
                :type git
                :url "https://github.com/kiwanami/emacs-deferred")
-        ;; (:name flymake-node-jshint
-        ;;        :type git
-        ;;        :url "https://github.com/jegbjerg/flymake-node-jshint.git"
-        ;;        :features flymake-node-jshint)
+        (:name find-file-in-project
+               :type http
+               :url "https://raw.github.com/ahobson/find-file-in-project/master/find-file-in-project.el"
+               :features find-file-in-project)
         (:name pretty-mode
                :type http
                :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
@@ -259,7 +255,8 @@
 ;;; el-get the rest
 (setq my-packages
       (append
-       '(autopair
+       '(find-file-in-project
+         autopair
          ace-jump-mode
          ansi-color
          ack-and-a-half
@@ -310,6 +307,7 @@
          rhtml
          shoulda-test
          serve-rails
+         slime
          railgun
          railway
          less-mode

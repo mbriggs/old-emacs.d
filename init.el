@@ -35,7 +35,6 @@
           init-rspec
           init-autocomplete
           init-ansi-color
-          init-helm
           init-ruby
           init-sass
           init-markdown
@@ -49,6 +48,7 @@
           init-git-blame
           init-volatile-highlight
           init-whitespace
+          init-slime
 
           my-emacs-settings
           my-defuns
