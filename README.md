@@ -23,51 +23,26 @@ _- G.B. Shaw_
 Install
 -------
 
-Using el-get, so everything should just magically download itself on first launch. Lots of plugins, so expect it to take some time, and probably crash once or twice
+Using el-get, so everything should just magically download itself on first launch. Lots of plugins (about 102 megs at this point), so expect it to take some time, and probably crash once or twice
 
 Dependancies
 ------------
 
 ubuntu:
 
-`sudo apt-get install texi2html texinfo python ctags-exuberant w3m gpg`
+`sudo apt-get install texi2html texinfo python ctags-exuberant w3m gpg sbcl`
 
 osx:
 
-`brew install ctags node w3m gpg`
+`brew install ctags node w3m gpg sbcl`
 
-ruby + `gem install fuzzy_file_finder`
+lein:
 
 `lein plugin install swank-clojure 1.3.3`
 
 `lein plugin install clj-stacktrace 0.2.3`
 
 it depends on a `~/.secrets.el` file being there. This is a good place to put passwords or other sensitive information required for plugins, but that you don't want sitting on public github.
-
-I use it to set `github-user` and `github-token`
-
-Install node on Linux
----------------------
-
-```bash
-git clone git@github.com:joyent/node.git
-cd node
-./configure && make && make install
-```
-
-install npm
-
-`curl http://npmjs.org/install.sh | sh`
-
-make sure node can find npm modules
-
-`echo 'export NODE_PATH="'$(npm root -g)'"' >> ~/.zshrc`
-
-then install jshint
-
-`sudo npm install -g jshint`
-
-and configure jshint options in `~/.jshint.json`
 
 If ctags isn't pointing at the right version
 --------------------------------------------
