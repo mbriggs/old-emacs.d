@@ -5,10 +5,10 @@
 
 (push "/usr/local/bin" exec-path)
 (push (expand-file-name "~/scripts") exec-path)
-(push "/usr/local/bin" exec-path)
 
 (mapcar 'require
         '(init-pre-package-variables
+          init-slime
           init-packages
           init-autopair
           init-rhtml
@@ -48,7 +48,6 @@
           init-git-blame
           init-volatile-highlight
           init-whitespace
-          init-slime
 
           my-emacs-settings
           my-defuns

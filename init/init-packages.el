@@ -216,15 +216,11 @@
 (require-package 'css-mode)
 (require-package 'ruby-compilation)
 (require-package 'inf-ruby)
-(require-package 'clojure-mode)
-(require-package 'clojure-test-mode)
 (require-package 'crontab-mode)
 (require-package 'coffee-mode)
 (require-package 'color-theme)
 (require-package 'csv-mode)
 (require-package 'diminish)
-(require-package 'durendal)
-(require-package 'elein)
 (require-package 'flymake-coffee)
 (require-package 'flymake-ruby)
 (require-package 'flymake-cursor)
@@ -263,6 +259,7 @@
          auto-complete
          auto-complete-css
          ;auto-complete-ruby
+clojure-mode
          ac-slime
          ac-dabbrev
          cycle-buffer
@@ -307,7 +304,6 @@
          rhtml
          shoulda-test
          serve-rails
-         slime
          railgun
          railway
          less-mode
