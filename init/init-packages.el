@@ -1,6 +1,7 @@
 ;;; Package.el
 
 (require 'compile)
+(require 'color-theme)
 (defun require-package (package &optional min-version)
   "Ask elpa to install given PACKAGE."
   (unless (package-installed-p package min-version)
@@ -22,8 +23,6 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(when (< emacs-major-version 24)
-  (require-package 'color-theme))
 
 
 ;;; el-get
@@ -218,7 +217,6 @@
 (require-package 'inf-ruby)
 (require-package 'crontab-mode)
 (require-package 'coffee-mode)
-(require-package 'color-theme)
 (require-package 'csv-mode)
 (require-package 'diminish)
 (require-package 'flymake-coffee)

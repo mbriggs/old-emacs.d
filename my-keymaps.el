@@ -24,8 +24,8 @@
 (define-key evil-normal-state-map (kbd "M-.") 'my-find-tag)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
-(define-key evil-visual-state-map ",ve" 'dr/extract-variable)
-(define-key evil-normal-state-map ",vi" 'dr/inline-variable)
+(define-key evil-visual-state-map ",re" 'dr/extract-variable)
+(define-key evil-normal-state-map ",ri" 'dr/inline-variable)
 (define-key evil-normal-state-map (kbd "M-k") 'cycle-buffer)
 (define-key evil-normal-state-map (kbd "M-K") 'cycle-buffer-backward)
 
