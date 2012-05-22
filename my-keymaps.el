@@ -24,8 +24,6 @@
 (define-key evil-normal-state-map (kbd "M-.") 'my-find-tag)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
-(define-key evil-visual-state-map ",re" 'dr/extract-variable)
-(define-key evil-normal-state-map ",ri" 'dr/inline-variable)
 (define-key evil-normal-state-map (kbd "M-k") 'cycle-buffer)
 (define-key evil-normal-state-map (kbd "M-K") 'cycle-buffer-backward)
 
@@ -33,6 +31,8 @@
 (define-key evil-normal-state-map (kbd "C-j") 'textmate-column-down)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-forward-word-begin)
 (define-key evil-normal-state-map (kbd "C-h") 'evil-backward-word-begin)
+(evil-define-key 'visual global-map (kbd ",re") 'dr/extract-variable)
+(evil-define-key 'normal global-map (kbd ",ri") 'dr/inline-variable)
 
 (global-set-key [f1] 'magit-status)
 (global-set-key [f5] 'my-clear-all-caches)
@@ -72,6 +72,7 @@
 (evil-ex-define-cmd "[gr]gist-region" 'gist-region)
 (evil-ex-define-cmd "[grp]gist-region-private" 'gist-region-private)
 (evil-ex-define-cmd "serve-rails" 'serve-rails:start-project-server)
+(evil-ex-define-cmd "serve-jasmine" 'serve-rails:start-jasmine)
 (evil-ex-define-cmd "erc" 'start-erc)
 (evil-ex-define-cmd "weather" 'weather)
 (evil-ex-define-cmd "rename-in-project" 'dr/rename-in-project)
