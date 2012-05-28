@@ -73,6 +73,8 @@
 (evil-ex-define-cmd "[grp]gist-region-private" 'gist-region-private)
 (evil-ex-define-cmd "serve-rails" 'serve-rails:start-project-server)
 (evil-ex-define-cmd "serve-jasmine" 'serve-rails:start-jasmine)
+(evil-ex-define-cmd "serve-guard" 'serve-rails:start-guard)
+(evil-ex-define-cmd "serve-spork" 'serve-rails:start-spork)
 (evil-ex-define-cmd "erc" 'start-erc)
 (evil-ex-define-cmd "weather" 'weather)
 (evil-ex-define-cmd "rename-in-project" 'dr/rename-in-project)

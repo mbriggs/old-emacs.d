@@ -31,6 +31,7 @@
           init-linum
           init-evil
           init-ack
+          init-serve-rails
           init-twit
           init-rspec
           init-autocomplete
