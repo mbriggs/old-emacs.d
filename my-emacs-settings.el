@@ -1,4 +1,5 @@
 (require 'uniquify)
+(require 'etags-select)
 (require 'color-theme)
 (require 'ace-jump-mode)
 
@@ -30,7 +31,7 @@
 (tooltip-mode -1)
 
 (setq textmate-find-files-command "git ls-tree --full-tree --name-only -r HEAD")
-(setq *textmate-gf-exclude* "(/|^)(\\.+[^/]+|vendor|tmp|log|classes|build|public|db/migrate)($|/)|(\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc)(/|$)")
+(setq *textmate-gf-exclude* "(/|^)(\\.+[^/]+|tmp|log|classes|build|public|db/migrate)($|/)|(\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc)(/|$)")
 
 ;; only turn off menus if not osx
 (if (not (eq system-type 'darwin))
