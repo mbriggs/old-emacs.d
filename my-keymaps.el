@@ -71,10 +71,10 @@
 (evil-ex-define-cmd "[gl]gist-list" 'gist-list)
 (evil-ex-define-cmd "[gr]gist-region" 'gist-region)
 (evil-ex-define-cmd "[grp]gist-region-private" 'gist-region-private)
-(evil-ex-define-cmd "serve-rails" 'serve-rails:start-project-server)
-(evil-ex-define-cmd "serve-jasmine" 'serve-rails:start-jasmine)
-(evil-ex-define-cmd "serve-guard" 'serve-rails:start-guard)
-(evil-ex-define-cmd "serve-spork" 'serve-rails:start-spork)
+(evil-ex-define-cmd "rserver" 'serve-rails:start-project-server)
+(evil-ex-define-cmd "jasmine" 'serve-rails:start-jasmine)
+(evil-ex-define-cmd "guard" 'serve-rails:start-guard)
+(evil-ex-define-cmd "spork" 'serve-rails:start-spork)
 (evil-ex-define-cmd "erc" 'start-erc)
 (evil-ex-define-cmd "weather" 'weather)
 (evil-ex-define-cmd "rename-in-project" 'dr/rename-in-project)
@@ -87,6 +87,10 @@
 (evil-ex-define-cmd "[ff]find-factory" 'railgun-find-factory)
 (evil-ex-define-cmd "[fs]find-schema" 'railgun-find-schema)
 
+;;; drop some keymaps
+
+(define-key *textmate-mode-map* [(meta return)] nil)
+(define-key org-mode-map [(meta return)] nil)
 
 
 ;;; esc quits
@@ -117,7 +121,8 @@
   (comint-interrupt-subjob)
   (popwin:close-popup-window))
 
-(evil-define-key 'normal comint-mode-map (kbd "q") 'kill-comint)
+(evil-define-key 'normal comint-mode-map (kbd "C-q") 'kill-comint)
+(evil-define-key 'normal comint-mode-map (kbd "q") 'popwin:close-popup-window)
 
 
 ;;; magit
@@ -181,13 +186,19 @@
   (kbd "M-J") 'org-metadown
   (kbd "M-K") 'org-metaup
   (kbd "C-=") 'org-todo
-  (kbd "C-o") 'evil-org-insert-heading
+  (kbd "M--") 'evil-org-normal-heading
   (kbd "C-j") 'org-forward-same-level
-  (kbd "C-k") 'org-backward-same-level)
+  (kbd "C-k") 'org-backward-same-level
+  (kbd "M-_") 'evil-org-heading-after-current)
 
 (evil-define-key 'insert org-mode-map
   (kbd "C-=") 'org-todo
-  (kbd "C-RET") 'evil-org-insert-heading)
+  (kbd "M-l") 'org-metaright
+  (kbd "M-h") 'org-metaleft
+  (kbd "M-j") 'org-metadown
+  (kbd "M-k") 'org-metaup
+  (kbd "M--") 'evil-org-normal-heading
+  (kbd "M-_") 'evil-org-heading-after-current)
 
 ;; ;;; fuzzy find
 

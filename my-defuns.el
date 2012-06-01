@@ -1,3 +1,8 @@
+(defun presentation-mode ()
+  (interactive)
+  (color-theme-scintilla)
+  (set-frame-font "Menlo-22"))
+
 (defun current-line-number ()
   (+ 1 (count-lines 1 (point))))
 

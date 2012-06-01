@@ -24,9 +24,16 @@
 (setq org-outline-path-complete-in-steps t)
 
 
-(defun evil-org-insert-heading ()
+(defun evil-org-heading-after-current ()
   (interactive)
-  (org-insert-heading-respect-content)
-  (evil-insert-state))
+  (org-insert-heading-after-current)
+  (evil-insert-state)
+  (end-of-line))
+
+(defun evil-org-normal-heading ()
+  (interactive)
+  (org-insert-heading)
+  (evil-insert-state)
+  (end-of-line))
 
 (provide 'init-org)
