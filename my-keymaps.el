@@ -113,6 +113,7 @@
 (evil-declare-key 'insert js3-mode-map (kbd "M-k") 'insert-js-function)
 (evil-declare-key 'normal js3-mode-map ",t," 'rtt/toggle-test-and-implementation)
 (evil-declare-key 'normal js3-mode-map ",g" 'add-to-js-globals)
+(evil-declare-key 'normal js3-mode-map ",d" 'js-log-line)
 
 ;;; comint
 
@@ -142,6 +143,7 @@
                   ",p" 'railgun-find-presenter)
 
 (evil-declare-key 'normal ruby-mode-map
+                  ",d" 'ruby-debug-puts
                   ",tf" 'test-verify
                   ",ta" 'test-verify-all
                   ",t," 'rtt/toggle-test-and-implementation
