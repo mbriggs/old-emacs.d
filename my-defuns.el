@@ -170,9 +170,7 @@
 
 (defun set-relative-shoulda-command ()
   (setq shoulda-command
-        (if *spork-running*
-            (concat "(cd " (eproject-root) "; SPORK_RUNNING=\"true\" ruby \"%f\" %o )")
-          (concat "(cd " (eproject-root) " && ruby \"%f\" %o)"))))
+        (concat "(cd " (eproject-root) " && ruby \"%f\" %o)")))
 
 (defun test-verify ()
   (interactive)
