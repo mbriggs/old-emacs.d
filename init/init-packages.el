@@ -46,6 +46,10 @@
                :type git
                :url "https://github.com/m2ym/popwin-el.git"
                :features popwin)
+        (:name buffer-tail
+               :type git
+               :url "https://github.com/mbriggs/buffer-tail.el.git"
+               :features buffer-tail)
         (:name expand-region
                :type git
                :url "https://github.com/mbriggs/expand-region.el.git")
