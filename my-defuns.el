@@ -20,7 +20,7 @@
 (defun ruby-debug-puts ()
   (interactive)
   (beginning-of-line)
-  (insert (concat "p \" ==================>> LINE " (number-to-string (current-line-number)) "\""))
+  (insert (concat "p \" !!!!!!!!!!!!!!!!!!!!!!!!!!!! [ LINE " (number-to-string (current-line-number)) " ]\""))
   (indent-for-tab-command)
   (newline)
   (indent-for-tab-command)
