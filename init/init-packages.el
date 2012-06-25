@@ -97,6 +97,10 @@
                :type http :url "http://hlinum-mode.googlecode.com/hg/hlinum.el"
                :features hlinum
                :depends linum-ex)
+        (:name slim
+               :type http
+               :url "https://raw.github.com/minad/emacs-slim/master/slim-mode.el"
+               :features slim-mode)
         (:name auto-complete-emacs-lisp
                :description "Auto-complete sources for emacs lisp"
                :type http
@@ -308,6 +312,7 @@ clojure-mode
          serve-rails
          railgun
          railway
+         slim
          less-mode
          solarized
          twittering-mode
