@@ -192,27 +192,24 @@
 
 (defun test-verify ()
   (interactive)
-  (if (eproject-attribute :use-shoulda)
-      (progn
-        (set-relative-shoulda-command)
-        (shoulda-verify))
-    (rspec-verify)))
+  (if (rtt/rspec? buffer-file-name)
+      (rspec-verify)
+    (set-relative-shoulda-command)
+    (shoulda-verify)))
 
 (defun test-verify-all ()
   (interactive)
-  (if (eproject-attribute :use-shoulda)
-      (progn
-        (set-relative-shoulda-command)
-        (shoulda-verify-all))
-    (rspec-verify-all)))
+  (if (rtt/rspec? buffer-file-name)
+      (rspec-verify-all)
+    (set-relative-shoulda-command)
+    (shoulda-verify-all)))
 
 (defun test-verify-single ()
   (interactive)
-  (if (eproject-attribute :use-shoulda)
-      (progn
-        (set-relative-shoulda-command)
-        (shoulda-verify-single))
-    (rspec-verify-single)))
+  (if (rtt/rspec? buffer-file-name)
+      (rspec-verify-single)
+    (set-relative-shoulda-command)
+    (shoulda-verify-single)))
 
 (defvar solarized-colors
   ;; name    sRGB      Gen RGB   
@@ -256,8 +253,6 @@
       sol-blue      (solarized-find-color 'blue)
       sol-cyan      (solarized-find-color 'cyan)
       sol-green     (solarized-find-color 'green))
-
-
 
 (defface  my-parens       `((((class color)) (:foreground "#BEA75D"))) "custom parens"  :group 'faces)
 (defface  my-braces       `((((class color)) (:foreground ,sol-blue  ))) "custom braces"  :group 'faces)
