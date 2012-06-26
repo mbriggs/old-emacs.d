@@ -199,10 +199,7 @@
 
 (defun test-verify-all ()
   (interactive)
-  (if (rtt/rspec? buffer-file-name)
-      (rspec-verify-all)
-    (set-relative-shoulda-command)
-    (shoulda-verify-all)))
+  (rspec-verify-all))
 
 (defun test-verify-single ()
   (interactive)
