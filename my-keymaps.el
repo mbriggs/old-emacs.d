@@ -136,6 +136,8 @@
                   (kbd "M-k") 'require-absolute-ruby-path)
 
 (evil-declare-key 'normal railway-minor-mode-map
+                  ",j" 'ra/find-javascript
+                  ",s" 'ra/find-stylesheet
                   ",m" 'railgun-find-model
                   ",c" 'railgun-find-controller
                   ",h" 'railgun-find-helper
