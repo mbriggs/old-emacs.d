@@ -23,7 +23,7 @@ _- G.B. Shaw_
 Install
 -------
 
-Using el-get, so everything should just magically download itself on first launch. Lots of plugins (about 102 megs at this point), so expect it to take some time, and probably crash once or twice
+Using el-get, so everything should just magically download itself on first launch. Lots of plugins (about 102 megs at this point), so expect it to take some time, and probably crash once or twice. I am using trunk right now, and know of at least one thing that won't even work with 24.1 (create-lockfiles to nil), so YMMV, but the newer the emacs the better.
 
 Dependancies
 ------------

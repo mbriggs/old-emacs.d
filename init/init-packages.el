@@ -163,6 +163,10 @@
                :type http
                :url "https://raw.github.com/purcell/less-css-mode/master/less-css-mode.el"
                :features less-css-mode)
+        (:name rails-assets
+               :type http
+               :url "https://raw.github.com/mbriggs/rails-assets/master/rails-assets.el"
+               :features rails-assets)
         (:name railway
                :type http
                :url "https://raw.github.com/mbriggs/railway.el/master/railway.el"
@@ -312,6 +316,7 @@ clojure-mode
          serve-rails
          railgun
          railway
+         rails-assets
          slim
          less-mode
          solarized
