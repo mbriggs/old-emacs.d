@@ -3,7 +3,15 @@
 (require 'color-theme)
 (require 'ace-jump-mode)
 
-(setq make-backup-files nil)
+(setq create-lockfiles nil)
+
+(setq backup-directory-alist `(("." . "~/.saves")))
+(setq backup-by-copying t)
+(setq delete-old-versions t
+  kept-new-versions 6
+  kept-old-versions 2
+  version-control t)
+
 (setq shell-file-name "/bin/bash")
 (setq auto-save-default nil)
 (setq-default tab-width 2)
