@@ -51,6 +51,7 @@
 
 (evil-ex-define-cmd "!" 'shell-command)
 (evil-ex-define-cmd "log" 'magit-log)
+(evil-ex-define-cmd "[br]branch" 'magit-branch-manager)
 (evil-ex-define-cmd "htmlize" 'htmlize-region)
 (evil-ex-define-cmd "[mm]minimap" 'toggle-minimap)
 (evil-ex-define-cmd "reset-directory" 'reset-current-dir)
