@@ -1,5 +1,6 @@
 (add-hook 'serve-rails/starting-spork-hook 'set-spork-env)
 (add-hook 'serve-rails/starting-guard-hook 'set-guard-env)
+(add-hook 'serve-rails/launch-complete-hook 'clear-test-env-vars)
 
 (defun set-spork-env ()
   (setenv "SPORK_RUNNING" "true")
