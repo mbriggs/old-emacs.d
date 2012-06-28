@@ -143,6 +143,7 @@
                   ",c" 'railgun-find-controller
                   ",h" 'railgun-find-helper
                   ",v" 'railgun-find-view
+                  ",l" 'railgun-find-lib
                   ",p" 'railgun-find-presenter)
 
 (evil-declare-key 'normal ruby-mode-map
