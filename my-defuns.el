@@ -79,6 +79,7 @@
 (defun my-clear-all-caches ()
   (interactive)
   (textmate-clear-cache)
+  (ra/clear-caches)
   (railgun-clear-caches))
 
 (defun my-delete-backwards ()
