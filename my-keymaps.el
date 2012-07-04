@@ -59,6 +59,7 @@
 (evil-ex-define-cmd "channel" 'ido-erc-buffer)
 (evil-ex-define-cmd "semicolons" 'semi-colonize)
 (evil-ex-define-cmd "create-spec" 'rtt/create-spec)
+(evil-ex-define-cmd "create-migration" 'railway-create-migration)
 (evil-ex-define-cmd "align" 'align-regexp)
 (evil-ex-define-cmd "[er]eval-region" 'eval-region)
 (evil-ex-define-cmd "[eb]eval-buffer" 'eval-buffer)
