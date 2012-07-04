@@ -27,7 +27,9 @@
  '(mumamo-chunk-coloring 1)
  '(rng-auto-validate-flag nil)
  '(scss-compile-at-save nil)
- '(tags-case-fold-search nil))
+ '(tags-case-fold-search nil)
+ '(ruby-end-check-statement-modifiers nil)
+ '(ruby-extra-keywords '("include" "extend" "private")))
 
   ;; name    sRGB      Gen RGB   degraded  ANSI(Solarized terminal)
   ;; '((base03  "#002b36" "#042028" "#1c1c1c" "#7f7f7f")
@@ -52,6 +54,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+
+ `(ruby-string-delimiter-face ((((class color)) (:foreground ,sol-red))))
+ `(ruby-op-face ((((class color)) (:foreground ,sol-blue))
+                 (t (:weight bold))))
  `(helm-selection ((((class color)) (:background ,sol-yellow :foreground ,sol-base3))))
  `(paren-face-match ((((class color)) (:background ,sol-orange :foreground ,sol-base3))))
  `(show-paren-match-face ((((class color)) (:background ,sol-yellow :foreground ,sol-base3))))
