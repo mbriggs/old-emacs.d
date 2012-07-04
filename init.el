@@ -4,6 +4,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
 (push "/usr/local/bin" exec-path)
+(push "/usr/bin" exec-path)
 (push (expand-file-name "~/scripts") exec-path)
 
 (mapcar 'require
