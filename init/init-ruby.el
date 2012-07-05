@@ -14,6 +14,7 @@
 
 (setq ruby-use-encoding-map nil)
 
+
 ; make :: symbol constituents
 ;(modify-syntax-entry ?: "_" ruby-mode-syntax-table)
 
@@ -27,8 +28,7 @@
 ;; (font-lock-add-keywords 'ruby-mode '(("\\<\\(def\\|class\\)\\>" . ruby-def-face)))
 
 (add-hook 'ruby-mode-hook 'rvm-activate-corresponding-ruby)
-(add-hook 'ruby-mode-hook 'flymake-ruby-load)
-(setq compile-command "rake ")
+;; (add-hook 'ruby-mode-hook 'flymake-ruby-load)
 
 (defun require-absolute-ruby-path ()
   (interactive)

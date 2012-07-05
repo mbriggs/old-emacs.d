@@ -36,7 +36,11 @@
 
 
 (setq el-get-sources
-      '((:name ansi-color :type emacswiki)
+      '((:name enhanced-ruby-mode
+               :type git
+               :url "git://github.com/mbriggs/Enhanced-Ruby-Mode.git"
+               :features ruby-mode)
+        (:name ansi-color :type emacswiki)
         (:name etags-select :type emacswiki)
         (:name joseph-file-util :type emacswiki :features joseph-file-util)
         (:name gh
@@ -261,7 +265,8 @@
 ;;; el-get the rest
 (setq my-packages
       (append
-       '(find-file-in-project
+       '(enhanced-ruby-mode
+         find-file-in-project
          autopair
          ace-jump-mode
          ansi-color
@@ -269,7 +274,7 @@
          auto-complete
          auto-complete-css
          ;auto-complete-ruby
-clojure-mode
+         clojure-mode
          ac-slime
          ac-dabbrev
          cycle-buffer
