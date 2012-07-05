@@ -38,7 +38,7 @@
 (setq el-get-sources
       '((:name enhanced-ruby-mode
                :type git
-               :url "git://github.com/jacott/Enhanced-Ruby-Mode.git"
+               :url "git://github.com/mbriggs/Enhanced-Ruby-Mode.git"
                :features ruby-mode)
         (:name ansi-color :type emacswiki)
         (:name etags-select :type emacswiki)
