@@ -3,6 +3,22 @@
   (color-theme-scintilla)
   (set-frame-font "Menlo-22" t))
 
+(defun ruby-onenine-ify-line-hashes ()
+  (interactive)
+  (ruby-onenine-ify-hashes (point-at-bol) (point-at-eol)))
+
+(defun ruby-onenine-ify-region-hashes ()
+  (interactive)
+  (ruby-onenine-ify-hashes (region-beginning) (region-end)))
+
+(defun ruby-onenine-ify-buffer-hashes ()
+  (interactive)
+  (ruby-onenine-ify-hashes (point-min) (point-max)))
+
+(defun ruby-onenine-ify-hashes (point-start point-end)
+  (replace-regexp ":\\([a-zA-Z0-9_]+\\) +=>" "\\1:"
+                  nil point-start point-end))
+
 (defun current-line-number ()
   (+ 1 (count-lines 1 (point))))
 

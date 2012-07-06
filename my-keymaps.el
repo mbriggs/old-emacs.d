@@ -88,6 +88,7 @@
 (evil-ex-define-cmd "[fb]find-blueprint" 'railgun-find-blueprint)
 (evil-ex-define-cmd "[ff]find-factory" 'railgun-find-factory)
 (evil-ex-define-cmd "[fs]find-schema" 'railgun-find-schema)
+(evil-ex-define-cmd "[19]onenineify" 'ruby-onenine-ify-region-hashes)
 
 ;;; drop some keymaps
 
@@ -152,7 +153,9 @@
                   ",tf" 'test-verify
                   ",ta" 'test-verify-all
                   ",t," 'rtt/toggle-test-and-implementation
-                  ",tt" 'test-verify-single)
+                  ",tt" 'test-verify-single
+                  ",1b" 'ruby-onenine-ify-buffer-hashes
+                  ",11" 'ruby-onenine-ify-line-hashes)
 
 (evil-declare-key 'insert rhtml-mode-map
                   (kbd "M-=") 'insert-rhtml-%=
