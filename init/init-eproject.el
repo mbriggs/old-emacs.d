@@ -13,9 +13,13 @@
 (define-project-type clojure (generic)
   (look-for "project.clj"))
 
+(define-project-attribute '("reporting" . :project-name)
+  '(:uses-domain t))
+
 (defun packman-eproject (name)
   (define-project-attribute `(,name . :project-name)
 	   '(:packman t
+       :uses-domain nil
        :rails-server passenger)))
 
 (mapc 'packman-eproject
