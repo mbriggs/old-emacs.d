@@ -88,7 +88,7 @@
 (evil-ex-define-cmd "[fb]find-blueprint" 'railgun-find-blueprint)
 (evil-ex-define-cmd "[ff]find-factory" 'railgun-find-factory)
 (evil-ex-define-cmd "[fs]find-schema" 'railgun-find-schema)
-(evil-ex-define-cmd "[19]onenineify" 'ruby-onenine-ify-region-hashes)
+(evil-ex-define-cmd "kill-hashes" 'ruby-onenine-ify-region-hashes)
 
 ;;; drop some keymaps
 
@@ -141,12 +141,18 @@
 (evil-declare-key 'normal railway-minor-mode-map
                   ",j" 'ra/find-javascript
                   ",s" 'ra/find-stylesheet
-                  ",m" 'railgun-find-model
+                  ",m" 'railgun-domain-or-model
                   ",c" 'railgun-find-controller
                   ",h" 'railgun-find-helper
                   ",v" 'railgun-find-view
                   ",l" 'railgun-find-lib
                   ",p" 'railgun-find-presenter)
+
+(defun railgun-domain-or-model ()
+  (interactive)
+  (if (eproject-attribute :uses-domain)
+      (railgun-find-domain)
+    (railgun-find-model)))
 
 (evil-declare-key 'normal ruby-mode-map
                   ",d" 'ruby-debug-puts
@@ -154,8 +160,8 @@
                   ",ta" 'test-verify-all
                   ",t," 'rtt/toggle-test-and-implementation
                   ",tt" 'test-verify-single
-                  ",1b" 'ruby-onenine-ify-buffer-hashes
-                  ",11" 'ruby-onenine-ify-line-hashes)
+                  ",hb" 'ruby-onenine-ify-buffer-hashes
+                  ",hh" 'ruby-onenine-ify-line-hashes)
 
 (evil-declare-key 'insert rhtml-mode-map
                   (kbd "M-=") 'insert-rhtml-%=
