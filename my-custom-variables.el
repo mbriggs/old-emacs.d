@@ -22,6 +22,7 @@
  '(js2-mirror-mode nil)
  '(js2-strict-missing-semi-warning nil)
  '(js3-global-externs my-global-externs)
+ '(session-use-package t)
  '(linum-disabled-modes-list (quote (eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode erc-mode)))
  '(linum-format "%3d ")
  '(mumamo-chunk-coloring 1)

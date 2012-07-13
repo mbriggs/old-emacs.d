@@ -155,6 +155,10 @@
         (:name gist
                :type http
                :url "https://raw.github.com/defunkt/gist.el/master/gist.el")
+        (:name session
+               :type http
+               :url "https://raw.github.com/tarsius/session/master/session.el"
+               :features session)
         (:name dumb-refactorings
                :type http
                :url "https://raw.github.com/mbriggs/dumb-refactorings.el/master/dumb-refactorings.el"
@@ -323,6 +327,7 @@
          railway
          rails-assets
          slim
+         session
          less-mode
          solarized
          twittering-mode

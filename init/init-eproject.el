@@ -14,7 +14,8 @@
   (look-for "project.clj"))
 
 (define-project-attribute '("reporting" . :project-name)
-  '(:uses-domain t))
+  '(:uses-domain t
+    :rails-server passenger))
 
 (defun packman-eproject (name)
   (define-project-attribute `(,name . :project-name)

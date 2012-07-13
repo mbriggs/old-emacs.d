@@ -26,6 +26,7 @@
 (define-key evil-normal-state-map (kbd "C-SPC") 'comment-or-uncomment-region-or-line)
 (define-key evil-normal-state-map (kbd "M-k") 'cycle-buffer)
 (define-key evil-normal-state-map (kbd "M-K") 'cycle-buffer-backward)
+(define-key evil-normal-state-map (kbd "M-o") 'session-jump-to-last-change)
 
 (define-key evil-normal-state-map (kbd "C-k") 'textmate-column-up)
 (define-key evil-normal-state-map (kbd "C-j") 'textmate-column-down)
