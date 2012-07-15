@@ -204,10 +204,6 @@
                :type http
                :url "https://raw.github.com/imakado/emacs-smartchr/master/smartchr.el"
                :features smartchr)
-        (:name rails-test-toggler
-               :type http
-               :url "https://raw.github.com/mbriggs/rails-test-toggler/master/rails-test-toggler.el"
-               :features rails-test-toggler)
         (:name volatile-highlights
                :type http
                :url "https://raw.github.com/k-talo/volatile-highlights.el/master/volatile-highlights.el")
@@ -315,7 +311,6 @@
          textmate
          ;; flymake-node-jshint
          prolog-el
-         rails-test-toggler
          gh
          pcache
          logito

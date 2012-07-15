@@ -115,7 +115,7 @@
 ;;; javascript
 
 (evil-declare-key 'insert js3-mode-map (kbd "M-k") 'insert-js-function)
-(evil-declare-key 'normal js3-mode-map ",t," 'rtt/toggle-test-and-implementation)
+(evil-declare-key 'normal js3-mode-map ",t," 'railgun-toggle-test-and-implementation)
 (evil-declare-key 'normal js3-mode-map ",g" 'add-to-js-globals)
 (evil-declare-key 'normal js3-mode-map ",d" 'js-log-line)
 
@@ -142,24 +142,26 @@
 (evil-declare-key 'normal railway-minor-mode-map
                   ",j" 'ra/find-javascript
                   ",s" 'ra/find-stylesheet
-                  ",m" 'railgun-domain-or-model
+                  ",m" 'go-to-domain-or-model
                   ",c" 'railgun-find-controller
                   ",h" 'railgun-find-helper
                   ",v" 'railgun-find-view
                   ",l" 'railgun-find-lib
                   ",p" 'railgun-find-presenter)
 
-(defun railgun-domain-or-model ()
+(defun go-to-domain-or-model ()
   (interactive)
   (if (eproject-attribute :uses-domain)
-      (railgun-find-domain)
-    (railgun-find-model)))
+      (setq railgun-entity 'domain)
+    (setq railgun-entity 'model))
+
+  (railgun-find-entity))
 
 (evil-declare-key 'normal ruby-mode-map
                   ",d" 'ruby-debug-puts
                   ",tf" 'test-verify
                   ",ta" 'test-verify-all
-                  ",t," 'rtt/toggle-test-and-implementation
+                  ",t," 'railgun-toggle-test-and-implmentation
                   ",tt" 'test-verify-single
                   ",hb" 'ruby-onenine-ify-buffer-hashes
                   ",hh" 'ruby-onenine-ify-line-hashes)
