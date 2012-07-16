@@ -20,7 +20,7 @@
 (defun packman-eproject (name)
   (define-project-attribute `(,name . :project-name)
 	   '(:packman t
-       :uses-domain nil
+       :uses-domain t
        :rails-server passenger)))
 
 (mapc 'packman-eproject
