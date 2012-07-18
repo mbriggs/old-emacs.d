@@ -179,6 +179,11 @@
 
 
 
+;;; cucumber
+
+(evil-declare-key 'normal feature-mode-map
+                  ",tf" 'feature-verify-all-scenarios-in-buffer
+                  ",tt" 'feature-verify-scenario-at-pos)
 
 ;;; clojure
 
