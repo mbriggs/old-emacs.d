@@ -46,6 +46,10 @@
         (:name gh
                :type git
                :url "https://github.com/sigma/gh.el.git")
+        (:name cucumber
+               :type git
+               :url "git://github.com/michaelklishin/cucumber.el.git"
+               :features feature-mode)
         (:name popwin
                :type git
                :url "https://github.com/m2ym/popwin-el.git"
@@ -323,6 +327,7 @@
          rails-assets
          slim
          session
+         cucumber
          less-mode
          solarized
          twittering-mode
