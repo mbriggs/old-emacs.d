@@ -161,7 +161,7 @@
                   ",d" 'ruby-debug-puts
                   ",tf" 'test-verify
                   ",ta" 'test-verify-all
-                  ",t," 'railgun-toggle-test-and-implmentation
+                  ",t," 'railgun-toggle-test-and-implementation
                   ",tt" 'test-verify-single
                   ",hb" 'ruby-onenine-ify-buffer-hashes
                   ",hh" 'ruby-onenine-ify-line-hashes)
