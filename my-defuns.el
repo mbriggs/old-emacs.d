@@ -209,8 +209,7 @@
 
 (defun test-verify ()
   (interactive)
-  (if (rtt/rspec? buffer-file-name)
-      (rspec-verify)
+  (if (railgun-spec?) (rspec-verify)
     (set-relative-shoulda-command)
     (shoulda-verify)))
 
@@ -220,8 +219,7 @@
 
 (defun test-verify-single ()
   (interactive)
-  (if (rtt/rspec? buffer-file-name)
-      (rspec-verify-single)
+  (if (railgun-spec?) (rspec-verify-single)
     (set-relative-shoulda-command)
     (shoulda-verify-single)))
 
