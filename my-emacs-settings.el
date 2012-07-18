@@ -3,6 +3,8 @@
 (require 'color-theme)
 (require 'ace-jump-mode)
 
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
 (setq create-lockfiles nil)
 
 (setq backup-directory-alist `(("." . "~/.saves")))
