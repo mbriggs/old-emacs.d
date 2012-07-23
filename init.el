@@ -54,6 +54,7 @@
           my-emacs-settings
           my-defuns
           my-keymaps
+          my-ex-mode-maps
           my-modeline
 
           hexcolors
