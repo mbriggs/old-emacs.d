@@ -29,6 +29,8 @@
  '(rng-auto-validate-flag nil)
  '(scss-compile-at-save nil)
  '(tags-case-fold-search nil)
+ '(zencoding-indentation 2)
+ '(feature-cucumber-command "cucumber {options} {feature}")
  '(ruby-end-check-statement-modifiers nil)
  '(ruby-extra-keywords '("include" "extend" "private")))
 

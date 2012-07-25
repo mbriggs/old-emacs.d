@@ -4,7 +4,7 @@
 (require 'ace-jump-mode)
 
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
-
+(add-hook 'sgml-mode-hook 'zencoding-mode)
 (setq create-lockfiles nil)
 
 (setq backup-directory-alist `(("." . "~/.saves")))

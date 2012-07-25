@@ -93,6 +93,10 @@
 
 (define-key magit-branch-manager-mode-map (kbd "/") 'evil-search-forward)
 
+;;; zencoding
+
+(define-key zencoding-mode-keymap (kbd "M-e") 'zencoding-expand-line)
+
 ;;; ruby
 
 (evil-declare-key 'insert inf-ruby-mode-map

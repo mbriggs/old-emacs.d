@@ -337,7 +337,8 @@
          xml-parse
          highlight-symbol
          weather
-         rvm)
+         rvm
+         zencoding-mode)
        (mapcar 'el-get-source-name el-get-sources)))
 
 
