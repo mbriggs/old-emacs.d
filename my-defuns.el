@@ -203,14 +203,26 @@
     (visit-tags-table tags-file)
     (message (concat "Loaded " tags-file))))
 
-(defun set-relative-shoulda-command ()
-  (setq shoulda-command
-        (concat "(cd " (eproject-root) " && ruby \"%f\" %o)")))
+(defvar *use-spork* nil)
+(defun toggle-use-spork ()
+  (interactive)
+  (setq *use-spork* (if *use-spork* nil t)))
+
+(defun set-shoulda-command ()
+  (let ((runner (if *use-spork* "testdrb" "ruby")))
+    (setq shoulda-command
+          (concat "(cd " (eproject-root) " && " runner " \"%f\" %o)"))))
+
+(require 'rspec-mode)
+(defadvice rspec-runner (around set-rspec-command)
+  (let ((rspec-spec-command (if *use-spork* "rspec --drb" "rspec")))
+    ad-do-it))
+(ad-activate 'rspec-runner)
 
 (defun test-verify ()
   (interactive)
   (if (railgun-spec?) (rspec-verify)
-    (set-relative-shoulda-command)
+    (set-shoulda-command)
     (shoulda-verify)))
 
 (defun test-verify-all ()
@@ -220,7 +232,7 @@
 (defun test-verify-single ()
   (interactive)
   (if (railgun-spec?) (rspec-verify-single)
-    (set-relative-shoulda-command)
+    (set-shoulda-command)
     (shoulda-verify-single)))
 
 (defvar solarized-colors
