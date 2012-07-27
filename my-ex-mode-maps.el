@@ -45,7 +45,6 @@
           ("[de]debug-elisp"           . edebug-defun)
           ("dired"                     . dired)
           ("twit"                      . twit)
-          ("create-spec"               . rtt/create-spec)
           ("[fb]find-blueprint"        . railgun-find-blueprint)
           ("[ff]find-factory"          . railgun-find-factory)
           ("[fs]find-schema"           . railgun-find-schema)
