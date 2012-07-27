@@ -92,6 +92,7 @@
 ;;; magit
 
 (define-key magit-branch-manager-mode-map (kbd "/") 'evil-search-forward)
+(define-key magit-branch-manager-mode-map (kbd "C-n") 'evil-search-next)
 
 ;;; zencoding
 

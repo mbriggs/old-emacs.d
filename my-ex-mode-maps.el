@@ -21,6 +21,8 @@
           ("create-controller"         . railgun-create-controller)
           ("create-helper"             . railgun-create-helper)
           ("create-migration"          . railway-create-migration)
+          ("create-javascript"         . railway-create-javascript)
+          ("create-stylesheet"         . railway-create-stylesheet)
           ("align"                     . align-regexp)
           ("[er]eval-region"           . eval-region)
           ("[eb]eval-buffer"           . eval-buffer)
