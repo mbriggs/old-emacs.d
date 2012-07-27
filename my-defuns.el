@@ -209,10 +209,12 @@
   (setq *use-spork* (if *use-spork* nil t))
   (message (concat (unless *use-spork* "not ") "using spork")))
 
-(defun set-shoulda-command ()
-  (let ((runner (if *use-spork* "testdrb" "ruby")))
-    (setq shoulda-command
-          (concat "(cd " (eproject-root) " && " runner " \"%f\" %o)"))))
+(defadvice shoulda-run-single-file (around set-shoulda-command)
+  (let* ((runner (if *use-spork* "testdrb" "ruby"))
+         (setq shoulda-command
+          (concat "(cd " (eproject-root) " && " runner " \"%f\" %o)")))
+    ad-do-it))
+(ad-activate 'shoulda-run-single-file)
 
 (require 'rspec-mode)
 (defadvice rspec-runner (around set-rspec-command)
@@ -222,9 +224,7 @@
 
 (defun test-verify ()
   (interactive)
-  (if (railgun-spec?) (rspec-verify)
-    (set-shoulda-command)
-    (shoulda-verify)))
+  (if (railgun-spec?) (rspec-verify) (shoulda-verify)))
 
 (defun test-verify-all ()
   (interactive)
@@ -232,9 +232,7 @@
 
 (defun test-verify-single ()
   (interactive)
-  (if (railgun-spec?) (rspec-verify-single)
-    (set-shoulda-command)
-    (shoulda-verify-single)))
+  (if (railgun-spec?) (rspec-verify-single) (shoulda-verify-single)))
 
 (defvar solarized-colors
   ;; name    sRGB      Gen RGB   
