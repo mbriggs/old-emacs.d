@@ -34,6 +34,7 @@
           init-ack
           init-serve-rails
           init-twit
+          init-yas
           init-rspec
           init-autocomplete
           init-ansi-color

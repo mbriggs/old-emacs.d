@@ -1,40 +1,21 @@
-(require 'ac-dabbrev)
-(substitute-key-definition 'ac-complete nil ac-completing-map)
-;(ac-config-default)
-
-(custom-set-variables '(ac-modes
-                        '(emacs-lisp-mode
-                          lisp-interaction-mode
-                          c-mode
-                          cc-mode
-                          c++-mode
-                          java-mode
-                          perl-mode
-                          clojure-mode
-                          cperl-mode
-                          python-mode
-                          ruby-mode
-                          ecmascript-mode
-                          javascript-mode
-                          js2-mode
-                          js3-mode
-                          php-mode
-                          css-mode
-                          sass-mode
-                          scss-mode
-                          nxml-mode
-                          makefile-mode
-                          sh-mode
-                          fortran-mode
-                          f90-mode
-                          ada-mode
-                          xml-mode
-                          sgml-mode)))
-
+(require 'auto-complete)
+(require 'auto-complete-config)
 (global-auto-complete-mode t)
 (setq ac-dwim nil) ; To get pop-ups with docs even if a word is uniquely completed
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
+
+;;----------------------------------------------------------------------------
+;; Use Emacs' built-in TAB completion hooks to trigger AC (Emacs >= 23.2)
+;;----------------------------------------------------------------------------
+(setq tab-always-indent 'complete)  ;; use 'complete when auto-complete is disabled
+(add-to-list 'completion-styles 'initials t)
+
+;; hook AC into completion-at-point
+(defun set-auto-complete-as-completion-at-point-function ()
+  (setq completion-at-point-functions '(auto-complete)))
+(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
 
 (set-default 'ac-sources
              '(ac-source-dictionary
@@ -42,13 +23,19 @@
                ac-source-words-in-same-mode-buffers
                ac-source-words-in-all-buffer))
 
-(define-key ac-completing-map (kbd "C-n") 'dabbrev-expand)
-(define-key ac-completing-map (kbd "C-p") 'dabbrev-expand)
+(dolist (mode '(magit-log-edit-mode log-edit-mode org-mode text-mode haml-mode
+                sass-mode yaml-mode csv-mode espresso-mode haskell-mode
+                html-mode nxml-mode sh-mode smarty-mode clojure-mode
+                lisp-mode textile-mode markdown-mode tuareg-mode
+                js3-mode css-mode ruby-mode emacs-lisp-mode less-css-mode))
+  (add-to-list 'ac-modes mode))
+
 
 ;; Exclude very large buffers from dabbrev
-(defun smp-dabbrev-friend-buffer (other-buffer)
+(defun sanityinc/dabbrev-friend-buffer (other-buffer)
   (< (buffer-size other-buffer) (* 1 1024 1024)))
 
-(setq dabbrev-friend-buffer-function 'smp-dabbrev-friend-buffer)
+(setq dabbrev-friend-buffer-function 'sanityinc/dabbrev-friend-buffer)
+
 
 (provide 'init-autocomplete)

@@ -15,11 +15,11 @@
     (setq load-path (remove package-el-site-lisp-dir load-path))))
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (package-initialize)
+
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -265,6 +265,7 @@
 (require-package 'scratch)
 (require-package 'yari)
 (require-package 'yaml-mode)
+(require-package 'yasnippet)
 
 ;;; el-get the rest
 (setq my-packages
@@ -277,7 +278,10 @@
          ack-and-a-half
          auto-complete
          auto-complete-css
-         ;auto-complete-ruby
+         auto-complete-yasnippet
+         auto-complete-etags
+         auto-complete-emacs-lisp
+         auto-complete-ruby
          clojure-mode
          ac-slime
          ac-dabbrev
@@ -288,8 +292,6 @@
          rdebug
          minimap
          hl-tags-mode
-         auto-complete-emacs-lisp
-         auto-complete-ruby
          dired-plus
          deferred
          diminish

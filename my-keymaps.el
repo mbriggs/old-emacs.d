@@ -73,7 +73,7 @@
 
 ;;; javascript
 
-(evil-declare-key 'insert js3-mode-map (kbd "M-k") 'insert-js-function)
+;; (evil-declare-key 'insert js3-mode-map (kbd "M-k") 'insert-js-function)
 (evil-declare-key 'normal js3-mode-map ",t," 'railgun-toggle-test-and-implementation)
 (evil-declare-key 'normal js3-mode-map ",g" 'add-to-js-globals)
 (evil-declare-key 'normal js3-mode-map ",d" 'js-log-line)
@@ -100,8 +100,8 @@
 
 ;;; ruby
 
-(evil-declare-key 'insert inf-ruby-mode-map
-                  (kbd "M-k") 'require-absolute-ruby-path)
+;; (evil-declare-key 'insert inf-ruby-mode-map
+;;                   (kbd "M-k") 'require-absolute-ruby-path)
 
 (evil-declare-key 'normal railway-minor-mode-map
                   ",j" 'ra/find-javascript
@@ -132,14 +132,14 @@
 
 (evil-declare-key 'insert rhtml-mode-map
                   (kbd "M-=") 'insert-rhtml-%=
-                  (kbd "M--") 'insert-rhtml-%
-                  (kbd "M-k") 'insert-hashrocket)
+                  (kbd "M--") 'insert-rhtml-%)
+                  ;(kbd "M-k") 'insert-hashrocket)
 
 (evil-declare-key 'normal rhtml-mode-map
                   (kbd "M->") 'partially/visit-partial)
 
-(evil-declare-key 'insert ruby-mode-map
-                  (kbd "M-k") 'insert-hashrocket)
+;; (evil-declare-key 'insert ruby-mode-map)
+                  ;(kbd "M-k") 'insert-hashrocket)
 
 
 
