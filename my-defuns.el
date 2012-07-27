@@ -206,7 +206,8 @@
 (defvar *use-spork* nil)
 (defun toggle-use-spork ()
   (interactive)
-  (setq *use-spork* (if *use-spork* nil t)))
+  (setq *use-spork* (if *use-spork* nil t))
+  (message (concat (unless *use-spork* "not ") "using spork")))
 
 (defun set-shoulda-command ()
   (let ((runner (if *use-spork* "testdrb" "ruby")))
