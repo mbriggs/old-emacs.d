@@ -96,7 +96,8 @@
   (interactive)
   (textmate-clear-cache)
   (ra/clear-caches)
-  (railgun-clear-caches))
+  (railgun-clear-caches)
+  (yas/reload-all))
 
 (defun my-delete-backwards ()
   (interactive)

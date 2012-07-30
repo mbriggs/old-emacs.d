@@ -1,0 +1,3 @@
+class ${1:classname}
+  $0
+end

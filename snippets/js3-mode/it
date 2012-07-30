@@ -1,0 +1,3 @@
+it("${1:does something}", function(){
+$0
+})
