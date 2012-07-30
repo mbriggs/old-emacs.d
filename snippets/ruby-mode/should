@@ -1,0 +1,3 @@
+should "${1:description of the test}" do
+$0
+end
