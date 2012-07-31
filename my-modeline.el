@@ -1,5 +1,8 @@
+(require 'powerline)
+;(powerline-default)
+
 ;; Mode line setup
-(setq nyan-wavy-trail t)
+;; (setq nyan-wavy-trail t)
 ;; (nyan-mode)
 
 (setq-default
@@ -11,7 +14,8 @@
                       (if (>= (current-column) 75)
                           'mode-line-80col-face
                         'mode-line-position-face)))
-   " "
+
+   (powerline-arrow-right 'modeline-position-face 'mode-line-read-only-face)
    ; read-only or modified status
    (:eval
     (cond (buffer-read-only
@@ -60,7 +64,7 @@
       (setq output (concat ".../" output)))
     output))
 
-;; Extra mode line faces
+;; ;; Extra mode line faces
 (make-face 'mode-line-read-only-face)
 (make-face 'mode-line-modified-face)
 (make-face 'mode-line-folder-face)
