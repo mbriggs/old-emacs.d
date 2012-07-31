@@ -13,6 +13,7 @@
           ("[mm]minimap"               . toggle-minimap)
           ("reset-directory"           . reset-current-dir)
           ("history"                   . magit-file-log)
+          ("bundle"                    . bundle-install)
           ("channel"                   . ido-erc-buffer)
           ("semicolons"                . semi-colonize)
           ("create-spec"               . railgun-create-spec)

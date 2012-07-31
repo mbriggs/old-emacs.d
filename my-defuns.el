@@ -92,6 +92,16 @@
                   (get-char-property (point) 'face))))
     (if face (message "Face: %s" face) (message "No face at %d" pos))))
 
+(defun bundle-install ()
+  (interactive)
+  (let ((out (get-buffer-create "*bundler*"))
+        (cmd (concat "cd " (railway-root) " && bundle install --binstubs")))
+    (rvm-autodetect-ruby)
+    (popwin:popup-buffer out)
+    (toggle-buffer-tail out "on")
+    (shell-command cmd out)
+    (message "bundle completed")))
+
 (defun my-clear-all-caches ()
   (interactive)
   (textmate-clear-cache)
