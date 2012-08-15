@@ -18,6 +18,9 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+
 (package-initialize)
 
 (unless package-archive-contents
@@ -245,7 +248,6 @@
 (require-package 'flymake-haml)
 (require-package 'flymake-sass)
 (require-package 'flymake-shell)
-(require-package 'http-twiddle)
 (require-package 'json)
 (require-package 'js-comint)
 (require-package 'linum-off)

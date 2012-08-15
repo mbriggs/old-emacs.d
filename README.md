@@ -19,6 +19,9 @@ _- Alan Kay_
 >>"The reasonable man adapts himself to Emacs; the unreasonable one persists in trying to adapt Emacs to himself. Therefore all progress depends on the unreasonable man."
 _- G.B. Shaw_
 
+>> "Compared to Emacs Wizards, graphical-IDE users are the equivalent of amateur musicians, pawing at their instrument with a sort of desperation. An IDE has blinking lights and pretty dialogs that you can't interact with properly, and gives newbies a nice comfortable sense of control. But that control is extremely crude, and all serious programmers prefer something that gives them more power."
+_- Steve Yegge_
+
 
 Install
 -------
