@@ -19,6 +19,17 @@
   (replace-regexp ":\\([a-zA-Z0-9_]+\\) +=>" "\\1:"
                   nil point-start point-end))
 
+(defun newline-anywhere ()
+  (interactive)
+  (end-of-line)
+  (newline-and-indent))
+
+(defun newline-on-previous-line-anywhere ()
+  (interactive)
+  (previous-line)
+  (end-of-line)
+  (newline-and-indent))
+
 (defun current-line-number ()
   (+ 1 (count-lines 1 (point))))
 
