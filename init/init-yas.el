@@ -1,4 +1,4 @@
-
+(require 'yasnippet)
 (setq yas/snippet-dirs '("~/.emacs.d/snippets"))
 (setq yas/trigger-key "M-k")
 (setq yas/next-field-key "M-n")
