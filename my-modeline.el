@@ -1,21 +1,10 @@
-(require 'powerline)
-;(powerline-default)
-
-;; Mode line setup
-;; (setq nyan-wavy-trail t)
-;; (nyan-mode)
-
-(setq-default
- mode-line-format
+(setq-default mode-line-format
  '(
-   ; dont need line numbers, cause i use linum
-   ;; (:propertize "%4l:" face mode-line-position-face)
    (:eval (propertize "%3c" 'face
                       (if (>= (current-column) 75)
                           'mode-line-80col-face
                         'mode-line-position-face)))
 
-   (powerline-arrow-right 'modeline-position-face 'mode-line-read-only-face)
    ; read-only or modified status
    (:eval
     (cond (buffer-read-only
