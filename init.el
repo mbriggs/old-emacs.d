@@ -7,6 +7,8 @@
 (push "/usr/bin" exec-path)
 (push (expand-file-name "~/scripts") exec-path)
 
+(cd "~")
+
 (mapcar 'require
         '(init-pre-package-variables
           init-slime
@@ -23,6 +25,7 @@
           init-dired
           init-flymake
           init-haml
+          init-webjump
           init-ido
           init-magit
           init-expand-region
