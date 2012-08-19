@@ -277,7 +277,6 @@
          autopair
          ace-jump-mode
          ansi-color
-         powerline
          ack-and-a-half
          auto-complete
          auto-complete-css
