@@ -16,6 +16,10 @@
 
         ("Backbone" . "http://backbonejs.org")
 
+        ("Github" .
+         [simple-query "https://github.com"
+                       "https://github.com/search?q=" "&type=Everything&repo=&langOverride=&start_value=1"])
+
         ("MDN" .
          [simple-query "https://developer.mozilla.org"
                        "https://developer.mozilla.org/en-US/search?q=" ""])
