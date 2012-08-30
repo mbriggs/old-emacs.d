@@ -39,4 +39,4 @@
          [simple-query "http://apidock.com"
                        "http://apidock.com/rails/search?query=" ""])))
 
-(provide 'webjump)
+(provide 'init-webjump)
