@@ -1,20 +1,3 @@
-(defun growl (title message)
-  (start-process "growl" " growl"
-                 "/usr/local/bin/growlnotify"
-                 title
-                 "-a" "Emacs")
-  (process-send-string " growl" message)
-  (process-send-string " growl" "\n")
-  (process-send-eof " growl"))
-
-(defun osx-erc-mention (match-type nick message)
-  "Shows a growl notification, when user's nick was mentioned. If the buffer is currently not visible, makes it sticky."
-  (and (eq match-type 'current-nick)
-       (not (erc-buffer-visible (current-buffer)))
-       (growl
-        (concat "ERC: name mentioned on: " (buffer-name (current-buffer)))
-        message)))
-
 (defun ido-erc-buffer()
   (interactive)
   (switch-to-buffer
@@ -38,7 +21,11 @@
   (interactive)
 
   (setq erc-autojoin-channels-alist '(("freenode.net"
-                                       "#clojure" "#emacs" "#meteor" "#javascript")))
+                                       "#clojure"
+                                       "#ruby-talk"
+                                       "#emacs"
+                                       "#nulogy"
+                                       "#javascript")))
 
   (setq erc-track-position-in-mode-line t)
   (setq erc-track-shorten-start 4)

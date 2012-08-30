@@ -292,6 +292,7 @@
          htmlize
          toggle-friend-file
          rdebug
+         deft
          minimap
          hl-tags-mode
          dired-plus
