@@ -50,6 +50,7 @@
 (global-set-key (kbd "M-j") 'other-window)
 (global-set-key (kbd "M-.") 'my-find-tag)
 (global-set-key (kbd "M-b") 'ibuffer)
+(global-set-key (kbd "M-v") 'evil-paste-after)
 (global-set-key (kbd "M-RET") 'newline-anywhere)
 (global-set-key (kbd "M-S-RET") 'newline-on-previous-line-anywhere)
 

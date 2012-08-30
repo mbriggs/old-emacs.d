@@ -212,6 +212,12 @@
     (shell-command (concat "(cd " root " && gtags)"))
     (message "tags loaded")))
 
+(defun fix-buffer-directory ()
+  (interactive)
+  (if buffer-file-name
+      (setq default-directory
+            (file-name-directory buffer-file-name))))
+
 (defun my-find-tag ()
   (interactive)
   (if (file-exists-p (concat (eproject-root) "TAGS"))
