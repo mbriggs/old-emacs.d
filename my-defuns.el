@@ -309,6 +309,7 @@
                                  magit-log-mode
                                  magit-commit-mode
                                  magit-branch-manager-mode
+                                 deft-mode
                                  ruby-mode
                                  gfm-mode
                                  org-mode

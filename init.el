@@ -16,6 +16,7 @@
           init-autopair
           init-rhtml
           init-crontab
+          init-deft
           init-css
           init-diminish
           init-clojure
