@@ -25,6 +25,7 @@
           ("create-migration"         . railway-create-migration)
           ("create-javascript"        . railway-create-javascript)
           ("create-stylesheet"        . railway-create-stylesheet)
+          ("chan"                     . ido-erc-buffer)
           ("align"                    . align-regexp)
           ("[er]eval-region"          . eval-region)
           ("[eb]eval-buffer"          . eval-buffer)
