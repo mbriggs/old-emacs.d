@@ -54,11 +54,14 @@
 (global-set-key (kbd "M-S-RET") 'newline-on-previous-line-anywhere)
 
 (global-set-key (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-w") 'quit-window)
+(global-set-key (kbd "M-w") 'quit-window)
 
 ;;; drop some keymaps
 
 (define-key *textmate-mode-map* [(meta return)] nil)
 (define-key org-mode-map [(meta return)] nil)
+
 
 
 ;;; esc quits
@@ -75,6 +78,13 @@
 
 ;; (define-key helm-map (kbd "M-n") 'helm-next-line)
 ;; (define-key helm-map (kbd "M-p") 'helm-previous-line)
+
+;;; deft
+
+(define-key deft-mode-map (kbd "M-n") 'next-line)
+(define-key deft-mode-map (kbd "M-p") 'previous-line)
+(define-key deft-mode-map (kbd "M-k") 'deft-delete-file)
+(define-key deft-mode-map (kbd "M-r") 'deft-rename-file)
 
 ;;; javascript
 

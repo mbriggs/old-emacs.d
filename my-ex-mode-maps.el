@@ -9,6 +9,7 @@
         '(("!"                        . shell-command)
           ("log"                      . magit-log)
           ("[br]branch"               . magit-branch-manager)
+          ("deft"                     . deft)
           ("htmlize"                  . htmlize-region)
           ("[mm]minimap"              . toggle-minimap)
           ("reset-directory"          . reset-current-dir)
