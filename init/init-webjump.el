@@ -10,6 +10,8 @@
 (setq webjump-sites
       '(("Hacker News" . "http://news.ycombinator.com")
 
+        ("Lobsters" . "http://lobste.rs")
+
         ("Twitter" . "http://www.twitter.com")
 
         ("Underscore" . "http://underscorejs.org/")
