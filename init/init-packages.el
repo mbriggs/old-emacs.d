@@ -112,16 +112,22 @@
                :type http
                :url "https://raw.github.com/minad/emacs-slim/master/slim-mode.el"
                :features slim-mode)
+        (:name popup
+               :type git
+               :url "https://github.com/auto-complete/popup-el")
+        (:name auto-complete
+               :type git
+               :url "https://github.com/auto-complete/auto-complete")
         (:name auto-complete-emacs-lisp
                :description "Auto-complete sources for emacs lisp"
                :type http
                :url "http://www.cx4a.org/pub/auto-complete-emacs-lisp.el"
                :depends auto-complete)
-        ;(:name auto-complete-ruby
-        ;       :description "Auto-complete sources for Ruby"
-        ;       :type http
-        ;       :url "http://www.cx4a.org/pub/auto-complete-ruby.el"
-        ;       :depends (auto-complete rcodetools))
+        (:name auto-complete-ruby
+               :description "Auto-complete sources for Ruby"
+               :type http
+               :url "http://www.cx4a.org/pub/auto-complete-ruby.el"
+               :depends (auto-complete))
         (:name eproject
                :type git
                :url "https://github.com/jrockway/eproject")
