@@ -24,6 +24,7 @@
                                        "#clojure"
                                        "#ruby-talk"
                                        "#emacs"
+                                       "#marionette"
                                        "#nulogy"
                                        "#javascript")))
 
