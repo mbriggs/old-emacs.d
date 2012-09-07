@@ -1,3 +1,4 @@
+(require 'vanilla-ruby-mode)
 (autoload 'ruby-mode "ruby-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.js.rjs$" . ruby-mode))
