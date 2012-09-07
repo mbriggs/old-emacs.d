@@ -10,6 +10,7 @@
       org-agenda-include-diary t
       org-agenda-window-setup 'current-window
       org-fast-tag-selection-single-key 'expert
+      org-startup-indented t
       org-tags-column 80)
 
 

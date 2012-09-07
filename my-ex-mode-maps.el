@@ -54,5 +54,9 @@
           ("[ff]find-factory"         . railgun-find-factory)
           ("[fs]find-schema"          . railgun-find-schema)
           ("[wj]webjump"              . webjump)
+          ("create-table"             . org-table-create-or-convert-from-region)
+          ("sort-column"              . org-sort)
+          ("add-column"               . org-shiftmetaright)
+          ("remove-column"            . org-shiftmetaleft)
           ("kill-hashes"              . ruby-onenine-ify-region-hashes)))
 
