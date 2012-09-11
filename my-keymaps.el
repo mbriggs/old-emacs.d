@@ -1,5 +1,6 @@
 ;;;; global
 
+
 (define-key evil-normal-state-map "  " 'ace-jump-mode)
 (define-key evil-normal-state-map " k" 'ace-jump-char-mode)
 (define-key evil-normal-state-map " l" 'ace-jump-line-mode)
@@ -60,8 +61,11 @@
 
 ;;; drop some keymaps
 
+(require 'auto-complete)
 (define-key *textmate-mode-map* [(meta return)] nil)
 (define-key org-mode-map [(meta return)] nil)
+(define-key ac-completing-map "\r" nil)
+(define-key ac-completing-map [return] nil)
 
 
 
