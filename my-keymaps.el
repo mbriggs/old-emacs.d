@@ -18,7 +18,7 @@
 (define-key evil-normal-state-map (kbd "<right>") 'next-error)
 (define-key evil-normal-state-map (kbd "<left>") 'previous-error)
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
-(define-key evil-normal-state-map (kbd "M-p") 'textmate-goto-file)
+(define-key evil-normal-state-map (kbd "M-t") 'textmate-goto-file)
 (define-key evil-normal-state-map (kbd "M-P") 'execute-extended-command)
 (define-key evil-normal-state-map (kbd "M-f") 'dired)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
