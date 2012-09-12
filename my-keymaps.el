@@ -66,6 +66,8 @@
 (define-key org-mode-map [(meta return)] nil)
 (define-key ac-completing-map "\r" nil)
 (define-key ac-completing-map [return] nil)
+(define-key ruby-mode-map "{" nil)
+(define-key ruby-mode-map "}" nil)
 
 
 
