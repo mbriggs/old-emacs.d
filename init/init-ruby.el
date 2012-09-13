@@ -1,5 +1,5 @@
-(require 'vanilla-ruby-mode)
-(autoload 'ruby-mode "ruby-mode" nil t)
+(load-file "~/.emacs.d/elisp/vanilla-ruby-mode.el")
+(load-library "ruby-mode")
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.js.rjs$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
