@@ -2,8 +2,9 @@
 (autoload 'js3-mode "js3" nil t)
 ;(require 'js2-highlight-vars)
 (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js3-mode))
-(add-to-list 'auto-mode-alist '("\\.json.erb$" . javascript-mode))
+(add-to-list 'auto-mode-alist '("\\.json.erb$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 
 (eval-after-load "coffee-mode"
@@ -21,7 +22,7 @@
   (local-set-key ",ce" 'js-send-last-sexp-and-go)
   (local-set-key ",cb" 'js-send-buffer-and-go)
   (local-set-key ",cl" 'js-load-file-and-go))
-(add-hook 'js-mode-hook 'add-inferior-js-keys)
+;;(add-hook 'js-mode-hook 'add-inferior-js-keys)
 
 
 ;;; make functions pretty

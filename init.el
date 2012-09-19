@@ -26,6 +26,7 @@
           init-dired
           init-flymake
           init-haml
+          init-jade
           init-webjump
           init-ido
           init-magit

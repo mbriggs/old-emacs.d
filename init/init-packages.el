@@ -61,6 +61,9 @@
                :type git
                :url "https://github.com/mbriggs/buffer-tail.el.git"
                :features buffer-tail)
+        (:name jade-mode
+               :type git
+               :url "https://github.com/brianc/jade-mode.git")
         (:name expand-region
                :type git
                :url "https://github.com/mbriggs/expand-region.el.git")
@@ -188,6 +191,10 @@
                :type http
                :url "https://raw.github.com/mbriggs/rails-assets/master/rails-assets.el"
                :features rails-assets)
+        (:name json-mode
+               :type http
+               :url "https://raw.github.com/joshwnj/json-mode/master/json-mode.el"
+               :features json-mode)
         (:name railway
                :type http
                :url "https://raw.github.com/mbriggs/railway.el/master/railway.el"
@@ -255,7 +262,6 @@
 (require-package 'flymake-sass)
 (require-package 'flymake-shell)
 (require-package 'json)
-(require-package 'js-comint)
 (require-package 'linum-off)
 (require-package 'markdown-mode)
 (require-package 'maxframe)
@@ -309,6 +315,7 @@
          el-expectations
          eproject
          emacs-w3m
+         js-comint
          evil
          evil-surround
          expand-region
@@ -318,7 +325,6 @@
          joseph-file-util
          magit
          js3-mode
-         js-comint
          midje-mode
          haml-mode
          pretty-mode
@@ -341,6 +347,9 @@
          cucumber
          less-mode
          solarized
+         jade-mode
+         json
+         json-mode
          twittering-mode
          rspec-mode
          textile-mode
