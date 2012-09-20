@@ -96,9 +96,11 @@
 ;;; javascript
 
 ;; (evil-declare-key 'insert js3-mode-map (kbd "M-k") 'insert-js-function)
-(evil-declare-key 'normal js3-mode-map ",t," 'railgun-toggle-test-and-implementation)
-(evil-declare-key 'normal js3-mode-map ",g" 'add-to-js-globals)
-(evil-declare-key 'normal js3-mode-map ",d" 'js-log-line)
+(evil-declare-key 'normal js3-mode-map
+                  ",g" 'add-to-js-globals
+                  ",d" 'js-log-line
+                  ",t," 'tjs-toggle-test-and-implementation
+                  ",tc" 'tjs-create-test)
 
 ;;; comint
 
@@ -133,6 +135,7 @@
                   ",h" 'railgun-find-helper
                   ",v" 'railgun-find-view
                   ",l" 'railgun-find-lib
+                  ",t," 'railgun-toggle-test-and-implementation
                   ",p" 'railgun-find-presenter)
 
 (defun go-to-domain-or-model ()
@@ -147,7 +150,6 @@
                   ",d" 'ruby-debug-puts
                   ",tf" 'test-verify
                   ",ta" 'test-verify-all
-                  ",t," 'railgun-toggle-test-and-implementation
                   ",tt" 'test-verify-single
                   ",hb" 'ruby-onenine-ify-buffer-hashes
                   ",hh" 'ruby-onenine-ify-line-hashes)

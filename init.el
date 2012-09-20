@@ -68,6 +68,8 @@
 
           server))
 
+(require 'test-js)
+
 (unless (server-running-p)
   (server-start))
 

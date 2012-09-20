@@ -1,6 +1,9 @@
 (require 'eproject)
 ;(require 'eproject-extras)
 
+(define-project-type js (generic)
+  (look-for "package.json"))
+
 (define-project-type ruby (generic)
   (look-for "Gemfile"))
 
