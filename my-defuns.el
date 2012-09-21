@@ -309,6 +309,7 @@
 (defface  my-braces       `((((class color)) (:foreground ,sol-blue  ))) "custom braces"  :group 'faces)
 (defface  my-brackets     `((((class color)) (:foreground ,sol-violet))) "custom brackets" :group 'faces)
 (defface  my-dot          `((((class color)) (:foreground "#BEA75D"))) "custom brackets" :group 'faces)
+(defface  my-semis        `((((class color)) (:foreground "#BEA75D"))) "custom semicolons" :group 'faces)
 (defface  my-double-quote `((((class color)) (:foreground ,sol-red   ))) "custom special" :group 'faces)
 
 (defvar tweak-syntax-blacklist '(magit-status-mode
@@ -328,6 +329,7 @@
                 (("#?\\^?{\\|}" . 'my-braces))
                 (("\\[\\|\\]" . 'my-brackets))
                 (("\\." . 'my-dot))
+                (("; *$" . 'my-semis))
                 (("#?\"" 0 'my-double-quote prepend))
                 (("#?\'" 0 'my-double-quote prepend))
                 (("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 'font-lock-warning-face t))))))
