@@ -38,6 +38,11 @@
   (let ((target (read-from-minibuffer "Create Test: " (tjs-current-file))))
     (find-file (concat (tjs-path) "tests/" target ".js"))))
 
+(defun tjs-create-spec ()
+  (interactive)
+  (let ((target (read-from-minibuffer "Create Spec: " (tjs-current-file))))
+    (find-file (concat (tjs-path) "spec/" target ".js"))))
+
 (defun tjs-current-file ()
   (let ((no-extension (replace-regexp-in-string ".js$" "" (buffer-file-name))))
     (replace-regexp-in-string (tjs-path) "" no-extension)))
