@@ -100,7 +100,8 @@
                   ",g" 'add-to-js-globals
                   ",d" 'js-log-line
                   ",t," 'tjs-toggle-test-and-implementation
-                  ",tc" 'tjs-create-test)
+                  ",tc" 'tjs-create-test
+                  ",ts" 'tjs-create-spec)
 
 ;;; comint
 
