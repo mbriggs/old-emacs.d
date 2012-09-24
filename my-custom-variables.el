@@ -2,7 +2,7 @@
                             "$" "$j" "Mustache" "jQuery" "_" "qcloud" "Nulogy" "qc" "Backbone" "JST"
                             "afterEach" "setFixtures" "require" "Handlebars" "exports" "todo" "setTimeout"
                             "clearTimeout" "setInterval" "clearInterval" "runs" "waits" "module" "Marionette"
-                            "Ember" "angular"))
+                            "Ember" "angular" "process" "__dirname" "define"))
 
 (custom-set-variables
  '(ac-modes (quote (emacs-lisp-mode lisp-interaction-mode c-mode cc-mode c++-mode java-mode perl-mode cperl-mode python-mode ruby-mode ecmascript-mode javascript-mode js2-mode js3-mode php-mode css-mode sass-mode scss-mode nxml-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode)))

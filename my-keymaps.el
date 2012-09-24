@@ -59,6 +59,11 @@
 (global-set-key (kbd "M-w") 'quit-window)
 (global-set-key (kbd "M-w") 'quit-window)
 
+;;; multiple-cursors
+
+(global-set-key (kbd "M-L") 'mc/mark-previous-like-this)
+(global-set-key (kbd "M-l") 'mc/mark-next-like-this)
+
 ;;; drop some keymaps
 
 (require 'auto-complete)
@@ -68,7 +73,6 @@
 (define-key ac-completing-map [return] nil)
 (define-key ruby-mode-map "{" nil)
 (define-key ruby-mode-map "}" nil)
-
 
 
 ;;; esc quits

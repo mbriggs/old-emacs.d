@@ -231,6 +231,7 @@
     (visit-tags-table tags-file)
     (message (concat "Loaded " tags-file))))
 
+
 (defvar *use-spork* nil)
 (defun toggle-use-spork ()
   (interactive)

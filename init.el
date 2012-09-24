@@ -69,6 +69,7 @@
           server))
 
 (require 'test-js)
+(require 'stylus-mode)
 
 (unless (server-running-p)
   (server-start))

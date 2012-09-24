@@ -53,6 +53,10 @@
                :type git
                :url "git://github.com/michaelklishin/cucumber.el.git"
                :features feature-mode)
+        (:name multiple-cursors
+               :type git
+               :url "https://github.com/magnars/multiple-cursors.el"
+               :features multiple-cursors)
         (:name popwin
                :type git
                :url "https://github.com/m2ym/popwin-el.git"
@@ -350,6 +354,7 @@
          jade-mode
          json
          json-mode
+         multiple-cursors
          twittering-mode
          rspec-mode
          textile-mode
