@@ -32,6 +32,7 @@
         "dev"
         "icg"
         "rel"
+        "pm"
         "packmanager"
         "production"))
 
