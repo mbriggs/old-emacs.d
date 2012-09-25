@@ -2,7 +2,7 @@
                             "$" "$j" "Mustache" "jQuery" "_" "qcloud" "Nulogy" "qc" "Backbone" "JST"
                             "afterEach" "setFixtures" "require" "Handlebars" "exports" "todo" "setTimeout"
                             "clearTimeout" "setInterval" "clearInterval" "runs" "waits" "module" "Marionette"
-                            "Ember" "angular" "process" "__dirname" "define"))
+                            "Ember" "angular" "process" "__dirname" "define" "sinon" "before" "after"))
 
 (custom-set-variables
  '(ac-modes (quote (emacs-lisp-mode lisp-interaction-mode c-mode cc-mode c++-mode java-mode perl-mode cperl-mode python-mode ruby-mode ecmascript-mode javascript-mode js2-mode js3-mode php-mode css-mode sass-mode scss-mode nxml-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode)))
@@ -19,6 +19,7 @@
  '(js2-mirror-mode nil)
  '(js2-strict-missing-semi-warning nil)
  '(js3-global-externs my-global-externs)
+ ;; '(js3-consistent-level-indent-inner-bracket t)
  '(session-use-package t)
  '(linum-disabled-modes-list (quote (eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode erc-mode)))
  '(linum-format "%3d ")
