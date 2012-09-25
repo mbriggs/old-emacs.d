@@ -246,10 +246,9 @@
 (ad-activate 'shoulda-run-single-file)
 
 (require 'rspec-mode)
-(defadvice rspec-runner (around set-rspec-command)
-  (let ((rspec-spec-command (if *use-spork* "rspec --drb" "rspec")))
-    ad-do-it))
-(ad-activate 'rspec-runner)
+
+(defun rspec-runner ()
+  (concat "cd " (eproject-root) " && bundle exec rspec"))
 
 (defun test-verify ()
   (interactive)
