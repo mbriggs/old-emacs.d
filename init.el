@@ -69,6 +69,7 @@
           server))
 
 (require 'test-js)
+(require 'smartscan)
 (require 'stylus-mode)
 
 (unless (server-running-p)
