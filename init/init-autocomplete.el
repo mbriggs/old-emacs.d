@@ -42,7 +42,7 @@
  '(ac-auto-show-menu nil)
  '(ac-use-menu-map t))
 
-(defun iy-tab-noconflict ()
+(defun iy-ac-tab-noconflict ()
   (let ((command (key-binding [tab]))) ; remember command
     (local-unset-key [tab]) ; unset from (kbd "<tab>")
     (local-set-key (kbd "TAB") command))) ; bind to (kbd "TAB")
