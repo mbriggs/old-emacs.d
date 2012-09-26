@@ -39,7 +39,7 @@
 
 (custom-set-variables
  '(ac-trigger-key "C-SPC")
- ;; '(ac-auto-start nil)
+ '(ac-auto-show-menu nil)
  '(ac-use-menu-map t))
 
 (defun iy-tab-noconflict ()
