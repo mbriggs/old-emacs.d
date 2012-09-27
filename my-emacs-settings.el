@@ -47,8 +47,8 @@
     (menu-bar-mode -1))
 
 (if (featurep 'ns)
-    (set-frame-font "Source Code Pro-17" t)
-  (set-frame-font "Source Code Pro-11" t))
+    (set-frame-font "Menlo-15" t)
+  (set-frame-font "Menlo-11" t))
 
 (add-hook 'after-change-major-mode-hook
           (lambda ()
