@@ -1,3 +1,24 @@
+(require 'iedit)
+ 
+(defun iedit-dwim (arg)
+  "Starts iedit but uses \\[narrow-to-defun] to limit its scope."
+  (interactive "P")
+  (if arg (iedit-mode)
+    (save-excursion
+      (save-restriction
+        (widen)
+
+        (if (eq major-mode 'ruby-mode) (narrow-to-ruby-block)
+          (narrow-to-defun))
+        (if iedit-mode (iedit-done)
+          (iedit-start (current-word)))))))
+
+(defun narrow-to-ruby-block ()
+  (save-excursion
+    (let ((start (progn (ruby-beginning-of-block) (point)))
+          (end (progn (ruby-end-of-block) (point))))
+      (narrow-to-region start end))))
+
 (defun presentation-mode ()
   (interactive)
   (color-theme-scintilla)

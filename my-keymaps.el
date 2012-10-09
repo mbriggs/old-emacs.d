@@ -58,11 +58,10 @@
 (global-set-key (kbd "M-w") 'quit-window)
 (global-set-key (kbd "M-w") 'quit-window)
 
-;;; multiple-cursors
+;;; iedit
 
-(global-set-key (kbd "M-L") 'mc/mark-previous-like-this)
-(global-set-key (kbd "M-l") 'mc/mark-next-like-this)
-(global-set-key (kbd "M-l") 'mc/mark-next-like-this)
+(global-set-key (kbd "M-L") 'iedit-mode)
+(global-set-key (kbd "M-l") 'iedit-dwim)
 
 ;;; drop some keymaps
 
