@@ -224,6 +224,10 @@
                :type http
                :url "https://raw.github.com/mbriggs/weather.el/master/weather.el"
                :features weather)
+        (:name web-mode
+               :type git
+               :url "https://github.com/fxbois/web-mode"
+               :features web-mode)
         (:name smartchr
                :type http
                :url "https://raw.github.com/imakado/emacs-smartchr/master/smartchr.el"
@@ -362,6 +366,7 @@
          xml-parse
          highlight-symbol
          weather
+         web-mode
          rvm
          zencoding-mode)
        (mapcar 'el-get-source-name el-get-sources)))

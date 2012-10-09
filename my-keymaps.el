@@ -38,6 +38,7 @@
 
 (global-set-key [f1] 'magit-status)
 (global-set-key [f5] 'my-clear-all-caches)
+(global-set-key [escape] 'keyboard-quit)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-\\") 'highlight-symbol-at-point)
 (global-set-key (kbd "M-;") 'er/expand-region)
@@ -61,6 +62,7 @@
 
 (global-set-key (kbd "M-L") 'mc/mark-previous-like-this)
 (global-set-key (kbd "M-l") 'mc/mark-next-like-this)
+(global-set-key (kbd "M-l") 'mc/mark-next-like-this)
 
 ;;; drop some keymaps
 
@@ -75,7 +77,6 @@
 
 ;;; esc quits
 
-(global-set-key [escape] 'keyboard-quit)
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
 (define-key evil-visual-state-map [escape] 'keyboard-quit)
 (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)

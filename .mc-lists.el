@@ -10,15 +10,15 @@
                                evil-next-line
                                evil-normal-state
                                evil-change
+                               keyboard-quit
+                               autopair-backspace
                                evil-forward-char
                                evil-backward-char))
 
 (setq mc/cmds-to-run-once '(evil-forward-section-begin
                             reposition-window
                             evil-record-macro
-                            cycle-buffer
-                            autopair-backspace
-                            keyboard-quit))
+                            cycle-buffer))
 
                             
                                

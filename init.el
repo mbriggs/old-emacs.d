@@ -14,7 +14,8 @@
           init-slime
           init-packages
           init-autopair
-          init-rhtml
+          ;; init-rhtml
+          init-web
           init-crontab
           init-deft
           init-css
