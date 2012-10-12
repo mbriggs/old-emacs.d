@@ -106,6 +106,14 @@
   (all-files-under-dir-recursively (tjs-path "spec/")
                                    ".js$" nil))
 
+(defun tjs-run ()
+  (interactive)
+  (let* ((args (if (file-exists-p (tjs-path "tests/")) "mocha" "jasmine"))
+         (out (make-comint "test-js" "grunt" nil)))
+    (with-current-buffer out (erase-buffer))
+    (popwin:popup-buffer-tail out :noselect t)
+    (toggle-buffer-tail "*test-js*" "on")))
+
 ;; stolen from rinari
 (defun tjs-root (&optional dir home)
   (or dir (setq dir default-directory))
