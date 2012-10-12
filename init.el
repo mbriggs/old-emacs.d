@@ -5,7 +5,9 @@
 
 (push "/usr/local/bin" exec-path)
 (push "/usr/bin" exec-path)
+(push "/usr/local/share/npm/bin" exec-path)
 (push (expand-file-name "~/scripts") exec-path)
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 
 (cd "~")
 
