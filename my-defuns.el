@@ -139,7 +139,7 @@
   (interactive)
   (textmate-clear-cache)
   (ra/clear-caches)
-  (railgun-clear-caches)
+  (rg-clear-caches)
   (yas/reload-all))
 
 (defun my-delete-backwards ()
@@ -274,7 +274,7 @@
 
 (defun test-verify ()
   (interactive)
-  (if (railgun-spec?) (rspec-verify) (shoulda-verify)))
+  (if (rg-spec?) (rspec-verify) (shoulda-verify)))
 
 (defun test-verify-all ()
   (interactive)
@@ -282,7 +282,7 @@
 
 (defun test-verify-single ()
   (interactive)
-  (if (railgun-spec?) (rspec-verify-single) (shoulda-verify-single)))
+  (if (rg-spec?) (rspec-verify-single) (shoulda-verify-single)))
 
 (defvar solarized-colors
   ;; name    sRGB      Gen RGB   
