@@ -50,4 +50,18 @@
 
 (add-hook 'ruby-mode-hook (lambda () (local-set-key [f6] 'recompile)))
 
+(defun ruby-interpolate-in-strings ()
+  "In a double quoted string, interpolate."
+  (interactive)
+  (insert "#")
+  (when (and
+         (looking-back "\".*")
+         (looking-at ".*\""))
+    (insert "{}")
+    (backward-char 1)))
+
+(eval-after-load 'ruby-mode
+  '(progn
+     (define-key ruby-mode-map (kbd "#") 'ruby-interpolate-in-strings)))
+
 (provide 'init-ruby)

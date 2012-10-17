@@ -55,6 +55,7 @@
           init-ruby-end
           init-eproject
           init-js
+          init-railgun
           init-lua
           init-git-blame
           init-volatile-highlight

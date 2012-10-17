@@ -134,20 +134,14 @@
                   ",j" 'ra/find-javascript
                   ",s" 'ra/find-stylesheet
                   ",m" 'go-to-domain-or-model
-                  ",c" 'railgun-find-controller
-                  ",h" 'railgun-find-helper
-                  ",v" 'railgun-find-view
-                  ",l" 'railgun-find-lib
-                  ",t," 'railgun-toggle-test-and-implementation
-                  ",p" 'railgun-find-presenter)
+                  ",c" 'rg-find-controller
+                  ",f" 'rg-find-class
+                  ",h" 'rg-find-helper
+                  ",v" 'rg-find-view
+                  ",l" 'rg-find-lib
+                  ",t," 'rg-toggle-test-and-implementation
+                  ",p" 'rg-find-presenter)
 
-(defun go-to-domain-or-model ()
-  (interactive)
-  (if (eproject-attribute :uses-domain)
-      (setq railgun-entity 'domain)
-    (setq railgun-entity 'model))
-
-  (railgun-find-entity))
 
 (evil-declare-key 'normal ruby-mode-map
                   ",d" 'ruby-debug-puts
