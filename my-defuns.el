@@ -262,8 +262,8 @@
 
 (defadvice shoulda-run-single-file (around set-shoulda-command)
   (let* ((runner (if *use-spork* "testdrb" "ruby"))
-         (setq shoulda-command
-          (concat "(cd " (eproject-root) " && " runner " \"%f\" %o)")))
+         (shoulda-command (concat "(cd " (eproject-root) " && "
+                                         runner " \"%f\" %o)")))
     ad-do-it))
 (ad-activate 'shoulda-run-single-file)
 
