@@ -63,7 +63,7 @@
 
 ;;; cursors
 
-(global-set-key (kbd "M-L") 'mc/unmark-previous-like-this)
+(global-set-key (kbd "M-L") 'skip-current-mark-and-mark-next)
 (global-set-key (kbd "M-l") 'mc/mark-next-like-this)
 ;;; drop some keymaps
 

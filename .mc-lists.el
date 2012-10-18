@@ -12,6 +12,8 @@
 
 (setq mc/cmds-to-run-once
       '(
+        keyboard-quit
         mc/unmark-previous-like-this
         reposition-window
+        skip-current-mark-and-mark-next
         ))

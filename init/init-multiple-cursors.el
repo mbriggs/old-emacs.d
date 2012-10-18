@@ -29,5 +29,6 @@
 (add-hook 'rectangular-region-mode-hook 'my-rrm-evil-switch-state)
 
 (add-to-list 'mc/unsupported-minor-modes 'autopair-mode)
+(add-to-list 'mc/unsupported-minor-modes 'evil-mode)
 
 (provide 'init-multiple-cursors)

@@ -18,6 +18,10 @@
           (end (progn (ruby-end-of-block) (point))))
       (narrow-to-region start end))))
 
+(defun skip-current-mark-and-mark-next ()
+  (interactive)
+  (mc/mark-next-like-this 0))
+
 (defun presentation-mode ()
   (interactive)
   (color-theme-scintilla)
