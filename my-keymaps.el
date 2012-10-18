@@ -27,10 +27,10 @@
 (define-key evil-normal-state-map (kbd "M-K") 'cycle-buffer-backward)
 (define-key evil-normal-state-map (kbd "M-o") 'session-jump-to-last-change)
 
-(define-key evil-normal-state-map (kbd "C-k") 'textmate-column-up)
-(define-key evil-normal-state-map (kbd "C-j") 'textmate-column-down)
-(define-key evil-normal-state-map (kbd "C-l") 'evil-forward-word-begin)
-(define-key evil-normal-state-map (kbd "C-h") 'evil-backward-word-begin)
+(define-key evil-normal-state-map (kbd "C-k") 'smart-up)
+(define-key evil-normal-state-map (kbd "C-j") 'smart-down)
+(define-key evil-normal-state-map (kbd "C-l") 'smart-forward)
+(define-key evil-normal-state-map (kbd "C-h") 'smart-backward)
 (evil-define-key 'visual global-map (kbd ",re") 'dr/extract-variable)
 (evil-define-key 'normal global-map (kbd ",ri") 'dr/inline-variable)
 
@@ -58,9 +58,13 @@
 
 ;;; iedit
 
-(global-set-key (kbd "M-L") 'iedit-mode)
-(global-set-key (kbd "M-l") 'iedit-dwim)
+;; (global-set-key (kbd "M-L") 'iedit-mode)
+;; (global-set-key (kbd "M-l") 'iedit-dwim)
 
+;;; cursors
+
+(global-set-key (kbd "M-L") 'mc/unmark-previous-like-this)
+(global-set-key (kbd "M-l") 'mc/mark-next-like-this)
 ;;; drop some keymaps
 
 (require 'auto-complete)

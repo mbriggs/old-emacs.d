@@ -78,10 +78,10 @@
                :type http
                :url "https://raw.github.com/ahobson/find-file-in-project/master/find-file-in-project.el"
                :features find-file-in-project)
-        (:name iedit-mode
-               :type http
-               :url "https://raw.github.com/eproxus/emacs-iedit/master/iedit.el"
-               :features iedit)
+        ;; (:name iedit-mode
+        ;;        :type http
+        ;;        :url "https://raw.github.com/eproxus/emacs-iedit/master/iedit.el"
+        ;;        :features iedit)
         (:name pretty-mode
                :type http
                :url "https://raw.github.com/emacsmirror/pretty-mode/master/pretty-mode.el"
@@ -207,6 +207,10 @@
                :type http
                :url "https://raw.github.com/mbriggs/railway.el/master/railway.el"
                :features railway)
+        (:name smart-forward
+               :type http
+               :url "https://raw.github.com/magnars/smart-forward.el/master/smart-forward.el"
+               :features smart-forward)
         (:name railgun
                :type http
                :url "https://raw.github.com/mbriggs/railgun.el/master/railgun.el"
@@ -362,8 +366,8 @@
          jade-mode
          json
          json-mode
-         iedit-mode
          multiple-cursors
+         smart-forward
          twittering-mode
          rspec-mode
          textile-mode
