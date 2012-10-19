@@ -3,6 +3,7 @@
 (require 'color-theme)
 (require 'ace-jump-mode)
 
+(add-to-list 'auto-mode-alist '("\.zsh$" . sh-mode))
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 (setq create-lockfiles nil)
@@ -14,7 +15,7 @@
   kept-old-versions 2
   version-control t)
 
-(setq shell-file-name "/bin/bash")
+(setq shell-file-name "zsh")
 (setq auto-save-default nil)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
@@ -52,7 +53,9 @@
 
 (add-hook 'after-change-major-mode-hook
           (lambda ()
-            (setq show-trailing-whitespace t)))
+            (when (not (eq major-mode 'shell-mode))
+              (setq show-trailing-whitespace t))))
+
 
 (set-face-foreground 'vertical-border "#fcf6e3")
 (set-face-background 'vertical-border "#fcf6e3")

@@ -373,6 +373,7 @@
          textile-mode
          volatile-highlights
          xml-parse
+         multi-term
          highlight-symbol
          weather
          web-mode

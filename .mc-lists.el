@@ -3,17 +3,11 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-        autopair-backspace
-        evil-backward-char
-        evil-forward-char
-        evil-normal-state
-        smart-symbol-go-forward
+        evil-change
         ))
 
 (setq mc/cmds-to-run-once
       '(
-        keyboard-quit
         mc/unmark-previous-like-this
         reposition-window
-        skip-current-mark-and-mark-next
         ))
