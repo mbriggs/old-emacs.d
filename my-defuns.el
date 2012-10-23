@@ -342,6 +342,7 @@
                                  magit-branch-manager-mode
                                  deft-mode
                                  ruby-mode
+                                 web-mode
                                  gfm-mode
                                  org-mode
                                  erc-mode))

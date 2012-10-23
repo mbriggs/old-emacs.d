@@ -7,6 +7,7 @@
 (add-to-list 'auto-mode-alist '("\\.html?$" . web-mode))
 
 (defun web-mode-hook ()
+  (local-set-key (kbd "RET") 'newline-and-indent)
   (setq web-mode-html-offset 2)
   (setq web-mode-css-offset 2)
   (setq web-mode-script-offset 2))

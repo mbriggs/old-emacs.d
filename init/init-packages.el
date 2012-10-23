@@ -234,7 +234,8 @@
                :features weather)
         (:name web-mode
                :type git
-               :url "https://github.com/fxbois/web-mode"
+               :url "https://github.com/mbriggs/web-mode"
+               ;; :url "https://github.com/fxbois/web-mode"
                :features web-mode)
         (:name smartchr
                :type http
