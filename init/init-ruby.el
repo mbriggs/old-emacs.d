@@ -11,7 +11,8 @@
 (setq interpreter-mode-alist
       (cons '("ruby" . ruby-mode) interpreter-mode-alist))
 
-(autoload 'run-ruby "inf-ruby" "Run an inferior Ruby process")
+(autoload 'run-ruby "inf-ruby")
+(add-hook 'inf-ruby-mode-hook 'zossima-mode)
 
 (setq ruby-use-encoding-map nil)
 
@@ -22,11 +23,6 @@
 (eval-after-load "ruby-mode"
   '(progn
      (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)))
-
-;; (defface ruby-def-face
-;;   '((t (:foreground "#0a2832" :weight bold)))
-;;    "My custom face for string delimiters")
-;; (font-lock-add-keywords 'ruby-mode '(("\\<\\(def\\|class\\)\\>" . ruby-def-face)))
 
 (add-hook 'ruby-mode-hook 'rvm-activate-corresponding-ruby)
 ;; (add-hook 'ruby-mode-hook 'flymake-ruby-load)

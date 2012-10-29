@@ -4,10 +4,14 @@
 (setq mc/cmds-to-run-for-all
       '(
         evil-change
+        indent-for-tab-command
+        isearch-other-control-char
+        isearch-printing-char
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        keyboard-quit
         mc/unmark-previous-like-this
         reposition-window
         ))

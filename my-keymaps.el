@@ -132,8 +132,8 @@
 
 ;;; ruby
 
-;; (evil-declare-key 'insert inf-ruby-mode-map
-;;                   (kbd "M-k") 'require-absolute-ruby-path)
+(evil-declare-key 'insert inf-ruby-mode-map
+                  (kbd "C-=") 'require-absolute-ruby-path)
 
 (evil-declare-key 'normal railway-minor-mode-map
                   ",j" 'ra/find-javascript

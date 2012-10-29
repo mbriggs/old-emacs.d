@@ -232,6 +232,11 @@
                :type http
                :url "https://raw.github.com/mbriggs/weather.el/master/weather.el"
                :features weather)
+        (:name zossima
+               :type git
+               :url "https://github.com/technomancy/zossima"
+               ;; :url "https://github.com/fxbois/web-mode"
+               :features zossima)
         (:name web-mode
                :type git
                :url "https://github.com/mbriggs/web-mode"
@@ -379,6 +384,7 @@
          weather
          web-mode
          rvm
+         zossima
          zencoding-mode)
        (mapcar 'el-get-source-name el-get-sources)))
 
