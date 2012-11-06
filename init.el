@@ -76,6 +76,7 @@
 (require 'test-js)
 (require 'smartscan)
 (require 'stylus-mode)
+(require 'web-mode)
 
 (unless (server-running-p)
   (server-start))

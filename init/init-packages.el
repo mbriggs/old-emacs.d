@@ -235,13 +235,12 @@
         (:name zossima
                :type git
                :url "https://github.com/technomancy/zossima"
-               ;; :url "https://github.com/fxbois/web-mode"
                :features zossima)
-        (:name web-mode
-               :type git
-               :url "https://github.com/mbriggs/web-mode"
-               ;; :url "https://github.com/fxbois/web-mode"
-               :features web-mode)
+        ;(:name web-mode
+        ;       :type git
+        ;       :url "https://github.com/mbriggs/web-mode"
+        ;       ;; :url "https://github.com/fxbois/web-mode"
+        ;       :features web-mode)
         (:name smartchr
                :type http
                :url "https://raw.github.com/imakado/emacs-smartchr/master/smartchr.el"
@@ -382,7 +381,7 @@
          multi-term
          highlight-symbol
          weather
-         web-mode
+         ;web-mode
          rvm
          zossima
          zencoding-mode)

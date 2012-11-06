@@ -3,7 +3,11 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-        evil-change
+        evil-append
+        evil-forward-char
+        evil-insert
+        evil-next-line
+        evil-normal-state
         indent-for-tab-command
         isearch-other-control-char
         isearch-printing-char
@@ -11,6 +15,8 @@
 
 (setq mc/cmds-to-run-once
       '(
+        evil-change
+        haml-electric-backspace
         keyboard-quit
         mc/unmark-previous-like-this
         reposition-window

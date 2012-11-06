@@ -26,6 +26,7 @@
           ("create-javascript"        . railway-create-javascript)
           ("create-stylesheet"        . railway-create-stylesheet)
           ("chan"                     . ido-erc-buffer)
+          ("clean"                    . clean-up-buffer-or-region)
           ("align"                    . align-regexp)
           ("[er]eval-region"          . eval-region)
           ("[eb]eval-buffer"          . eval-buffer)
