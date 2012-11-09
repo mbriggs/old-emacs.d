@@ -59,7 +59,8 @@
     (replace-regexp-in-string (tjs-root) "" no-extension)))
 
 (defun tjs-find-implementation (file)
-  (tjs-find-matching-files file (tjs-files)))
+  (let ((test-name (replace-regexp-in-string "[\\._][sS]pec\\.js$" ".js" file)))
+    (tjs-find-matching-files test-name (tjs-files))))
 
 (defun tjs-find-test (file)
   (let ((underscore-spec (tjs-set-file-postfix file "_spec"))
@@ -117,7 +118,8 @@
 ;; stolen from rinari
 (defun tjs-root (&optional dir home)
   (or dir (setq dir default-directory))
-  (if (file-exists-p (expand-file-name "package.json" dir))
+  (if (or (file-exists-p (expand-file-name "Gemfile" dir))
+          (file-exists-p (expand-file-name "package.json" dir)))
       dir
     (let ((new-dir (expand-file-name (file-name-as-directory "..") dir)))
       ;; regexp to match windows roots, tramp roots, or regular posix roots
