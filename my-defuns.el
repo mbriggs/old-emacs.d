@@ -154,6 +154,7 @@
   (textmate-clear-cache)
   (ra/clear-caches)
   (rg-clear-caches)
+  (tjs-clear-caches)
   (yas/reload-all))
 
 (defun my-delete-backwards ()

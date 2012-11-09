@@ -95,10 +95,17 @@
 (defun tjs-on-spec-p ()
   (string-match-p "/spec/" (buffer-file-name)))
 
+(defvar tjs--files nil)
 (defun tjs-files ()
-  (all-files-under-dir-recursively (tjs-root)
-                                   ".js$" t
-                                   "/\\(tests\\|spec\\|node_modules\\)/" t))
+  (or tjs--files
+      (setq tjs--files
+            (all-files-under-dir-recursively (tjs-root)
+                                             ".js$" t
+                                             "/\\(tests\\|spec\\|node_modules\\)/" t))))
+
+(defun tjs-clear-caches ()
+  (setq tjs--files nil))
+
 (defun tjs-tests ()
   (all-files-under-dir-recursively (tjs-path "tests/")
                                    ".js$" nil))
@@ -106,6 +113,7 @@
 (defun tjs-specs ()
   (all-files-under-dir-recursively (tjs-path "spec/")
                                    ".js$" nil))
+
 
 (defun tjs-run ()
   (interactive)
