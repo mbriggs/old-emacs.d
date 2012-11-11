@@ -189,7 +189,8 @@
 
 (defun semi-colonize ()
   (interactive)
-  (query-replace-regexp " *.+[^;,{}\n]$" "\\&;"))
+  (beginning-of-buffer)
+  (query-replace-regexp "^ *[^/]+[^;,{}\n.]$" "\\&;"))
 
 (defun format-json ()
   (interactive)
