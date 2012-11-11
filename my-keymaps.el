@@ -144,7 +144,6 @@
                   ",h" 'rg-find-helper
                   ",v" 'rg-find-view
                   ",l" 'rg-find-lib
-                  ",t," 'rg-toggle-test-and-implementation
                   ",p" 'rg-find-presenter)
 
 
@@ -153,6 +152,7 @@
                   ",tf" 'test-verify
                   ",ta" 'test-verify-all
                   ",tt" 'test-verify-single
+                  ",t," 'rg-toggle-test-and-implementation
                   ",hb" 'ruby-onenine-ify-buffer-hashes
                   ",hh" 'ruby-onenine-ify-line-hashes)
 
