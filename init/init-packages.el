@@ -168,7 +168,7 @@
                :url "http://github.com/djwhitt/rvm.el.git"
                :load "rvm.el"
                :compile ("rvm.el")
-               :after (lambda() (rvm-use-default)))
+               :after (progn (rvm-use-default)))
         (:name js3-mode
                :type git
                :url "https://github.com/thomblake/js3-mode.git")
