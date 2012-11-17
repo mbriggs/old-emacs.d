@@ -2,9 +2,9 @@
 (autoload 'js3-mode "js3" nil t)
 ;(require 'js2-highlight-vars)
 (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
-(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . javascript-mode))
 (add-to-list 'auto-mode-alist '("\\.js.erb$" . js3-mode))
-(add-to-list 'auto-mode-alist '("\\.json.erb$" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.json.erb$" . javscript-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 
 (eval-after-load "coffee-mode"

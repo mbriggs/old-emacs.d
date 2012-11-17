@@ -8,9 +8,11 @@
         evil-insert
         evil-next-line
         evil-normal-state
+        ido-hacks-execute-extended-command
         indent-for-tab-command
         isearch-other-control-char
         isearch-printing-char
+        downcase-word
         ))
 
 (setq mc/cmds-to-run-once

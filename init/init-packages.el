@@ -99,10 +99,6 @@
                :description "Toggles between friend files (e.g. h and cpp). See customize-group toggle-friend-file."
                :url "https://github.com/gizmomogwai/toggle-friend-file/raw/master/toggle-friend-file.el"
                :features toggle-friend-file)
-        (:name rdebug
-               :description "Ruby debugger user interface, startup file."
-               :type svn
-               :url "http://ruby-debug.rubyforge.org/svn/trunk/emacs/")
         (:name minimap
                :description "Minimap sidebar for Emacs"
                :type git
@@ -199,10 +195,6 @@
                :type http
                :url "https://raw.github.com/mbriggs/rails-assets/master/rails-assets.el"
                :features rails-assets)
-        (:name json-mode
-               :type http
-               :url "https://raw.github.com/joshwnj/json-mode/master/json-mode.el"
-               :features json-mode)
         (:name railway
                :type http
                :url "https://raw.github.com/mbriggs/railway.el/master/railway.el"
@@ -282,7 +274,6 @@
 (require-package 'flymake-haml)
 (require-package 'flymake-sass)
 (require-package 'flymake-shell)
-(require-package 'json)
 (require-package 'linum-off)
 (require-package 'markdown-mode)
 (require-package 'maxframe)
@@ -324,7 +315,6 @@
          hlinum
          htmlize
          toggle-friend-file
-         rdebug
          deft
          minimap
          hl-tags-mode
@@ -369,8 +359,6 @@
          less-mode
          solarized
          jade-mode
-         json
-         json-mode
          multiple-cursors
          smart-forward
          twittering-mode
