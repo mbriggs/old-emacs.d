@@ -115,10 +115,35 @@
                                    ".js$" nil))
 
 
-(defun tjs-run ()
+(defvar tjs-acceptance-command '("grunt" "test:acceptance"))
+(defvar tjs-unit-command '("grunt" "test:unit"))
+(defvar tjs-client-command '("grunt" "test:client"))
+(defvar tjs-last-run nil)
+
+(defun tjs-run-last ()
   (interactive)
-  (let* ((args (if (file-exists-p (tjs-path "tests/")) "mocha" "jasmine"))
-         (out (make-comint "test-js" "grunt" nil)))
+  (if (fboundp tjs-last-run) (funcall tjs-last-run)
+    (message "Don't know about previous run")))
+
+(defun tjs-run-acceptance ()
+  (interactive)
+  (setq tjs-last-run 'tjs-run-acceptance)
+  (tjs-run tjs-acceptance-command))
+
+(defun tjs-run-unit ()
+  (interactive)
+  (setq tjs-last-run 'tjs-run-unit)
+  (tjs-run tjs-unit-command))
+
+(defun tjs-run-client ()
+  (interactive)
+  (setq tjs-last-run 'tjs-run-client)
+  (tjs-run tjs-client-command))
+
+(defun tjs-run (command)
+  (let* ((app (car command))
+         (args (cadr command))
+         (out (make-comint "test-js" app nil args)))
     (with-current-buffer out (erase-buffer))
     (popwin:popup-buffer-tail out :noselect t)
     (toggle-buffer-tail "*test-js*" "on")))
