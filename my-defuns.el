@@ -356,6 +356,7 @@
                                  magit-branch-manager-mode
                                  deft-mode
                                  ruby-mode
+                                 haml-mode
                                  web-mode
                                  gfm-mode
                                  org-mode
