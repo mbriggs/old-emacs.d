@@ -107,9 +107,10 @@
                   ",g" 'add-to-js-globals
                   ",d" 'js-log-line
                   ",t," 'tjs-toggle-test-and-implementation
-                  ",tr" 'tjs-run
-                  ",tc" 'tjs-create-test
-                  ",ts" 'tjs-create-spec)
+                  ",ta" 'tjs-run-acceptance
+                  ",tu" 'tjs-run-unit
+                  ",tc" 'tjs-run-client
+                  ",tl" 'tjs-run-last)
 
 ;;; comint
 
