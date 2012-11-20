@@ -39,10 +39,13 @@
 
 
 (setq el-get-sources
-      '((:name enhanced-ruby-mode
+      '(;(:name enhanced-ruby-mode
+        ;       :type git
+        ;       :url "git://github.com/mbriggs/Enhanced-Ruby-Mode.git"
+        ;      :features ruby-mode)
+        (:name haml-mode
                :type git
-               :url "git://github.com/mbriggs/Enhanced-Ruby-Mode.git"
-               :features ruby-mode)
+               :url "https://github.com/nex3/haml-mode")
         (:name ansi-color :type emacswiki)
         (:name etags-select :type emacswiki)
         (:name joseph-file-util :type emacswiki :features joseph-file-util)
@@ -66,6 +69,9 @@
                :url "https://github.com/mbriggs/buffer-tail.el.git"
                :features buffer-tail)
         (:name jade-mode
+               :type git
+               :url "https://github.com/ananthakumaran/jade-mode")
+        (:name stylus-mode
                :type git
                :url "https://github.com/brianc/jade-mode.git")
         (:name expand-region
@@ -220,6 +226,10 @@
         (:name rspec-mode
                :type git
                :url "git@github.com:mbriggs/rspec-mode.git")
+        ;; (:name my-haml-mode
+        ;;        :type git
+        ;;        :url "https://github.com/mbriggs/haml-mode"
+        ;;        :features haml-mode)
         (:name weather
                :type http
                :url "https://raw.github.com/mbriggs/weather.el/master/weather.el"
@@ -296,7 +306,7 @@
 ;;; el-get the rest
 (setq my-packages
       (append
-       '(enhanced-ruby-mode
+       '(;enhanced-ruby-mode
          find-file-in-project
          autopair
          ace-jump-mode
@@ -359,6 +369,7 @@
          less-mode
          solarized
          jade-mode
+         stylus-mode
          multiple-cursors
          smart-forward
          twittering-mode
