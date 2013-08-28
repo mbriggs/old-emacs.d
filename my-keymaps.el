@@ -97,10 +97,10 @@
 
 ;;; deft
 
-(define-key deft-mode-map (kbd "M-n") 'next-line)
-(define-key deft-mode-map (kbd "M-p") 'previous-line)
-(define-key deft-mode-map (kbd "M-k") 'deft-delete-file)
-(define-key deft-mode-map (kbd "M-r") 'deft-rename-file)
+;(define-key deft-mode-map (kbd "M-n") 'next-line)
+;(define-key deft-mode-map (kbd "M-p") 'previous-line)
+;(define-key deft-mode-map (kbd "M-k") 'deft-delete-file)
+;(define-key deft-mode-map (kbd "M-r") 'deft-rename-file)
 
 ;;; javascript
 

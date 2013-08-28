@@ -13,16 +13,16 @@
 
 (mapcar 'require
         '(init-pre-package-variables
-          init-slime
+          ;init-slime
           init-packages
           init-autopair
           ;; init-rhtml
           init-web
           init-crontab
-          init-deft
+          ;init-deft
           init-css
           init-diminish
-          init-clojure
+          ;init-clojure
           init-secrets
           init-erc
           init-csv

@@ -121,10 +121,6 @@
                :type http :url "http://hlinum-mode.googlecode.com/hg/hlinum.el"
                :features hlinum
                :depends linum-ex)
-        (:name slim
-               :type http
-               :url "https://raw.github.com/minad/emacs-slim/master/slim-mode.el"
-               :features slim-mode)
         (:name popup
                :type git
                :url "https://github.com/auto-complete/popup-el")
@@ -183,7 +179,7 @@
                :url "https://raw.github.com/defunkt/gist.el/master/gist.el")
         (:name session
                :type http
-               :url "https://raw.github.com/tarsius/session/master/session.el"
+               :url "https://raw.github.com/emacsmirror/session/master/session.el"
                :features session)
         (:name dumb-refactorings
                :type http
@@ -278,6 +274,7 @@
 (require-package 'coffee-mode)
 (require-package 'csv-mode)
 (require-package 'diminish)
+(require-package 'haskell-mode)
 (require-package 'flymake-coffee)
 (require-package 'flymake-ruby)
 (require-package 'flymake-cursor)
@@ -289,6 +286,7 @@
 (require-package 'maxframe)
 (require-package 'move-text)
 (require-package 'marmalade)
+(require-package 'magit)
 (require-package 'mic-paren)
 (require-package 'mode-compile)
 (require-package 'org)
@@ -318,14 +316,12 @@
          auto-complete-etags
          auto-complete-emacs-lisp
          auto-complete-ruby
-         clojure-mode
-         ac-slime
          ac-dabbrev
          cycle-buffer
          hlinum
          htmlize
          toggle-friend-file
-         deft
+         ;deft
          minimap
          hl-tags-mode
          dired-plus
@@ -342,9 +338,7 @@
          expand-region
          etags-select
          ido-hacks
-         haskell-mode
          joseph-file-util
-         magit
          js3-mode
          midje-mode
          haml-mode
@@ -363,7 +357,6 @@
          railgun
          railway
          rails-assets
-         slim
          session
          cucumber
          less-mode
