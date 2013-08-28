@@ -1,7 +1,7 @@
 (require 'magit)
 
-(add-hook 'magit-log-edit-mode-hook 'insert-ticket-number-from-branch-name)
 (setq magit-default-tracking-name-function 'magit-default-tracking-name-branch-only)
+(add-hook 'magit-log-edit-mode-hook 'insert-ticket-number-from-branch-name)
 
 (defun insert-ticket-number-from-branch-name ()
   (erase-buffer)

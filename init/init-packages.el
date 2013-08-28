@@ -39,10 +39,10 @@
 
 
 (setq el-get-sources
-      '(;(:name enhanced-ruby-mode
-        ;       :type git
-        ;       :url "git://github.com/mbriggs/Enhanced-Ruby-Mode.git"
-        ;      :features ruby-mode)
+      '((:name enhanced-ruby-mode
+               :type git
+               :url "git://github.com/mbriggs/Enhanced-Ruby-Mode.git"
+              :features ruby-mode)
         (:name haml-mode
                :type git
                :url "https://github.com/nex3/haml-mode")
@@ -165,12 +165,12 @@
                :type git
                :url "https://github.com/scottjad/ido-hacks"
                :features ido-hacks)
-        (:name rvm
-               :type git
-               :url "http://github.com/djwhitt/rvm.el.git"
-               :load "rvm.el"
-               :compile ("rvm.el")
-               :after (progn (rvm-use-default)))
+        ; (:name rvm
+        ;        :type git
+        ;        :url "http://github.com/djwhitt/rvm.el.git"
+        ;        :load "rvm.el"
+        ;        :compile ("rvm.el")
+        ;        :after (progn (rvm-use-default)))
         (:name js3-mode
                :type git
                :url "https://github.com/thomblake/js3-mode.git")
@@ -381,7 +381,7 @@
          highlight-symbol
          weather
          ;web-mode
-         rvm
+         ;rvm
          zossima
          zencoding-mode)
        (mapcar 'el-get-source-name el-get-sources)))

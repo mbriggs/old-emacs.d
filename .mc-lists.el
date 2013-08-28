@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        downcase-word
         evil-append
         evil-forward-char
         evil-insert
@@ -12,7 +13,7 @@
         indent-for-tab-command
         isearch-other-control-char
         isearch-printing-char
-        downcase-word
+        ruby-end-space
         ))
 
 (setq mc/cmds-to-run-once

@@ -15,6 +15,20 @@
      (let ((table-name (rg-remove "^.*_" table-name)))
        ad-do-it))))
 
+(defun setup-railgun-for-qcloud ()
+  (when (string= "qcloud" (eproject-name))
+    (setq rg--class-paths
+          '((model      . "app/models/")
+            (controller . "app/controllers/")
+            (presenter  . "app/presenters/")
+            (repository . "app/repositories/")
+            (helper     . "app/helpers/")
+            (service    . "app/services/")
+            (domain     . "domain/")
+            (lib        . "lib/")
+            (func-test  . "test/functional/")
+            (spec       . "spec/")))))
+
 (defun setup-railgun-for-packman ()
   (when (eproject-attribute :packman)
     (setq rg-factory-file-path "test/blueprints.rb")
@@ -31,6 +45,7 @@
             (spec       . ("spec/" . "spec/\\(domain/[a-zA-Z0-9_]+/\\|[a-zA-Z0-9_]+/\\)"))))))
 
 (add-hook 'ruby-project-file-visit-hook 'setup-railgun-for-packman)
+(add-hook 'ruby-project-file-visit-hook 'setup-railgun-for-qcloud)
 
 (defun go-to-domain-or-model ()
   (interactive)

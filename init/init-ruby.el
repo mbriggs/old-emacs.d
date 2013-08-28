@@ -24,7 +24,7 @@
   '(progn
      (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)))
 
-(add-hook 'ruby-mode-hook 'rvm-activate-corresponding-ruby)
+;(add-hook 'ruby-mode-hook 'rvm-activate-corresponding-ruby)
 ;; (add-hook 'ruby-mode-hook 'flymake-ruby-load)
 
 (defun require-absolute-ruby-path ()

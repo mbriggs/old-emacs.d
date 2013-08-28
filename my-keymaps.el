@@ -76,6 +76,8 @@
 (define-key ac-completing-map [return] nil)
 (define-key ruby-mode-map "{" nil)
 (define-key ruby-mode-map "}" nil)
+(define-key compilation-mode-map "g" nil)
+(define-key compilation-mode-map "G" nil)
 
 
 ;;; esc quits
