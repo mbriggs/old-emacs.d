@@ -83,6 +83,7 @@
 
 
 ;;; i miss intellij
+(global-set-key (kbd "M-q") 'evil-quit-all)
 (evil-define-key 'visual global-map
   (kbd "M-d") 'duplicate-region)
 
@@ -90,7 +91,12 @@
   (kbd "M-d") 'duplicate-line)
 
 (evil-define-key 'insert global-map
-  (kbd "M-d") 'duplicate-line)
+  (kbd "M-d") 'duplicate-line
+  (kbd "M-<backspace>") 'kill-whole-line
+  (kbd "M-J") 'evil-join
+  (kbd "M-<return>") 'evil-open-below
+  (kbd "M-<left>") 'evil-first-non-blank
+  (kbd "M-<right>") 'move-end-of-line)
 
 
 ;;; esc quits
