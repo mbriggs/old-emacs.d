@@ -45,6 +45,9 @@ lein:
 
 `lein plugin install clj-stacktrace 0.2.3`
 
+python:
+`pip install virtualenv rope ropemacs flake8`
+
 it depends on a `~/.secrets.el` file being there. This is a good place to put passwords or other sensitive information required for plugins, but that you don't want sitting on public github.
 
 If ctags isn't pointing at the right version

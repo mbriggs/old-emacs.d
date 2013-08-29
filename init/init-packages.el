@@ -277,7 +277,6 @@
 (require-package 'haskell-mode)
 (require-package 'flymake-coffee)
 (require-package 'flymake-ruby)
-(require-package 'flymake-cursor)
 (require-package 'flymake-haml)
 (require-package 'flymake-sass)
 (require-package 'flymake-shell)
@@ -296,10 +295,17 @@
 (require-package 'rainbow-mode)
 (require-package 'sass-mode)
 (require-package 'scss-mode)
+(require-package 'pymacs)
+(require-package 'python-django)
 (require-package 'scratch)
+(require-package 'epc)
+(require-package 'jedi)
 (require-package 'yari)
 (require-package 'yaml-mode)
 (require-package 'yasnippet)
+(require-package 'flymake-python-pyflakes)
+
+
 
 ;;; el-get the rest
 (setq my-packages
@@ -352,6 +358,7 @@
          logito
          gist
          rhtml
+         ropemacs
          shoulda-test
          serve-rails
          railgun
@@ -371,6 +378,7 @@
          volatile-highlights
          xml-parse
          multi-term
+         python-mode
          highlight-symbol
          weather
          ;web-mode

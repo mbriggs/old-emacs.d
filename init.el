@@ -25,6 +25,7 @@
           ;init-clojure
           init-secrets
           init-erc
+          init-python
           init-csv
           init-dired
           init-flymake
