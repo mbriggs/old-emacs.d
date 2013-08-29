@@ -18,6 +18,23 @@
           (end (progn (ruby-end-of-block) (point))))
       (narrow-to-region start end))))
 
+(defun duplicate-region ()
+  (interactive)
+  (kill-region (region-beginning) (region-end))
+  (yank)
+  (vhl/clear-all)
+  (yank))
+
+(defun duplicate-line ()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (vhl/clear-all)
+  (yank))
+
 (defun clean-up-buffer-or-region ()
   "Untabifies, indents and deletes trailing whitespace from buffer or region."
   (interactive)

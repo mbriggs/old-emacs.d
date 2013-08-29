@@ -40,8 +40,8 @@
 (global-set-key [escape] 'keyboard-quit)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-\\") 'highlight-symbol-at-point)
-(global-set-key (kbd "M-;") 'er/expand-region)
-(global-set-key (kbd "M-:") 'er/contract-region)
+(global-set-key (kbd "<M-up>") 'er/expand-region) ;
+(global-set-key (kbd "<M-down>") 'er/contract-region)
 (global-set-key (kbd "C-<backspace>") 'my-delete-backwards)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-]") 'textmate-shift-right)
@@ -71,6 +71,8 @@
 
 (require 'auto-complete)
 (define-key *textmate-mode-map* [(meta return)] nil)
+(define-key *textmate-mode-map* [(meta up)] nil)
+(define-key *textmate-mode-map* [(meta down)] nil)
 (define-key org-mode-map [(meta return)] nil)
 (define-key ac-completing-map "\r" nil)
 (define-key ac-completing-map [return] nil)
@@ -78,6 +80,17 @@
 (define-key ruby-mode-map "}" nil)
 (define-key compilation-mode-map "g" nil)
 (define-key compilation-mode-map "G" nil)
+
+
+;;; i miss intellij
+(evil-define-key 'visual global-map
+  (kbd "M-d") 'duplicate-region)
+
+(evil-define-key 'normal global-map
+  (kbd "M-d") 'duplicate-line)
+
+(evil-define-key 'insert global-map
+  (kbd "M-d") 'duplicate-line)
 
 
 ;;; esc quits
