@@ -24,6 +24,14 @@
   (local-set-key ",cl" 'js-load-file-and-go))
 ;;(add-hook 'js-mode-hook 'add-inferior-js-keys)
 
+;;; tern
+
+;; (autoload 'tern-mode "tern.el" nil t)
+;; (add-hook 'js3-mode-hook (lambda () (tern-mode t)))
+;; (eval-after-load 'tern
+;;    '(progn
+;;       (require 'tern-auto-complete)
+;;       (tern-ac-setup)))
 
 ;;; make functions pretty
 

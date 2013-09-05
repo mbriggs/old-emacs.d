@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/src/projectile/" "~/src/backbone.repository/" "~/src/packmanager/")
+("~/.emacs.d/" "~/src/backbone.repository/" "~/src/projectile/" "~/src/packmanager/")
