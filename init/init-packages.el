@@ -137,9 +137,6 @@
                :type http
                :url "http://www.cx4a.org/pub/auto-complete-ruby.el"
                :depends (auto-complete))
-        (:name eproject
-               :type git
-               :url "https://github.com/jrockway/eproject")
         (:name logito
                :type http
                :url "https://raw.github.com/sigma/logito/master/logito.el")
@@ -291,6 +288,8 @@
 (require-package 'org)
 (require-package 'paredit)
 (require-package 'ruby-end)
+(require-package 's)
+(require-package 'projectile)
 (require-package 'ruby-block)
 (require-package 'rainbow-mode)
 (require-package 'sass-mode)
@@ -303,6 +302,8 @@
 (require-package 'yari)
 (require-package 'yaml-mode)
 (require-package 'yasnippet)
+(require-package 'flx)
+(require-package 'flx-ido)
 (require-package 'flymake-python-pyflakes)
 
 
@@ -336,7 +337,6 @@
          dumb-refactorings
          lua-mode
          el-expectations
-         eproject
          emacs-w3m
          js-comint
          evil

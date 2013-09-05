@@ -2,8 +2,8 @@
 (eval-after-load "undo-tree"
   '(diminish 'undo-tree-mode "ut"))
 
-(eval-after-load "eproject"
-  '(diminish 'eproject-mode "prj"))
+(eval-after-load "Projectile"
+  '(diminish 'projectile-mode "prj"))
 
 (eval-after-load "volatile-highlights"
   '(diminish 'volatile-highlights-mode "vh"))

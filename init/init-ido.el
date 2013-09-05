@@ -14,4 +14,15 @@
 (defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
 
+;;; flx
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(setq flx-ido-threshhold 12000)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-use-faces nil)
+;; set gc threshold to 20mb
+(setq gc-cons-threshold 20000000)
+
 (provide 'init-ido)

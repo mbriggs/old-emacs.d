@@ -17,7 +17,7 @@
 (define-key evil-normal-state-map "L" 'evil-last-non-blank)
 (define-key evil-normal-state-map (kbd "<tab>") 'indent-for-tab-command)
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
-(define-key evil-normal-state-map (kbd "M-t") 'textmate-goto-file)
+(define-key evil-normal-state-map (kbd "M-t") 'projectile-find-file)
 (define-key evil-normal-state-map (kbd "M-f") 'dired)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "M-j") 'evil-window-next)
@@ -56,7 +56,7 @@
 
 (global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-w") 'quit-window)
-(global-set-key (kbd "M-w") 'quit-window)
+(global-set-key (kbd "M-W") 'projectile-kill-buffers)
 
 ;;; iedit
 
@@ -161,7 +161,7 @@
 (evil-declare-key 'normal railway-minor-mode-map
                   ",j" 'ra/find-javascript
                   ",s" 'ra/find-stylesheet
-                  ",m" 'go-to-domain-or-model
+                  ",m" 'rg-find-entity
                   ",c" 'rg-find-controller
                   ",f" 'rg-find-class
                   ",h" 'rg-find-helper

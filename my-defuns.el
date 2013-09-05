@@ -169,6 +169,7 @@
 (defun my-clear-all-caches ()
   (interactive)
   (textmate-clear-cache)
+  (projectile-invalidate-cache (projectile-project-name))
   (ra/clear-caches)
   (rg-clear-caches)
   (tjs-clear-caches)
@@ -219,10 +220,6 @@
   (interactive)
   (copy-region-as-kill (point) (point-at-eol)))
 
-(defun command-t ()
-  (interactive)
-  (fuzzy-find-project-root (eproject-root))
-  (fuzzy-find-in-project))
 
 (defun sort-lines-random (beg end)
   "Sort lines in region randomly."
@@ -251,21 +248,6 @@
         (set-visited-file-name new-name)
         (set-buffer-modified-p nil)))))
 
-
-(defun build-ctags ()
-  (interactive)
-  (message "building project tags")
-  (let ((root (eproject-root)))
-    (shell-command (concat "ctags -e -R --extra=+q --exclude=db --exclude=test --exclude=.git --exclude=public -f " root "TAGS " root)))
-  (visit-project-tags)
-  (message "tags built successfully"))
-
-(defun build-gtags ()
-  (interactive)
-  (message "building gtags")
-  (let ((root (eproject-root)))
-    (shell-command (concat "(cd " root " && gtags)"))
-    (message "tags loaded")))
 
 (defun fix-buffer-directory ()
   (interactive)

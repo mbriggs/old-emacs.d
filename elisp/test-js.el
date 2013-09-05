@@ -59,17 +59,19 @@
     (replace-regexp-in-string (tjs-root) "" no-extension)))
 
 (defun tjs-find-implementation (file)
-  (let ((test-name (replace-regexp-in-string "[\\._][sS]pec\\.js$" ".js" file)))
+  (let ((test-name (replace-regexp-in-string "[\\._]\\(spec\\|test\\)\\.js$" ".js" file)))
     (tjs-find-matching-files test-name (tjs-files))))
 
 (defun tjs-find-test (file)
   (let ((underscore-spec (tjs-set-file-postfix file "_spec"))
         (dot-spec (tjs-set-file-postfix file ".spec"))
         (camel-spec (tjs-set-file-postfix file "Spec"))
+        (dot-test (tjs-set-file-postfix file ".test"))
         (specs (tjs-specs))
         (tests (tjs-tests)))
 
     (append (tjs-find-matching-files file tests)
+            (tjs-find-matching-files dot-test tests)
             (tjs-find-matching-files underscore-spec specs)
             (tjs-find-matching-files dot-spec specs)
             (tjs-find-matching-files camel-spec specs))))
@@ -95,7 +97,6 @@
 (defun tjs-on-spec-p ()
   (string-match-p "/spec/" (buffer-file-name)))
 
-(defvar tjs--files nil)
 (defun tjs-files ()
   (or tjs--files
       (setq tjs--files

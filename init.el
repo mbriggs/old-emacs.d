@@ -26,6 +26,7 @@
           init-secrets
           init-erc
           init-python
+          init-projectile
           init-csv
           init-dired
           init-flymake
@@ -54,7 +55,7 @@
           init-yaml
           init-ruby-block
           init-ruby-end
-          init-eproject
+          ;init-eproject
           init-js
           init-multiple-cursors
           init-railgun

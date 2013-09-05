@@ -16,7 +16,7 @@
        ad-do-it))))
 
 (defun setup-railgun-for-qcloud ()
-  (when (string= "qcloud" (eproject-name))
+  (when (string= "qcloud" (projectile-project-name))
     (setq rg--class-paths
           '((model      . "app/models/")
             (controller . "app/controllers/")
@@ -30,7 +30,7 @@
             (spec       . "spec/")))))
 
 (defun setup-railgun-for-packman ()
-  (when (eproject-attribute :packman)
+  (when (string= "packmanager" (projectile-project-name))
     (setq rg-factory-file-path "test/blueprints.rb")
     (setq rg--class-paths
           '((model      . "app/models/")
@@ -46,13 +46,5 @@
 
 (add-hook 'ruby-project-file-visit-hook 'setup-railgun-for-packman)
 (add-hook 'ruby-project-file-visit-hook 'setup-railgun-for-qcloud)
-
-(defun go-to-domain-or-model ()
-  (interactive)
-  (if (eproject-attribute :uses-domain)
-      (setq rg-entity 'domain)
-    (setq rg-entity 'model))
-
-  (rg-find-entity))
 
 (provide 'init-railgun)
