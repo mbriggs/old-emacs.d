@@ -38,19 +38,19 @@
 
 (setq dabbrev-friend-buffer-function 'sanityinc/dabbrev-friend-buffer)
 
-(custom-set-variables
- '(ac-trigger-key "C-SPC")
- '(ac-auto-show-menu nil)
- '(ac-use-menu-map t))
+;; (custom-set-variables
+;;  '(ac-trigger-key "C-SPC")
+;;  '(ac-auto-show-menu nil)
+;;  '(ac-use-menu-map t))
 
-(defun iy-ac-tab-noconflict ()
-  (let ((command (key-binding [tab]))) ; remember command
-    (local-unset-key [tab]) ; unset from (kbd "<tab>")
-    (local-set-key (kbd "TAB") command))) ; bind to (kbd "TAB")
+;; (defun iy-ac-tab-noconflict ()
+;;   (let ((command (key-binding [tab]))) ; remember command
+;;     (local-unset-key [tab]) ; unset from (kbd "<tab>")
+;;     (local-set-key (kbd "TAB") command))) ; bind to (kbd "TAB")
 
-(add-hook 'ruby-mode-hook 'iy-ac-tab-noconflict)
-(add-hook 'markdown-mode-hook 'iy-ac-tab-noconflict)
-(add-hook 'org-mode-hook 'iy-ac-tab-noconflict)
+;; (add-hook 'ruby-mode-hook 'iy-ac-tab-noconflict)
+;; (add-hook 'markdown-mode-hook 'iy-ac-tab-noconflict)
+;; (add-hook 'org-mode-hook 'iy-ac-tab-noconflict)
 
 
 (provide 'init-autocomplete)

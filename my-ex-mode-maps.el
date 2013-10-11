@@ -55,6 +55,8 @@
           ("[ff]find-factory"         . rg-find-factory)
           ("[fs]find-schema"          . rg-find-schema)
           ("[wj]webjump"              . webjump)
+          ("[lf]load-file"            . nrepl-load-current-buffer)
+          ("nrepl-jack-in"            . nrepl-jack-in)
           ("create-table"             . org-table-create-or-convert-from-region)
           ("sort-column"              . org-sort)
           ("add-column"               . org-shiftmetaright)

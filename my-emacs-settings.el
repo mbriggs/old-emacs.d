@@ -2,11 +2,14 @@
 (require 'etags-select)
 (require 'color-theme)
 (require 'ace-jump-mode)
+(require 'help+)
+(require 'ragtime)
 
 (add-to-list 'auto-mode-alist '("\.zsh$" . sh-mode))
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 (setq create-lockfiles nil)
+(setq ring-bell-function 'ignore)
 
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq backup-by-copying t)

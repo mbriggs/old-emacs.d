@@ -1,4 +1,4 @@
-(load-file "~/.emacs.d/elisp/vanilla-ruby-mode.el")
+;(load-file "~/.emacs.d/elisp/vanilla-ruby-mode.el")
 (load-library "ruby-mode")
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.js.rjs$" . ruby-mode))
@@ -59,5 +59,8 @@
 (eval-after-load 'ruby-mode
   '(progn
      (define-key ruby-mode-map (kbd "#") 'ruby-interpolate-in-strings)))
+
+
+(setq enh-ruby-program "/Users/matt/.rbenv/versions/1.9.3/bin/ruby")
 
 (provide 'init-ruby)

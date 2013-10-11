@@ -5,6 +5,8 @@
           (lambda ()
             (setq autopair-dont-activate t)))
 
-(set-default 'autopair-dont-activate #'(lambda () (eq major-mode 'sldb-mode)))
+(set-default 'autopair-dont-activate #'(lambda () (memq major-mode '(sldb-mode
+                                                                     clojure-mode
+                                                                     nrepl-repl-mode))))
 
 (provide 'init-autopair)

@@ -22,5 +22,6 @@
         haml-electric-backspace
         keyboard-quit
         mc/unmark-previous-like-this
+        paredit-forward-kill-word
         reposition-window
         ))

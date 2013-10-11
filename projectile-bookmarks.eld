@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/src/backbone.repository/" "~/src/projectile/" "~/src/packmanager/")
+("~/.emacs.d/" "~/src/pills/" "~/.emacs.d/el-get/autopair/" "~/src/copack-map/" "~/src/backbone.repository/" "~/src/backbone.serializer/" "~/src/backbone.error/" "~/src/backbone.class/" "~/src/nulogy-ui/" "~/.zsh/" "~/src/projectile/" "~/src/packmanager/")

@@ -41,7 +41,7 @@
 (setq el-get-sources
       '((:name enhanced-ruby-mode
                :type git
-               :url "git://github.com/mbriggs/Enhanced-Ruby-Mode.git"
+               :url "git://github.com/zenspider/enhanced-ruby-mode.git"
               :features ruby-mode)
         (:name haml-mode
                :type git
@@ -264,7 +264,10 @@
                :features rhtml-mode)))
 
 ;;; get what we can from elpa
+(require-package 'anzu)
 (require-package 'css-mode)
+(require-package 'clojure-mode)
+(require-package 'auto-complete)
 (require-package 'ruby-compilation)
 (require-package 'inf-ruby)
 (require-package 'crontab-mode)
@@ -280,13 +283,17 @@
 (require-package 'linum-off)
 (require-package 'markdown-mode)
 (require-package 'maxframe)
+(require-package 'ac-nrepl)
 (require-package 'move-text)
 (require-package 'marmalade)
 (require-package 'magit)
 (require-package 'mic-paren)
 (require-package 'mode-compile)
+(require-package 'nrepl)
 (require-package 'org)
 (require-package 'paredit)
+(require-package 'evil)
+(require-package 'evil-paredit)
 (require-package 'ruby-end)
 (require-package 's)
 (require-package 'projectile)
@@ -311,13 +318,12 @@
 ;;; el-get the rest
 (setq my-packages
       (append
-       '(;enhanced-ruby-mode
+       '(enhanced-ruby-mode
          find-file-in-project
          autopair
          ace-jump-mode
          ansi-color
          ack-and-a-half
-         auto-complete
          auto-complete-css
          auto-complete-yasnippet
          auto-complete-etags
@@ -334,13 +340,13 @@
          dired-plus
          deferred
          diminish
+         help+
+         help-fns+
          dumb-refactorings
          lua-mode
          el-expectations
          emacs-w3m
          js-comint
-         evil
-         evil-surround
          expand-region
          etags-select
          ido-hacks
@@ -358,6 +364,7 @@
          logito
          gist
          rhtml
+         evil-surround
          ropemacs
          shoulda-test
          serve-rails

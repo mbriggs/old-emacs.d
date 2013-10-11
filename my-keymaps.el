@@ -18,7 +18,7 @@
 (define-key evil-normal-state-map (kbd "<tab>") 'indent-for-tab-command)
 (define-key evil-normal-state-map (kbd "<C-return>") 'new-line-in-normal-mode)
 (define-key evil-normal-state-map (kbd "M-t") 'projectile-find-file)
-(define-key evil-normal-state-map (kbd "M-f") 'dired)
+(define-key evil-normal-state-map (kbd "M-F") 'dired)
 (define-key evil-normal-state-map (kbd "C-w") 'delete-trailing-whitespace)
 (define-key evil-normal-state-map (kbd "M-j") 'evil-window-next)
 (define-key evil-normal-state-map (kbd "M-.") 'my-find-tag)
@@ -132,6 +132,14 @@
                   ",tu" 'tjs-run-unit
                   ",tc" 'tjs-run-client
                   ",tl" 'tjs-run-last)
+
+;; isearch
+
+(global-set-key (kbd "M-f") 'isearch-forward)
+(global-set-key (kbd "M-r") 'isearch-backward)
+(define-key isearch-mode-map [escape] 'isearch-cancel)
+(define-key isearch-mode-map (kbd "M-f") 'isearch-repeat-forward)
+(define-key isearch-mode-map (kbd "M-r") 'isearch-repeat-backward)
 
 ;;; comint
 

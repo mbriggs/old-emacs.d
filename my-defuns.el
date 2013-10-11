@@ -1,17 +1,3 @@
-;(defun iedit-dwim (arg)
-;  "Starts iedit but uses \\[narrow-to-defun] to limit its scope."
-;  (interactive "P")
-;  (if arg (iedit-mode)
-;    (save-excursion
-;      (save-restriction
-;        (widen)
-;
-;        (if (eq major-mode 'ruby-mode) (narrow-to-ruby-block)
-;          (narrow-to-defun))
-;
-;        (if iedit-mode (iedit-done)
-;          (iedit-start (current-word)))))))
-
 (defun narrow-to-ruby-block ()
   (save-excursion
     (let ((start (progn (ruby-beginning-of-block) (point)))
@@ -97,24 +83,6 @@
       (minimap-kill)
     (minimap-create)))
 
-(defun ruby-debug-puts ()
-  (interactive)
-  (beginning-of-line)
-  (insert (concat "p \" !!!!!!!!!!!!!!!!!!!!!!!!!!!! [ LINE " (number-to-string (current-line-number)) " ]\""))
-  (indent-for-tab-command)
-  (newline)
-  (indent-for-tab-command)
-  (insert "p \"DBG: \"")
-  (newline)
-  (indent-for-tab-command)
-  (insert "p \" ==================>> END <<=====================\"")
-  (newline)
-  (indent-for-tab-command)
-  (previous-line)
-  (previous-line)
-  (end-of-line)
-  (backward-char))
-
 (defun js-alert-line ()
   (interactive)
   (newline)
@@ -189,10 +157,10 @@
   (let ((var (word-at-point)))
     (save-excursion
       (beginning-of-buffer)
-      (when (not (string-match "^/\\* global " (current-line)))
+      (when (not (string-match "^/\\*global " (current-line)))
           (newline)
           (previous-line)
-          (insert "/* global */"))
+          (insert "/*global */"))
       (while (not (string-match "*/" (current-line)))
         (next-line))
       (end-of-line)
@@ -257,14 +225,14 @@
 
 (defun my-find-tag ()
   (interactive)
-  (if (file-exists-p (concat (eproject-root) "TAGS"))
+  (if (file-exists-p (concat (projectile-project-root) "TAGS"))
       (visit-project-tags)
     (build-ctags))
   (etags-select-find-tag-at-point))
 
 (defun visit-project-tags ()
   (interactive)
-  (let ((tags-file (concat (eproject-root) "TAGS")))
+  (let ((tags-file (concat (projectile-project-root) "TAGS")))
     (visit-tags-table tags-file)
     (message (concat "Loaded " tags-file))))
 
@@ -277,7 +245,7 @@
 
 (defadvice shoulda-run-single-file (around set-shoulda-command)
   (let* ((runner (if *use-spork* "testdrb" "ruby"))
-         (shoulda-command (concat "(cd " (eproject-root) " && "
+         (shoulda-command (concat "(cd " (projectile-project-root) " && "
                                          runner " \"%f\" %o)")))
     ad-do-it))
 (ad-activate 'shoulda-run-single-file)
@@ -285,7 +253,7 @@
 (require 'rspec-mode)
 
 (defun rspec-runner ()
-  (concat "cd " (eproject-root) " && bundle exec rspec"))
+  (concat "cd " (projectile-project-root) " && bundle exec rspec"))
 
 (defun test-verify ()
   (interactive)

@@ -7,22 +7,20 @@
 (push "/usr/bin" exec-path)
 (push "/usr/local/share/npm/bin" exec-path)
 (push (expand-file-name "~/scripts") exec-path)
-(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(setenv "PATH" (concat "/usr/local/bin:" (expand-file-name "~/scripts") ":" (getenv "PATH")))
 
 (cd "~")
 
 (mapcar 'require
         '(init-pre-package-variables
-          ;init-slime
           init-packages
           init-autopair
-          ;; init-rhtml
           init-web
+          init-anzu
           init-crontab
-          ;init-deft
+          init-evil
           init-css
           init-diminish
-          ;init-clojure
           init-secrets
           init-erc
           init-python
@@ -40,7 +38,6 @@
           init-org
           init-rinari
           init-linum
-          init-evil
           init-ack
           init-serve-rails
           init-twit
@@ -55,10 +52,11 @@
           init-yaml
           init-ruby-block
           init-ruby-end
-          ;init-eproject
+          init-clojure
           init-js
           init-multiple-cursors
           init-railgun
+          init-paredit
           init-lua
           init-git-blame
           init-volatile-highlight
